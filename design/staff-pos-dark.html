@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>HUST Cine - POS Terminal (Dark Mode)</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;background-color:#0f1013;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "cinema-black": "#0f1013", "cinema-dark": "#121316", "surface-panel": "#1a1c22", "surface-card": "#21242c", "surface-card-hover": "#282c37", "surface-elevated": "#1e2129", "border-dark": "#2d323f", "border-dark-subtle": "#232732", "text-main": "#F3F4F6", "text-muted-dark": "#9CA3AF", "text-subtle": "#6B7280", "primary-red": "#C8102E", "primary-red-hover": "#DC143C", "primary-red-glow": "rgba(200, 16, 46, 0.35)", "gold-vip": "#E5B842", "gold-vip-dim": "#3d3215", "neon-green": "#22C55E", "neon-cyan": "#06B6D4", "neon-amber": "#D98A00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "fontFamily": { "sans": ["Be Vietnam Pro", "sans-serif"], "code-time": ["Be Vietnam Pro", "monospace"] } } } };</script>
+  <!-- HUST Cine Design System Core Assets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+
+  <link rel="stylesheet" href="css/pos.css">
+  <script src="js/pos.js"></script>
+</head><body class="bg-cinema-black font-sans text-text-main antialiased select-none min-h-screen flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-[#12141a]/95 backdrop-blur-md border-b border-border-dark shadow-[0_4px_20px_rgba(0,0,0,0.5)]"><div class="h-20 w-full px-6 flex items-center justify-between gap-4"><div class="flex items-center gap-4"><div class="flex items-center gap-2.5"><div class="w-10 h-10 rounded-xl bg-primary-red flex items-center justify-center text-white shadow-[0_0_15px_rgba(200,16,46,0.5)]"><span class="material-symbols-outlined text-[22px]">movie</span></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="text-[19px] text-white tracking-tight font-extrabold">HUST CINE</span><span class="text-[10px] px-1.5 py-0.5 rounded bg-primary-red/20 text-[#ff6b7e] border border-primary-red/40 font-bold tracking-wide">POS TERMINAL</span></div><span class="text-xs text-text-muted-dark truncate max-w-[140px]">Đại Cồ Việt · Hà Nội</span></div></div><div class="h-8 w-[1px] bg-border-dark"></div><div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-card border border-border-dark"><span class="material-symbols-outlined text-text-muted-dark text-[17px]">point_of_sale</span><div class="flex flex-col"><span class="text-xs font-semibold text-text-main uppercase tracking-wider">TERM #03 · Sảnh A1</span><span class="text-[10px] text-text-subtle leading-tight">Quầy Vé &amp; F&amp;B</span></div></div><div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-card border border-border-dark"><span class="material-symbols-outlined text-text-muted-dark text-[17px]">badge</span><div class="flex flex-col"><span class="text-xs font-semibold text-text-main">Trần Mai Lan</span><span class="text-[10px] text-neon-green leading-tight flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-neon-green"></span>Thu ngân · Ca sáng</span></div></div><div class="hidden 2xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-card border border-border-dark"><span class="w-2 h-2 rounded-full bg-neon-green shadow-[0_0_8px_#22C55E] animate-pulse"></span><span class="font-code-time text-xs text-text-muted-dark font-medium">T4, 21/10/2026 · 14:32:08</span></div></div><nav class="flex items-center gap-1.5 bg-[#171920] p-1.5 rounded-xl border border-border-dark"><a aria-current="page" class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg font-semibold text-xs transition-all bg-primary-red text-white shadow-[0_0_12px_rgba(200,16,46,0.6)]" data-path="chon-phim-suat-chieu" href="#"><span class="material-symbols-outlined text-[16px]">theaters</span><span>Phim &amp; Suất Chiếu</span></a><a class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-text-muted-dark hover:text-white hover:bg-surface-card transition-all" data-path="chon-ghe" href="#"><span class="material-symbols-outlined text-[16px]">chair</span><span>Sơ Đồ Ghế</span></a><a class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-text-muted-dark hover:text-white hover:bg-surface-card transition-all" data-path="combo-fb" href="#"><span class="material-symbols-outlined text-[16px]">fastfood</span><span>Combo Bắp Nước</span></a><a class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-text-muted-dark hover:text-white hover:bg-surface-card transition-all" data-path="hoi-vien-hust-club" href="#"><span class="material-symbols-outlined text-[16px]">badge</span><span>HUST Club &amp; Thẻ SV</span></a><a class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-text-muted-dark hover:text-white hover:bg-surface-card transition-all" data-path="thanh-toan-in-ve" href="#"><span class="material-symbols-outlined text-[16px]">receipt_long</span><span>Thanh Toán &amp; In</span></a></nav><div class="flex items-center gap-3"><div class="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-card border border-border-dark text-neon-green"><span class="material-symbols-outlined text-[16px]">wifi</span><span class="font-code-time text-xs font-semibold tracking-wider">12ms</span></div><div class="flex items-center gap-1.5"><button class="w-9 h-9 rounded-lg flex items-center justify-center bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-muted-dark hover:text-white transition-colors" title="Mở ngăn kéo tiền (F2)" type="button"><span class="material-symbols-outlined text-[18px]">payments</span></button><button class="w-9 h-9 rounded-lg flex items-center justify-center bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-muted-dark hover:text-white transition-colors" title="Bàn giao két &amp; Kết ca (F4)" type="button"><span class="material-symbols-outlined text-[18px]">receipt_long</span></button><button class="w-9 h-9 rounded-lg flex items-center justify-center bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-muted-dark hover:text-white transition-colors" title="Hỗ trợ IT (F9)" type="button"><span class="material-symbols-outlined text-[18px]">support_agent</span></button><button class="w-9 h-9 rounded-lg flex items-center justify-center bg-surface-card hover:bg-primary-red text-text-muted-dark hover:text-white border border-border-dark transition-colors" title="Khóa trạm (Esc)" type="button"><span class="material-symbols-outlined text-[18px]">lock</span></button></div><div class="w-9 h-9 rounded-full bg-primary-red/20 border border-primary-red/50 flex items-center justify-center text-white font-bold"><span class="material-symbols-outlined text-[20px]">person</span></div></div></div></header><main class="w-full pt-20 bg-cinema-black flex-1 flex flex-col"><div class="flex flex-col w-full flex-1">
+<!-- POS TOP WORKSPACE ACTION & FILTER BAR -->
+<div class="w-full bg-[#14161d] px-6 py-2.5 border-b border-border-dark shadow-md flex flex-col gap-2.5">
+<!-- Row 1: Fast Hotkey Navigation Strip -->
+<div class="flex items-center justify-between gap-4 overflow-x-auto pb-0.5">
+<div class="flex items-center gap-2 shrink-0">
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-primary-red text-white font-semibold text-xs shadow-[0_0_12px_rgba(200,16,46,0.5)] border border-primary-red/80 transition-all hover:bg-primary-red-hover" type="button">
+<span class="px-1.5 py-0.5 rounded bg-black/30 font-code-time text-[10px] text-white font-bold">F1</span>
+<span>Chọn Phim &amp; Suất Chiếu</span>
+<span class="w-2 h-2 rounded-full bg-white animate-pulse ml-0.5 shadow-[0_0_5px_white]"></span>
+</button>
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white font-semibold text-xs border border-border-dark transition-all" type="button">
+<span class="px-1.5 py-0.5 rounded bg-cinema-black text-text-muted-dark font-code-time text-[10px]">F2</span>
+<span>Sơ Đồ Ghế Chi Tiết</span>
+</button>
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white font-semibold text-xs border border-border-dark transition-all" type="button">
+<span class="px-1.5 py-0.5 rounded bg-cinema-black text-text-muted-dark font-code-time text-[10px]">F3</span>
+<span>Bắp Nước &amp; Combo F&amp;B</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-red/30 border border-primary-red/40 text-primary-red font-bold text-[10px]">+1</span>
+</button>
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white font-semibold text-xs border border-border-dark transition-all" type="button">
+<span class="px-1.5 py-0.5 rounded bg-cinema-black text-text-muted-dark font-code-time text-[10px]">F4</span>
+<span>Tra Cứu SV &amp; HUST Club</span>
+<span class="material-symbols-outlined text-[15px] text-neon-green">verified</span>
+</button>
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white font-semibold text-xs border border-border-dark transition-all" type="button">
+<span class="px-1.5 py-0.5 rounded bg-cinema-black text-text-muted-dark font-code-time text-[10px]">F5</span>
+<span>Thanh Toán &amp; Xuất Vé</span>
+</button>
+</div>
+<!-- Quick Session Indicator & Alert -->
+<div class="hidden xl:flex items-center gap-2 shrink-0">
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-red/15 text-[#ff7d8e] border border-primary-red/30 text-xs font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary-red">school</span>
+<span>Ưu đãi SV Bách Khoa: Giảm 20% Vé 2D/IMAX</span>
+</span>
+</div>
+</div>
+<!-- Row 2: Date Selector & Quick Filters -->
+<div class="flex items-center justify-between gap-4 pt-1 overflow-x-auto">
+<!-- Date Pills -->
+<div class="flex items-center gap-2 shrink-0">
+<span class="text-xs font-semibold text-text-subtle mr-1 uppercase tracking-wider">Ngày chiếu:</span>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-red text-white text-xs font-bold shadow-[0_0_10px_rgba(200,16,46,0.4)] flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[15px]">calendar_today</span>
+<span>Hôm nay 21/10 (Thứ Tư)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white border border-border-dark text-xs font-medium transition-colors" type="button">
+<span>Ngày mai 22/10</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white border border-border-dark text-xs font-medium transition-colors" type="button">
+<span>Thứ Sáu 23/10</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-card border border-border-dark text-text-muted-dark hover:text-white transition-colors" title="Chọn ngày khác" type="button">
+<span class="material-symbols-outlined text-[16px]">event</span>
+</button>
+</div>
+<!-- Format Filter Pills -->
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="text-xs font-semibold text-text-subtle mr-1 uppercase tracking-wider">Định dạng:</span>
+<button class="px-3 py-1 rounded-lg bg-surface-card-hover text-white border border-border-dark text-xs font-bold" type="button">Tất cả (8)</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white border border-border-dark-subtle text-xs transition-colors" type="button">Đang chiếu</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white border border-border-dark-subtle text-xs transition-colors" type="button">IMAX Laser</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white border border-border-dark-subtle text-xs transition-colors" type="button">2D Atmos</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-card hover:bg-surface-card-hover text-text-muted-dark hover:text-white border border-border-dark-subtle text-xs transition-colors" type="button">Luxury Suite</button>
+</div>
+</div>
+</div>
+<!-- MAIN TOUCH SCREEN LAYOUT -->
+<div class="w-full px-6 py-4 grid grid-cols-12 gap-5 flex-1">
+<!-- LEFT & CENTER (68% - 8 Cols): Interactive Fast Booking Deck -->
+<div class="col-span-12 xl:col-span-8 flex flex-col gap-4">
+<!-- SECTION A: Quick Movie Selector & Showtimes Grid -->
+<div class="bg-surface-panel border border-border-dark rounded-xl p-4 shadow-xl flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-red shadow-[0_0_8px_#C8102E]"></span>
+<span class="text-base font-bold text-white tracking-tight">Phim Đang Chiếu Tại Cụm Rạp Đại Cồ Việt</span>
+<span class="text-[11px] px-2.5 py-0.5 rounded-full bg-surface-card border border-border-dark text-text-muted-dark">4 Phim trọng điểm hôm nay</span>
+</div>
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-text-subtle text-[17px]">search</span>
+<input class="w-full h-8 pl-8 pr-3 text-xs rounded-lg bg-surface-card border border-border-dark text-white placeholder-text-subtle focus:outline-none focus:border-primary-red focus:ring-1 focus:ring-primary-red transition-all" placeholder="Tìm tên phim, mã suất (Ctrl+K)..." type="text"/>
+</div>
+</div>
+<!-- Movie Cards Row -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<!-- Card 1 (Active Selected) -->
+<div class="relative rounded-xl p-2.5 bg-gradient-to-b from-[#2a171c] to-surface-card border-2 border-primary-red shadow-[0_0_15px_rgba(200,16,46,0.35)] flex flex-col gap-2 cursor-pointer transition-all">
+<div class="absolute top-2 right-2 z-10">
+<span class="material-symbols-outlined text-primary-red text-[20px] drop-shadow-[0_0_6px_#C8102E]">check_circle</span>
+</div>
+<div class="relative w-full h-32 rounded-lg overflow-hidden bg-cinema-black border border-border-dark">
+<img class="w-full h-full object-cover" data-alt="High contrast cinema poster of Dune Part Two showing vast orange sand dunes under dual suns with bold mechanical sci-fi typography in cinematic red lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqcdhHWSLnrZ3aEFEfqDxNQ5jT1SPT_BGI62ldYcmhMP9WuiCRS6MLjZsAjcsioJNL1sAuF0gaqss9vb8kPKY8p-Xd-yhWRW_xHg0h16ELwdK5oF6vzd6V-V8_KNVG6rfHmJmlWUkEM7razZq_083h1OlPO6Npkwb9dNvFIeuQnqzD1N34NntnqF6ih_F0RILtNnnVKIYucF1nSIqpRFrCfX2bBckgBUo3Xqce0LXDKC1sB9XpR5Pb"/>
+<div class="absolute top-1.5 left-1.5 flex gap-1">
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-primary-red text-white font-extrabold shadow-sm">T16</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-gold-vip text-black font-extrabold shadow-sm">IMAX</span>
+</div>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/85 backdrop-blur text-white font-code-time text-[10px] border border-white/10">
+                166 phút
+              </div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs text-white truncate font-bold">Dune: Hành Tinh Cát 2</span>
+<span class="text-[11px] text-[#ff7d8e] font-medium truncate">IMAX Laser &amp; 2D Phụ đề</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-xl p-2.5 bg-surface-card hover:bg-surface-card-hover border border-border-dark transition-all flex flex-col gap-2 cursor-pointer">
+<div class="relative w-full h-32 rounded-lg overflow-hidden bg-cinema-black border border-border-dark-subtle">
+<img class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" data-alt="Vietnamese cinema drama poster with emotional close-up portrait of woman in nostalgic Saigon warm lighting and soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkXDp66R7ae6taMdHKuhTCRM1-DgG1rpmwEwdaq_h3QZFUZHACvCKAM1KZWt24K8MpqqqY7j62-Hxzcfb4RMDkU68jiJ95Z1U6BHdSAitIBeE_oL9I80psxRLZLf6uo5jmraYxvOvVFMt_I0eiOJqiQL30h_t98gYeBuaOgG54aZz4V7NNIEE40y5hA19m11lZi6a9Kx_JJx-GA-g3E4PZHMeogv8ueCBFQRlVsFQCiQ_0D96w2ZyA"/>
+<div class="absolute top-1.5 left-1.5 flex gap-1">
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-[#9b1c1c] text-white font-bold">T18</span>
+</div>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/85 backdrop-blur text-white font-code-time text-[10px] border border-white/10">
+                131 phút
+              </div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs text-white truncate font-semibold">Mai</span>
+<span class="text-[11px] text-text-muted-dark truncate">Tâm lý xã hội · 2D Atmos</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="rounded-xl p-2.5 bg-surface-card hover:bg-surface-card-hover border border-border-dark transition-all flex flex-col gap-2 cursor-pointer">
+<div class="relative w-full h-32 rounded-lg overflow-hidden bg-cinema-black border border-border-dark-subtle">
+<img class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" data-alt="Monstrous giant ape and radioactive atomic lizard battle scene poster with neon pink and electric blue explosions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdBNBT5bqMztPJ-n3n7eKV_XXHAzdkJ1OmJ89nc7t-6oLvs208iHqbwjkBx-OkWYFoSxzoi9djW86qsh3jNmoH5Fsto97q9qrv4yEXnTzp9y56bVUgEWE3hVwnatajf30aYOnT_aOkwfDmyc2B39nbP_Xmg-S4kFgxG-iBE2aqGS1nGRxdt_bTquaLq_6v5y_X7bBJbpBdeNu6Echc-tmE96_cYO0L5mANQiN9Z60FO6QA10aL5uRg"/>
+<div class="absolute top-1.5 left-1.5 flex gap-1">
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-[#1e40af] text-white font-bold">K</span>
+</div>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/85 backdrop-blur text-white font-code-time text-[10px] border border-white/10">
+                115 phút
+              </div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs text-white truncate font-semibold">Godzilla x Kong</span>
+<span class="text-[11px] text-text-muted-dark truncate">Hành động giả tưởng · 3D Laser</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="rounded-xl p-2.5 bg-surface-card hover:bg-surface-card-hover border border-border-dark transition-all flex flex-col gap-2 cursor-pointer">
+<div class="relative w-full h-32 rounded-lg overflow-hidden bg-cinema-black border border-border-dark-subtle">
+<img class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" data-alt="Playful energetic martial arts panda in action pose in ancient bamboo temple setting with vibrant green colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXGBtoDCC5FILnRFUbnF2chJbNDxBLX6cFGtELPAKSOJQC-iNLlzpGTY9dTJfj68v11U8COvbc-xIf-IQKrr9lMsxch_jyLQ_dMyA9aJwWfU-wk-xBz5baEIWyo6WCM9s7RmcDx0s-byBVJEs0KSyrz4ZyeX7q4bWYzVGoTWTh-9MaP4rtHX2kSVTfjWi5NEaNHy-b6nFYsZQAI4bnqXo49jWTS8r9OOn8qxQp_Q1iYgPXO8kYclRz"/>
+<div class="absolute top-1.5 left-1.5 flex gap-1">
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-[#065f46] text-[#34d399] font-bold">P</span>
+</div>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/85 backdrop-blur text-white font-code-time text-[10px] border border-white/10">
+                94 phút
+              </div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs text-white truncate font-semibold">Kung Fu Panda 4</span>
+<span class="text-[11px] text-text-muted-dark truncate">Hoạt hình hài hước · 2D Lồng tiếng</span>
+</div>
+</div>
+</div>
+<!-- SHOWTIMES GROUPED BY ROOM/HALL FOR SELECTED MOVIE -->
+<div class="mt-1 pt-3 bg-cinema-dark border border-border-dark rounded-xl p-3.5 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-white">Suất chiếu: Dune 2 (21/10/2026)</span>
+<span class="text-xs text-text-subtle">· Chọn phòng để nạp sơ đồ ghế</span>
+</div>
+<span class="text-xs text-primary-red font-bold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-red animate-ping"></span>Đang chọn: Phòng 01 - 14:45</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Room 1 (IMAX) -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 p-2.5 rounded-lg bg-surface-card border border-border-dark">
+<div class="flex items-center gap-2.5 shrink-0 min-w-[210px]">
+<div class="w-8 h-8 rounded-lg bg-primary-red text-white flex items-center justify-center font-bold text-xs shadow-[0_0_8px_rgba(200,16,46,0.5)]">P01</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-white">Phòng 01 · IMAX Laser</span>
+<span class="text-[11px] text-text-muted-dark">260 chỗ ngồi · Màn chiếu vòm 24m</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<!-- Selected Showtime -->
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-red text-white flex flex-col items-center shadow-[0_0_12px_rgba(200,16,46,0.6)] border border-primary-red" type="button">
+<div class="flex items-center gap-1">
+<span class="text-sm font-extrabold">14:45</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-code-time text-[10px] text-white/90 leading-none">182 chỗ · 155k</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-panel hover:bg-surface-card-hover border border-border-dark text-text-main flex flex-col items-center transition-colors" type="button">
+<span class="text-sm font-bold">18:00</span>
+<span class="font-code-time text-neon-amber text-[10px] font-semibold leading-none">Sắp đầy · 165k</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-panel hover:bg-surface-card-hover border border-border-dark text-text-main flex flex-col items-center transition-colors" type="button">
+<span class="text-sm font-bold">21:15</span>
+<span class="font-code-time text-text-subtle text-[10px] leading-none">95 chỗ · 165k</span>
+</button>
+</div>
+</div>
+<!-- Room 3 (Standard 2D) -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 p-2.5 rounded-lg bg-surface-panel border border-border-dark-subtle opacity-85 hover:opacity-100 transition-opacity">
+<div class="flex items-center gap-2.5 shrink-0 min-w-[210px]">
+<div class="w-8 h-8 rounded-lg bg-surface-card text-text-muted-dark flex items-center justify-center font-bold text-xs border border-border-dark">P03</div>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-text-main">Phòng 03 · Standard 2D</span>
+<span class="text-[11px] text-text-subtle">120 chỗ ngồi · Âm thanh Dolby 7.1</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-main flex flex-col items-center transition-colors" type="button">
+<span class="text-sm font-bold">15:15</span>
+<span class="font-code-time text-text-subtle text-[10px] leading-none">45 chỗ · 95k</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-main flex flex-col items-center transition-colors" type="button">
+<span class="text-sm font-bold">17:30</span>
+<span class="font-code-time text-text-subtle text-[10px] leading-none">110 chỗ · 95k</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-main flex flex-col items-center transition-colors" type="button">
+<span class="text-sm font-bold">20:00</span>
+<span class="font-code-time text-primary-red font-semibold text-[10px] leading-none">8 chỗ · 115k</span>
+</button>
+</div>
+</div>
+<!-- Room 5 (Luxury Suite) -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 p-2.5 rounded-lg bg-surface-panel border border-border-dark-subtle opacity-85 hover:opacity-100 transition-opacity">
+<div class="flex items-center gap-2.5 shrink-0 min-w-[210px]">
+<div class="w-8 h-8 rounded-lg bg-gold-vip-dim border border-gold-vip/50 text-gold-vip flex items-center justify-center font-bold text-xs">P05</div>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-text-main">Phòng 05 · Luxury Suite</span>
+<span class="text-[11px] text-text-subtle">40 ghế recliner chỉnh điện &amp; Phục vụ</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-main flex flex-col items-center transition-colors" type="button">
+<span class="text-sm font-bold">16:00</span>
+<span class="font-code-time text-text-subtle text-[10px] leading-none">18 chỗ · 160k</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-main flex flex-col items-center transition-colors" type="button">
+<span class="text-sm font-bold">19:30</span>
+<span class="font-code-time text-neon-amber text-[10px] font-semibold leading-none">12 chỗ · 210k</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION B: Interactive Mini Seat Map & Quick Seat Picker -->
+<div class="bg-surface-panel border border-border-dark rounded-xl p-4 shadow-xl flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-neon-cyan shadow-[0_0_8px_#06B6D4]"></span>
+<span class="text-base font-bold text-white">Sơ Đồ Ghế: Phòng 01 (IMAX Laser) · Suất 14:45</span>
+<span class="font-code-time text-xs text-text-muted-dark bg-surface-card px-2 py-0.5 rounded border border-border-dark">Đang chọn: 2 ghế (G10, G11)</span>
+</div>
+<!-- Quick Seat Action Buttons for cashier speed -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded-lg bg-gold-vip-dim border border-gold-vip/50 text-gold-vip hover:bg-gold-vip hover:text-black text-xs font-semibold transition-colors" type="button">
+              +1 VIP Trung Tâm
+            </button>
+<button class="px-3 py-1 rounded-lg bg-primary-red/15 border border-primary-red/40 text-primary-red hover:bg-primary-red hover:text-white text-xs font-semibold transition-colors" type="button">
+              +2 Ghế Cặp Đôi
+            </button>
+<button class="px-3 py-1 rounded-lg bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-muted-dark hover:text-white text-xs transition-colors" type="button">
+              Xóa Chọn
+            </button>
+</div>
+</div>
+<!-- Cinema Screen Curve Representation -->
+<div class="w-full flex flex-col items-center pt-2">
+<div class="w-4/5 h-2.5 rounded-full bg-gradient-to-r from-[#172554] via-neon-cyan to-[#172554] shadow-[0_0_15px_rgba(6,182,212,0.6)]"></div>
+<span class="text-xs font-bold text-neon-cyan/80 uppercase tracking-widest mt-1.5 text-[10px] drop-shadow-[0_0_4px_rgba(6,182,212,0.4)]">MÀN HÌNH CHIẾU IMAX 24M</span>
+</div>
+<!-- The Seat Matrix Grid -->
+<div class="w-full overflow-x-auto py-3 flex flex-col items-center gap-2">
+<!-- Row E (Normal seats) -->
+<div class="flex items-center gap-2">
+<span class="font-code-time text-xs text-text-subtle w-4 text-center font-bold">E</span>
+<div class="flex items-center gap-1.5">
+<!-- Left block -->
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">E01</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">E02</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">E03</div>
+<div class="w-7 h-7 rounded bg-[#16181f] text-text-subtle/40 border border-[#232733] flex items-center justify-center font-code-time text-[10px] cursor-not-allowed line-through">E04</div>
+<!-- Aisle -->
+<div class="w-4"></div>
+<!-- Center block -->
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">E05</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">E06</div>
+<div class="w-7 h-7 rounded bg-[#16181f] text-text-subtle/40 border border-[#232733] flex items-center justify-center font-code-time text-[10px] cursor-not-allowed line-through">E07</div>
+<div class="w-7 h-7 rounded bg-[#16181f] text-text-subtle/40 border border-[#232733] flex items-center justify-center font-code-time text-[10px] cursor-not-allowed line-through">E08</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">E09</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">E10</div>
+<!-- Aisle -->
+<div class="w-4"></div>
+<!-- Right block -->
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">E11</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">E12</div>
+</div>
+</div>
+<!-- Row F (VIP Sweet Spot Area) -->
+<div class="flex items-center gap-2">
+<span class="font-code-time text-xs text-text-subtle w-4 text-center font-bold">F</span>
+<div class="flex items-center gap-1.5">
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">F01</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">F02</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">F03</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">F04</div>
+<div class="w-4"></div>
+<!-- Gold VIP Row -->
+<div class="w-7 h-7 rounded bg-gold-vip-dim hover:bg-gold-vip hover:text-black border border-gold-vip text-gold-vip flex items-center justify-center font-code-time text-[10px] font-bold cursor-pointer transition-colors shadow-[0_0_5px_rgba(229,184,66,0.3)]">F05</div>
+<div class="w-7 h-7 rounded bg-gold-vip-dim hover:bg-gold-vip hover:text-black border border-gold-vip text-gold-vip flex items-center justify-center font-code-time text-[10px] font-bold cursor-pointer transition-colors shadow-[0_0_5px_rgba(229,184,66,0.3)]">F06</div>
+<div class="w-7 h-7 rounded bg-[#16181f] text-text-subtle/40 border border-[#232733] flex items-center justify-center font-code-time text-[10px] cursor-not-allowed line-through">F07</div>
+<div class="w-7 h-7 rounded bg-[#16181f] text-text-subtle/40 border border-[#232733] flex items-center justify-center font-code-time text-[10px] cursor-not-allowed line-through">F08</div>
+<div class="w-7 h-7 rounded bg-gold-vip-dim hover:bg-gold-vip hover:text-black border border-gold-vip text-gold-vip flex items-center justify-center font-code-time text-[10px] font-bold cursor-pointer transition-colors shadow-[0_0_5px_rgba(229,184,66,0.3)]">F09</div>
+<div class="w-7 h-7 rounded bg-gold-vip-dim hover:bg-gold-vip hover:text-black border border-gold-vip text-gold-vip flex items-center justify-center font-code-time text-[10px] font-bold cursor-pointer transition-colors shadow-[0_0_5px_rgba(229,184,66,0.3)]">F10</div>
+<div class="w-4"></div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">F11</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">F12</div>
+</div>
+</div>
+<!-- Row G (VIP Sweet Spot Area - Includes SELECTED G10 & G11) -->
+<div class="flex items-center gap-2">
+<span class="font-code-time text-xs text-primary-red w-4 text-center font-bold">G</span>
+<div class="flex items-center gap-1.5">
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">G01</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">G02</div>
+<div class="w-7 h-7 rounded bg-[#16181f] text-text-subtle/40 border border-[#232733] flex items-center justify-center font-code-time text-[10px] cursor-not-allowed line-through">G03</div>
+<div class="w-7 h-7 rounded bg-[#16181f] text-text-subtle/40 border border-[#232733] flex items-center justify-center font-code-time text-[10px] cursor-not-allowed line-through">G04</div>
+<div class="w-4"></div>
+<!-- Gold VIP Seats -->
+<div class="w-7 h-7 rounded bg-[#16181f] text-text-subtle/40 border border-[#232733] flex items-center justify-center font-code-time text-[10px] cursor-not-allowed line-through">G05</div>
+<div class="w-7 h-7 rounded bg-[#16181f] text-text-subtle/40 border border-[#232733] flex items-center justify-center font-code-time text-[10px] cursor-not-allowed line-through">G06</div>
+<div class="w-7 h-7 rounded bg-gold-vip-dim hover:bg-gold-vip hover:text-black border border-gold-vip text-gold-vip flex items-center justify-center font-code-time text-[10px] font-bold cursor-pointer transition-colors shadow-[0_0_5px_rgba(229,184,66,0.3)]">G07</div>
+<div class="w-7 h-7 rounded bg-gold-vip-dim hover:bg-gold-vip hover:text-black border border-gold-vip text-gold-vip flex items-center justify-center font-code-time text-[10px] font-bold cursor-pointer transition-colors shadow-[0_0_5px_rgba(229,184,66,0.3)]">G08</div>
+<div class="w-7 h-7 rounded bg-gold-vip-dim hover:bg-gold-vip hover:text-black border border-gold-vip text-gold-vip flex items-center justify-center font-code-time text-[10px] font-bold cursor-pointer transition-colors shadow-[0_0_5px_rgba(229,184,66,0.3)]">G09</div>
+<!-- SELECTED SEATS G10 & G11 -->
+<div class="w-7 h-7 rounded bg-primary-red text-white flex items-center justify-center font-code-time text-[10px] font-bold shadow-[0_0_12px_rgba(200,16,46,0.8)] border border-white/80 scale-105">
+<span class="text-[9px]">G10</span>
+</div>
+<div class="w-7 h-7 rounded bg-primary-red text-white flex items-center justify-center font-code-time text-[10px] font-bold shadow-[0_0_12px_rgba(200,16,46,0.8)] border border-white/80 scale-105">
+<span class="text-[9px]">G11</span>
+</div>
+<div class="w-4"></div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">G12</div>
+</div>
+</div>
+<!-- Row H (Couple & Standard) -->
+<div class="flex items-center gap-2">
+<span class="font-code-time text-xs text-text-subtle w-4 text-center font-bold">H</span>
+<div class="flex items-center gap-1.5">
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H01</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H02</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H03</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H04</div>
+<div class="w-4"></div>
+<div class="w-7 h-7 rounded bg-[#3b2a12] border border-neon-amber text-neon-amber flex items-center justify-center font-code-time text-[10px] font-semibold shadow-[0_0_5px_rgba(217,138,0,0.3)]" title="Đang giữ chỗ trực tuyến">H05</div>
+<div class="w-7 h-7 rounded bg-[#3b2a12] border border-neon-amber text-neon-amber flex items-center justify-center font-code-time text-[10px] font-semibold shadow-[0_0_5px_rgba(217,138,0,0.3)]" title="Đang giữ chỗ trực tuyến">H06</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H07</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H08</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H09</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H10</div>
+<div class="w-4"></div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H11</div>
+<div class="w-7 h-7 rounded bg-[#252936] hover:bg-[#323748] border border-[#373e52] text-text-muted-dark hover:text-white flex items-center justify-center font-code-time text-[10px] cursor-pointer transition-colors">H12</div>
+</div>
+</div>
+</div>
+<!-- Seat Map Legend -->
+<div class="flex items-center justify-center gap-6 pt-1 text-xs border-t border-border-dark-subtle">
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#252936] border border-[#373e52]"></span>
+<span class="text-text-muted-dark">Ghế thường (145k)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-gold-vip-dim border border-gold-vip"></span>
+<span class="text-gold-vip font-medium">VIP Sweetspot (155k)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-primary-red border border-white/60 shadow-[0_0_6px_#C8102E]"></span>
+<span class="text-white font-bold">Đang chọn (2 ghế)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#16181f] border border-[#232733] line-through"></span>
+<span class="text-text-subtle">Đã bán</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#3b2a12] border border-neon-amber"></span>
+<span class="text-neon-amber">Đang giữ chỗ</span>
+</div>
+</div>
+</div>
+<!-- SECTION C: Fast Concession Add-on Bar -->
+<div class="bg-surface-panel border border-border-dark rounded-xl p-4 shadow-xl flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-red text-[20px]">fastfood</span>
+<span class="text-base font-bold text-white">Gợi Ý Upsell Bắp Nước Nhanh Tại Quầy</span>
+<span class="text-[11px] px-2 py-0.5 rounded-full bg-primary-red/15 border border-primary-red/30 text-primary-red font-semibold">Tăng doanh thu F&amp;B</span>
+</div>
+<button class="text-primary-red hover:text-white font-semibold text-xs flex items-center gap-1 transition-colors" type="button">
+<span>Toàn bộ Menu F&amp;B [F3]</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<!-- Item 1: Combo Solo -->
+<div class="p-3 rounded-xl bg-surface-card hover:bg-surface-card-hover border border-border-dark transition-all flex flex-col justify-between gap-2">
+<div class="flex flex-col">
+<span class="text-xs text-white font-bold truncate">Combo HUST Solo</span>
+<span class="text-[11px] text-text-subtle truncate">1 Bắp Vừa + 1 Pepsi Lớn</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="text-xs text-primary-red font-bold font-code-time">85.000đ</span>
+<button class="w-7 h-7 rounded-lg bg-surface-panel border border-border-dark text-white hover:bg-primary-red flex items-center justify-center shadow transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Combo Double (ALREADY ADDED) -->
+<div class="p-3 rounded-xl bg-gradient-to-b from-[#2a171c] to-surface-card border-2 border-primary-red shadow-[0_0_12px_rgba(200,16,46,0.3)] flex flex-col justify-between gap-2 relative">
+<div class="absolute -top-2 -right-1.5 px-2 py-0.5 rounded-full bg-primary-red text-white font-code-time text-[10px] font-bold shadow-[0_0_8px_#C8102E]">x1</div>
+<div class="flex flex-col">
+<span class="text-xs text-white font-bold truncate">Combo HUST Double</span>
+<span class="text-[11px] text-[#ff7d8e] truncate font-medium">1 Bắp Lớn + 2 Nước Ngọt</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="text-xs text-primary-red font-bold font-code-time">115.000đ</span>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-surface-panel border border-border-dark text-white hover:bg-border-dark flex items-center justify-center font-bold text-xs" type="button">-</button>
+<span class="font-code-time text-xs font-bold text-white px-1">1</span>
+<button class="w-6 h-6 rounded bg-primary-red text-white flex items-center justify-center font-bold text-xs" type="button">+</button>
+</div>
+</div>
+</div>
+<!-- Item 3: Bắp Phô Mai Size L -->
+<div class="p-3 rounded-xl bg-surface-card hover:bg-surface-card-hover border border-border-dark transition-all flex flex-col justify-between gap-2">
+<div class="flex flex-col">
+<span class="text-xs text-white font-bold truncate">Bắp Rang Phô Mai L</span>
+<span class="text-[11px] text-text-subtle truncate">Hương vị bơ phô mai đậm đà</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="text-xs text-primary-red font-bold font-code-time">69.000đ</span>
+<button class="w-7 h-7 rounded-lg bg-surface-panel border border-border-dark text-white hover:bg-primary-red flex items-center justify-center shadow transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Item 4: Nước Suối -->
+<div class="p-3 rounded-xl bg-surface-card hover:bg-surface-card-hover border border-border-dark transition-all flex flex-col justify-between gap-2">
+<div class="flex flex-col">
+<span class="text-xs text-white font-bold truncate">Nước Suối Aquafina</span>
+<span class="text-[11px] text-text-subtle truncate">Chai 500ml ướp lạnh</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="text-xs text-primary-red font-bold font-code-time">20.000đ</span>
+<button class="w-7 h-7 rounded-lg bg-surface-panel border border-border-dark text-white hover:bg-primary-red flex items-center justify-center shadow transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (32% - 4 Cols): POS Cart, Payment & Numpad Terminal -->
+<div class="col-span-12 xl:col-span-4 flex flex-col gap-3">
+<div class="bg-surface-panel border border-border-dark rounded-xl p-4 shadow-2xl flex flex-col gap-3">
+<!-- Cart Header -->
+<div class="flex items-center justify-between pb-2 border-b border-border-dark">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-lg text-white font-extrabold tracking-tight">#POS-10492</span>
+<span class="w-2.5 h-2.5 rounded-full bg-neon-green shadow-[0_0_8px_#22C55E] animate-pulse"></span>
+</div>
+<span class="font-code-time text-xs text-text-subtle">14:32:15 · Khách tại quầy A1</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-surface-card border border-border-dark text-text-muted-dark hover:text-primary-red text-xs transition-colors" title="Hủy giỏ" type="button">Làm mới</button>
+<span class="px-2.5 py-0.5 rounded-lg bg-neon-green/15 text-neon-green border border-neon-green/30 text-xs font-bold">Đang xử lý</span>
+</div>
+</div>
+<!-- Customer / Loyalty & Student ID Lookup -->
+<div class="p-3 rounded-xl bg-surface-card border border-border-dark flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-xs text-text-muted-dark uppercase tracking-wider font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary-red">badge</span>
+              Hội Viên / SV Bách Khoa
+            </span>
+<button class="text-xs text-primary-red hover:underline font-bold" type="button">Đổi KH</button>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-primary-red/20 border border-primary-red/50 text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">
+              DH
+            </div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="text-xs text-white font-bold truncate">Đặng Hoàng Nam</span>
+<span class="material-symbols-outlined text-[15px] text-neon-cyan" title="Đã đối soát thẻ SV">verified</span>
+</div>
+<span class="font-code-time text-xs text-text-muted-dark">MSSV: 20210619 · 0982***619</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<span class="px-2 py-0.5 rounded bg-primary-red/20 border border-primary-red/40 text-[#ff7d8e] text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">percent</span>
+              Chiết khấu SV: -20%
+            </span>
+<span class="px-2 py-0.5 rounded bg-gold-vip-dim border border-gold-vip/50 text-gold-vip text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">stars</span>
+              Diamond · 31 Điểm
+            </span>
+</div>
+</div>
+<!-- Cart Items List -->
+<div class="flex flex-col gap-2 max-h-56 overflow-y-auto pr-1">
+<!-- Item 1: Tickets -->
+<div class="p-2.5 rounded-lg bg-surface-card border border-border-dark flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="text-xs text-white font-bold">2x Vé IMAX Laser - Dune 2</span>
+<span class="text-[11px] text-text-muted-dark">Ghế G10, G11 (VIP) · 14:45 Hôm nay</span>
+<span class="text-[10px] text-text-subtle font-code-time">Phòng 01 · 2 x 155.000đ</span>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="text-xs text-white font-bold font-code-time">310.000đ</span>
+<button class="text-text-subtle hover:text-primary-red mt-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Concession Combo -->
+<div class="p-2.5 rounded-lg bg-surface-card border border-border-dark flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="text-xs text-white font-bold">1x Combo HUST Double</span>
+<span class="text-[11px] text-text-muted-dark">1 Bắp Phô Mai L + 2 Pepsi Lớn</span>
+<span class="text-[10px] text-text-subtle">Quầy F&amp;B Sảnh A1</span>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="text-xs text-white font-bold font-code-time">115.000đ</span>
+<button class="text-text-subtle hover:text-primary-red mt-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Discount Promotion Applied -->
+<div class="p-2.5 rounded-lg bg-[#271217] border border-primary-red/40 flex items-center justify-between text-[#ff7d8e]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-red">local_offer</span>
+<span class="text-xs font-bold">Ưu đãi SV Bách Khoa (-20% Vé)</span>
+</div>
+<span class="text-xs font-bold font-code-time text-primary-red">-62.000đ</span>
+</div>
+</div>
+<!-- Calculation Summary Box -->
+<div class="p-3.5 rounded-xl bg-[#14161d] border border-border-dark flex flex-col gap-2">
+<div class="flex items-center justify-between text-xs text-text-muted-dark">
+<span>Tạm tính (3 món):</span>
+<span class="font-code-time text-white font-medium">425.000 VNĐ</span>
+</div>
+<div class="flex items-center justify-between text-xs text-[#ff7d8e]">
+<span>Giảm giá thẻ sinh viên:</span>
+<span class="font-code-time font-bold text-primary-red">-62.000 VNĐ</span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-subtle">
+<span>Thuế GTGT (VAT 8%):</span>
+<span>Đã bao gồm</span>
+</div>
+<div class="h-[1px] bg-border-dark my-1"></div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs text-text-subtle uppercase tracking-wider font-bold">TỔNG THANH TOÁN</span>
+<span class="text-[10px] text-text-subtle">Đã áp dụng toàn bộ chiết khấu</span>
+</div>
+<span class="text-3xl text-primary-red font-black tracking-tight drop-shadow-[0_0_12px_rgba(200,16,46,0.6)]">363.000 <span class="text-base font-normal text-text-muted-dark">đ</span></span>
+</div>
+</div>
+<!-- Payment Methods Quick Switch (Large Touch Targets) -->
+<div class="grid grid-cols-2 gap-2">
+<button class="p-2.5 rounded-xl bg-primary-red text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-[0_0_12px_rgba(200,16,46,0.5)] border border-primary-red" type="button">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>Tiền mặt [F8]</span>
+</button>
+<button class="p-2.5 rounded-xl bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-main text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-neon-cyan">qr_code_2</span>
+<span>VietQR / MoMo [F9]</span>
+</button>
+<button class="p-2.5 rounded-xl bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-main text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-white">credit_card</span>
+<span>Quẹt Thẻ POS [F10]</span>
+</button>
+<button class="p-2.5 rounded-xl bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-main text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-gold-vip">loyalty</span>
+<span>Điểm HUST Club [F11]</span>
+</button>
+</div>
+<!-- Cash Calculator & Change Due -->
+<div class="p-3 rounded-xl bg-surface-card border border-border-dark flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-text-muted-dark">Chọn nhanh tiền khách đưa:</span>
+<span class="font-code-time text-xs text-text-subtle">Phím tắt 1, 2, 3</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5">
+<button class="py-1.5 px-1 rounded-lg bg-surface-panel hover:bg-surface-card-hover border border-border-dark text-text-main font-code-time text-xs font-semibold text-center truncate transition-colors" type="button">363k (Đủ)</button>
+<button class="py-1.5 px-1 rounded-lg bg-surface-panel hover:bg-surface-card-hover border border-border-dark text-text-main font-code-time text-xs font-semibold text-center truncate transition-colors" type="button">400.000</button>
+<button class="py-1.5 px-1 rounded-lg bg-primary-red text-white font-code-time text-xs font-bold text-center truncate shadow-[0_0_8px_rgba(200,16,46,0.6)] border border-primary-red" type="button">500.000</button>
+<button class="py-1.5 px-1 rounded-lg bg-surface-panel hover:bg-surface-card-hover border border-border-dark text-text-main font-code-time text-xs font-semibold text-center truncate transition-colors" type="button">1.000.000</button>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-border-dark-subtle mt-0.5">
+<div class="flex flex-col">
+<span class="text-xs text-text-muted-dark">Khách đưa:</span>
+<span class="text-base text-white font-extrabold font-code-time">500.000đ</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs text-neon-green font-semibold">Tiền thừa trả khách:</span>
+<span class="text-2xl text-neon-green font-black font-code-time tracking-tight drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]">137.000 VNĐ</span>
+</div>
+</div>
+</div>
+<!-- Checkout Actions Bar -->
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full h-12 rounded-xl bg-primary-red hover:bg-primary-red-hover text-white text-base font-extrabold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(200,16,46,0.7)] border border-primary-red/80 transition-all active:scale-[0.99] tracking-wide" type="button">
+<span class="material-symbols-outlined text-[22px]">print</span>
+<span>IN VÉ &amp; THANH TOÁN (Enter)</span>
+</button>
+<div class="grid grid-cols-3 gap-2">
+<button class="h-9 rounded-lg bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-muted-dark hover:text-white text-xs font-medium flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">receipt</span>
+<span>In Tạm Tính</span>
+</button>
+<button class="h-9 rounded-lg bg-surface-card hover:bg-surface-card-hover border border-border-dark text-text-muted-dark hover:text-white text-xs font-medium flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">call_split</span>
+<span>Tách Đơn</span>
+</button>
+<button class="h-9 rounded-lg bg-surface-card hover:bg-primary-red hover:text-white border border-border-dark text-text-muted-dark text-xs font-medium flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Hủy (Esc)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- HARDWARE TELEMETRY & POS FOOTER DOCK -->
+<div class="w-full bg-[#12141a] px-6 py-2.5 mt-auto border-t border-border-dark shadow-[0_-4px_20px_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-center justify-between gap-3">
+<!-- Telemetry Badges -->
+<div class="flex items-center gap-4 flex-wrap">
+<div class="flex items-center gap-2 text-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-neon-green shadow-[0_0_8px_#22C55E]"></span>
+<span class="font-bold text-white">Epson TM-T88VI:</span>
+<span class="text-text-muted-dark">Trực tuyến (Giấy 80mm: 92%)</span>
+</div>
+<div class="h-4 w-[1px] bg-border-dark hidden sm:block"></div>
+<div class="flex items-center gap-1.5 text-xs">
+<span class="material-symbols-outlined text-neon-green text-[16px]">lock</span>
+<span class="font-bold text-white">Két Tiền F2:</span>
+<span class="text-text-muted-dark">Đang khóa an toàn</span>
+</div>
+<div class="h-4 w-[1px] bg-border-dark hidden sm:block"></div>
+<div class="flex items-center gap-2 text-xs">
+<span class="material-symbols-outlined text-neon-cyan text-[17px]">tv</span>
+<span class="font-bold text-white">Màn Hình Phụ (Khách):</span>
+<span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark font-code-time text-neon-green font-bold text-xs shadow-sm">363.000 VNĐ</span>
+</div>
+</div>
+<!-- Live Cashier Shortcuts Cheat Sheet -->
+<div class="flex items-center gap-1.5 overflow-x-auto font-code-time text-xs">
+<span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark text-text-muted-dark">[F1 Phim]</span>
+<span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark text-text-muted-dark">[F2 Ghế]</span>
+<span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark text-text-muted-dark">[F3 F&amp;B]</span>
+<span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark text-text-muted-dark">[F8 Tiền Mặt]</span>
+<span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark text-text-muted-dark">[F9 QR]</span>
+<span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark text-text-muted-dark">[Space Mở Két]</span>
+<span class="px-2.5 py-0.5 rounded bg-primary-red text-white font-bold shadow-[0_0_8px_rgba(200,16,46,0.6)]">[Enter In Vé]</span>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for touch feedback and fast cashier keyboard listeners
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const mainBtn = Array.from(document.querySelectorAll('button')).find(el => el.textContent.includes('IN VÉ'));
+      if (mainBtn) {
+        mainBtn.classList.add('scale-95');
+        setTimeout(() => mainBtn.classList.remove('scale-95'), 150);
+      }
+    }
+  });
+</script></main><footer class="w-full bg-[#0d0e12] border-t border-border-dark-subtle"><div class="h-12 w-full px-6 flex items-center justify-between text-xs text-text-muted-dark"><div class="flex items-center gap-4"><span class="flex items-center gap-1.5 text-neon-green font-semibold"><span class="w-2 h-2 rounded-full bg-neon-green shadow-[0_0_6px_#22C55E]"></span>Máy in vé: Sẵn sàng (Paper 94%)</span><span class="hidden md:inline text-border-dark">|</span><span class="hidden md:flex items-center gap-1.5 text-text-muted-dark"><span class="material-symbols-outlined text-[15px] text-neon-cyan">qr_code_scanner</span>Máy quét mã: Đã kết nối</span><span class="hidden lg:inline text-border-dark">|</span><span class="hidden lg:flex items-center gap-1.5 text-text-muted-dark"><span class="material-symbols-outlined text-[15px] text-neon-green">contactless</span>VietQR POS: Trực tuyến</span></div><div class="flex items-center gap-2 font-code-time text-xs"><span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark text-text-muted-dark">F1: Tra cứu</span><span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark text-text-muted-dark">F2: Két</span><span class="px-2 py-0.5 rounded bg-surface-card border border-border-dark text-text-muted-dark">Space: Thanh toán</span><span class="text-text-subtle ml-2">HUST Cine OS v2.4.1 (Dark Mode)</span></div></div></footer>
+  <!-- HUST Cine Dynamic Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+
+</body></html>

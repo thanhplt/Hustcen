@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>HUST Cine - Hệ Thống Đặt Vé Phim Số 1</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-container": "#c8102e",
+          "on-primary": "#ffffff",
+          "surface-dim": "#dcd9e0",
+          "gold-vip": "#B8902A",
+          "tertiary-fixed": "#ffdf9b",
+          "background": "#fbf8ff",
+          "secondary-container": "#fd6166",
+          "inverse-on-surface": "#f3eff7",
+          "on-primary-fixed-variant": "#92001c",
+          "on-error": "#ffffff",
+          "error-container": "#ffdad6",
+          "surface-bright": "#fbf8ff",
+          "surface-highlight": "#FDECEF",
+          "status-error": "#B3261E",
+          "outline-variant": "#e5bdbb",
+          "on-secondary-fixed-variant": "#8f0c20",
+          "on-secondary-fixed": "#410007",
+          "surface-base": "#FFFFFF",
+          "surface-container-low": "#f5f2f9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#f0edf4",
+          "on-background": "#1b1b20",
+          "border-subtle": "#E8E0E0",
+          "text-primary": "#1A1A1F",
+          "on-primary-fixed": "#410007",
+          "text-muted": "#8A8A94",
+          "secondary-fixed-dim": "#ffb3b1",
+          "inverse-surface": "#303035",
+          "primary-fixed-dim": "#ffb3b1",
+          "status-info": "#1F6FD1",
+          "tertiary-fixed-dim": "#edc157",
+          "tertiary": "#624900",
+          "status-success": "#1E8E5A",
+          "surface-variant": "#e4e1e8",
+          "on-primary-container": "#ffdad8",
+          "on-tertiary-fixed": "#251a00",
+          "error": "#ba1a1a",
+          "surface": "#fbf8ff",
+          "on-tertiary-container": "#ffdf9b",
+          "surface-tint": "#bf0229",
+          "status-warning": "#D98A00",
+          "on-secondary-container": "#640011",
+          "inverse-primary": "#ffb3b1",
+          "secondary": "#b12a34",
+          "on-error-container": "#93000a",
+          "secondary-fixed": "#ffdad8",
+          "on-surface": "#1b1b20",
+          "surface-container-highest": "#e4e1e8",
+          "surface-container-high": "#eae7ee",
+          "on-tertiary-fixed-variant": "#5b4300",
+          "on-surface-variant": "#5c403f",
+          "text-secondary": "#5B5B66",
+          "on-tertiary": "#ffffff",
+          "primary": "#9e001f",
+          "on-secondary": "#ffffff",
+          "primary-fixed": "#ffdad8",
+          "tertiary-container": "#806000",
+          "outline": "#906f6e",
+          "surface-alt": "#F7F4F4"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Be Vietnam Pro"],
+          "headline-sm": ["Be Vietnam Pro"],
+          "body-sm": ["Be Vietnam Pro"],
+          "display-hero-mobile": ["Be Vietnam Pro"],
+          "code-time": ["Be Vietnam Pro"],
+          "display-hero": ["Be Vietnam Pro"],
+          "body-lg": ["Be Vietnam Pro"],
+          "label-lg": ["Be Vietnam Pro"],
+          "headline-lg": ["Be Vietnam Pro"],
+          "body-md": ["Be Vietnam Pro"],
+          "headline-lg-mobile": ["Be Vietnam Pro"],
+          "label-md": ["Be Vietnam Pro"],
+          "label-sm": ["Be Vietnam Pro"]
+        },
+        "fontSize": {
+          "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+          "display-hero-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+          "code-time": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "display-hero": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script>
+  <!-- HUST Cine Design System Core Assets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+
+</head><body class="bg-surface-base font-body-md text-text-primary antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface-base/95 backdrop-blur-md shadow-[0_1px_8px_rgba(26,26,31,0.06)]"><div class="h-20 w-full max-w-[1280px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg flex-shrink-0"><a class="flex items-center gap-space-sm" data-path="trang-chu" href="#"><img alt="HUST Cine Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xc2DBjIbyU2iCW8pkrtHDbQk3KCXkj2oYeO7QzyUGo-jOvqUf1a1whNKtPGf4iPE9yfgSdydVixM3zDARXjjs7PcLKQLPBofwkxCjkX2geOJ1bxtvahqNZTw0FUp3bWRbXcc1YaF3FISrHqUMmjjU82w35woh-wKiu4_wRSFTppvta_VioXu-DOkftFsqmhMTzyxI58OHFirBwflYeOvmjq8aU8IDDfEDj3uImavJnmNQb-5Q_ei5qjA"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">HUST Cine</span></a></div><div class="hidden xl:flex items-center gap-space-md flex-1 max-w-2xl px-space-md"><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-base">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-alt text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Tìm kiếm phim, rạp chiếu..." type="text"/></div><div class="relative flex-shrink-0"><button class="h-10 px-space-md rounded-lg bg-surface-alt hover:bg-surface-highlight hover:text-primary transition-colors flex items-center gap-space-xs font-label-md text-label-md text-text-secondary" type="button"><span class="material-symbols-outlined text-sm text-primary">location_on</span><span>HUST Cine Đại Cồ Việt</span><span class="material-symbols-outlined text-xs">arrow_drop_down</span></button></div><div class="hidden 2xl:flex items-center gap-space-xs h-10 px-3 rounded-full bg-surface-alt font-code-time text-code-time text-text-secondary flex-shrink-0"><span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span><span>Thứ Tư, 21/10/2026 · 14:32</span></div></div><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center bg-surface-alt rounded-full p-1"><button class="px-2.5 py-1 rounded-full bg-surface-base text-primary font-label-sm text-label-sm shadow-[0_1px_3px_rgba(0,0,0,0.08)]" type="button">VI</button><button class="px-2.5 py-1 rounded-full text-text-muted hover:text-text-primary font-label-sm text-label-sm transition-colors" type="button">EN</button></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex items-center gap-space-xs bg-surface-highlight px-2.5 py-1 rounded-full"><span class="material-symbols-outlined text-gold-vip text-sm">stars</span><span class="font-label-sm text-label-sm text-primary">850 pts</span></div><a class="flex items-center" data-path="tai-khoan" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20 hover:ring-primary-container transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcxI79qWjeicOl3j4uhRuKPIB3vlSXOQAdC6LSR-LuCGDfeDPYKR3J9waACkCeh4cAyzuiwbkYycaOHexznv8gGvGW_tQrkj9aeym1y226sxz2mrhhVlW6_Q5fNjCwh379MkGxh1D1UtasOLSolXZAxzy-i4i43I-OSO7IgyFmHPJ5FcnKEiuNzxcNsrrCd1WvcFsu8Ok0neDM2DAZ9dR3pOm32Yq0GDGnDyjP5grqNNWclkwviJ-s"/></a></div></div></div><div class="w-full bg-surface-base border-t border-border-subtle"><div class="max-w-[1280px] mx-auto px-margin flex items-center justify-between"><nav class="flex items-center gap-space-lg overflow-x-auto" data-active-classes="text-primary font-label-lg border-b-2 border-primary-container py-2.5"><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="trang-chu" href="#">Trang chủ</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="danh-sach-phim" href="#">Phim</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="lich-chieu" href="#">Lịch chiếu</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="rap-va-gia-ve" href="#">Rạp &amp; Giá vé</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="uu-dai" href="#">Ưu đãi</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="phong-private" href="#">Phòng Private</a></nav><div class="xl:hidden flex items-center py-2"><span class="material-symbols-outlined text-text-secondary">search</span></div></div></div></header><main class="w-full pt-28 bg-surface-base flex-1"><div class="flex flex-col w-full">
+<!-- Top Stepper and Real-time Countdown Banner -->
+<section class="w-full bg-surface-alt py-space-md">
+<div class="max-w-[1280px] mx-auto px-margin flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- 3-Step Checkout Flow Tracker -->
+<nav aria-label="Tiến trình đặt vé" class="flex items-center gap-space-sm sm:gap-space-md">
+<!-- Step 1: Completed -->
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-full bg-status-success text-on-primary flex items-center justify-center font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-base">check</span>
+</span>
+<span class="font-label-md text-label-md text-text-primary hidden sm:inline">1. Chọn ghế</span>
+</div>
+<div class="w-8 sm:w-12 h-0.5 bg-status-success rounded-full"></div>
+<!-- Step 2: Completed -->
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-full bg-status-success text-on-primary flex items-center justify-center font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-base">check</span>
+</span>
+<span class="font-label-md text-label-md text-text-primary hidden sm:inline">2. Bắp nước</span>
+</div>
+<div class="w-8 sm:w-12 h-0.5 bg-primary-container rounded-full"></div>
+<!-- Step 3: Current / Active -->
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm ring-4 ring-surface-highlight font-bold">
+            3
+          </span>
+<span class="font-label-md text-label-md text-primary font-bold">3. Thanh toán</span>
+</div>
+</nav>
+<!-- Real-time Expiration Timer Chip -->
+<div class="flex items-center gap-space-xs bg-surface-base px-space-md py-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-status-warning text-base animate-pulse">timer</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Thời gian giữ vé:</span>
+<span class="font-code-time text-code-time text-primary font-bold tracking-wider" id="countdown-timer">06:15</span>
+</div>
+</div>
+</section>
+<!-- Main Checkout Workflow Area -->
+<main class="w-full max-w-[1280px] mx-auto px-margin py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: Payment Details & Configuration (approx. 64% ~ 8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Block 1: Ticket Holder Information -->
+<div class="bg-surface-base p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">badge</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Thông tin người nhận vé</h2>
+</div>
+<span class="font-label-sm text-label-sm text-status-success bg-surface-alt px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-success"></span> Đã liên kết SSO HUST
+            </span>
+</div>
+<!-- Account Type Switcher -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm p-1 bg-surface-alt rounded-lg mb-space-md">
+<label class="flex items-center justify-center gap-space-xs py-2 px-3 rounded-md bg-surface-base text-primary font-label-sm text-label-sm shadow-sm cursor-pointer transition-all">
+<input checked="" class="accent-primary-container sr-only" name="customer-type" type="radio"/>
+<span class="material-symbols-outlined text-sm">school</span>
+<span>Sinh viên Bách Khoa (2021****)</span>
+</label>
+<label class="flex items-center justify-center gap-space-xs py-2 px-3 rounded-md text-text-secondary hover:text-text-primary font-label-sm text-label-sm cursor-pointer transition-all">
+<input class="accent-primary-container sr-only" name="customer-type" type="radio"/>
+<span class="material-symbols-outlined text-sm">person</span>
+<span>Khách vãng lai / Thành viên</span>
+</label>
+</div>
+<!-- Inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary">Họ và tên</label>
+<div class="relative">
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-alt text-text-primary font-body-md text-body-md focus:bg-surface-base focus:outline-none transition-all" type="text" value="Nguyễn Văn A"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-status-success text-base">verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary">Số điện thoại nhận SMS OTP</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-alt text-text-primary font-body-md text-body-md focus:bg-surface-base focus:outline-none transition-all" type="tel" value="0987***321"/>
+</div>
+<div class="md:col-span-2 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-secondary">Email nhận vé điện tử (E-Ticket PDF &amp; QR)</label>
+<div class="relative">
+<input class="w-full h-11 pl-space-md pr-10 rounded-lg bg-surface-alt text-text-primary font-body-md text-body-md focus:bg-surface-base focus:outline-none transition-all" type="email" value="a.nguyen@hust.edu.vn"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted text-base">mail</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md flex items-start gap-space-xs p-space-sm bg-surface-highlight rounded-lg">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-primary">
+              Vé điện tử kèm mã QR hợp lệ sẽ được gửi tự động qua Email và SMS. Vui lòng xuất trình mã QR này trực tiếp tại quầy soát vé tầng 3 Thư viện Tạ Quang Bửu.
+            </p>
+</div>
+</div>
+<!-- Block 2: Vouchers & HUST Points -->
+<div class="bg-surface-base p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs pb-space-sm mb-space-md">
+<span class="material-symbols-outlined text-primary text-xl">confirmation_number</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Mã giảm giá &amp; Điểm thưởng</h2>
+</div>
+<!-- Coupon Code Input -->
+<div class="flex flex-col gap-space-xs mb-space-md">
+<label class="font-label-sm text-label-sm text-text-secondary">Mã Voucher / Khuyến mãi</label>
+<div class="flex gap-space-xs">
+<div class="relative flex-1">
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-alt text-text-primary font-code-time text-code-time font-bold tracking-wider uppercase focus:bg-surface-base focus:outline-none transition-all" placeholder="Nhập mã ưu đãi..." type="text" uppercase="" value="BKCOMBO20"/>
+</div>
+<button class="h-11 px-space-lg bg-primary-container text-on-primary font-label-md text-label-md rounded-lg hover:bg-secondary transition-all" type="button">
+                Áp dụng
+              </button>
+</div>
+<!-- Applied Voucher Notification Badge -->
+<div class="flex items-center justify-between p-2.5 bg-surface-alt rounded-lg mt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-success text-base">check_circle</span>
+<span class="font-label-sm text-label-sm text-text-primary">
+                  Áp dụng thành công mã <span class="font-bold text-primary">BKCOMBO20</span>
+</span>
+<span class="font-body-sm text-body-sm text-status-success bg-surface-base px-2 py-0.5 rounded text-xs">-20.000đ Combo</span>
+</div>
+<button class="text-text-muted hover:text-status-error text-xs flex items-center" type="button">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+</div>
+<!-- HUST Points Redemption Box -->
+<div class="p-space-md bg-surface-alt rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-gold-vip text-xl mt-0.5">stars</span>
+<div>
+<p class="font-label-md text-label-md text-text-primary">Đổi điểm thưởng HUST Points</p>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  Số dư: <strong class="text-gold-vip">850 pts</strong> (Tương đương 85.000đ trừ trực tiếp)
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end sm:self-center">
+<span class="font-label-sm text-label-sm text-text-secondary" id="points-status">Chưa kích hoạt</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="toggle-points" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-border-subtle after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Block 3: Payment Methods -->
+<div class="bg-surface-base p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">account_balance_wallet</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Phương thức thanh toán</h2>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span> Bảo mật tức thời
+            </span>
+</div>
+<!-- Radio Cards List -->
+<div class="flex flex-col gap-space-sm" id="payment-methods-list">
+<!-- Option A: MoMo (Default Selected) -->
+<label class="group relative flex items-center justify-between p-space-md rounded-xl bg-surface-highlight cursor-pointer transition-all shadow-sm">
+<div class="flex items-center gap-space-md">
+<input checked="" class="w-4 h-4 accent-primary-container" name="payment_method" type="radio" value="momo"/>
+<!-- MoMo SVG Emblem -->
+<div class="w-10 h-10 rounded-lg bg-[#A50064] flex items-center justify-center text-white font-bold text-xs flex-shrink-0 shadow-sm">
+                  MoMo
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-text-primary">Ví Điện Tử MoMo</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-container text-on-primary">Khuyên Dùng</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Giảm thêm 10.000đ khi liên kết ví lần đầu</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-xl">radio_button_checked</span>
+</label>
+<!-- Option B: ZaloPay / ShopeePay -->
+<label class="group relative flex items-center justify-between p-space-md rounded-xl bg-surface-alt hover:bg-surface-base cursor-pointer transition-all">
+<div class="flex items-center gap-space-md">
+<input class="w-4 h-4 accent-primary-container" name="payment_method" type="radio" value="zalopay"/>
+<div class="w-10 h-10 rounded-lg bg-[#0068FF] flex items-center justify-center text-white font-bold text-xs flex-shrink-0 shadow-sm">
+                  ZaloPay
+                </div>
+<div>
+<span class="font-label-lg text-label-lg text-text-primary">Ví ZaloPay / ShopeePay</span>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Quét mã QR thanh toán nhanh không phí giao dịch</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted text-xl">radio_button_unchecked</span>
+</label>
+<!-- Option C: VNPAY-QR / Domestic ATM -->
+<label class="group relative flex items-center justify-between p-space-md rounded-xl bg-surface-alt hover:bg-surface-base cursor-pointer transition-all">
+<div class="flex items-center gap-space-md">
+<input class="w-4 h-4 accent-primary-container" name="payment_method" type="radio" value="vnpay"/>
+<div class="w-10 h-10 rounded-lg bg-[#005BAA] flex items-center justify-center text-white font-bold text-[10px] tracking-tight flex-shrink-0 shadow-sm">
+                  VNPAY
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-text-primary">VNPAY-QR &amp; Thẻ ATM Nội Địa</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Hỗ trợ hơn 35+ ứng dụng ngân hàng di động toàn quốc</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted text-xl">radio_button_unchecked</span>
+</label>
+<!-- Option D: International Cards -->
+<label class="group relative flex items-center justify-between p-space-md rounded-xl bg-surface-alt hover:bg-surface-base cursor-pointer transition-all">
+<div class="flex items-center gap-space-md">
+<input class="w-4 h-4 accent-primary-container" name="payment_method" type="radio" value="card"/>
+<div class="w-10 h-10 rounded-lg bg-[#1A1A1F] flex items-center justify-center text-white flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-base">credit_card</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-text-primary">Thẻ Quốc Tế (Visa, MasterCard, JCB)</span>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Thanh toán bảo mật chuẩn 3D Secure toàn cầu</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted text-xl">radio_button_unchecked</span>
+</label>
+</div>
+<!-- PCI DSS / SSL Security Callout -->
+<div class="mt-space-md flex items-center gap-space-sm p-3 bg-surface-alt rounded-lg text-text-secondary">
+<span class="material-symbols-outlined text-status-success text-lg flex-shrink-0">verified_user</span>
+<p class="font-body-sm text-body-sm">
+              Cổng thanh toán được bảo mật đa tầng đạt chuẩn <strong>PCI DSS Level 1</strong> và mã hóa đường truyền <strong>SSL 256-bit</strong> tiêu chuẩn ngân hàng.
+            </p>
+</div>
+</div>
+<!-- Block 4: Policies and Terms -->
+<div class="bg-surface-base p-space-md rounded-xl flex items-start gap-space-sm shadow-sm">
+<input checked="" class="mt-1 w-4 h-4 accent-primary-container cursor-pointer rounded" id="term-check" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-text-secondary cursor-pointer leading-relaxed" for="term-check">
+            Tôi xác nhận các thông tin trên là chính xác và đồng ý với 
+            <a class="text-primary font-medium hover:underline" href="#">Điều khoản sử dụng</a> cùng 
+            <a class="text-primary font-medium hover:underline" href="#">Chính sách vé xem phim</a> của HUST Cine. 
+            Vé đã đặt không thể hoàn huỷ hoặc đổi suất chiếu trong vòng 60 phút trước giờ phim bắt đầu.
+          </label>
+</div>
+</div>
+<!-- RIGHT COLUMN: Sticky Order Stub Summary (approx. 36% ~ 4 cols) -->
+<aside class="lg:col-span-4 sticky top-32">
+<div class="rounded-xl overflow-hidden shadow-lg bg-surface-base">
+<!-- Cinema Ticket Stub Header (Deep Engineering Red) -->
+<div class="bg-primary p-space-md text-on-primary relative overflow-hidden">
+<!-- Subtle Technical Grid Texture -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 16px 16px;"></div>
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">local_activity</span>
+<span class="font-label-lg text-label-lg tracking-wider uppercase font-bold text-on-primary">HUST CINE TICKET</span>
+</div>
+<span class="font-code-time text-code-time text-on-primary-container font-mono">#BK-94821</span>
+</div>
+<!-- Movie Identification -->
+<div class="relative z-10 mt-space-md">
+<span class="inline-block px-2 py-0.5 rounded bg-surface-base text-primary font-label-sm text-label-sm font-bold mb-1">
+                T16 · 2D LASER DIGITAL
+              </span>
+<h3 class="font-headline-sm text-headline-sm text-on-primary leading-tight font-extrabold">
+                Chiến Binh Công Nghệ: Kỷ Nguyên Mới
+              </h3>
+</div>
+</div>
+<!-- Perforated Cut Visual Divider -->
+<div class="relative w-full h-4 bg-surface-base flex items-center justify-between px-[-8px]">
+<div class="w-4 h-4 bg-surface-base rounded-full -ml-2 shadow-inner"></div>
+<div class="w-full h-0.5 border-b-2 border-dashed border-border-subtle mx-2"></div>
+<div class="w-4 h-4 bg-surface-base rounded-full -mr-2 shadow-inner"></div>
+</div>
+<!-- Ticket Body Content -->
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Screening Context -->
+<div class="space-y-2 text-text-primary">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
+<div class="min-w-0 flex-1">
+<p class="font-label-sm text-label-sm font-bold">HUST Cine Đại Cồ Việt</p>
+<p class="font-body-sm text-body-sm text-text-secondary truncate">Tầng 3, Nhà Thư Viện Tạ Quang Bửu</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">schedule</span>
+<p class="font-body-sm text-body-sm">
+<strong class="text-text-primary">19:30</strong> · Thứ Tư, 21/10/2026 (<span class="text-primary font-medium">Phòng 03</span>)
+                </p>
+</div>
+</div>
+<!-- Detailed Breakdown -->
+<div class="bg-surface-alt p-space-sm rounded-lg flex flex-col gap-2">
+<!-- Seats Breakdown -->
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<div>
+<span class="font-label-sm text-label-sm text-text-primary block">Ghế VIP: Hàng F (F06, F07)</span>
+<span class="text-xs text-text-secondary">2x Vé VIP Tiêu chuẩn</span>
+</div>
+<span class="font-label-md text-label-md text-text-primary font-bold">250.000đ</span>
+</div>
+<!-- Concessions Breakdown -->
+<div class="flex items-center justify-between font-body-sm text-body-sm pt-2">
+<div>
+<span class="font-label-sm text-label-sm text-text-primary block">01× HUST Dual Combo</span>
+<span class="text-xs text-text-secondary">1 Bắp Phô mai lớn + 2 Coca</span>
+</div>
+<span class="font-label-md text-label-md text-text-primary font-bold">115.000đ</span>
+</div>
+</div>
+<!-- Financial Calculations -->
+<div class="space-y-2 font-body-sm text-body-sm pt-1">
+<div class="flex justify-between text-text-secondary">
+<span>Tạm tính</span>
+<span class="font-medium text-text-primary">365.000đ</span>
+</div>
+<div class="flex justify-between text-status-success font-medium">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">sell</span> Voucher BKCOMBO20
+                </span>
+<span>-20.000đ</span>
+</div>
+<div class="flex justify-between text-status-success font-medium">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">school</span> Ưu đãi HUST Student
+                </span>
+<span>-50.000đ</span>
+</div>
+<!-- Dynamic Points Line (Hidden by default unless toggled) -->
+<div class="hidden justify-between text-gold-vip font-medium" id="points-discount-row">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">stars</span> Điểm thưởng (850 pts)
+                </span>
+<span>-85.000đ</span>
+</div>
+</div>
+<!-- Final Grand Total -->
+<div class="pt-space-sm bg-surface-highlight p-3 rounded-lg flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-text-secondary block uppercase">Tổng thanh toán</span>
+<span class="font-body-sm text-body-sm text-text-muted text-xs">Đã bao gồm VAT &amp; Phí rạp</span>
+</div>
+<div class="text-right">
+<span class="font-headline-lg text-headline-lg text-primary font-extrabold tracking-tight" id="final-total">
+                  295.000đ
+                </span>
+</div>
+</div>
+<!-- Call to Action Buttons -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<button class="w-full h-12 bg-primary-container hover:bg-secondary text-on-primary font-label-lg text-label-lg rounded-lg shadow-md transition-all flex items-center justify-center gap-2 group" id="btn-submit-checkout" type="button">
+<span>Xác nhận &amp; Thanh toán</span>
+<span class="font-bold" id="btn-price-label">295.000đ</span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<a class="w-full h-10 flex items-center justify-center gap-1 text-text-secondary hover:text-primary font-label-md text-label-md transition-colors" data-path="bap-nuoc" href="#">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+<span>Quay lại chọn bắp nước</span>
+</a>
+</div>
+<!-- Technical & Support Helpdesk Note -->
+<div class="text-center pt-space-xs">
+<p class="font-body-sm text-body-sm text-text-muted text-xs flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">support_agent</span>
+<span>Hotline hỗ trợ sinh viên:</span>
+<strong class="text-text-primary">1900 2026</strong>
+<span>(8:00 - 23:00)</span>
+</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<script>
+  (function initCheckoutInteraction() {
+    // Realtime 06:15 Countdown Timer Emulation
+    let secondsLeft = 6 * 60 + 15;
+    const timerElem = document.getElementById('countdown-timer');
+
+    if (timerElem) {
+      const countdownInterval = setInterval(() => {
+        if (secondsLeft <= 0) {
+          clearInterval(countdownInterval);
+          timerElem.textContent = '00:00';
+          alert('Thời gian giữ vé của bạn đã hết hạn. Vui lòng chọn lại suất chiếu.');
+          return;
+        }
+        secondsLeft--;
+        const m = Math.floor(secondsLeft / 60);
+        const s = secondsLeft % 60;
+        timerElem.textContent = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+      }, 1000);
+    }
+
+    // Interactive HUST Points Toggle and Dynamic Total Calculation
+    const pointsToggle = document.getElementById('toggle-points');
+    const pointsStatus = document.getElementById('points-status');
+    const pointsRow = document.getElementById('points-discount-row');
+    const finalTotalElem = document.getElementById('final-total');
+    const btnPriceLabel = document.getElementById('btn-price-label');
+
+    if (pointsToggle && finalTotalElem && btnPriceLabel) {
+      pointsToggle.addEventListener('change', function () {
+        if (this.checked) {
+          pointsStatus.textContent = 'Đã áp dụng (-85k)';
+          pointsStatus.className = 'font-label-sm text-label-sm text-status-success font-semibold';
+          pointsRow.classList.remove('hidden');
+          pointsRow.classList.add('flex');
+          finalTotalElem.textContent = '210.000đ';
+          btnPriceLabel.textContent = '210.000đ';
+        } else {
+          pointsStatus.textContent = 'Chưa kích hoạt';
+          pointsStatus.className = 'font-label-sm text-label-sm text-text-secondary';
+          pointsRow.classList.add('hidden');
+          pointsRow.classList.remove('flex');
+          finalTotalElem.textContent = '295.000đ';
+          btnPriceLabel.textContent = '295.000đ';
+        }
+      });
+    }
+
+    // Payment Selection Radio Highlighting
+    const paymentList = document.getElementById('payment-methods-list');
+    if (paymentList) {
+      const labels = paymentList.querySelectorAll('label');
+      labels.forEach(label => {
+        label.addEventListener('click', () => {
+          labels.forEach(l => {
+            l.className = 'group relative flex items-center justify-between p-space-md rounded-xl bg-surface-alt hover:bg-surface-base cursor-pointer transition-all';
+            const icon = l.querySelector('.material-symbols-outlined:last-child');
+            if (icon) {
+              icon.textContent = 'radio_button_unchecked';
+              icon.className = 'material-symbols-outlined text-text-muted text-xl';
+            }
+          });
+
+          label.className = 'group relative flex items-center justify-between p-space-md rounded-xl bg-surface-highlight cursor-pointer transition-all shadow-sm';
+          const activeIcon = label.querySelector('.material-symbols-outlined:last-child');
+          if (activeIcon) {
+            activeIcon.textContent = 'radio_button_checked';
+            activeIcon.className = 'material-symbols-outlined text-primary text-xl';
+          }
+        });
+      });
+    }
+
+    // Form Submission Handler
+    const submitBtn = document.getElementById('btn-submit-checkout');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', () => {
+        const termsChecked = document.getElementById('term-check')?.checked;
+        if (!termsChecked) {
+          alert('Vui lòng đồng ý với Điều khoản sử dụng của HUST Cine để tiếp tục.');
+          return;
+        }
+        submitBtn.innerHTML = `
+          <span class="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin inline-block mr-2"></span>
+          <span>Đang chuyển hướng thanh toán an toàn...</span>
+        `;
+        submitBtn.disabled = true;
+        setTimeout(() => {
+          window.location.hash = '#thanh-cong';
+        }, 1200);
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-[#8E0B1F] text-on-primary relative overflow-hidden"><div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 24px 24px;"></div><div class="max-w-[1280px] mx-auto px-margin py-space-xl relative z-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-lg text-headline-lg text-on-primary tracking-tight font-extrabold">HUST Cine</span></div><p class="font-body-md text-body-md text-on-primary-container max-w-sm">Hệ thống rạp chiếu phim hiện đại kỹ thuật số thuộc Trường Đại học Bách Khoa Hà Nội, kết hợp kỹ thuật trình chiếu đỉnh cao và không gian điện ảnh tiên phong.</p><div class="flex flex-col gap-space-xs mt-space-sm"><span class="font-label-md text-label-md text-tertiary-fixed font-semibold">ĐĂNG KÝ NHẬN TIN KHUYẾN MÃI</span><div class="flex gap-space-xs max-w-md"><input class="flex-1 h-11 px-space-md rounded-lg bg-surface-base text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none" placeholder="Nhập email của bạn..." type="email"/><button class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-lg text-label-lg transition-colors shadow-sm" type="button">Gửi</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Chính sách &amp; Quy định</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-dieu-khoan" href="#">Điều khoản sử dụng</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-thanh-toan" href="#">Chính sách thanh toán</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-bao-mat" href="#">Chính sách bảo mật</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-hoan-ve" href="#">Chính sách hoàn vé</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Cụm rạp HUST Cine</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Đại Cồ Việt (Hai Bà Trưng)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Times City (Minh Khai)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Cầu Giấy (Xuân Thủy)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="phong-private" href="#">HUST Cine Studio Lab Private</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Liên hệ &amp; Hỗ trợ</span><span class="font-body-sm text-body-sm text-on-primary-container">Hotline: 1900 2026 (8:00 - 23:00)</span><span class="font-body-sm text-body-sm text-on-primary-container">Email: contact@hustcine.edu.vn</span><span class="font-body-sm text-body-sm text-on-primary-container">Địa chỉ: 1 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội</span><div class="flex items-center gap-space-sm pt-space-xs"><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">share</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">public</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">mail</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">forum</span></div></div></div><div class="pt-space-lg border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-primary-container">© 2026 HUST Cine. Hệ thống rạp chiếu phim hiện đại kỹ thuật số.</p><p class="font-body-sm text-body-sm text-on-primary-container/80">Đại học Bách Khoa Hà Nội • Viện Điện ảnh &amp; Kỹ thuật Số</p></div></div></footer>
+  <!-- HUST Cine Dynamic Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+
+</body></html>

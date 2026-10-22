@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>HUST Cine - Hệ Thống Đặt Vé Phim Số 1</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-container": "#c8102e",
+          "on-primary": "#ffffff",
+          "surface-dim": "#dcd9e0",
+          "gold-vip": "#B8902A",
+          "tertiary-fixed": "#ffdf9b",
+          "background": "#fbf8ff",
+          "secondary-container": "#fd6166",
+          "inverse-on-surface": "#f3eff7",
+          "on-primary-fixed-variant": "#92001c",
+          "on-error": "#ffffff",
+          "error-container": "#ffdad6",
+          "surface-bright": "#fbf8ff",
+          "surface-highlight": "#FDECEF",
+          "status-error": "#B3261E",
+          "outline-variant": "#e5bdbb",
+          "on-secondary-fixed-variant": "#8f0c20",
+          "on-secondary-fixed": "#410007",
+          "surface-base": "#FFFFFF",
+          "surface-container-low": "#f5f2f9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#f0edf4",
+          "on-background": "#1b1b20",
+          "border-subtle": "#E8E0E0",
+          "text-primary": "#1A1A1F",
+          "on-primary-fixed": "#410007",
+          "text-muted": "#8A8A94",
+          "secondary-fixed-dim": "#ffb3b1",
+          "inverse-surface": "#303035",
+          "primary-fixed-dim": "#ffb3b1",
+          "status-info": "#1F6FD1",
+          "tertiary-fixed-dim": "#edc157",
+          "tertiary": "#624900",
+          "status-success": "#1E8E5A",
+          "surface-variant": "#e4e1e8",
+          "on-primary-container": "#ffdad8",
+          "on-tertiary-fixed": "#251a00",
+          "error": "#ba1a1a",
+          "surface": "#fbf8ff",
+          "on-tertiary-container": "#ffdf9b",
+          "surface-tint": "#bf0229",
+          "status-warning": "#D98A00",
+          "on-secondary-container": "#640011",
+          "inverse-primary": "#ffb3b1",
+          "secondary": "#b12a34",
+          "on-error-container": "#93000a",
+          "secondary-fixed": "#ffdad8",
+          "on-surface": "#1b1b20",
+          "surface-container-highest": "#e4e1e8",
+          "surface-container-high": "#eae7ee",
+          "on-tertiary-fixed-variant": "#5b4300",
+          "on-surface-variant": "#5c403f",
+          "text-secondary": "#5B5B66",
+          "on-tertiary": "#ffffff",
+          "primary": "#9e001f",
+          "on-secondary": "#ffffff",
+          "primary-fixed": "#ffdad8",
+          "tertiary-container": "#806000",
+          "outline": "#906f6e",
+          "surface-alt": "#F7F4F4"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Be Vietnam Pro"],
+          "headline-sm": ["Be Vietnam Pro"],
+          "body-sm": ["Be Vietnam Pro"],
+          "display-hero-mobile": ["Be Vietnam Pro"],
+          "code-time": ["Be Vietnam Pro"],
+          "display-hero": ["Be Vietnam Pro"],
+          "body-lg": ["Be Vietnam Pro"],
+          "label-lg": ["Be Vietnam Pro"],
+          "headline-lg": ["Be Vietnam Pro"],
+          "body-md": ["Be Vietnam Pro"],
+          "headline-lg-mobile": ["Be Vietnam Pro"],
+          "label-md": ["Be Vietnam Pro"],
+          "label-sm": ["Be Vietnam Pro"]
+        },
+        "fontSize": {
+          "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+          "display-hero-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+          "code-time": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "display-hero": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script>
+  <!-- HUST Cine Design System Core Assets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+
+</head><body class="bg-surface-base font-body-md text-text-primary antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-base/95 backdrop-blur-md shadow-[0_1px_8px_rgba(26,26,31,0.06)]"><div class="h-28 flex flex-col justify-between"><div class="h-16 w-full max-w-[1280px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg flex-shrink-0"><a class="flex items-center gap-space-sm" data-path="trang-chu" href="#"><img alt="HUST Cine Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xc2DBjIbyU2iCW8pkrtHDbQk3KCXkj2oYeO7QzyUGo-jOvqUf1a1whNKtPGf4iPE9yfgSdydVixM3zDARXjjs7PcLKQLPBofwkxCjkX2geOJ1bxtvahqNZTw0FUp3bWRbXcc1YaF3FISrHqUMmjjU82w35woh-wKiu4_wRSFTppvta_VioXu-DOkftFsqmhMTzyxI58OHFirBwflYeOvmjq8aU8IDDfEDj3uImavJnmNQb-5Q_ei5qjA"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">HUST Cine</span></a></div><div class="hidden xl:flex items-center gap-space-md flex-1 max-w-2xl px-space-md"><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-base">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-alt text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Tìm kiếm phim, rạp chiếu..." type="text"/></div><div class="relative flex-shrink-0"><button class="h-10 px-space-md rounded-lg bg-surface-alt hover:bg-surface-highlight hover:text-primary transition-colors flex items-center gap-space-xs font-label-md text-label-md text-text-secondary" type="button"><span class="material-symbols-outlined text-sm text-primary">location_on</span><span>HUST Cine Đại Cồ Việt</span><span class="material-symbols-outlined text-xs">arrow_drop_down</span></button></div><div class="hidden 2xl:flex items-center gap-space-xs h-10 px-3 rounded-full bg-surface-alt font-code-time text-code-time text-text-secondary flex-shrink-0"><span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span><span>Thứ Tư, 21/10/2026 · 14:32</span></div></div><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center bg-surface-alt rounded-full p-1"><button class="px-2.5 py-1 rounded-full bg-surface-base text-primary font-label-sm text-label-sm shadow-[0_1px_3px_rgba(0,0,0,0.08)]" type="button">VI</button><button class="px-2.5 py-1 rounded-full text-text-muted hover:text-text-primary font-label-sm text-label-sm transition-colors" type="button">EN</button></div><a class="relative p-2 rounded-full hover:bg-surface-alt text-text-secondary hover:text-primary transition-colors" data-path="thong-bao-va-trang-thai-ve" href="#" title="Thông báo &amp; Trạng thái vé"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container"></span></a><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex items-center gap-space-xs bg-surface-highlight px-2.5 py-1 rounded-full"><span class="material-symbols-outlined text-gold-vip text-sm">stars</span><span class="font-label-sm text-label-sm text-primary">850 pts</span></div><a class="flex items-center" data-path="tai-khoan" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20 hover:ring-primary-container transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcxI79qWjeicOl3j4uhRuKPIB3vlSXOQAdC6LSR-LuCGDfeDPYKR3J9waACkCeh4cAyzuiwbkYycaOHexznv8gGvGW_tQrkj9aeym1y226sxz2mrhhVlW6_Q5fNjCwh379MkGxh1D1UtasOLSolXZAxzy-i4i43I-OSO7IgyFmHPJ5FcnKEiuNzxcNsrrCd1WvcFsu8Ok0neDM2DAZ9dR3pOm32Yq0GDGnDyjP5grqNNWclkwviJ-s"/></a></div></div></div><div class="w-full h-12 bg-surface-base border-t border-border-subtle"><div class="max-w-[1280px] mx-auto px-margin h-full flex items-center justify-between"><nav class="flex items-center gap-space-lg overflow-x-auto h-full scrollbar-none" data-active-classes="text-primary font-label-lg border-b-2 border-primary-container"><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="trang-chu" href="#">Trang chủ</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="danh-sach-phim" href="#">Phim</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="lich-chieu" href="#">Lịch chiếu</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="rap-va-gia-ve" href="#">Rạp &amp; Giá vé</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="phong-chieu-chuan-ky-thuat" href="#">Phòng chiếu chuẩn kỹ thuật</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="phong-trai-nghiem-studio-lab" href="#">Phòng trải nghiệm Studio Lab</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="uu-dai" href="#">Ưu đãi</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="thong-bao-va-trang-thai-ve" href="#">Thông báo &amp; Trạng thái vé</a></nav><div class="xl:hidden flex items-center py-2"><span class="material-symbols-outlined text-text-secondary">search</span></div></div></div></div></header><main class="w-full pt-28 bg-surface-base min-h-[calc(100vh-112px)]"><div class="flex flex-col w-full">
+<!-- BREADCRUMB & LIVE TIMER BAR -->
+<section class="w-full bg-surface-alt/70">
+<div class="max-w-[1280px] mx-auto px-margin py-3 flex flex-wrap items-center justify-between gap-3">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-body-sm text-body-sm text-text-secondary min-w-0">
+<a class="hover:text-primary transition-colors flex items-center gap-1 flex-shrink-0" data-path="trang-chu" href="#">
+<span class="material-symbols-outlined text-base">home</span>
+<span>Trang chủ</span>
+</a>
+<span class="text-text-muted">/</span>
+<a class="hover:text-primary transition-colors flex-shrink-0" data-path="lich-chieu" href="#">Lịch chiếu</a>
+<span class="text-text-muted">/</span>
+<a class="hover:text-primary transition-colors flex-shrink-0" data-path="danh-sach-phim" href="#">Chiến Binh Công Nghệ</a>
+<span class="text-text-muted">/</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold truncate">Chọn ghế Luxury Suite</span>
+</nav>
+<!-- Active Booking Countdown Pill -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-highlight text-primary font-code-time text-code-time shadow-sm" id="booking-timer">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="material-symbols-outlined text-sm">hourglass_top</span>
+<span>Thời gian giữ ghế còn:</span>
+<span class="font-bold tracking-wider font-label-md text-label-md" id="countdown-val">09:42</span>
+</div>
+</div>
+</section>
+<!-- 3-STEP FLOW INDICATOR -->
+<section class="w-full bg-surface-base">
+<div class="max-w-[1280px] mx-auto px-margin py-5">
+<div class="grid grid-cols-3 gap-2 md:gap-6 relative">
+<!-- Step 1: Active -->
+<div class="flex items-center gap-3 p-3 md:px-5 md:py-3.5 rounded-xl bg-primary text-on-primary shadow-sm transition-all">
+<div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-lg md:text-xl">airline_seat_recline_extra</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-sm text-label-sm uppercase tracking-wider text-on-primary/80">Bước 1</span>
+<span class="block font-label-lg text-label-lg font-bold truncate">1. Chọn ghế Hạng sang</span>
+</div>
+</div>
+<!-- Step 2: Next -->
+<div class="flex items-center gap-3 p-3 md:px-5 md:py-3.5 rounded-xl bg-surface-alt text-text-secondary transition-all">
+<div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-text-muted">
+<span class="material-symbols-outlined text-lg md:text-xl">fastfood</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Bước 2</span>
+<span class="block font-label-lg text-label-lg truncate">2. Bắp nước Combo</span>
+</div>
+</div>
+<!-- Step 3: Final -->
+<div class="flex items-center gap-3 p-3 md:px-5 md:py-3.5 rounded-xl bg-surface-alt text-text-secondary transition-all">
+<div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 text-text-muted">
+<span class="material-symbols-outlined text-lg md:text-xl">credit_card</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Bước 3</span>
+<span class="block font-label-lg text-label-lg truncate">3. Thanh toán</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SHOWTIME & LUXURY SUITE AMENITIES HEADER -->
+<section class="w-full bg-surface-base">
+<div class="max-w-[1280px] mx-auto px-margin py-6">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#8E0B1F] via-[#9e001f] to-[#640011] text-on-primary p-6 md:p-8 shadow-md">
+<!-- Isometric technical grid subtle overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #ffffff 1px, transparent 0); background-size: 20px 20px;"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<!-- Movie & Hall Details -->
+<div class="flex flex-col gap-2 max-w-2xl">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded bg-gold-vip text-on-primary font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1 shadow-sm font-bold">
+<span class="material-symbols-outlined text-sm">stars</span>
+                Luxury Recliner Suite
+              </span>
+<span class="px-2 py-0.5 rounded bg-white/20 font-label-sm text-label-sm">40 Ghế Độc Quyền</span>
+<span class="px-2 py-0.5 rounded bg-white/10 font-label-sm text-label-sm">T16</span>
+<span class="px-2 py-0.5 rounded bg-white/10 font-label-sm text-label-sm">2D Dolby Atmos</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-primary font-bold tracking-tight">
+              Chiến Binh Công Nghệ: Kỷ Nguyên Mới
+            </h1>
+<div class="flex flex-wrap items-center gap-y-2 gap-x-5 font-body-md text-body-md text-on-primary-container">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-tertiary-fixed">location_on</span>
+<span>HUST Cine Đại Cồ Việt · <strong>Phòng Luxury 01</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-tertiary-fixed">schedule</span>
+<span class="font-medium text-white">Hôm nay (21/10/2026) · 19:30 - 21:38</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-tertiary-fixed">volume_up</span>
+<span>Dolby Atmos Studio 64 Kênh</span>
+</div>
+</div>
+</div>
+<!-- Price & Ticket Quick Status -->
+<div class="flex lg:flex-col items-center lg:items-end justify-between lg:justify-center p-4 rounded-xl bg-white/10 backdrop-blur-sm shadow-sm flex-shrink-0">
+<div class="text-left lg:text-right">
+<span class="block font-label-sm text-label-sm uppercase tracking-wide text-tertiary-fixed">Giá vé đồng hạng Luxury</span>
+<span class="font-display-hero text-headline-lg text-white font-extrabold">180.000<span class="text-headline-sm font-semibold">đ</span></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-primary-container mt-1">Đã bao gồm Welcome Drink</span>
+</div>
+</div>
+<!-- Luxury Suite Exclusive Amenities Banner -->
+<div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3 mt-6 pt-5 border-t border-white/15">
+<div class="flex items-center gap-2.5 p-2 rounded-lg bg-black/20">
+<span class="material-symbols-outlined text-gold-vip text-xl flex-shrink-0">airline_seat_flat</span>
+<span class="font-label-sm text-label-sm text-white/95 leading-snug">Ghế ngả điện 160° da Nappa êm ái</span>
+</div>
+<div class="flex items-center gap-2.5 p-2 rounded-lg bg-black/20">
+<span class="material-symbols-outlined text-gold-vip text-xl flex-shrink-0">contactless</span>
+<span class="font-label-sm text-label-sm text-white/95 leading-snug">Bàn tiệc &amp; Sạc không dây Qi chuẩn</span>
+</div>
+<div class="flex items-center gap-2.5 p-2 rounded-lg bg-black/20">
+<span class="material-symbols-outlined text-gold-vip text-xl flex-shrink-0">room_service</span>
+<span class="font-label-sm text-label-sm text-white/95 leading-snug">Nút bấm gọi Butler phục vụ tại chỗ</span>
+</div>
+<div class="flex items-center gap-2.5 p-2 rounded-lg bg-black/20">
+<span class="material-symbols-outlined text-gold-vip text-xl flex-shrink-0">local_bar</span>
+<span class="font-label-sm text-label-sm text-white/95 leading-snug">Tặng Welcome Mocktail &amp; Khăn ấm</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN SEAT SELECTION & SUMMARY LAYOUT (12 COLUMNS) -->
+<section class="w-full bg-surface-alt/50 pb-12">
+<div class="max-w-[1280px] mx-auto px-margin py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT / MAIN: SEAT MAP CANVAS (8 COLUMNS) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- SEAT CANVAS CONTAINER -->
+<div class="w-full bg-surface-base p-6 md:p-8 rounded-2xl shadow-sm flex flex-col items-center">
+<!-- CURVED PROJECTION SCREEN -->
+<div class="w-full max-w-2xl mb-12 flex flex-col items-center">
+<div class="relative w-full h-12 flex items-center justify-center">
+<!-- SVG Curved Screen Graphic -->
+<svg class="w-full h-full filter drop-shadow-[0_8px_12px_rgba(200,16,46,0.18)]" fill="none" viewbox="0 0 600 60" xmlns="http://www.w3.org/2000/svg">
+<!-- Ambient Screen Light Glow -->
+<path d="M 30 50 Q 300 10 570 50" stroke="url(#screenGrad)" stroke-linecap="round" stroke-width="6"></path>
+<path d="M 35 48 Q 300 12 565 48" opacity="0.8" stroke="#ffffff" stroke-linecap="round" stroke-width="2"></path>
+<!-- Light Ray Trapeze effect -->
+<polygon fill="url(#lightRayGrad)" opacity="0.15" points="30,50 570,50 520,0 80,0"></polygon>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="screenGrad" x1="0" x2="600" y1="0" y2="0">
+<stop offset="0%" stop-color="#8E0B1F" stop-opacity="0.2"></stop>
+<stop offset="20%" stop-color="#c8102e"></stop>
+<stop offset="50%" stop-color="#ffb3b1"></stop>
+<stop offset="80%" stop-color="#c8102e"></stop>
+<stop offset="100%" stop-color="#8E0B1F" stop-opacity="0.2"></stop>
+</lineargradient>
+<lineargradient gradientunits="userSpaceOnUse" id="lightRayGrad" x1="300" x2="300" y1="0" y2="60">
+<stop offset="0%" stop-color="#c8102e" stop-opacity="0.6"></stop>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider font-semibold">
+                  MÀN CHIẾU SIÊU NÉT MICRO-PERF 16M (DOLBY ATMOS STUDIO)
+                </span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</div>
+</div>
+<!-- AUDITORIUM SEATING GRID: 40 LUXURY RECLINERS -->
+<!-- Layout: 5 Rows (A-E), each row 8 seats split by center 1.8M aisle (01-04 | Aisle | 05-08) -->
+<div class="w-full max-w-2xl flex flex-col gap-4 overflow-x-auto pb-4 scrollbar-none" id="seat-map-container">
+<!-- ROW A -->
+<div class="flex items-center justify-between gap-2 min-w-[580px]">
+<span class="w-6 font-label-md text-label-md text-text-muted font-bold text-center">A</span>
+<!-- Left Block: 01 to 04 -->
+<div class="flex items-center gap-3">
+<!-- A01 - Available -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="A" data-seat-id="A01" data-type="recliner" title="Ghế A01 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">01</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- A02 - Available -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="A" data-seat-id="A02" data-type="recliner" title="Ghế A02 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">02</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- A03 - Available -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="A" data-seat-id="A03" data-type="recliner" title="Ghế A03 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">03</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- A04 - Available -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="A" data-seat-id="A04" data-type="recliner" title="Ghế A04 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">04</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+</div>
+<!-- Wide Central Aisle (1.8m Equivalent) -->
+<div class="w-16 flex flex-col items-center justify-center text-text-muted opacity-40">
+<span class="font-label-sm text-[10px] uppercase tracking-widest text-center">Lối đi 1.8m</span>
+</div>
+<!-- Right Block: 05 to 08 -->
+<div class="flex items-center gap-3">
+<!-- A05 - Available -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="A" data-seat-id="A05" data-type="recliner" title="Ghế A05 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">05</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- A06 - Sold/Occupied -->
+<div class="relative flex flex-col items-center opacity-60 cursor-not-allowed" title="Ghế A06 - Đã bán">
+<div class="w-11 h-9 rounded-lg bg-surface-container flex flex-col items-center justify-center text-text-muted relative overflow-hidden">
+<span class="material-symbols-outlined text-xs">close</span>
+<span class="font-label-sm text-[10px] font-medium">06</span>
+<div class="absolute inset-0 bg-gradient-to-tr from-transparent via-text-muted/20 to-transparent pointer-events-none"></div>
+</div>
+<span class="w-7 h-1 bg-surface-container-highest rounded-b mt-0.5"></span>
+</div>
+<!-- A07 - Sold/Occupied -->
+<div class="relative flex flex-col items-center opacity-60 cursor-not-allowed" title="Ghế A07 - Đã bán">
+<div class="w-11 h-9 rounded-lg bg-surface-container flex flex-col items-center justify-center text-text-muted relative overflow-hidden">
+<span class="material-symbols-outlined text-xs">close</span>
+<span class="font-label-sm text-[10px] font-medium">07</span>
+<div class="absolute inset-0 bg-gradient-to-tr from-transparent via-text-muted/20 to-transparent pointer-events-none"></div>
+</div>
+<span class="w-7 h-1 bg-surface-container-highest rounded-b mt-0.5"></span>
+</div>
+<!-- A08 - Available -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="A" data-seat-id="A08" data-type="recliner" title="Ghế A08 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">08</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+</div>
+<span class="w-6 font-label-md text-label-md text-text-muted font-bold text-center">A</span>
+</div>
+<!-- ROW B -->
+<div class="flex items-center justify-between gap-2 min-w-[580px]">
+<span class="w-6 font-label-md text-label-md text-text-muted font-bold text-center">B</span>
+<!-- Left Block -->
+<div class="flex items-center gap-3">
+<!-- B01 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="B" data-seat-id="B01" data-type="recliner" title="Ghế B01 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">01</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- B02 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="B" data-seat-id="B02" data-type="recliner" title="Ghế B02 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">02</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- B03 - Held by other user -->
+<div class="relative flex flex-col items-center cursor-not-allowed" title="Ghế B03 - Đang giữ chỗ (01:20)">
+<div class="w-11 h-9 rounded-lg bg-tertiary-fixed flex flex-col items-center justify-center text-on-tertiary-container shadow-xs">
+<span class="material-symbols-outlined text-xs animate-spin" style="animation-duration: 4s;">schedule</span>
+<span class="font-label-sm text-[10px] font-bold">03</span>
+</div>
+<span class="w-7 h-1 bg-tertiary-fixed-dim rounded-b mt-0.5"></span>
+</div>
+<!-- B04 - Held by other user -->
+<div class="relative flex flex-col items-center cursor-not-allowed" title="Ghế B04 - Đang giữ chỗ (01:20)">
+<div class="w-11 h-9 rounded-lg bg-tertiary-fixed flex flex-col items-center justify-center text-on-tertiary-container shadow-xs">
+<span class="material-symbols-outlined text-xs animate-spin" style="animation-duration: 4s;">schedule</span>
+<span class="font-label-sm text-[10px] font-bold">04</span>
+</div>
+<span class="w-7 h-1 bg-tertiary-fixed-dim rounded-b mt-0.5"></span>
+</div>
+</div>
+<!-- Central Aisle -->
+<div class="w-16 flex justify-center">
+<span class="w-0.5 h-6 bg-surface-container rounded-full"></span>
+</div>
+<!-- Right Block -->
+<div class="flex items-center gap-3">
+<!-- B05 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="B" data-seat-id="B05" data-type="recliner" title="Ghế B05 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">05</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- B06 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="B" data-seat-id="B06" data-type="recliner" title="Ghế B06 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">06</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- B07 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="B" data-seat-id="B07" data-type="recliner" title="Ghế B07 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">07</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- B08 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="B" data-seat-id="B08" data-type="recliner" title="Ghế B08 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">08</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+</div>
+<span class="w-6 font-label-md text-label-md text-text-muted font-bold text-center">B</span>
+</div>
+<!-- ROW C: SWEET SPOT VIP CENTER -->
+<div class="flex items-center justify-between gap-2 min-w-[580px] py-1 bg-surface-highlight/40 rounded-xl px-2">
+<div class="flex items-center gap-1 w-6">
+<span class="font-label-md text-label-md text-gold-vip font-bold">C</span>
+</div>
+<!-- Left Block -->
+<div class="flex items-center gap-3">
+<!-- C01 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="C" data-seat-id="C01" data-type="sweet-spot" title="Ghế C01 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">01</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+<!-- C02 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="C" data-seat-id="C02" data-type="sweet-spot" title="Ghế C02 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">02</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+<!-- C03 - Sold -->
+<div class="relative flex flex-col items-center opacity-60 cursor-not-allowed" title="Ghế C03 - Đã bán">
+<div class="w-11 h-9 rounded-lg bg-surface-container flex flex-col items-center justify-center text-text-muted relative overflow-hidden">
+<span class="material-symbols-outlined text-xs">close</span>
+<span class="font-label-sm text-[10px] font-medium">03</span>
+</div>
+<span class="w-7 h-1 bg-surface-container-highest rounded-b mt-0.5"></span>
+</div>
+<!-- C04 - Sold -->
+<div class="relative flex flex-col items-center opacity-60 cursor-not-allowed" title="Ghế C04 - Đã bán">
+<div class="w-11 h-9 rounded-lg bg-surface-container flex flex-col items-center justify-center text-text-muted relative overflow-hidden">
+<span class="material-symbols-outlined text-xs">close</span>
+<span class="font-label-sm text-[10px] font-medium">04</span>
+</div>
+<span class="w-7 h-1 bg-surface-container-highest rounded-b mt-0.5"></span>
+</div>
+</div>
+<!-- Central Aisle VIP Indicator -->
+<div class="w-16 flex flex-col items-center justify-center">
+<span class="px-1.5 py-0.5 rounded bg-gold-vip text-white font-label-sm text-[9px] font-bold uppercase tracking-wider">Sweet Spot</span>
+</div>
+<!-- Right Block: C05 & C06 SELECTED ACTIVE -->
+<div class="flex items-center gap-3">
+<!-- C05 - SELECTED (Active) -->
+<button class="seat-btn selected-seat group relative flex flex-col items-center focus:outline-none" data-row="C" data-seat-id="C05" data-selected="true" data-type="sweet-spot" title="Ghế C05 (Sweet Spot VIP) - Đang chọn" type="button">
+<div class="w-11 h-9 rounded-lg bg-primary-container text-on-primary flex flex-col items-center justify-center shadow-md ring-2 ring-primary-container/40 transition-all cursor-pointer transform scale-105">
+<span class="material-symbols-outlined text-xs font-bold">check</span>
+<span class="font-label-sm text-[10px] font-bold text-white">05</span>
+</div>
+<span class="w-7 h-1 bg-primary rounded-b mt-0.5"></span>
+</button>
+<!-- C06 - SELECTED (Active) -->
+<button class="seat-btn selected-seat group relative flex flex-col items-center focus:outline-none" data-row="C" data-seat-id="C06" data-selected="true" data-type="sweet-spot" title="Ghế C06 (Sweet Spot VIP) - Đang chọn" type="button">
+<div class="w-11 h-9 rounded-lg bg-primary-container text-on-primary flex flex-col items-center justify-center shadow-md ring-2 ring-primary-container/40 transition-all cursor-pointer transform scale-105">
+<span class="material-symbols-outlined text-xs font-bold">check</span>
+<span class="font-label-sm text-[10px] font-bold text-white">06</span>
+</div>
+<span class="w-7 h-1 bg-primary rounded-b mt-0.5"></span>
+</button>
+<!-- C07 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="C" data-seat-id="C07" data-type="sweet-spot" title="Ghế C07 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">07</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+<!-- C08 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="C" data-seat-id="C08" data-type="sweet-spot" title="Ghế C08 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">08</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+</div>
+<div class="flex items-center gap-1 w-6 justify-end">
+<span class="font-label-md text-label-md text-gold-vip font-bold">C</span>
+</div>
+</div>
+<!-- ROW D: SWEET SPOT VIP CENTER -->
+<div class="flex items-center justify-between gap-2 min-w-[580px] py-1 bg-surface-highlight/20 rounded-xl px-2">
+<span class="w-6 font-label-md text-label-md text-gold-vip font-bold text-center">D</span>
+<!-- Left Block -->
+<div class="flex items-center gap-3">
+<!-- D01 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="D" data-seat-id="D01" data-type="sweet-spot" title="Ghế D01 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">01</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+<!-- D02 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="D" data-seat-id="D02" data-type="sweet-spot" title="Ghế D02 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">02</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+<!-- D03 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="D" data-seat-id="D03" data-type="sweet-spot" title="Ghế D03 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">03</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+<!-- D04 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="D" data-seat-id="D04" data-type="sweet-spot" title="Ghế D04 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">04</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+</div>
+<!-- Central Aisle -->
+<div class="w-16 flex justify-center">
+<span class="w-0.5 h-6 bg-surface-container rounded-full"></span>
+</div>
+<!-- Right Block -->
+<div class="flex items-center gap-3">
+<!-- D05 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="D" data-seat-id="D05" data-type="sweet-spot" title="Ghế D05 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">05</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+<!-- D06 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="D" data-seat-id="D06" data-type="sweet-spot" title="Ghế D06 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">06</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+<!-- D07 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="D" data-seat-id="D07" data-type="sweet-spot" title="Ghế D07 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">07</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+<!-- D08 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="D" data-seat-id="D08" data-type="sweet-spot" title="Ghế D08 (Sweet Spot VIP) - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+<span class="font-label-sm text-[10px] text-text-primary font-semibold">08</span>
+</div>
+<span class="w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5"></span>
+</button>
+</div>
+<span class="w-6 font-label-md text-label-md text-gold-vip font-bold text-center">D</span>
+</div>
+<!-- ROW E -->
+<div class="flex items-center justify-between gap-2 min-w-[580px]">
+<span class="w-6 font-label-md text-label-md text-text-muted font-bold text-center">E</span>
+<!-- Left Block -->
+<div class="flex items-center gap-3">
+<!-- E01 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="E" data-seat-id="E01" data-type="recliner" title="Ghế E01 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">01</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- E02 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="E" data-seat-id="E02" data-type="recliner" title="Ghế E02 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">02</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- E03 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="E" data-seat-id="E03" data-type="recliner" title="Ghế E03 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">03</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- E04 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="E" data-seat-id="E04" data-type="recliner" title="Ghế E04 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">04</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+</div>
+<!-- Central Aisle -->
+<div class="w-16 flex justify-center">
+<span class="w-0.5 h-6 bg-surface-container rounded-full"></span>
+</div>
+<!-- Right Block -->
+<div class="flex items-center gap-3">
+<!-- E05 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="E" data-seat-id="E05" data-type="recliner" title="Ghế E05 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">05</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- E06 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="E" data-seat-id="E06" data-type="recliner" title="Ghế E06 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">06</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- E07 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="E" data-seat-id="E07" data-type="recliner" title="Ghế E07 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">07</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+<!-- E08 -->
+<button class="seat-btn group relative flex flex-col items-center focus:outline-none" data-row="E" data-seat-id="E08" data-type="recliner" title="Ghế E08 - 180.000đ" type="button">
+<div class="w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xs text-text-muted group-hover:text-primary">airline_seat_recline_extra</span>
+<span class="font-label-sm text-[10px] text-text-primary font-medium">08</span>
+</div>
+<span class="w-7 h-1 bg-surface-container rounded-b mt-0.5"></span>
+</button>
+</div>
+<span class="w-6 font-label-md text-label-md text-text-muted font-bold text-center">E</span>
+</div>
+</div>
+<!-- SEAT STATUS LEGEND -->
+<div class="w-full pt-8 mt-6 border-t border-border-subtle flex flex-wrap items-center justify-center gap-x-6 gap-y-3 font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-alt flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-text-muted">airline_seat_recline_extra</span>
+</div>
+<span class="text-text-secondary">Ghế Trống (180k)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary-container text-on-primary flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+<span class="text-text-primary font-medium">Đang chọn</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-container text-text-muted flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">close</span>
+</div>
+<span class="text-text-muted">Đã bán</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-tertiary-fixed text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">schedule</span>
+</div>
+<span class="text-text-secondary">Đang giữ chỗ</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-base flex items-center justify-center">
+<span class="material-symbols-outlined text-xs text-gold-vip">stars</span>
+</div>
+<span class="text-gold-vip font-semibold">Sweet Spot VIP (Hàng C-D)</span>
+</div>
+</div>
+<!-- SEAT RECLINER MECHANICAL SCHEMATIC (VISUAL RICHNESS) -->
+<div class="w-full mt-6 p-4 rounded-xl bg-surface-alt/70 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-highlight text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-xl">auto_transmission</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-text-primary block font-semibold">Cơ cấu ngả Recliner &amp; Bàn Butler</span>
+<span class="font-body-sm text-body-sm text-text-secondary block">Mỗi ghế có 1.4m khoảng cách để chân, khay xoay 360° không cản trở lối đi.</span>
+</div>
+</div>
+<div class="flex items-center gap-2 font-code-time text-code-time text-primary bg-surface-base px-3 py-1.5 rounded-lg shadow-xs">
+<span class="material-symbols-outlined text-sm">format_image_left</span>
+<span>Quy tắc: Không để lẻ 1 ghế trống ở giữa</span>
+</div>
+</div>
+</div>
+<!-- REASSURANCE NOTES -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-start gap-3 p-4 rounded-xl bg-surface-base shadow-sm">
+<span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">verified_user</span>
+<div>
+<span class="font-label-md text-label-md text-text-primary font-semibold block">Giữ ghế thời gian thực</span>
+<span class="font-body-sm text-body-sm text-text-secondary block">Ghế bạn chọn lập tức được khoá trên toàn bộ hệ thống HUST Cine trong 10 phút.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 rounded-xl bg-surface-base shadow-sm">
+<span class="material-symbols-outlined text-gold-vip text-xl flex-shrink-0 mt-0.5">room_service</span>
+<div>
+<span class="font-label-md text-label-md text-text-primary font-semibold block">Phục vụ tại ghế chuẩn 5 sao</span>
+<span class="font-body-sm text-body-sm text-text-secondary block">Chọn combo bắp nước ở bước tiếp theo để nhân viên chuẩn bị sẵn trước giờ chiếu.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: STICKY ORDER SUMMARY TICKET PANEL (4 COLUMNS) -->
+<div class="lg:col-span-4 flex flex-col gap-5 sticky top-32">
+<!-- TICKET STUB ORDER SUMMARY -->
+<div class="w-full bg-surface-base rounded-2xl shadow-md overflow-hidden flex flex-col">
+<!-- Ticket Header (Brand Deep Red) -->
+<div class="bg-[#8E0B1F] text-on-primary p-5 relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 opacity-10">
+<span class="material-symbols-outlined text-8xl">local_activity</span>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary-fixed block font-bold">THÔNG TIN ĐẶT VÉ</span>
+<span class="font-headline-sm text-headline-sm font-bold text-white block mt-0.5">Hạng sang Recliner Suite</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined text-xl">confirmation_number</span>
+</div>
+</div>
+<div class="mt-3 flex items-center gap-2 font-code-time text-code-time text-on-primary-container">
+<span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span>
+<span>Mã giao dịch tạm thời: #HUST-LX8892</span>
+</div>
+</div>
+<!-- Ticket Body -->
+<div class="p-6 flex flex-col gap-5">
+<!-- Movie Mini Summary -->
+<div class="flex gap-3 pb-4 border-b border-border-subtle">
+<div class="w-16 h-24 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="High-tech sci-fi cyberpunk cinema movie poster with red and gold holographic glowing elements and a robotic warrior in sharp modern cinema aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKnJcQ7ORvPTziONN989GuYLtEY2OlcrVzAQfKQ3sLL4SsORf0iYNUqLmLpRubaHb6_aiks6m4DjAHwF9gruJcjfW1cMuWrtdXmeP8nTFAWlkTbqUuXM2LXO23UD9ckYbDOW0Mu3gcHRmSFjsStHR1w8xBchubMcx-RovBVRqbHyCg6Oewes_DHofX31x4GxoD25SbaW6KsM4QKlFP-uS_18f-bd9qMuX-1jvQuotEw-pVG4YmJ2l6"/>
+<span class="absolute top-1 left-1 px-1 rounded bg-black/70 text-[9px] text-white font-bold">T16</span>
+</div>
+<div class="flex flex-col justify-between py-0.5">
+<div>
+<span class="font-headline-sm text-base text-text-primary font-bold line-clamp-1">Chiến Binh Công Nghệ</span>
+<span class="font-body-sm text-body-sm text-text-secondary block">2D Dolby Atmos Hạng sang</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>19:30 · Hôm nay 21/10</span>
+</div>
+</div>
+</div>
+<!-- Selected Seats Breakdown -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider font-semibold">Ghế đã chọn (<span id="seat-count-display">2</span>)</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline" id="clear-seats-btn" type="button">Đặt lại</button>
+</div>
+<!-- Seat Pills List -->
+<div class="flex flex-wrap gap-2" id="selected-seats-list">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-highlight text-primary font-label-md text-label-md font-bold shadow-xs">
+<span class="material-symbols-outlined text-sm text-gold-vip">stars</span>
+<span>C05 (Sweet Spot)</span>
+<span class="text-xs text-text-secondary font-normal">· 180k</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-highlight text-primary font-label-md text-label-md font-bold shadow-xs">
+<span class="material-symbols-outlined text-sm text-gold-vip">stars</span>
+<span>C06 (Sweet Spot)</span>
+<span class="text-xs text-text-secondary font-normal">· 180k</span>
+</div>
+</div>
+</div>
+<!-- Inclusive Complimentary Perks -->
+<div class="p-3.5 rounded-xl bg-surface-alt flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-gold-vip uppercase tracking-wider font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">redeem</span>
+                  Đặc quyền đi kèm vé miễn phí
+                </span>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>02x Welcome Mocktail Berry Fizz</span>
+<span class="text-status-success font-semibold">0đ</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>02x Khăn thơm thảo mộc cao cấp</span>
+<span class="text-status-success font-semibold">0đ</span>
+</div>
+</div>
+<!-- Perforated dashed divider -->
+<div class="relative py-1">
+<div class="w-full border-t border-dashed border-border-subtle"></div>
+<div class="absolute -left-9 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface-alt"></div>
+<div class="absolute -right-9 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface-alt"></div>
+</div>
+<!-- Total calculation -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-body-md text-body-md text-text-secondary">
+<span>Vé xem phim (2 x 180.000đ)</span>
+<span class="font-semibold text-text-primary">360.000đ</span>
+</div>
+<div class="flex items-center justify-between font-body-md text-body-md text-text-secondary">
+<span>Dịch vụ phòng Suite</span>
+<span class="text-status-success font-semibold">Đã bao gồm</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-border-subtle mt-1">
+<div>
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold block">Tạm tính</span>
+<span class="font-body-sm text-body-sm text-text-muted">Chưa gồm combo bắp nước</span>
+</div>
+<div class="text-right">
+<span class="font-display-hero text-headline-lg text-primary font-extrabold block" id="total-price-display">360.000đ</span>
+</div>
+</div>
+</div>
+<!-- CTA ACTION BUTTONS -->
+<div class="flex flex-col gap-2.5 pt-2">
+<!-- Primary Action -->
+<a class="w-full h-12 rounded-lg bg-primary hover:bg-[#A50D25] text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-all focus:ring-2 focus:ring-primary/40 text-center" data-path="bap-nuoc-combo" href="#">
+<span>TIẾP TỤC CHỌN COMBO BẮP NƯỚC</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+<!-- Secondary Action -->
+<a class="w-full h-11 rounded-lg bg-surface-base hover:bg-surface-alt text-text-secondary font-label-md text-label-md flex items-center justify-center transition-colors text-center" data-path="lich-chieu" href="#">
+                  Quay lại chọn suất chiếu khác
+                </a>
+</div>
+<!-- Security guarantee badge -->
+<div class="flex items-center justify-center gap-1.5 font-label-sm text-[11px] text-text-muted pt-1 text-center">
+<span class="material-symbols-outlined text-sm text-status-success">lock</span>
+<span>Thanh toán bảo mật · Đổi trả miễn phí trước 60 phút</span>
+</div>
+</div>
+</div>
+<!-- LOYALTY REWARDS ESTIMATE CHIP -->
+<div class="p-4 rounded-xl bg-surface-highlight flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-gold-vip text-xl">military_tech</span>
+<div>
+<span class="font-label-sm text-label-sm text-primary font-semibold block">Tích luỹ HUST Cine Club</span>
+<span class="font-body-sm text-body-sm text-text-secondary block">+36 điểm thưởng sau giao dịch</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-gold-vip font-bold">VIP Silver</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE CLIENT-SIDE ENGINE (Seat Picker, Timer, Summary calculation) -->
+<script>
+    (function initSeatPicker() {
+      const PRICE_PER_SEAT = 180000;
+      let selectedSeats = ['C05', 'C06'];
+
+      // Elements
+      const seatButtons = document.querySelectorAll('.seat-btn');
+      const seatCountDisplay = document.getElementById('seat-count-display');
+      const totalPriceDisplay = document.getElementById('total-price-display');
+      const selectedSeatsList = document.getElementById('selected-seats-list');
+      const clearBtn = document.getElementById('clear-seats-btn');
+      const countdownElem = document.getElementById('countdown-val');
+
+      function updateUI() {
+        if (seatCountDisplay) seatCountDisplay.textContent = selectedSeats.length;
+        if (totalPriceDisplay) {
+          const total = selectedSeats.length * PRICE_PER_SEAT;
+          totalPriceDisplay.textContent = total.toLocaleString('vi-VN') + 'đ';
+        }
+
+        // Render tags
+        if (selectedSeatsList) {
+          if (selectedSeats.length === 0) {
+            selectedSeatsList.innerHTML = '<span class="font-body-sm text-body-sm text-text-muted italic">Vui lòng chọn ít nhất 1 ghế trên sơ đồ</span>';
+          } else {
+            selectedSeatsList.innerHTML = selectedSeats.map(seatId => {
+              const isSweet = seatId.startsWith('C') || seatId.startsWith('D');
+              return `
+                <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-highlight text-primary font-label-md text-label-md font-bold shadow-xs">
+                  ${isSweet ? '<span class="material-symbols-outlined text-sm text-gold-vip">stars</span>' : '<span class="material-symbols-outlined text-sm text-primary">airline_seat_recline_extra</span>'}
+                  <span>${seatId} ${isSweet ? '(Sweet Spot)' : ''}</span>
+                  <span class="text-xs text-text-secondary font-normal">· 180k</span>
+                </div>
+              `;
+            }).join('');
+          }
+        }
+
+        // Update button visual styles
+        seatButtons.forEach(btn => {
+          const seatId = btn.getAttribute('data-seat-id');
+          const isSweet = btn.getAttribute('data-type') === 'sweet-spot';
+          const innerBox = btn.querySelector('div');
+          const underBar = btn.querySelector('span:last-child');
+          
+          if (selectedSeats.includes(seatId)) {
+            btn.classList.add('selected-seat');
+            innerBox.className = 'w-11 h-9 rounded-lg bg-primary-container text-on-primary flex flex-col items-center justify-center shadow-md ring-2 ring-primary-container/40 transition-all cursor-pointer transform scale-105';
+            innerBox.innerHTML = `
+              <span class="material-symbols-outlined text-xs font-bold">check</span>
+              <span class="font-label-sm text-[10px] font-bold text-white">${seatId.slice(1)}</span>
+            `;
+            if (underBar) underBar.className = 'w-7 h-1 bg-primary rounded-b mt-0.5';
+          } else {
+            btn.classList.remove('selected-seat');
+            innerBox.className = isSweet 
+              ? 'w-11 h-9 rounded-lg bg-surface-base hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer'
+              : 'w-11 h-9 rounded-lg bg-surface-alt hover:bg-surface-highlight flex flex-col items-center justify-center shadow-xs transition-all cursor-pointer';
+            innerBox.innerHTML = `
+              <span class="material-symbols-outlined text-xs ${isSweet ? 'text-gold-vip' : 'text-text-muted group-hover:text-primary'}">${isSweet ? 'stars' : 'airline_seat_recline_extra'}</span>
+              <span class="font-label-sm text-[10px] text-text-primary ${isSweet ? 'font-semibold' : 'font-medium'}">${seatId.slice(1)}</span>
+            `;
+            if (underBar) {
+              underBar.className = isSweet ? 'w-7 h-1 bg-gold-vip/40 rounded-b mt-0.5' : 'w-7 h-1 bg-surface-container rounded-b mt-0.5';
+            }
+          }
+        });
+      }
+
+      // Seat click listener
+      seatButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const seatId = btn.getAttribute('data-seat-id');
+          const idx = selectedSeats.indexOf(seatId);
+
+          if (idx > -1) {
+            selectedSeats.splice(idx, 1);
+          } else {
+            if (selectedSeats.length >= 8) {
+              alert('Bạn chỉ có thể chọn tối đa 8 ghế trong một giao dịch.');
+              return;
+            }
+            selectedSeats.push(seatId);
+          }
+          updateUI();
+        });
+      });
+
+      // Clear button
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          selectedSeats = [];
+          updateUI();
+        });
+      }
+
+      // Live 10-Minute countdown
+      let totalSeconds = 9 * 60 + 42;
+      setInterval(() => {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          const m = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+          const s = String(totalSeconds % 60).padStart(2, '0');
+          if (countdownElem) countdownElem.textContent = `${m}:${s}`;
+        }
+      }, 1000);
+
+      // Initial visual trigger
+      updateUI();
+    })();
+  </script>
+</div></main><footer class="w-full bg-[#8E0B1F] text-on-primary relative overflow-hidden"><div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 24px 24px;"></div><div class="max-w-[1280px] mx-auto px-margin py-space-xl relative z-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-lg text-headline-lg text-on-primary tracking-tight font-extrabold">HUST Cine</span></div><p class="font-body-md text-body-md text-on-primary-container max-w-sm">Hệ thống rạp chiếu phim hiện đại kỹ thuật số thuộc Trường Đại học Bách Khoa Hà Nội, kết hợp kỹ thuật trình chiếu đỉnh cao và không gian điện ảnh tiên phong.</p><div class="flex flex-col gap-space-xs mt-space-sm"><span class="font-label-md text-label-md text-tertiary-fixed font-semibold">ĐĂNG KÝ NHẬN TIN KHUYẾN MÃI</span><div class="flex gap-space-xs max-w-md"><input class="flex-1 h-11 px-space-md rounded-lg bg-surface-base text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none" placeholder="Nhập email của bạn..." type="email"/><button class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-lg text-label-lg transition-colors shadow-sm" type="button">Gửi</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Chính sách &amp; Quy định</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-dieu-khoan" href="#">Điều khoản sử dụng</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-thanh-toan" href="#">Chính sách thanh toán</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-bao-mat" href="#">Chính sách bảo mật</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-hoan-ve" href="#">Chính sách hoàn vé</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Cụm rạp &amp; Phòng chiếu</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Đại Cồ Việt (Hai Bà Trưng)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="phong-chieu-chuan-ky-thuat" href="#">Phòng Laser 4K Dolby Atmos Bách Khoa</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="phong-chieu-chuan-ky-thuat" href="#">Phòng IMAX Laser HUST</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="phong-trai-nghiem-studio-lab" href="#">HUST Cine Studio Lab &amp; Private Cinema</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Liên hệ &amp; Hỗ trợ</span><span class="font-body-sm text-body-sm text-on-primary-container">Hotline: 1900 2026 (8:00 - 23:00)</span><span class="font-body-sm text-body-sm text-on-primary-container">Email: contact@hustcine.edu.vn</span><span class="font-body-sm text-body-sm text-on-primary-container">Địa chỉ: 1 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội</span><div class="flex items-center gap-space-sm pt-space-xs"><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">share</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">public</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">mail</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">forum</span></div></div></div><div class="pt-space-lg border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-primary-container">© 2026 HUST Cine. Hệ thống rạp chiếu phim hiện đại kỹ thuật số.</p><p class="font-body-sm text-body-sm text-on-primary-container/80">Đại học Bách Khoa Hà Nội • Viện Điện ảnh &amp; Kỹ thuật Số</p></div></div></footer>
+  <!-- HUST Cine Dynamic Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+
+</body></html>

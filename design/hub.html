@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUST Cine - Bản Đồ Toàn Bộ Màn Hình Hệ Thống (Sitemap & Component Hub)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+</head>
+<body class="bg-surface-base text-text-primary antialiased min-h-screen flex flex-col font-body-md">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-surface-base/95 backdrop-blur-md border-b border-border-subtle shadow-sm">
+    <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-white font-bold text-xl shadow-md">
+            H
+          </div>
+          <div>
+            <h1 class="text-xl font-headline-sm font-bold text-primary tracking-tight">HUST Cine</h1>
+            <p class="text-xs text-text-secondary">Cinema Ticket Booking System • Design System Hub</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle-btn" class="flex items-center gap-2 h-10 px-4 rounded-full bg-surface-alt hover:bg-surface-highlight text-text-secondary hover:text-primary transition-all">
+          <span id="theme-icon" class="material-symbols-outlined text-lg text-gold-vip">dark_mode</span>
+          <span id="theme-label" class="text-sm font-semibold">Tối</span>
+        </button>
+        <a href="index.html" class="h-10 px-5 rounded-lg bg-primary-container hover:bg-[#8E0B1F] text-white text-sm font-semibold flex items-center gap-2 shadow-sm transition-all">
+          <span class="material-symbols-outlined text-base">home</span>
+          <span>Vào Trang Chủ</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <div class="bg-[#8E0B1F] text-white py-12 px-6 hust-grid-bg relative overflow-hidden">
+    <div class="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div>
+        <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-tertiary-fixed mb-2">
+          <span class="px-2 py-0.5 rounded bg-white/20">StitchMCP Production Export</span>
+          <span>•</span>
+          <span>25 Giao diện hoàn chỉnh</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">HUST Cine - Bản Đồ Điều Hướng Màn Hình</h2>
+        <p class="mt-2 text-on-primary-container max-w-2xl text-base opacity-95">
+          Tập hợp toàn bộ bản thiết kế từ dự án Stitch <strong>Cinema Ticket Booking System</strong> đã được tối ưu hóa, chuẩn hóa đường dẫn, tách file HTML, CSS và JS chuyên biệt theo kiến trúc chuẩn cho webapp.
+        </p>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="bg-black/30 backdrop-blur-md px-5 py-4 rounded-xl border border-white/10 text-center">
+          <div class="text-3xl font-extrabold text-gold-vip">15</div>
+          <div class="text-xs text-white/80 uppercase tracking-wider mt-1">Khách Hàng</div>
+        </div>
+        <div class="bg-black/30 backdrop-blur-md px-5 py-4 rounded-xl border border-white/10 text-center">
+          <div class="text-3xl font-extrabold text-[#fd6166]">8</div>
+          <div class="text-xs text-white/80 uppercase tracking-wider mt-1">Admin Portal</div>
+        </div>
+        <div class="bg-black/30 backdrop-blur-md px-5 py-4 rounded-xl border border-white/10 text-center">
+          <div class="text-3xl font-extrabold text-status-success">2</div>
+          <div class="text-xs text-white/80 uppercase tracking-wider mt-1">Staff POS</div>
+        </div>
+        <div class="bg-black/30 backdrop-blur-md px-5 py-4 rounded-xl border border-white/10 text-center">
+          <div class="text-3xl font-extrabold text-status-info">2</div>
+          <div class="text-xs text-white/80 uppercase tracking-wider mt-1">Specs Docs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search & Category Filters -->
+  <main class="max-w-[1400px] mx-auto px-6 py-10 flex-1 w-full">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+      <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0" id="filter-tabs">
+        <button class="filter-btn active px-4 py-2 rounded-lg bg-primary-container text-white text-sm font-semibold shadow-sm transition-all" data-category="ALL">
+          Tất Cả (27 Mục)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-lg bg-surface-alt hover:bg-surface-highlight text-text-secondary hover:text-primary text-sm font-semibold transition-all" data-category="Customer">
+          Khách Hàng (15 Màn)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-lg bg-surface-alt hover:bg-surface-highlight text-text-secondary hover:text-primary text-sm font-semibold transition-all" data-category="Admin">
+          Quản Trị Admin (8 Màn)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-lg bg-surface-alt hover:bg-surface-highlight text-text-secondary hover:text-primary text-sm font-semibold transition-all" data-category="POS">
+          Thu Ngân POS (2 Màn)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-lg bg-surface-alt hover:bg-surface-highlight text-text-secondary hover:text-primary text-sm font-semibold transition-all" data-category="Docs">
+          Tài Liệu & Spec (2 Mục)
+        </button>
+      </div>
+
+      <div class="relative w-full md:w-72">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-base">search</span>
+        <input id="search-input" type="text" placeholder="Tìm kiếm màn hình, mã S/A..." class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-alt border border-border-subtle focus:outline-none focus:ring-1 focus:ring-primary-container text-sm">
+      </div>
+    </div>
+
+    <!-- Screen Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="screens-grid">
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="POS" data-title="quầy pos bán vé & f&b tại rạp (staff box office) pos-01 staff-pos.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-status-success/15 text-status-success">
+                POS-01 • POS
+              </span>
+              <span class="text-xs font-mono text-text-muted">staff-pos.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Quầy POS Bán Vé & F&B Tại Rạp (Staff Box Office)
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Giao diện thu ngân cảm ứng 1 chạm cho nhân viên bán vé & F&B tại sảnh rạp (Light Mode)
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="staff-pos.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Admin" data-title="quản lý bảng giá vé & ghế a6 admin-gia-ve.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-[#fd6166]/20 text-[#9e001f]">
+                A6 • Admin
+              </span>
+              <span class="text-xs font-mono text-text-muted">admin-gia-ve.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Quản Lý Bảng Giá Vé & Ghế
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Ma trận giá vé theo ngày trong tuần, suất chiếu sớm, học sinh sinh viên Bách Khoa, phụ thu 3D/IMAX
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="admin-gia-ve.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Admin" data-title="báo cáo phân tích doanh thu & đối soát a8 admin-bao-cao.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-[#fd6166]/20 text-[#9e001f]">
+                A8 • Admin
+              </span>
+              <span class="text-xs font-mono text-text-muted">admin-bao-cao.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Báo Cáo Phân Tích Doanh Thu & Đối Soát
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Đối soát cổng thanh toán MoMo, VNPay, Vietcombank POS, két tiền mặt và tỷ lệ bản quyền hãng phim
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="admin-bao-cao.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="POS" data-title="quầy pos bán vé cảm ứng (dark mode pos) pos-02 staff-pos-dark.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-status-success/15 text-status-success">
+                POS-02 • POS
+              </span>
+              <span class="text-xs font-mono text-text-muted">staff-pos-dark.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Quầy POS Bán Vé Cảm Ứng (Dark Mode POS)
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Giao diện thu ngân cảm ứng nền tối chống lóa mắt cho nhân viên làm việc trong sảnh rạp thiếu sáng
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="staff-pos-dark.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="modal xem trailer & đặt vé nhanh s13-s14 modal-trailer-dat-ve.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S13-S14 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">modal-trailer-dat-ve.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Modal Xem Trailer & Đặt Vé Nhanh
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Trình phát Trailer YouTube cinematic tỉ lệ 16:9 kèm ngăn kéo (drawer) chọn suất chiếu siêu tốc
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="modal-trailer-dat-ve.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Admin" data-title="quản lý suất chiếu & lịch chiếu rạp a2 admin-suat-chieu.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-[#fd6166]/20 text-[#9e001f]">
+                A2 • Admin
+              </span>
+              <span class="text-xs font-mono text-text-muted">admin-suat-chieu.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Quản Lý Suất Chiếu & Lịch Chiếu Rạp
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Lịch chiếu theo phim & timeline theo phòng, tự động kiểm tra trùng ca chiếu (conflict check)
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="admin-suat-chieu.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="trang chủ & đặt vé s1 index.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S1 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">index.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Trang Chủ & Đặt Vé
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Trang chủ HUST Cine, Hero banner bom tấn, Quick-Booking bar 5 bước, danh mục phim đang chiếu / sắp chiếu
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="index.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="thông báo & trạng thái giữ ghế s12 trang-thai-giu-ghe.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S12 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">trang-thai-giu-ghe.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Thông Báo & Trạng Thái Giữ Ghế
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Cảnh báo suất sắp đóng đặt vé (<10 phút), thông báo hết hạn giữ vé và đếm ngược giữ chỗ real-time
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="trang-thai-giu-ghe.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="chọn ghế phòng chiếu imax laser 260 chỗ s4b chon-ghe-imax.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S4b • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">chon-ghe-imax.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Chọn Ghế Phòng Chiếu IMAX Laser 260 Chỗ
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Sơ đồ khán phòng IMAX Laser khán đài dốc đứng, phân vùng ghế VIP Sweetspot trung tâm và kiểm tra ghế đơn lẻ
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="chon-ghe-imax.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Admin" data-title="trình dựng sơ đồ phòng chiếu a3 admin-so-do-phong.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-[#fd6166]/20 text-[#9e001f]">
+                A3 • Admin
+              </span>
+              <span class="text-xs font-mono text-text-muted">admin-so-do-phong.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Trình Dựng Sơ Đồ Phòng Chiếu
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Seat-Map Builder trực quan kéo thả hàng ghế, lối đi, ghế đôi, recliner, VIP và thiết lập giá ghế
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="admin-so-do-phong.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Admin" data-title="quản lý đơn hàng & hoàn vé a4 admin-don-hang.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-[#fd6166]/20 text-[#9e001f]">
+                A4 • Admin
+              </span>
+              <span class="text-xs font-mono text-text-muted">admin-don-hang.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Quản Lý Đơn Hàng & Hoàn Vé
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Tra cứu mã đơn đặt vé #HUST-xxxx, lịch sử thanh toán, hoàn vé tự động và hủy giải phóng ghế
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="admin-don-hang.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="chọn ghế phòng chiếu hạng sang luxury recliner s4c chon-ghe-luxury.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S4c • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">chon-ghe-luxury.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Chọn Ghế Phòng Chiếu Hạng Sang Luxury Recliner
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Sơ đồ phòng chiếu 40 ghế sofa ngả điện kèm bàn phục vụ riêng cao cấp
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="chon-ghe-luxury.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Admin" data-title="quản lý & chỉnh sửa phim a5 admin-phim.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-[#fd6166]/20 text-[#9e001f]">
+                A5 • Admin
+              </span>
+              <span class="text-xs font-mono text-text-muted">admin-phim.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Quản Lý & Chỉnh Sửa Phim
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              CRUD danh mục phim, upload poster chuẩn tỉ lệ 2:3, backdrop 16:9 và kiểm tra nhúng link trailer YouTube
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="admin-phim.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="danh sách cụm rạp & bản đồ tiện ích s9 cum-rap.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S9 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">cum-rap.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Danh Sách Cụm Rạp & Bản Đồ Tiện Ích
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Danh sách 4 cụm rạp HUST Cine (Đại Cồ Việt, Times City, Cầu Giấy), chỉ đường bản đồ & lịch chiếu theo rạp
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="cum-rap.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="các loại phòng chiếu & bảng so sánh kỹ thuật s11 loai-phong-chieu.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S11 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">loai-phong-chieu.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Các Loại Phòng Chiếu & Bảng So Sánh Kỹ Thuật
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Showcase chi tiết 5 loại phòng (Standard, Wide, IMAX Laser, Recliner, Private Lab) và bảng so sánh công nghệ
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="loai-phong-chieu.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="chi tiết phim & suất chiếu 7 ngày s3 chi-tiet-phim.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S3 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">chi-tiet-phim.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Chi Tiết Phim & Suất Chiếu 7 Ngày
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Thông tin phim, trailer, dải chọn ngày 7 ngày và danh sách chips suất chiếu với 5 trạng thái mở/đóng/hết vé
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="chi-tiet-phim.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="vé điện tử & kết quả đặt vé s7 ve-dien-tu.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S7 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">ve-dien-tu.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Vé Điện Tử & Kết Quả Đặt Vé
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Mã QR soát vé vào phòng chiếu, mã đặt vé, thông tin suất chiếu và nút tải vé PDF
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="ve-dien-tu.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="chọn ghế phòng chiếu tiêu chuẩn s4a chon-ghe-tieu-chuan.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S4a • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">chon-ghe-tieu-chuan.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Chọn Ghế Phòng Chiếu Tiêu Chuẩn
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Sơ đồ phòng chiếu 120 ghế 2D tiêu chuẩn với hàng ghế Sweetspot và ghế đôi Sweetbox cuối phòng
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="chon-ghe-tieu-chuan.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="quản lý tài khoản thành viên & vé của tôi s8 tai-khoan.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S8 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">tai-khoan.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Quản Lý Tài Khoản Thành Viên & Vé Của Tôi
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Hồ sơ hội viên HUST Club, tích điểm thưởng, hạng thẻ, lịch sử vé đã xem và kho voucher sinh viên
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="tai-khoan.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="danh sách phim & bộ lọc nâng cao s2 danh-sach-phim.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S2 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">danh-sach-phim.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Danh Sách Phim & Bộ Lọc Nâng Cao
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Danh mục phim đa dạng, bộ lọc theo thể loại, định dạng IMAX/3D/2D, độ tuổi T13/T16/T18 và cụm rạp
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="danh-sach-phim.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Docs" data-title="antigravity backend architecture & api spec spec-01 docs/backend-architecture-api-spec.md">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-status-info/15 text-status-info">
+                SPEC-01 • Docs
+              </span>
+              <span class="text-xs font-mono text-text-muted">docs/backend-architecture-api-spec.md</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              AntiGravity Backend Architecture & API Spec
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Kiến trúc backend, Prisma ERD Schema, RESTful API và WebSocket Specs
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="docs/backend-architecture-api-spec.md" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="chọn combo bắp nước s5 chon-combo-bap-nuoc.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S5 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">chon-combo-bap-nuoc.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Chọn Combo Bắp Nước
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Bước 2 đặt vé: Lựa chọn combo bắp rang bơ, nước giải khát, quà tặng collectible và nâng cấp size/vị
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="chon-combo-bap-nuoc.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Docs" data-title="design system technical cinema tokens spec-02 docs/design.md">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-status-info/15 text-status-info">
+                SPEC-02 • Docs
+              </span>
+              <span class="text-xs font-mono text-text-muted">docs/design.md</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Design System Technical Cinema Tokens
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Đặc tả Design System Technical Cinema: màu sắc, typography, bán kính góc, quy tắc ghế
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="docs/design.md" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Admin" data-title="admin dashboard quản trị doanh thu & vận hành a1 admin-dashboard.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-[#fd6166]/20 text-[#9e001f]">
+                A1 • Admin
+              </span>
+              <span class="text-xs font-mono text-text-muted">admin-dashboard.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Admin Dashboard Quản Trị Doanh Thu & Vận Hành
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Bảng điều khiển trung tâm: KPI doanh thu thực, tỷ lệ lấp đầy rạp, biểu đồ doanh thu và top phim ăn khách
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="admin-dashboard.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="thanh toán & xác nhận đơn hàng s6 thanh-toan.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S6 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">thanh-toan.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Thanh Toán & Xác Nhận Đơn Hàng
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Bước 3 đặt vé: Nhập voucher sinh viên, tích lũy điểm HUST Club, chọn cổng thanh toán MoMo, VNPay, VietQR
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="thanh-toan.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Admin" data-title="quản lý combo bắp nước & dịch vụ f&b a7 admin-combo-fnb.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-[#fd6166]/20 text-[#9e001f]">
+                A7 • Admin
+              </span>
+              <span class="text-xs font-mono text-text-muted">admin-combo-fnb.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Quản Lý Combo Bắp Nước & Dịch Vụ F&B
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Quản lý thực đơn concession, định lượng nguyên vật liệu kho BoM và quy tắc phụ thu upsell bắp nước
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="admin-combo-fnb.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="screen-card flex flex-col justify-between bg-surface-base rounded-xl border border-border-subtle shadow-sm hover:shadow-md hover:border-primary transition-all p-5 group" data-category="Customer" data-title="đặt phòng chiếu private lab nguyên phòng s10 phong-private.html">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded text-xs font-bold uppercase bg-primary-container/10 text-primary">
+                S10 • Customer
+              </span>
+              <span class="text-xs font-mono text-text-muted">phong-private.html</span>
+            </div>
+
+            <h3 class="font-headline-sm font-bold text-base text-text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
+              Đặt Phòng Chiếu Private Lab Nguyên Phòng
+            </h3>
+
+            <p class="text-xs text-text-secondary line-clamp-3 mb-4">
+              Quy trình đặt bao trọn phòng chiếu riêng 10 người, chọn gói sinh nhật/cầu hôn và thực đơn VIP cao cấp
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-border-subtle flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-text-muted flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">visibility</span>
+              Xem giao diện
+            </span>
+            <a href="phong-private.html" class="px-3 py-1.5 rounded-lg bg-surface-alt group-hover:bg-primary-container text-text-primary group-hover:text-white text-xs font-bold transition-all flex items-center gap-1 shadow-sm">
+              <span>Mở Màn</span>
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-alt border-t border-border-subtle py-8 text-center text-xs text-text-secondary">
+    <div class="max-w-[1400px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 HUST Cine. Hệ thống đặt vé xem phim Đại học Bách Khoa Hà Nội.</p>
+      <div class="flex items-center gap-6">
+        <a href="docs/backend-architecture-api-spec.md" class="text-primary hover:underline">Backend Architecture Spec</a>
+        <a href="docs/design.md" class="text-primary hover:underline">Design Tokens</a>
+        <a href="index.html" class="text-primary hover:underline">Trang chủ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script>
+    // Tab Filter & Search Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const screenCards = document.querySelectorAll('.screen-card');
+    const searchInput = document.getElementById('search-input');
+
+    let currentCategory = 'ALL';
+    let searchQuery = '';
+
+    function applyFilter() {
+      screenCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const text = card.getAttribute('data-title');
+
+        const matchCat = (currentCategory === 'ALL' || cat === currentCategory);
+        const matchSearch = (!searchQuery || text.includes(searchQuery));
+
+        if (matchCat && matchSearch) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-white', 'shadow-sm');
+          b.classList.add('bg-surface-alt', 'text-text-secondary');
+        });
+        btn.classList.add('bg-primary-container', 'text-white', 'shadow-sm');
+        btn.classList.remove('bg-surface-alt', 'text-text-secondary');
+        currentCategory = btn.getAttribute('data-category');
+        applyFilter();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      applyFilter();
+    });
+  </script>
+</body>
+</html>

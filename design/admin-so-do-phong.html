@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "inverse-on-surface": "#f3eff7",
+          "inverse-surface": "#303035",
+          "on-tertiary-container": "#ffdf9b",
+          "primary-fixed-dim": "#ffb3b1",
+          "surface-bright": "#fbf8ff",
+          "on-primary": "#ffffff",
+          "text-secondary": "#5B5B66",
+          "tertiary-container": "#806000",
+          "secondary": "#b12a34",
+          "on-tertiary": "#ffffff",
+          "primary-container": "#c8102e",
+          "status-error": "#B3261E",
+          "background": "#fbf8ff",
+          "status-success": "#1E8E5A",
+          "on-primary-fixed-variant": "#92001c",
+          "secondary-container": "#fd6166",
+          "surface-variant": "#e4e1e8",
+          "surface-dim": "#dcd9e0",
+          "tertiary-fixed-dim": "#edc157",
+          "error": "#ba1a1a",
+          "status-info": "#1F6FD1",
+          "on-primary-fixed": "#410007",
+          "surface-tint": "#bf0229",
+          "on-tertiary-fixed-variant": "#5b4300",
+          "surface-highlight": "#FDECEF",
+          "error-container": "#ffdad6",
+          "on-error-container": "#93000a",
+          "on-secondary-fixed": "#410007",
+          "secondary-fixed-dim": "#ffb3b1",
+          "on-secondary-container": "#640011",
+          "outline": "#906f6e",
+          "surface-container-lowest": "#ffffff",
+          "border-subtle": "#E8E0E0",
+          "on-surface-variant": "#5c403f",
+          "surface": "#fbf8ff",
+          "gold-vip": "#B8902A",
+          "on-secondary-fixed-variant": "#8f0c20",
+          "on-tertiary-fixed": "#251a00",
+          "primary-fixed": "#ffdad8",
+          "surface-container": "#f0edf4",
+          "surface-container-low": "#f5f2f9",
+          "surface-container-high": "#eae7ee",
+          "inverse-primary": "#ffb3b1",
+          "surface-container-highest": "#e4e1e8",
+          "on-surface": "#1b1b20",
+          "tertiary-fixed": "#ffdf9b",
+          "surface-base": "#FFFFFF",
+          "on-error": "#ffffff",
+          "text-primary": "#1A1A1F",
+          "status-warning": "#D98A00",
+          "primary": "#9e001f",
+          "tertiary": "#624900",
+          "on-background": "#1b1b20",
+          "on-secondary": "#ffffff",
+          "on-primary-container": "#ffdad8",
+          "surface-alt": "#F7F4F4",
+          "secondary-fixed": "#ffdad8",
+          "outline-variant": "#e5bdbb",
+          "text-muted": "#8A8A94"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2.5rem",
+          "gutter": "1.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-md": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "margin-mobile": "1rem"
+        },
+        "fontFamily": {
+          "body-sm": [
+            "Be Vietnam Pro"
+          ],
+          "headline-sm": [
+            "Be Vietnam Pro"
+          ],
+          "body-md": [
+            "Be Vietnam Pro"
+          ],
+          "display-hero-mobile": [
+            "Be Vietnam Pro"
+          ],
+          "body-lg": [
+            "Be Vietnam Pro"
+          ],
+          "headline-lg": [
+            "Be Vietnam Pro"
+          ],
+          "label-sm": [
+            "Be Vietnam Pro"
+          ],
+          "code-time": [
+            "Be Vietnam Pro"
+          ],
+          "display-hero": [
+            "Be Vietnam Pro"
+          ],
+          "label-md": [
+            "Be Vietnam Pro"
+          ],
+          "headline-lg-mobile": [
+            "Be Vietnam Pro"
+          ],
+          "label-lg": [
+            "Be Vietnam Pro"
+          ],
+          "headline-md": [
+            "Be Vietnam Pro"
+          ]
+        },
+        "fontSize": {
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero-mobile": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "800"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "code-time": [
+            "13px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "500"
+            }
+          ],
+          "display-hero": [
+            "44px",
+            {
+              "lineHeight": "52px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script>
+  <!-- HUST Cine Design System Core Assets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+
+</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-gutter flex items-center gap-space-sm bg-surface-container-low"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">videocam</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-bold">HUST Cine</span><span class="px-1.5 py-0.5 rounded bg-surface-highlight text-primary font-label-sm text-label-sm tracking-wider uppercase font-bold">Portal</span></div><span class="font-label-sm text-label-sm text-text-muted">Hệ thống Quản trị &amp; Điều hành</span></div></div><div class="px-gutter py-space-xs"><div class="px-space-sm py-space-xs rounded bg-surface-alt flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span><span class="font-code-time text-code-time text-text-secondary">Live Node 01</span></div><span class="font-label-sm text-label-sm text-gold-vip font-medium">BK-HN.24</span></div></div><nav class="flex-1 px-space-sm py-space-xs space-y-1 overflow-y-auto max-h-[calc(100vh-12rem)]" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="quan-ly-phim" href="#"><span class="material-symbols-outlined text-[20px]">movie</span><span class="font-label-lg text-label-lg">Quản lý Phim</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="rap-va-phong-chieu" href="#"><span class="material-symbols-outlined text-[20px]">theaters</span><span class="font-label-lg text-label-lg">Rạp &amp; Phòng chiếu</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="suat-chieu" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-label-lg text-label-lg">Suất chiếu</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="bang-gia-ve-va-ghe" href="#"><span class="material-symbols-outlined text-[20px]">event_seat</span><span class="font-label-lg text-label-lg">Bảng giá vé &amp; Ghế</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="combo-va-dich-vu" href="#"><span class="material-symbols-outlined text-[20px]">fastfood</span><span class="font-label-lg text-label-lg">Combo &amp; Dịch vụ</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="khuyen-mai-va-voucher" href="#"><span class="material-symbols-outlined text-[20px]">sell</span><span class="font-label-lg text-label-lg">Khuyến mãi &amp; Voucher</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="don-hang-va-giao-dich" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-lg text-label-lg">Đơn hàng &amp; Giao dịch</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="khach-hang-va-thanh-vien" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-lg text-label-lg">Khách hàng &amp; Thành viên</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="bao-cao-doanh-thu" href="#"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span class="font-label-lg text-label-lg">Báo cáo doanh thu</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-highlight hover:text-primary transition-colors" data-path="cai-dat-he-thong" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-lg text-label-lg">Cài đặt hệ thống</span></a></nav></div><div class="p-space-md bg-surface-container"><div class="p-space-sm rounded-lg bg-surface-base flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-status-success text-[18px]">verified</span><span class="font-code-time text-code-time text-text-secondary">SMPTE v4.2</span></div><span class="font-label-sm text-label-sm text-text-muted">Port 8088</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-1.5 rounded-lg w-80"><span class="material-symbols-outlined text-text-muted text-[18px]">search</span><input class="bg-transparent border-0 outline-none text-on-surface placeholder:text-text-muted font-body-sm text-body-sm w-full" placeholder="Tìm vé, mã đặt chỗ, phim, user..." type="text"/></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-1.5 rounded-lg cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">pin_drop</span><span class="font-label-md text-label-md text-on-surface font-semibold">HUST Cine Đại Cồ Việt</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-low shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><span class="w-2 h-2 rounded-full bg-status-success"></span><span class="font-code-time text-code-time text-text-secondary">19:42:08 · GMT+7</span></div><div class="relative flex items-center justify-center cursor-pointer"><span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface transition-colors text-[22px]">notifications</span><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">5</span></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Nguyễn Tuấn Kiệt</span><span class="font-label-sm text-label-sm text-text-muted leading-tight">Quản lý cụm rạp</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-[calc(100vh-3.5rem)]"><div class="flex flex-col w-full">
+<!-- Top Command Ribbon & Breadcrumb -->
+<section class="w-full bg-surface-container-low px-margin py-space-sm shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-space-xs font-label-md text-label-md text-text-muted">
+<span class="hover:text-primary transition-colors cursor-pointer">Hệ thống quản trị</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Rạp &amp; Phòng chiếu</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-semibold text-primary">Trình dựng sơ đồ ghế (Seat-Map Builder)</span>
+</nav>
+<!-- Engine Status & Sync Pill -->
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-base shadow-sm">
+<span class="w-2 h-2 rounded-full bg-status-success animate-ping"></span>
+<span class="font-code-time text-code-time text-text-secondary">SMPTE CAD Engine v4.2 · Snap 4px</span>
+</div>
+</div>
+</div>
+<!-- Page Title & Primary Actions -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">grid_view</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-md text-headline-md text-text-primary tracking-tight font-bold">Trình Dựng Sơ Đồ Khán Phòng &amp; Ma Trận Ghế</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-status-success/10 text-status-success font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-success"></span>
+              Phòng 01 - IMAX Laser Flagship (Sơ đồ đang kích hoạt)
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Hiệu chỉnh ma trận ghế vật lý, khoảng cách lối đi PCCC và phân vùng giá động cho chuẩn chiếu Dolby Atmos / IMAX.</p>
+</div>
+</div>
+<!-- Action Button Group -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-base hover:bg-surface-highlight text-text-primary font-label-md text-label-md shadow-sm transition-colors" title="Xem trước chế độ khách mua vé" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">visibility</span>
+<span>Xem trước khách</span>
+</button>
+<div class="flex items-center bg-surface-base rounded-lg shadow-sm p-0.5">
+<button class="p-1.5 hover:bg-surface-container rounded text-text-secondary hover:text-text-primary transition-colors" title="Hoàn tác (Ctrl+Z)" type="button">
+<span class="material-symbols-outlined text-[18px]">undo</span>
+</button>
+<div class="w-px h-4 bg-surface-variant"></div>
+<button class="p-1.5 hover:bg-surface-container rounded text-text-secondary hover:text-text-primary transition-colors" title="Làm lại (Ctrl+Y)" type="button">
+<span class="material-symbols-outlined text-[18px]">redo</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-base hover:bg-surface-highlight text-primary font-label-md text-label-md shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Lưu bản nháp</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md shadow-md hover:shadow-lg transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+<span>Áp dụng &amp; Xuất bản sơ đồ</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Template Picker & Global Parameters -->
+<section class="w-full bg-surface-base px-margin py-space-sm shadow-sm flex flex-col gap-space-sm">
+<!-- 5 Standard Templates -->
+<div class="flex items-center gap-space-sm overflow-x-auto pb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted whitespace-nowrap">Khuôn mẫu chuẩn:</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-highlight text-text-secondary font-label-sm text-label-sm whitespace-nowrap transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">view_compact</span>
+<span>Tiêu chuẩn (120 ghế)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-highlight text-text-secondary font-label-sm text-label-sm whitespace-nowrap transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">stadium</span>
+<span>Siêu rộng - Grand Hall (200 ghế)</span>
+</button>
+<!-- Active: IMAX Laser -->
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-highlight text-primary font-label-sm text-label-sm whitespace-nowrap font-semibold shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">theaters</span>
+<span>IMAX Laser (260 ghế)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-highlight text-text-secondary font-label-sm text-label-sm whitespace-nowrap transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">airline_seat_recline_extra</span>
+<span>Hạng sang - Luxury Recliner (40 ghế)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-highlight text-text-secondary font-label-sm text-label-sm whitespace-nowrap transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">weekend</span>
+<span>Private Lab (10 ghế sofa)</span>
+</button>
+</div>
+<!-- Parameter Config Fields -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-sm pt-space-xs">
+<!-- Cluster Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-muted">Cụm rạp &amp; Cơ sở</label>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low text-text-primary font-body-sm text-body-sm shadow-sm cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[18px] text-primary">location_city</span>
+<span class="font-medium truncate">HUST Cine Đại Cồ Việt</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-text-muted">expand_more</span>
+</div>
+</div>
+<!-- Config Name -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-muted">Tên cấu hình sơ đồ</label>
+<div class="flex items-center px-3 py-2 rounded-lg bg-surface-container-low text-text-primary font-body-sm text-body-sm shadow-sm">
+<input class="w-full bg-transparent outline-none font-medium text-text-primary" type="text" value="Sơ đồ IMAX Rake Chuẩn 2026-v2"/>
+<span class="material-symbols-outlined text-[16px] text-text-muted">edit</span>
+</div>
+</div>
+<!-- Grid Dimension -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-muted">Kích thước ma trận &amp; Độ cong</label>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low text-text-primary font-code-time text-code-time shadow-sm">
+<span>13 Hàng (A–M) × 22 Cột</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-base font-label-sm text-label-sm text-primary font-bold">28° Curve</span>
+</div>
+</div>
+<!-- Whole Room Toggle -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-muted">Bán nguyên phòng (Whole-room)</label>
+<div class="flex items-center justify-between px-3 py-1.5 rounded-lg bg-surface-container-low shadow-sm">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-text-secondary">Vô hiệu hóa</span>
+<span class="font-label-sm text-label-sm text-text-muted">(Chỉ dùng Private Lab)</span>
+</div>
+<div class="w-9 h-5 bg-surface-variant rounded-full p-0.5 cursor-not-allowed opacity-60">
+<div class="w-4 h-4 bg-surface-base rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+<!-- Price Multiplier -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-text-muted">Hệ số định dạng vé (Multiplier)</label>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low text-text-primary font-body-sm text-body-sm shadow-sm">
+<span class="font-code-time text-code-time font-bold text-primary">1.35×</span>
+<span class="font-label-sm text-label-sm text-text-muted">IMAX 3D Laser Spec</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main 3-Column Studio Workspace -->
+<div class="w-full px-margin py-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- COLUMN A: TOOLBOX & PALETTE (Col span 3) -->
+<div class="lg:col-span-3 flex flex-col gap-space-md">
+<!-- Drawing Tools Card -->
+<div class="p-space-md rounded-xl bg-surface-base shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-label-lg text-label-lg text-text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">build</span>
+            Công cụ thao tác
+          </h2>
+<span class="font-label-sm text-label-sm text-text-muted">Hotkeys (1-5)</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Select -->
+<button class="flex items-center gap-2 p-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Chọn (Select)</span>
+</button>
+<!-- Brush -->
+<button class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low hover:bg-surface-highlight text-text-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">brush</span>
+<span>Cọ sơn (Fill)</span>
+</button>
+<!-- Row Generator -->
+<button class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low hover:bg-surface-highlight text-text-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">table_rows</span>
+<span>Kẻ hàng (Row)</span>
+</button>
+<!-- Eraser -->
+<button class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low hover:bg-surface-highlight text-text-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-error">ink_eraser</span>
+<span>Xóa (Eraser)</span>
+</button>
+</div>
+<!-- SMPTE Ruler -->
+<button class="w-full flex items-center justify-between p-2 rounded-lg bg-surface-container-low hover:bg-surface-highlight text-text-secondary font-label-md text-label-md transition-all" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">straighten</span>
+<span>Thước đo góc nhìn SMPTE</span>
+</div>
+<span class="font-code-time text-code-time text-status-info font-bold">36°</span>
+</button>
+</div>
+<!-- Seat Archetypes Palette -->
+<div class="p-space-md rounded-xl bg-surface-base shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-label-lg text-label-lg text-text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">category</span>
+            Phân loại ghế &amp; Hệ số
+          </h2>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Click để chọn</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">Chọn loại ghế bên dưới rồi click hoặc kéo trên lưới khán phòng để gán thuộc tính:</p>
+<div class="flex flex-col gap-space-xs">
+<!-- Standard -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-highlight transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded bg-surface-base shadow-sm flex items-center justify-center font-code-time text-label-sm text-text-secondary font-bold">
+                STD
+              </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-semibold group-hover:text-primary">Ghế Thường (Standard)</span>
+<span class="font-body-sm text-body-sm text-text-muted">Giá cơ sở: 95.000 ₫</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-base text-text-secondary font-code-time text-code-time font-bold shadow-sm">1.0×</span>
+</div>
+<!-- VIP Gold -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-highlight transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded bg-gold-vip/10 shadow-sm flex items-center justify-center text-gold-vip">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-semibold group-hover:text-primary">Ghế VIP (Gold Rake)</span>
+<span class="font-body-sm text-body-sm text-text-muted">Vị trí trung tâm màn ảnh</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-base text-gold-vip font-code-time text-code-time font-bold shadow-sm">1.25×</span>
+</div>
+<!-- Couple / Sweetbox -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-highlight transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-7 rounded bg-secondary-container/20 shadow-sm flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-semibold group-hover:text-primary">Ghế Đôi (Sweetbox)</span>
+<span class="font-body-sm text-body-sm text-text-muted">Kích thước x2 hàng cuối</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-base text-secondary font-code-time text-code-time font-bold shadow-sm">2.2×</span>
+</div>
+<!-- Luxury Recliner -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-highlight transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-7 rounded bg-surface-base shadow-sm flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[16px]">chair</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-semibold group-hover:text-primary">Luxury Recliner</span>
+<span class="font-body-sm text-body-sm text-text-muted">Sofa da chỉnh điện 160°</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-base text-tertiary font-code-time text-code-time font-bold shadow-sm">1.8×</span>
+</div>
+<!-- Wheelchair -->
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-highlight transition-all cursor-pointer flex items-center justify-between group">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded bg-status-info/10 shadow-sm flex items-center justify-center text-status-info">
+<span class="material-symbols-outlined text-[16px]">accessible</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-semibold group-hover:text-primary">Người khuyết tật</span>
+<span class="font-body-sm text-body-sm text-text-muted">Không gian phẳng tiện ích</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-base text-status-info font-code-time text-code-time font-bold shadow-sm">1.0×</span>
+</div>
+</div>
+</div>
+<!-- Infrastructure & Tech Objects -->
+<div class="p-space-md rounded-xl bg-surface-base shadow-sm flex flex-col gap-space-sm">
+<h2 class="font-label-lg text-label-lg text-text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">meeting_room</span>
+          Vật thể kiến trúc &amp; An toàn
+        </h2>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-highlight cursor-pointer flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-status-success/20 text-status-success flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">logout</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-semibold">Exit PCCC</span>
+<span class="font-label-sm text-label-sm text-text-muted">Cửa thoát nạn</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-highlight cursor-pointer flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-status-info/20 text-status-info flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">login</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-semibold">Sảnh vào</span>
+<span class="font-label-sm text-label-sm text-text-muted">Lối vào rạp</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-highlight cursor-pointer flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-text-muted/20 text-text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">space_dashboard</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-semibold">Lối đi kỹ thuật</span>
+<span class="font-label-sm text-label-sm text-text-muted">Aisle Space</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low hover:bg-surface-highlight cursor-pointer flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-variant text-text-muted flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">view_column</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-semibold">Cột chịu lực</span>
+<span class="font-label-sm text-label-sm text-text-muted">Pillar Block</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMN B: INTERACTIVE SEAT CANVAS (Col span 6) -->
+<div class="lg:col-span-6 flex flex-col gap-space-sm">
+<!-- Main Visual Grid Stage -->
+<div class="w-full bg-surface-base rounded-2xl shadow-md p-space-md flex flex-col items-center justify-between min-h-[640px] relative overflow-hidden">
+<!-- Subtle Engineering Grid Watermark Overlay -->
+<div class="absolute inset-0 pointer-events-none opacity-5 bg-[radial-gradient(#1b1b20_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Curved IMAX Laser Screen Visualization -->
+<div class="w-full flex flex-col items-center pt-space-xs z-10">
+<div class="relative w-4/5 max-w-lg flex flex-col items-center">
+<!-- Curved Screen Arc SVG -->
+<svg class="w-full h-12 text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 400 40">
+<defs>
+<lineargradient id="screenGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#c8102e" stop-opacity="0.3"></stop>
+<stop offset="50%" stop-color="#c8102e" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#c8102e" stop-opacity="0.3"></stop>
+</lineargradient>
+</defs>
+<path d="M 10 32 Q 200 6 390 32" stroke="url(#screenGrad)" stroke-linecap="round" stroke-width="4.5"></path>
+<path d="M 10 32 Q 200 6 390 32" stroke="#ffdad8" stroke-dasharray="6 4" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+<div class="flex items-center gap-1.5 -mt-2">
+<span class="material-symbols-outlined text-[14px] text-primary">screen_rotation</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-bold text-primary">MÀN CHIẾU CONG IMAX LASER 24M · DOLBY ATMOS DUAL-ARRAY</span>
+</div>
+<div class="flex items-center gap-4 text-text-muted font-code-time text-[10px] mt-0.5">
+<span>Rake: 1.35m</span>
+<span>·</span>
+<span>FOV: 36° SMPTE Center</span>
+<span>·</span>
+<span>Luminance: 14fL HDR</span>
+</div>
+</div>
+</div>
+<!-- Theater Hall Seat Matrix Container -->
+<div class="w-full my-space-md overflow-x-auto z-10 flex flex-col items-center">
+<!-- Entrance & Exit Markers at Top Flanks -->
+<div class="w-full max-w-[560px] flex items-center justify-between px-2 mb-2">
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-status-success/10 text-status-success font-code-time text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">arrow_back</span>
+<span>EXIT 01 (1.8m PCCC)</span>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-status-info/10 text-status-info font-code-time text-[11px] font-bold">
+<span>SẢNH VÀO CỬA A</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</div>
+</div>
+<!-- THE SEAT GRID (Rows A through M) -->
+<div class="flex flex-col gap-1.5 max-w-[580px] w-full px-2 py-2">
+<!-- ROW A (Standard) -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">A</span>
+<div class="flex items-center gap-1">
+<!-- Block Left (4) -->
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">1</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">2</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">3</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">4</div>
+</div>
+<!-- Aisle 1 -->
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<!-- Block Center (10) -->
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">5</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">6</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">7</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">8</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">9</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">10</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">11</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">12</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">13</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">14</div>
+</div>
+<!-- Aisle 2 -->
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<!-- Block Right (4) -->
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">15</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">16</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">17</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">A</span>
+</div>
+<!-- ROW B (Standard) -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">B</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">1</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">2</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">3</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">5</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">6</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">7</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">8</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">9</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">10</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">11</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">12</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">13</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">15</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">16</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">17</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">B</span>
+</div>
+<!-- ROW C (Standard) -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">C</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">1</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">2</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">3</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">5</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">6</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">7</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">8</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">9</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">10</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">11</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">12</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">13</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">15</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">16</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">17</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">C</span>
+</div>
+<!-- ROW D (With Wheelchair access at flanks) -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">D</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<!-- Wheelchair 1 -->
+<div class="w-5 h-5 rounded-sm bg-status-info/20 text-status-info shadow-sm hover:scale-110 cursor-pointer flex items-center justify-center" title="Ghế Wheelchair D01">
+<span class="material-symbols-outlined text-[13px]">accessible</span>
+</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">2</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">3</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">5</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">6</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">7</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">8</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">9</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">10</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">11</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">12</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">13</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">15</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">16</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">17</div>
+<!-- Wheelchair 2 -->
+<div class="w-5 h-5 rounded-sm bg-status-info/20 text-status-info shadow-sm hover:scale-110 cursor-pointer flex items-center justify-center" title="Ghế Wheelchair D18">
+<span class="material-symbols-outlined text-[13px]">accessible</span>
+</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">D</span>
+</div>
+<!-- SWEET SPOT BOUNDARY (Rows E through I) -->
+<div class="p-1.5 rounded-xl bg-gold-vip/5 relative flex flex-col gap-1.5 shadow-sm">
+<div class="absolute -top-2.5 right-4 px-2 py-0.5 rounded bg-gold-vip text-on-primary font-label-sm text-[10px] font-bold tracking-wider uppercase shadow-sm">
+                IMAX SWEET SPOT ZONE (VIP 1.25×)
+              </div>
+<!-- ROW E -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-gold-vip">E</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">1</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">2</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">3</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">5</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">6</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">7</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">8</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">9</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">10</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">11</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">12</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">13</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">15</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">16</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">17</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-gold-vip">E</span>
+</div>
+<!-- ROW F -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-gold-vip">F</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">1</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">2</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">3</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">5</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">6</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">7</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">8</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">9</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">10</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">11</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">12</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">13</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">15</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">16</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">17</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-gold-vip">F</span>
+</div>
+<!-- ROW G (SELECTED SEATS HIGHLIGHTED: G10 & G11) -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-primary">G</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">1</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">2</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">3</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">5</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">6</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">7</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">8</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">9</div>
+<!-- Selected G10 -->
+<div class="w-5 h-5 rounded-sm bg-primary-container text-on-primary shadow-md scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold animate-pulse">10</div>
+<!-- Selected G11 -->
+<div class="w-5 h-5 rounded-sm bg-primary-container text-on-primary shadow-md scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold animate-pulse">11</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">12</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">13</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">15</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">16</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">17</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-primary">G</span>
+</div>
+<!-- ROW H -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-gold-vip">H</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">1</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">2</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">3</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">5</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">6</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">7</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">8</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">9</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">10</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">11</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">12</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">13</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">15</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">16</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">17</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-gold-vip">H</span>
+</div>
+<!-- ROW I -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-gold-vip">I</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">1</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">2</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">3</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">5</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">6</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">7</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">8</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">9</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">10</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">11</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">12</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">13</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/25 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">15</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">16</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">17</div>
+<div class="w-5 h-5 rounded-sm bg-gold-vip/15 text-gold-vip shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-gold-vip">I</span>
+</div>
+</div>
+<!-- ROW J (Standard Extended) -->
+<div class="flex items-center justify-between text-center pt-1">
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">J</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">1</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">2</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">3</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">5</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">6</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">7</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">8</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">9</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">10</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">11</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">12</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">13</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">15</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">16</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">17</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">J</span>
+</div>
+<!-- ROW K -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">K</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">1</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">2</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">3</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">5</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">6</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">7</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">8</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">9</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">10</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">11</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">12</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">13</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">15</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">16</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">17</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">K</span>
+</div>
+<!-- ROW L -->
+<div class="flex items-center justify-between text-center">
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">L</span>
+<div class="flex items-center gap-1">
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">1</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">2</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">3</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">4</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">5</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">6</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">7</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">8</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">9</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">10</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">11</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">12</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">13</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">14</div>
+</div>
+<div class="w-4 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<div class="flex gap-1">
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">15</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">16</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">17</div>
+<div class="w-5 h-5 rounded-sm bg-surface-container-low shadow-sm hover:scale-110 cursor-pointer font-code-time text-[10px] flex items-center justify-center">18</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-text-muted">L</span>
+</div>
+<!-- ROW M (SWEETBOX / COUPLE SEATS - Double Width) -->
+<div class="flex items-center justify-between text-center pt-2">
+<span class="w-5 font-code-time text-code-time font-bold text-secondary">M</span>
+<div class="flex items-center gap-1.5">
+<!-- 2 Couple Left -->
+<div class="flex gap-1.5">
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M01-02</div>
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M03-04</div>
+</div>
+<div class="w-3 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<!-- 6 Couple Center -->
+<div class="flex gap-1.5">
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M05-06</div>
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M07-08</div>
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M09-10</div>
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M11-12</div>
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M13-14</div>
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M15-16</div>
+</div>
+<div class="w-3 flex justify-center text-text-muted text-[9px] font-code-time">|</div>
+<!-- 2 Couple Right -->
+<div class="flex gap-1.5">
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M17-18</div>
+<div class="w-10 h-5 rounded-md bg-secondary-container/25 text-secondary shadow-sm hover:scale-105 cursor-pointer font-code-time text-[10px] flex items-center justify-center font-bold">M19-20</div>
+</div>
+</div>
+<span class="w-5 font-code-time text-code-time font-bold text-secondary">M</span>
+</div>
+</div>
+<!-- Bottom Emergency Exit & Projection Booth Indicator -->
+<div class="w-full max-w-[560px] flex items-center justify-between px-2 mt-3">
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-status-success/10 text-status-success font-code-time text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+<span>EXIT 02 (PCCC)</span>
+</div>
+<div class="flex items-center gap-1.5 text-text-muted font-code-time text-[11px]">
+<span class="material-symbols-outlined text-[15px]">videocam</span>
+<span>BUỒNG CHIẾU LASER PROJECTOR #01 (DCI SECURE)</span>
+</div>
+</div>
+</div>
+<!-- Canvas Floating Bottom Control Toolbar -->
+<div class="w-full bg-surface-container-low/90 backdrop-blur-md px-space-md py-space-xs rounded-xl shadow-sm flex flex-wrap items-center justify-between gap-space-xs z-20">
+<div class="flex items-center gap-space-xs">
+<button class="p-1 rounded bg-surface-base hover:bg-surface-container text-text-secondary transition-colors" title="Phóng to" type="button">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+<span class="font-code-time text-code-time font-semibold text-text-primary px-1">100%</span>
+<button class="p-1 rounded bg-surface-base hover:bg-surface-container text-text-secondary transition-colors" title="Thu nhỏ" type="button">
+<span class="material-symbols-outlined text-[18px]">zoom_out</span>
+</button>
+<div class="w-px h-4 bg-surface-variant mx-1"></div>
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-surface-base hover:bg-surface-container text-text-secondary font-label-sm text-label-sm transition-colors" title="Căn vừa màn hình" type="button">
+<span class="material-symbols-outlined text-[16px]">fit_screen</span>
+<span>Fit</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input checked="" class="w-3.5 h-3.5 accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-text-secondary font-medium">Hiện mã số ghế</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input checked="" class="w-3.5 h-3.5 accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-text-secondary font-medium">Snap Grid 4px</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input class="w-3.5 h-3.5 accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-text-secondary font-medium">Hiện giá vé</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Quick Tips & Shortcut Banner -->
+<div class="w-full bg-surface-container-low px-space-md py-space-xs rounded-lg flex items-center justify-between text-text-muted font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gold-vip text-[18px]">lightbulb</span>
+<span>Mẹo: Giữ phím <kbd class="px-1.5 py-0.5 rounded bg-surface-base font-code-time text-code-time text-text-primary shadow-xs">Shift</kbd> để quét chọn nhiều ghế liên tiếp; Nhấn <kbd class="px-1.5 py-0.5 rounded bg-surface-base font-code-time text-code-time text-text-primary shadow-xs">Del</kbd> để chuyển thành lối đi.</span>
+</div>
+<span class="font-code-time text-code-time text-text-secondary font-medium">260 Sockets OK</span>
+</div>
+</div>
+<!-- COLUMN C: INSPECTOR & REAL-TIME VALIDATION (Col span 3) -->
+<div class="lg:col-span-3 flex flex-col gap-space-md">
+<!-- Live Seat Counter Card -->
+<div class="p-space-md rounded-xl bg-surface-base shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-label-lg text-label-lg text-text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">analytics</span>
+            Thống kê công suất
+          </h2>
+<span class="font-code-time text-code-time font-bold text-status-success">100% Khả dụng</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero text-headline-lg font-bold text-primary">260</span>
+<span class="font-body-md text-body-md text-text-muted">/ 260 tổng ghế</span>
+</div>
+<!-- Breakdown Progress Bars -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<!-- Standard -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span> Ghế Thường (Standard)
+              </span>
+<span class="font-code-time font-semibold text-text-primary">124 ghế (47.7%)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-text-secondary rounded-full" style="width: 47.7%"></div>
+</div>
+</div>
+<!-- VIP -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-gold-vip"></span> Ghế VIP Sweet Spot
+              </span>
+<span class="font-code-time font-semibold text-gold-vip">112 ghế (43.1%)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gold-vip rounded-full" style="width: 43.1%"></div>
+</div>
+</div>
+<!-- Sweetbox -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Ghế Đôi (Sweetbox)
+              </span>
+<span class="font-code-time font-semibold text-secondary">20 ghế (7.7%)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 7.7%"></div>
+</div>
+</div>
+<!-- Wheelchair -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-info"></span> Xe lăn (Wheelchair)
+              </span>
+<span class="font-code-time font-semibold text-status-info">4 ghế (1.5%)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-status-info rounded-full" style="width: 1.5%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Selected Seat Inspector Panel -->
+<div class="p-space-md rounded-xl bg-surface-base shadow-sm flex flex-col gap-space-sm border-2 border-primary/20">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<h2 class="font-label-lg text-label-lg text-primary font-bold uppercase tracking-wider">Thuộc tính ghế đang chọn</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-highlight text-primary font-code-time text-code-time font-bold">2 Ghế</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-body-sm text-body-sm text-text-muted">Mã vật lý &amp; Tọa độ</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-text-primary">Hàng G · Ghế 10 &amp; 11</span>
+<span class="px-2 py-0.5 rounded bg-gold-vip/15 text-gold-vip font-label-sm text-label-sm font-bold">VIP Sweet Spot</span>
+</div>
+<div class="flex items-center gap-2 font-code-time text-[11px] text-text-muted mt-0.5">
+<span>Matrix: Row 07, Col 10-11</span>
+<span>·</span>
+<span>ID: IMAX-G10-G11</span>
+</div>
+</div>
+<!-- Property Dropdowns & Controls -->
+<div class="flex flex-col gap-space-xs pt-1">
+<label class="font-label-sm text-label-sm text-text-muted">Đổi phân hạng ghế:</label>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low text-text-primary font-body-sm text-body-sm shadow-sm cursor-pointer hover:bg-surface-container">
+<span class="font-semibold text-gold-vip flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+              Ghế VIP (Gold 1.25×)
+            </span>
+<span class="material-symbols-outlined text-[16px] text-text-muted">expand_more</span>
+</div>
+</div>
+<!-- Maintenance Lock Toggle -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-text-primary">Tạm khóa bảo trì</span>
+<span class="font-body-sm text-body-sm text-text-muted leading-tight">Khóa bán vé trên web/app</span>
+</div>
+<div class="w-9 h-5 bg-surface-variant rounded-full p-0.5 cursor-pointer">
+<div class="w-4 h-4 bg-surface-base rounded-full shadow-sm"></div>
+</div>
+</div>
+<!-- Acoustic & Sightline Note -->
+<div class="p-2.5 rounded-lg bg-surface-highlight flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">verified</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-primary">Tọa độ vàng SMPTE 100%</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Góc nhìn trực diện trục chính màn hình IMAX, độ lệch âm học stereo Dolby &lt; 0.02ms.</span>
+</div>
+</div>
+</div>
+<!-- Cinema Safety & Validation Rules Checklist -->
+<div class="p-space-md rounded-xl bg-surface-base shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-label-lg text-label-lg text-text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-status-success">verified_user</span>
+            Kiểm định PCCC &amp; Chuẩn SMPTE
+          </h2>
+<span class="px-2 py-0.5 rounded-full bg-status-success/10 text-status-success font-code-time text-code-time font-bold">4/4 Đạt</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-text-secondary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-status-success text-[18px] shrink-0">check_circle</span>
+<span>Không có ghế lẻ cô lập (No Orphan Seats rule OK).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-status-success text-[18px] shrink-0">check_circle</span>
+<span>Lối thoát hiểm và hành lang PCCC đạt tối thiểu 1.4m.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-status-success text-[18px] shrink-0">check_circle</span>
+<span>Khoảng cách khán đài dốc Stadium Rake (1.35m) chuẩn quốc tế.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-status-success text-[18px] shrink-0">check_circle</span>
+<span>Đầy đủ góc nhìn SMPTE 36° cho trọn vẹn khu Sweet Spot.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low py-space-sm px-margin flex flex-col md:flex-row items-center justify-between text-text-muted font-body-sm text-body-sm shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div><span>HUST Cine Management Suite v4.2 · Kết nối hệ thống SMPTE Server OK</span></div><div class="flex items-center gap-space-md"><span class="text-status-success font-medium flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span>Tất cả dịch vụ hoạt động bình thường</span><span>Bách Khoa, Hai Bà Trưng, Hà Nội</span></div></footer></div>
+  <!-- HUST Cine Dynamic Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+
+</body></html>

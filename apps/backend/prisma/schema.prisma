@@ -1,0 +1,410 @@
+// Prisma Schema for HUST Cine (SQLite Local Database)
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 1. Phân quyền & Người dùng
+model User {
+  id              String         @id @default(uuid())
+  email           String?        @unique
+  phone           String?        @unique
+  passwordHash    String?
+  fullName        String
+  role            String         @default("CUSTOMER") // CUSTOMER, STAFF, MANAGER, ADMIN
+  tierId          String?
+  tier            MembershipTier? @relation(fields: [tierId], references: [id])
+  loyaltyPoints   Int            @default(0)
+  bookings        Booking[]
+  reviews         Review[]
+  favorites       Favorite[]
+  notifications   Notification[]
+  auditLogs       AuditLog[]
+  shifts          StaffShift[]
+  subscriptions   NotifyMeSubscription[]
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+}
+
+model MembershipTier {
+  id              String         @id @default(uuid())
+  name            String         // HUST Silver, Gold, Diamond
+  minPoints       Int            @default(0)
+  discountPercent Float          @default(0.0)
+  users           User[]
+}
+
+// 2. Rạp & Phòng chiếu (5 Loại phòng chuẩn)
+model Cinema {
+  id          String         @id @default(uuid())
+  name        String         // HUST Cine Đại Cồ Việt, Times City,...
+  slug        String         @unique
+  address     String
+  city        String         @default("Hà Nội")
+  phone       String?
+  amenities   String?        // JSON array: ["Parking", "Cafe", "IMAX"]
+  auditoriums Auditorium[]
+  showtimes   Showtime[]
+  bookings    Booking[]
+  createdAt   DateTime       @default(now())
+}
+
+model Auditorium {
+  id               String       @id @default(uuid())
+  cinemaId         String
+  cinema           Cinema       @relation(fields: [cinemaId], references: [id], onDelete: Cascade)
+  code             String       // P01, P02,...
+  name             String       // Phòng 01 (IMAX Laser)
+  type             String       // STANDARD, GRAND, IMAX, LUXURY, PRIVATE
+  capacity         Int
+  bookingMode      String       @default("PER_SEAT") // PER_SEAT, WHOLE_ROOM
+  priceMultiplier  Float        @default(1.0)
+  features         String?      // JSON array
+  seatLayoutConfig String       // JSON cấu trúc ma trận ghế
+  seats            Seat[]
+  showtimes        Showtime[]
+}
+
+model Seat {
+  id            String       @id @default(uuid())
+  auditoriumId  String
+  auditorium    Auditorium   @relation(fields: [auditoriumId], references: [id], onDelete: Cascade)
+  rowCode       String       // A, B, ... M
+  seatNumber    Int          // 1, 2, ... 20
+  seatLabel     String       // G10
+  seatType      String       @default("STANDARD") // STANDARD, VIP, COUPLE, RECLINER, SOFA, WHEELCHAIR
+  isWheelchair  Boolean      @default(false)
+  showtimeSeats ShowtimeSeat[]
+
+  @@unique([auditoriumId, rowCode, seatNumber])
+}
+
+// 3. Phim & Thể loại
+model Movie {
+  id                 String       @id @default(uuid())
+  slug               String       @unique
+  title              String
+  originalTitle      String?
+  synopsis           String
+  durationMinutes    Int
+  releaseDate        DateTime
+  ageRating          String       @default("P") // P, K, T13, T16, T18
+  languages          String       @default("Tiếng Việt")
+  subtitleInfo       String?      @default("Phụ đề tiếng Việt")
+  country            String       @default("Việt Nam")
+  director           String?
+  castList           String?      // JSON array
+  formats            String       @default("[\"2D\"]") // JSON array: ["2D", "3D", "IMAX"]
+  status             String       @default("DRAFT") // DRAFT, COMING_SOON, NOW_SHOWING, ENDED, HIDDEN
+  posterUrl          String?
+  posterWidth        Int?
+  posterHeight       Int?
+  posterBlurhash     String?
+  backdropUrl        String?
+  trailerYoutubeId   String?
+  trailerUrlOriginal String?
+  trailerEmbeddable  Boolean?
+  trailerTitle       String?
+  trailerCheckedAt   DateTime?
+  ratingAvg          Float        @default(0.0)
+  ratingCount        Int          @default(0)
+  genres             MovieGenre[]
+  showtimes          Showtime[]
+  reviews            Review[]
+  favorites          Favorite[]
+  subscriptions      NotifyMeSubscription[]
+  createdBy          String?
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+  deletedAt          DateTime?
+}
+
+model Genre {
+  id     String       @id @default(uuid())
+  name   String       @unique
+  slug   String       @unique
+  movies MovieGenre[]
+}
+
+model MovieGenre {
+  movieId String
+  genreId String
+  movie   Movie @relation(fields: [movieId], references: [id], onDelete: Cascade)
+  genre   Genre @relation(fields: [genreId], references: [id], onDelete: Cascade)
+
+  @@id([movieId, genreId])
+}
+
+// 4. Suất chiếu & Ghế giữ (Atomic Hold)
+model ShowtimeSeries {
+  id         String     @id @default(uuid())
+  daysOfWeek String     // JSON array [1,2,3,4,5]
+  startDate  DateTime
+  endDate    DateTime
+  showtimes  Showtime[]
+}
+
+model Showtime {
+  id              String          @id @default(uuid())
+  movieId         String
+  movie           Movie           @relation(fields: [movieId], references: [id])
+  cinemaId        String
+  cinema          Cinema          @relation(fields: [cinemaId], references: [id])
+  auditoriumId    String
+  auditorium      Auditorium      @relation(fields: [auditoriumId], references: [id])
+  seriesId        String?
+  series          ShowtimeSeries? @relation(fields: [seriesId], references: [id])
+  format          String          @default("2D") // 2D, 3D, IMAX
+  startAt         DateTime
+  endAt           DateTime
+  basePrice       Float
+  isCancelled     Boolean         @default(false)
+  cancelledReason String?
+  showtimeSeats   ShowtimeSeat[]
+  bookings        Booking[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+model ShowtimeSeat {
+  id            String      @id @default(uuid())
+  showtimeId    String
+  showtime      Showtime    @relation(fields: [showtimeId], references: [id], onDelete: Cascade)
+  seatId        String
+  seat          Seat        @relation(fields: [seatId], references: [id], onDelete: Cascade)
+  status        String      @default("AVAILABLE") // AVAILABLE, HELD, SOLD
+  holdUserId    String?
+  holdSessionId String?
+  holdExpiresAt DateTime?
+  bookingSeats  BookingSeat[]
+
+  @@unique([showtimeId, seatId])
+}
+
+// 5. Giá vé, Đơn hàng & Combo Bắp Nước
+model PriceRule {
+  id              String   @id @default(uuid())
+  name            String
+  dayOfWeek       Int?     // 1-7, null = all
+  isHoliday       Boolean  @default(false)
+  roomType        String?  // STANDARD, GRAND, IMAX, LUXURY, PRIVATE
+  seatType        String?  // STANDARD, VIP, COUPLE, RECLINER, SOFA
+  format          String?  // 2D, 3D, IMAX
+  multiplier      Float    @default(1.0)
+  surchargeAmount Float    @default(0.0)
+}
+
+model Combo {
+  id          String         @id @default(uuid())
+  name        String
+  description String?
+  price       Float
+  imageUrl    String?
+  isActive    Boolean        @default(true)
+  items       BookingCombo[]
+}
+
+model Booking {
+  id             String        @id @default(uuid())
+  bookingCode    String        @unique // #HUST-xxxx
+  userId         String?
+  user           User?         @relation(fields: [userId], references: [id])
+  showtimeId     String
+  showtime       Showtime      @relation(fields: [showtimeId], references: [id])
+  cinemaId       String
+  cinema         Cinema        @relation(fields: [cinemaId], references: [id])
+  guestEmail     String?
+  guestPhone     String?
+  guestName      String?
+  totalAmount    Float
+  discountAmount Float         @default(0.0)
+  finalAmount    Float
+  status         String        @default("PENDING") // PENDING, PAID, EXPIRED, CANCELLED, REFUNDED
+  qrTokenSigned  String?
+  qrScannedAt    DateTime?
+  qrScannedBy    String?
+  expiresAt      DateTime
+  bookingSeats   BookingSeat[]
+  bookingCombos  BookingCombo[]
+  payments       Payment[]
+  refunds        Refund[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+model BookingSeat {
+  id             String       @id @default(uuid())
+  bookingId      String
+  booking        Booking      @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  showtimeSeatId String
+  showtimeSeat   ShowtimeSeat @relation(fields: [showtimeSeatId], references: [id])
+  price          Float
+}
+
+model BookingCombo {
+  id        String   @id @default(uuid())
+  bookingId String
+  booking   Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  comboId   String
+  combo     Combo    @relation(fields: [comboId], references: [id])
+  quantity  Int      @default(1)
+  unitPrice Float
+}
+
+// 6. Thanh toán & Hoàn vé
+model Payment {
+  id             String   @id @default(uuid())
+  bookingId      String
+  booking        Booking  @relation(fields: [bookingId], references: [id])
+  method         String   @default("MOCK_GATEWAY") // MOCK_GATEWAY, VNPAY, MOMO, CASH
+  status         String   @default("PENDING") // PENDING, SUCCESS, FAILED, REFUNDED
+  amount         Float
+  transactionRef String?  @unique
+  gatewayPayload String?  // JSON
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Refund {
+  id         String   @id @default(uuid())
+  bookingId  String
+  booking    Booking  @relation(fields: [bookingId], references: [id])
+  amount     Float
+  reason     String
+  approvedBy String?
+  createdAt  DateTime @default(now())
+}
+
+// 7. Khuyến mãi & Voucher
+model Voucher {
+  id             String              @id @default(uuid())
+  code           String              @unique
+  description    String
+  discountPct    Float               @default(0.0)
+  discountAmount Float?
+  minOrderAmount Float               @default(0.0)
+  maxDiscount    Float?
+  validFrom      DateTime
+  validTo        DateTime
+  maxUses        Int                 @default(1000)
+  usedCount      Int                 @default(0)
+  isActive       Boolean             @default(true)
+  redemptions    VoucherRedemption[]
+}
+
+model VoucherRedemption {
+  id        String   @id @default(uuid())
+  voucherId String
+  voucher   Voucher  @relation(fields: [voucherId], references: [id])
+  bookingId String
+  userId    String?
+  createdAt DateTime @default(now())
+}
+
+// 8. Đánh giá, Thông báo & Tin tức
+model Review {
+  id        String   @id @default(uuid())
+  movieId   String
+  movie     Movie    @relation(fields: [movieId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  rating    Int      // 1 - 10
+  comment   String?
+  createdAt DateTime @default(now())
+}
+
+model Favorite {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  movieId   String
+  movie     Movie    @relation(fields: [movieId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([userId, movieId])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  title     String
+  content   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model NotifyMeSubscription {
+  id        String   @id @default(uuid())
+  movieId   String
+  movie     Movie    @relation(fields: [movieId], references: [id])
+  email     String?
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Banner {
+  id       String  @id @default(uuid())
+  title    String
+  imageUrl String
+  linkUrl  String?
+  orderNum Int     @default(0)
+  isActive Boolean @default(true)
+}
+
+model News {
+  id        String   @id @default(uuid())
+  title     String
+  slug      String   @unique
+  summary   String
+  content   String
+  thumbnail String
+  published DateTime @default(now())
+}
+
+model StaffShift {
+  id         String    @id @default(uuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id])
+  startedAt  DateTime  @default(now())
+  endedAt    DateTime?
+  totalSales Float     @default(0.0)
+  totalCash  Float     @default(0.0)
+}
+
+// 9. Hạ tầng cục bộ: DevMail, SystemSetting, AuditLog
+model SystemSetting {
+  key         String   @id
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+}
+
+model DevMail {
+  id        String   @id @default(uuid())
+  recipient String
+  subject   String
+  bodyText  String
+  bodyHtml  String
+  category  String   // OTP, BOOKING_CONFIRM, REMINDER, REFUND, CANCEL
+  createdAt DateTime @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id])
+  action     String   // CREATE_MOVIE, CANCEL_SHOWTIME, REFUND_ORDER,...
+  entityType String
+  entityId   String
+  oldData    String?  // JSON
+  newData    String?  // JSON
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+}

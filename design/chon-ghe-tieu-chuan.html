@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>HUST Cine - Hệ Thống Đặt Vé Phim Số 1</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-container": "#c8102e",
+          "on-primary": "#ffffff",
+          "surface-dim": "#dcd9e0",
+          "gold-vip": "#B8902A",
+          "tertiary-fixed": "#ffdf9b",
+          "background": "#fbf8ff",
+          "secondary-container": "#fd6166",
+          "inverse-on-surface": "#f3eff7",
+          "on-primary-fixed-variant": "#92001c",
+          "on-error": "#ffffff",
+          "error-container": "#ffdad6",
+          "surface-bright": "#fbf8ff",
+          "surface-highlight": "#FDECEF",
+          "status-error": "#B3261E",
+          "outline-variant": "#e5bdbb",
+          "on-secondary-fixed-variant": "#8f0c20",
+          "on-secondary-fixed": "#410007",
+          "surface-base": "#FFFFFF",
+          "surface-container-low": "#f5f2f9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#f0edf4",
+          "on-background": "#1b1b20",
+          "border-subtle": "#E8E0E0",
+          "text-primary": "#1A1A1F",
+          "on-primary-fixed": "#410007",
+          "text-muted": "#8A8A94",
+          "secondary-fixed-dim": "#ffb3b1",
+          "inverse-surface": "#303035",
+          "primary-fixed-dim": "#ffb3b1",
+          "status-info": "#1F6FD1",
+          "tertiary-fixed-dim": "#edc157",
+          "tertiary": "#624900",
+          "status-success": "#1E8E5A",
+          "surface-variant": "#e4e1e8",
+          "on-primary-container": "#ffdad8",
+          "on-tertiary-fixed": "#251a00",
+          "error": "#ba1a1a",
+          "surface": "#fbf8ff",
+          "on-tertiary-container": "#ffdf9b",
+          "surface-tint": "#bf0229",
+          "status-warning": "#D98A00",
+          "on-secondary-container": "#640011",
+          "inverse-primary": "#ffb3b1",
+          "secondary": "#b12a34",
+          "on-error-container": "#93000a",
+          "secondary-fixed": "#ffdad8",
+          "on-surface": "#1b1b20",
+          "surface-container-highest": "#e4e1e8",
+          "surface-container-high": "#eae7ee",
+          "on-tertiary-fixed-variant": "#5b4300",
+          "on-surface-variant": "#5c403f",
+          "text-secondary": "#5B5B66",
+          "on-tertiary": "#ffffff",
+          "primary": "#9e001f",
+          "on-secondary": "#ffffff",
+          "primary-fixed": "#ffdad8",
+          "tertiary-container": "#806000",
+          "outline": "#906f6e",
+          "surface-alt": "#F7F4F4"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Be Vietnam Pro"],
+          "headline-sm": ["Be Vietnam Pro"],
+          "body-sm": ["Be Vietnam Pro"],
+          "display-hero-mobile": ["Be Vietnam Pro"],
+          "code-time": ["Be Vietnam Pro"],
+          "display-hero": ["Be Vietnam Pro"],
+          "body-lg": ["Be Vietnam Pro"],
+          "label-lg": ["Be Vietnam Pro"],
+          "headline-lg": ["Be Vietnam Pro"],
+          "body-md": ["Be Vietnam Pro"],
+          "headline-lg-mobile": ["Be Vietnam Pro"],
+          "label-md": ["Be Vietnam Pro"],
+          "label-sm": ["Be Vietnam Pro"]
+        },
+        "fontSize": {
+          "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+          "display-hero-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+          "code-time": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "display-hero": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script>
+  <!-- HUST Cine Design System Core Assets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+
+</head><body class="bg-surface-base font-body-md text-text-primary antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface-base/95 backdrop-blur-md shadow-[0_1px_8px_rgba(26,26,31,0.06)]"><div class="h-20 w-full max-w-[1280px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg flex-shrink-0"><a class="flex items-center gap-space-sm" data-path="trang-chu" href="#"><img alt="HUST Cine Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xc2DBjIbyU2iCW8pkrtHDbQk3KCXkj2oYeO7QzyUGo-jOvqUf1a1whNKtPGf4iPE9yfgSdydVixM3zDARXjjs7PcLKQLPBofwkxCjkX2geOJ1bxtvahqNZTw0FUp3bWRbXcc1YaF3FISrHqUMmjjU82w35woh-wKiu4_wRSFTppvta_VioXu-DOkftFsqmhMTzyxI58OHFirBwflYeOvmjq8aU8IDDfEDj3uImavJnmNQb-5Q_ei5qjA"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">HUST Cine</span></a></div><div class="hidden xl:flex items-center gap-space-md flex-1 max-w-2xl px-space-md"><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-base">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-alt text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Tìm kiếm phim, rạp chiếu..." type="text"/></div><div class="relative flex-shrink-0"><button class="h-10 px-space-md rounded-lg bg-surface-alt hover:bg-surface-highlight hover:text-primary transition-colors flex items-center gap-space-xs font-label-md text-label-md text-text-secondary" type="button"><span class="material-symbols-outlined text-sm text-primary">location_on</span><span>HUST Cine Đại Cồ Việt</span><span class="material-symbols-outlined text-xs">arrow_drop_down</span></button></div><div class="hidden 2xl:flex items-center gap-space-xs h-10 px-3 rounded-full bg-surface-alt font-code-time text-code-time text-text-secondary flex-shrink-0"><span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span><span>Thứ Tư, 21/10/2026 · 14:32</span></div></div><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center bg-surface-alt rounded-full p-1"><button class="px-2.5 py-1 rounded-full bg-surface-base text-primary font-label-sm text-label-sm shadow-[0_1px_3px_rgba(0,0,0,0.08)]" type="button">VI</button><button class="px-2.5 py-1 rounded-full text-text-muted hover:text-text-primary font-label-sm text-label-sm transition-colors" type="button">EN</button></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex items-center gap-space-xs bg-surface-highlight px-2.5 py-1 rounded-full"><span class="material-symbols-outlined text-gold-vip text-sm">stars</span><span class="font-label-sm text-label-sm text-primary">850 pts</span></div><a class="flex items-center" data-path="tai-khoan" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20 hover:ring-primary-container transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcxI79qWjeicOl3j4uhRuKPIB3vlSXOQAdC6LSR-LuCGDfeDPYKR3J9waACkCeh4cAyzuiwbkYycaOHexznv8gGvGW_tQrkj9aeym1y226sxz2mrhhVlW6_Q5fNjCwh379MkGxh1D1UtasOLSolXZAxzy-i4i43I-OSO7IgyFmHPJ5FcnKEiuNzxcNsrrCd1WvcFsu8Ok0neDM2DAZ9dR3pOm32Yq0GDGnDyjP5grqNNWclkwviJ-s"/></a></div></div></div><div class="w-full bg-surface-base border-t border-border-subtle"><div class="max-w-[1280px] mx-auto px-margin flex items-center justify-between"><nav class="flex items-center gap-space-lg overflow-x-auto" data-active-classes="text-primary font-label-lg border-b-2 border-primary-container py-2.5"><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="trang-chu" href="#">Trang chủ</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="danh-sach-phim" href="#">Phim</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="lich-chieu" href="#">Lịch chiếu</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="rap-va-gia-ve" href="#">Rạp &amp; Giá vé</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="uu-dai" href="#">Ưu đãi</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="phong-private" href="#">Phòng Private</a></nav><div class="xl:hidden flex items-center py-2"><span class="material-symbols-outlined text-text-secondary">search</span></div></div></div></header><main class="w-full pt-28 bg-surface-base flex-1"><div class="flex flex-col w-full">
+<!-- Stepper Breadcrumb Header -->
+<div class="w-full bg-surface-container-low py-4 shadow-sm">
+<div class="max-w-[1280px] mx-auto px-margin flex items-center justify-between">
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+<span>Đổi suất chiếu</span>
+</a>
+</div>
+<!-- 3-Step Flow Tracker -->
+<div class="flex items-center gap-3 sm:gap-6">
+<!-- Step 1: Active -->
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">1</div>
+<span class="font-label-md text-label-md text-primary font-bold">Chọn ghế</span>
+</div>
+<div class="w-8 sm:w-14 h-0.5 bg-surface-dim"></div>
+<!-- Step 2: Pending -->
+<div class="flex items-center gap-2 opacity-60">
+<div class="w-7 h-7 rounded-full bg-surface-base text-text-muted flex items-center justify-center font-label-sm text-label-sm font-semibold">2</div>
+<span class="font-label-md text-label-md text-text-secondary hidden sm:inline">Chọn bắp nước</span>
+</div>
+<div class="w-8 sm:w-14 h-0.5 bg-surface-dim"></div>
+<!-- Step 3: Pending -->
+<div class="flex items-center gap-2 opacity-60">
+<div class="w-7 h-7 rounded-full bg-surface-base text-text-muted flex items-center justify-center font-label-sm text-label-sm font-semibold">3</div>
+<span class="font-label-md text-label-md text-text-secondary hidden sm:inline">Thanh toán</span>
+</div>
+</div>
+<!-- Live Hold Countdown Pill -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-highlight text-primary font-code-time text-code-time font-semibold shadow-sm animate-pulse" id="top-timer">
+<span class="material-symbols-outlined text-base text-primary">hourglass_top</span>
+<span id="countdown-display">09:42</span>
+</div>
+</div>
+</div>
+<!-- Screening Session Context Banner -->
+<div class="w-full bg-surface-base py-4 shadow-sm">
+<div class="max-w-[1280px] mx-auto px-margin flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4 min-w-0">
+<div class="w-12 h-16 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 shadow-sm hidden sm:block">
+<img class="w-full h-full object-cover" data-alt="Official cyberpunk cinematic movie poster for Chien Binh Cong Nghe Ky Nguyen Moi set against dramatic neon red and mechanical circuitry tones in sharp digital rendering style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4fuK0Ov0DsEYGYQ_MGO5yCoMMC1EzN0h-bo3L_EObpGkW8-C0QWVJ_VSugUpkz32YKbPD6oZ177Rov1sQ1SeMKnzMz--BF7P2mVVcu7dT_t_dAZmz947mTP6zU59odTSskKD9uDrjjgFJWO6WGcLtzz-PNvvxhC-cgfjkroSIqwKbMCE6GlLPiuQK_j6_UQpWtaOBO6VNYyle6gygjqQVehMeARumpng-OTmWYymPOvoJQ-tjGrPs"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded bg-status-error text-on-error font-label-sm text-label-sm uppercase tracking-wider font-bold">T16</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-text-secondary">Phòng Thường · Phòng 03</span>
+<span class="px-2 py-0.5 rounded bg-surface-highlight text-primary font-label-sm text-label-sm font-semibold">2D Digital</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">surround_sound</span> Dolby Atmos 7.1
+            </span>
+</div>
+<h1 class="font-headline-sm text-headline-sm text-text-primary truncate">Chiến Binh Công Nghệ: Kỷ Nguyên Mới</h1>
+<div class="flex items-center gap-3 text-text-secondary font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">location_on</span> HUST Cine Đại Cồ Việt</span>
+<span class="text-text-muted">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">schedule</span> Thứ Tư, 21/10/2026 · 19:30 - 21:38</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden md:block">
+<div class="font-label-sm text-label-sm text-text-muted uppercase">Tổng tạm tính</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold" id="header-total">250.000đ</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Workspace: Seat Matrix & Side Ticket Info -->
+<div class="w-full bg-surface-alt py-8">
+<div class="max-w-[1280px] mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left / Center: Interactive Seat Canvas (8 cols) -->
+<div class="lg:col-span-8 flex flex-col bg-surface-base rounded-xl p-6 sm:p-8 shadow-sm overflow-hidden">
+<!-- Screen Arc Projection Area -->
+<div class="relative w-full flex flex-col items-center mb-10 pt-2">
+<!-- Screen Curvature SVG -->
+<div class="w-full max-w-xl h-14 relative flex items-center justify-center">
+<svg class="w-full h-full overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 600 50">
+<defs>
+<lineargradient id="screenBeam" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#C8102E" stop-opacity="0.3"></stop>
+<stop offset="40%" stop-color="#C8102E" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#C8102E" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="arcGlow" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#9E001F" stop-opacity="0.2"></stop>
+<stop offset="25%" stop-color="#C8102E" stop-opacity="0.9"></stop>
+<stop offset="50%" stop-color="#FD6166" stop-opacity="1"></stop>
+<stop offset="75%" stop-color="#C8102E" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#9E001F" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<!-- Projection light cone polygon -->
+<polygon fill="url(#screenBeam)" points="50,15 550,15 590,50 10,50"></polygon>
+<!-- Screen curve path -->
+<path d="M 30,22 Q 300,2 570,22" fill="none" stroke="url(#arcGlow)" stroke-linecap="round" stroke-width="4.5"></path>
+<path d="M 40,24 Q 300,5 560,24" fill="none" stroke="#C8102E" stroke-dasharray="4 4" stroke-opacity="0.2" stroke-width="1.5"></path>
+</svg>
+<!-- Luminous glow highlight behind screen label -->
+<div class="absolute top-2 inset-x-0 flex flex-col items-center justify-center">
+<span class="font-label-sm text-label-sm tracking-[0.25em] text-primary uppercase font-bold drop-shadow-sm">MÀN HÌNH / SCREEN</span>
+<span class="font-body-sm text-[10px] text-text-muted mt-0.5 tracking-wider font-code-time">DOLBY ATMOS HIGH PRECISION CANVAS</span>
+</div>
+</div>
+</div>
+<!-- Seat Grid Container with Horizontal Scroll fallback on tiny screens -->
+<div class="w-full overflow-x-auto pb-4">
+<div class="min-w-[620px] mx-auto flex flex-col items-center gap-2.5">
+<!-- Row A (Standard) with Wheelchair accessibility spot -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">A</div>
+<!-- Flank Accessible Space -->
+<div class="w-7 h-7 rounded bg-surface-container flex items-center justify-center text-status-info title='Khu vực xe lăn'" title="Vị trí hỗ trợ xe lăn">
+<span class="material-symbols-outlined text-base">accessible</span>
+</div>
+<!-- Seats 01 - 04 -->
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">01</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">02</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">03</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">04</button>
+<!-- Aisle Space -->
+<div class="w-5"></div>
+<!-- Seats 05 - 08 -->
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">05</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">06</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">07</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">08</button>
+<!-- Aisle Space -->
+<div class="w-5"></div>
+<!-- Seats 09 - 12 -->
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">09</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">10</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">11</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center transition-all shadow-sm" type="button">12</button>
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">A</div>
+</div>
+<!-- Row B (Standard) -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">B</div>
+<div class="w-7 h-7"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">01</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">02</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">03</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">04</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">05</button>
+<!-- Sold Seat: B06 -->
+<div class="w-7 h-7 rounded bg-surface-dim text-text-muted font-code-time text-[10px] flex items-center justify-center cursor-not-allowed relative overflow-hidden" title="Đã bán">
+<span class="material-symbols-outlined text-sm text-text-muted">close</span>
+</div>
+<!-- Sold Seat: B07 -->
+<div class="w-7 h-7 rounded bg-surface-dim text-text-muted font-code-time text-[10px] flex items-center justify-center cursor-not-allowed relative overflow-hidden" title="Đã bán">
+<span class="material-symbols-outlined text-sm text-text-muted">close</span>
+</div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">08</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">09</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">10</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">11</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">12</button>
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">B</div>
+</div>
+<!-- Row C (Standard) -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">C</div>
+<div class="w-7 h-7"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">01</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">02</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">03</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">04</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">05</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">06</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">07</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">08</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">09</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">10</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">11</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">12</button>
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">C</div>
+</div>
+<!-- Row D (Standard) with Held Seats -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">D</div>
+<div class="w-7 h-7"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">01</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">02</button>
+<!-- D03 Held -->
+<div class="w-7 h-7 rounded bg-tertiary-fixed text-status-warning font-code-time text-[10px] flex items-center justify-center cursor-not-allowed shadow-sm" title="Đang giữ chỗ">
+<span class="material-symbols-outlined text-sm">schedule</span>
+</div>
+<!-- D04 Held -->
+<div class="w-7 h-7 rounded bg-tertiary-fixed text-status-warning font-code-time text-[10px] flex items-center justify-center cursor-not-allowed shadow-sm" title="Đang giữ chỗ">
+<span class="material-symbols-outlined text-sm">schedule</span>
+</div>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">05</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">06</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">07</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">08</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">09</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">10</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">11</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">12</button>
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">D</div>
+</div>
+<!-- Row E (Standard) -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">E</div>
+<div class="w-7 h-7"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">01</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">02</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">03</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">04</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">05</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">06</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">07</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">08</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">09</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">10</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">11</button>
+<button class="w-7 h-7 rounded bg-surface-base hover:bg-surface-highlight text-text-secondary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">12</button>
+<div class="w-6 font-code-time text-code-time text-text-muted font-bold text-center">E</div>
+</div>
+<!-- Separator: Standard to VIP transition -->
+<div class="w-full flex items-center justify-center my-1 gap-4">
+<div class="h-px bg-surface-variant flex-1 max-w-xs"></div>
+<span class="font-label-sm text-[10px] uppercase tracking-widest text-gold-vip font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">crown</span> KHU VỰC GHẾ VIP CHÍNH DIỆN
+                </span>
+<div class="h-px bg-surface-variant flex-1 max-w-xs"></div>
+</div>
+<!-- Row F (VIP Seats) - With F06 & F07 SELECTED -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-gold-vip font-bold text-center">F</div>
+<div class="w-7 h-7"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">01</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">02</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">03</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">04</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">05</button>
+<!-- SELECTED SEAT: F06 -->
+<button class="w-7 h-7 rounded bg-primary-container text-on-primary font-code-time text-[10px] font-bold flex items-center justify-center shadow-md scale-105 ring-2 ring-primary-container/30 transition-transform" type="button">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</button>
+<!-- SELECTED SEAT: F07 -->
+<button class="w-7 h-7 rounded bg-primary-container text-on-primary font-code-time text-[10px] font-bold flex items-center justify-center shadow-md scale-105 ring-2 ring-primary-container/30 transition-transform" type="button">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">08</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">09</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">10</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">11</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">12</button>
+<div class="w-6 font-code-time text-code-time text-gold-vip font-bold text-center">F</div>
+</div>
+<!-- Row G (VIP Seats) -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-gold-vip font-bold text-center">G</div>
+<div class="w-7 h-7"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">01</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">02</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">03</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">04</button>
+<div class="w-5"></div>
+<!-- Sold VIP Seats in G Center -->
+<div class="w-7 h-7 rounded bg-surface-dim text-text-muted font-code-time text-[10px] flex items-center justify-center cursor-not-allowed" title="Đã bán">
+<span class="material-symbols-outlined text-sm text-text-muted">close</span>
+</div>
+<div class="w-7 h-7 rounded bg-surface-dim text-text-muted font-code-time text-[10px] flex items-center justify-center cursor-not-allowed" title="Đã bán">
+<span class="material-symbols-outlined text-sm text-text-muted">close</span>
+</div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">07</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">08</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">09</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">10</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">11</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">12</button>
+<div class="w-6 font-code-time text-code-time text-gold-vip font-bold text-center">G</div>
+</div>
+<!-- Row H (VIP Seats) -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-gold-vip font-bold text-center">H</div>
+<div class="w-7 h-7"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">01</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">02</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">03</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">04</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">05</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">06</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">07</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">08</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">09</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">10</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">11</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">12</button>
+<div class="w-6 font-code-time text-code-time text-gold-vip font-bold text-center">H</div>
+</div>
+<!-- Row I (VIP Seats) -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-gold-vip font-bold text-center">I</div>
+<div class="w-7 h-7"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">01</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">02</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">03</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">04</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">05</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">06</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">07</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">08</button>
+<div class="w-5"></div>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">09</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">10</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">11</button>
+<button class="w-7 h-7 rounded bg-tertiary-fixed-dim/20 hover:bg-tertiary-fixed text-text-primary font-code-time text-[10px] font-semibold flex items-center justify-center shadow-sm" type="button">12</button>
+<div class="w-6 font-code-time text-code-time text-gold-vip font-bold text-center">I</div>
+</div>
+<!-- Separator: VIP to Sweetbox transition -->
+<div class="w-full flex items-center justify-center my-1 gap-4">
+<div class="h-px bg-surface-variant flex-1 max-w-xs"></div>
+<span class="font-label-sm text-[10px] uppercase tracking-widest text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">favorite</span> GHẾ ĐÔI SWEETBOX CUỐI PHÒNG
+                </span>
+<div class="h-px bg-surface-variant flex-1 max-w-xs"></div>
+</div>
+<!-- Row J (Couple Seats - 6 double-width units = 12 seats) -->
+<div class="flex items-center gap-2 w-full justify-center">
+<div class="w-6 font-code-time text-code-time text-primary font-bold text-center">J</div>
+<div class="w-7 h-7"></div>
+<!-- Sweetbox Pair 01-02 -->
+<button class="w-[66px] h-7 rounded-full bg-secondary-fixed hover:bg-primary-container hover:text-on-primary text-primary font-code-time text-[10px] font-semibold flex items-center justify-center gap-1 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-xs">favorite</span>
+<span>J01-02</span>
+</button>
+<!-- Sweetbox Pair 03-04 -->
+<button class="w-[66px] h-7 rounded-full bg-secondary-fixed hover:bg-primary-container hover:text-on-primary text-primary font-code-time text-[10px] font-semibold flex items-center justify-center gap-1 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-xs">favorite</span>
+<span>J03-04</span>
+</button>
+<div class="w-5"></div>
+<!-- Sweetbox Pair 05-06 -->
+<button class="w-[66px] h-7 rounded-full bg-secondary-fixed hover:bg-primary-container hover:text-on-primary text-primary font-code-time text-[10px] font-semibold flex items-center justify-center gap-1 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-xs">favorite</span>
+<span>J05-06</span>
+</button>
+<!-- Sweetbox Pair 07-08 (Sold) -->
+<div class="w-[66px] h-7 rounded-full bg-surface-dim text-text-muted font-code-time text-[10px] font-semibold flex items-center justify-center gap-1 cursor-not-allowed">
+<span class="material-symbols-outlined text-xs">close</span>
+<span>J07-08</span>
+</div>
+<div class="w-5"></div>
+<!-- Sweetbox Pair 09-10 -->
+<button class="w-[66px] h-7 rounded-full bg-secondary-fixed hover:bg-primary-container hover:text-on-primary text-primary font-code-time text-[10px] font-semibold flex items-center justify-center gap-1 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-xs">favorite</span>
+<span>J09-10</span>
+</button>
+<!-- Sweetbox Pair 11-12 -->
+<button class="w-[66px] h-7 rounded-full bg-secondary-fixed hover:bg-primary-container hover:text-on-primary text-primary font-code-time text-[10px] font-semibold flex items-center justify-center gap-1 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-xs">favorite</span>
+<span>J11-12</span>
+</button>
+<div class="w-6 font-code-time text-code-time text-primary font-bold text-center">J</div>
+</div>
+</div>
+</div>
+<!-- Comprehensive Visual Legend Bar -->
+<div class="mt-8 pt-6 bg-surface-base rounded-xl">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+<!-- Available Standard -->
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-base shadow-sm flex items-center justify-center text-[10px] font-code-time text-text-muted">A</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary">Ghế Thường</span>
+<span class="font-body-sm text-[11px] text-text-secondary">95.000đ</span>
+</div>
+</div>
+<!-- VIP -->
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-tertiary-fixed-dim/30 shadow-sm flex items-center justify-center text-[10px] font-code-time text-gold-vip font-bold">
+<span class="material-symbols-outlined text-xs">crown</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary">Ghế VIP</span>
+<span class="font-body-sm text-[11px] text-text-secondary">125.000đ</span>
+</div>
+</div>
+<!-- Sweetbox Couple -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-6 rounded-full bg-secondary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xs">favorite</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary">Ghế Đôi</span>
+<span class="font-body-sm text-[11px] text-text-secondary">240.000đ/cặp</span>
+</div>
+</div>
+<!-- Selected -->
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary font-semibold">Đang chọn</span>
+<span class="font-body-sm text-[11px] text-primary">Ghế của bạn</span>
+</div>
+</div>
+<!-- Held -->
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-tertiary-fixed text-status-warning flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary">Đang giữ chỗ</span>
+<span class="font-body-sm text-[11px] text-text-muted">Tạm khóa</span>
+</div>
+</div>
+<!-- Sold -->
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-surface-dim text-text-muted flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">close</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary">Đã mua</span>
+<span class="font-body-sm text-[11px] text-text-muted">Không khả dụng</span>
+</div>
+</div>
+</div>
+<!-- Booking Rules Note -->
+<div class="mt-6 p-3 rounded-lg bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-base text-primary mt-0.5">info</span>
+<div class="font-body-sm text-body-sm text-text-secondary">
+<span class="font-semibold text-text-primary">Quy định chọn ghế:</span> Mỗi giao dịch được chọn tối đa <strong class="text-text-primary">08 ghế</strong>. Vui lòng không để trống một ghế đơn độc lập giữa các vị trí đã chọn hoặc đã mua để đảm bảo quyền lợi khán giả khác.
+              </div>
+</div>
+</div>
+</div>
+<!-- Right: Ticket Stub / Order Summary (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-4 sticky top-24">
+<div class="bg-surface-base rounded-xl overflow-hidden shadow-md">
+<!-- Perforated Stub Header (Authoritative Engineering Crimson) -->
+<div class="bg-[#8E0B1F] text-on-primary p-5 relative overflow-hidden">
+<!-- Technical subtle grid overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 16px 16px;"></div>
+<div class="relative z-10 flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary-fixed font-bold">HUST CINE TICKET</span>
+<h3 class="font-headline-sm text-headline-sm text-on-primary mt-0.5">Thông tin đặt vé</h3>
+</div>
+<span class="material-symbols-outlined text-2xl text-tertiary-fixed">confirmation_number</span>
+</div>
+</div>
+<!-- Stub Perforation Notch Divider -->
+<div class="relative w-full h-4 bg-surface-base flex items-center justify-between">
+<div class="w-4 h-4 rounded-full bg-surface-alt -ml-2"></div>
+<div class="flex-1 border-b-2 border-dashed border-border-subtle mx-2"></div>
+<div class="w-4 h-4 rounded-full bg-surface-alt -mr-2"></div>
+</div>
+<!-- Ticket Body Details -->
+<div class="p-5 flex flex-col gap-4">
+<!-- Movie & Hall Details -->
+<div>
+<span class="font-label-sm text-[11px] uppercase text-text-muted">Phim</span>
+<div class="font-label-lg text-label-lg text-text-primary font-bold mt-0.5">Chiến Binh Công Nghệ: Kỷ Nguyên Mới</div>
+<div class="font-body-sm text-body-sm text-text-secondary mt-1 flex flex-col gap-0.5">
+<span>HUST Cine Đại Cồ Việt · P.03</span>
+<span class="font-semibold text-text-primary">19:30 - Thứ Tư, 21/10/2026</span>
+</div>
+</div>
+<div class="h-px bg-surface-container"></div>
+<!-- Selected Seats List -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-[11px] uppercase text-text-muted">Ghế đã chọn (02)</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Hàng F (VIP)</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-highlight text-primary font-code-time text-code-time font-bold shadow-sm">
+<span class="material-symbols-outlined text-sm">crown</span>
+<span>F06 (VIP)</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-highlight text-primary font-code-time text-code-time font-bold shadow-sm">
+<span class="material-symbols-outlined text-sm">crown</span>
+<span>F07 (VIP)</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container"></div>
+<!-- Price Breakdown -->
+<div class="flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-text-secondary">
+<span>2 × Ghế VIP (125.000đ)</span>
+<span class="font-code-time text-text-primary font-semibold">250.000đ</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary">
+<span>Phí dịch vụ kỹ thuật</span>
+<span class="text-status-success font-medium">Miễn phí</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-lg text-label-lg text-text-primary font-bold">Tổng thanh toán</span>
+<span class="font-headline-sm text-headline-sm text-primary font-extrabold font-code-time">250.000đ</span>
+</div>
+</div>
+<!-- Primary Flow CTA -->
+<div class="pt-2">
+<a class="w-full h-12 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition-all shadow-md group" href="#">
+<span>Tiếp tục - Chọn Combo bắp nước</span>
+<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<p class="text-center font-body-sm text-[11px] text-text-muted mt-2">
+                  Ghế được bảo lưu trong 10 phút để hoàn tất đơn hàng
+                </p>
+</div>
+</div>
+</div>
+<!-- Quick Assistance Card -->
+<div class="bg-surface-base rounded-xl p-4 shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-xl">support_agent</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary font-bold">Cần hỗ trợ chọn chỗ đoàn thể?</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Gọi Hotline <strong class="text-primary font-semibold">1900 2026</strong> để nhận giá ưu đãi sinh viên.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Floating Sticky Checkout Bar (Fixed on mobile screens) -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface-base/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(26,26,31,0.08)] py-3 px-4">
+<div class="flex items-center justify-between gap-3">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1 font-body-sm text-[11px] text-text-secondary truncate">
+<span>02 Ghế:</span>
+<strong class="text-primary font-bold">F06, F07</strong>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary font-extrabold font-code-time">250.000đ</div>
+</div>
+<a class="flex-1 max-w-[200px] h-11 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 shadow-sm" href="#">
+<span>Chọn bắp nước</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+<script>
+    // Simple Interactive Seat Selection & Countdown Simulator
+    (function() {
+      // Countdown Timer Logic
+      let totalSeconds = 9 * 60 + 42;
+      const display = document.getElementById('countdown-display');
+      
+      setInterval(function() {
+        if (totalSeconds <= 0) return;
+        totalSeconds--;
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        if (display) {
+          display.textContent = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+        }
+      }, 1000);
+    })();
+  </script>
+</div></main><footer class="w-full bg-[#8E0B1F] text-on-primary relative overflow-hidden"><div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 24px 24px;"></div><div class="max-w-[1280px] mx-auto px-margin py-space-xl relative z-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-lg text-headline-lg text-on-primary tracking-tight font-extrabold">HUST Cine</span></div><p class="font-body-md text-body-md text-on-primary-container max-w-sm">Hệ thống rạp chiếu phim hiện đại kỹ thuật số thuộc Trường Đại học Bách Khoa Hà Nội, kết hợp kỹ thuật trình chiếu đỉnh cao và không gian điện ảnh tiên phong.</p><div class="flex flex-col gap-space-xs mt-space-sm"><span class="font-label-md text-label-md text-tertiary-fixed font-semibold">ĐĂNG KÝ NHẬN TIN KHUYẾN MÃI</span><div class="flex gap-space-xs max-w-md"><input class="flex-1 h-11 px-space-md rounded-lg bg-surface-base text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none" placeholder="Nhập email của bạn..." type="email"/><button class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-lg text-label-lg transition-colors shadow-sm" type="button">Gửi</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Chính sách &amp; Quy định</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-dieu-khoan" href="#">Điều khoản sử dụng</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-thanh-toan" href="#">Chính sách thanh toán</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-bao-mat" href="#">Chính sách bảo mật</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-hoan-ve" href="#">Chính sách hoàn vé</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Cụm rạp HUST Cine</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Đại Cồ Việt (Hai Bà Trưng)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Times City (Minh Khai)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Cầu Giấy (Xuân Thủy)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="phong-private" href="#">HUST Cine Studio Lab Private</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Liên hệ &amp; Hỗ trợ</span><span class="font-body-sm text-body-sm text-on-primary-container">Hotline: 1900 2026 (8:00 - 23:00)</span><span class="font-body-sm text-body-sm text-on-primary-container">Email: contact@hustcine.edu.vn</span><span class="font-body-sm text-body-sm text-on-primary-container">Địa chỉ: 1 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội</span><div class="flex items-center gap-space-sm pt-space-xs"><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">share</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">public</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">mail</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">forum</span></div></div></div><div class="pt-space-lg border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-primary-container">© 2026 HUST Cine. Hệ thống rạp chiếu phim hiện đại kỹ thuật số.</p><p class="font-body-sm text-body-sm text-on-primary-container/80">Đại học Bách Khoa Hà Nội • Viện Điện ảnh &amp; Kỹ thuật Số</p></div></div></footer>
+  <!-- HUST Cine Dynamic Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+
+</body></html>

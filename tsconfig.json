@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "skipLibCheck": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/backend"
+    },
+    {
+      "path": "./apps/frontend"
+    }
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "plugins",
+    ".agents",
+    "design"
+  ]
+}

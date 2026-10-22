@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary":"#ffffff","on-error-container":"#93000a","tertiary-container":"#806000","on-error":"#ffffff","surface-container-lowest":"#ffffff","secondary-fixed":"#ffdad8","on-primary":"#ffffff","on-tertiary-container":"#ffdf9b","inverse-primary":"#ffb3b1","surface-container-low":"#f5f2f9","text-muted":"#8A8A94","on-surface":"#1b1b20","surface-dim":"#dcd9e0","surface":"#fbf8ff","on-primary-container":"#ffdad8","primary-fixed":"#ffdad8","surface-highlight":"#FDECEF","on-secondary-fixed":"#410007","primary-fixed-dim":"#ffb3b1","primary":"#9e001f","outline":"#906f6e","gold-vip":"#B8902A","inverse-on-surface":"#f3eff7","surface-alt":"#F7F4F4","error":"#ba1a1a","text-secondary":"#5B5B66","surface-tint":"#bf0229","text-primary":"#1A1A1F","status-error":"#B3261E","on-tertiary":"#ffffff","on-primary-fixed-variant":"#92001c","tertiary-fixed-dim":"#edc157","status-warning":"#D98A00","on-tertiary-fixed-variant":"#5b4300","outline-variant":"#e5bdbb","on-background":"#1b1b20","surface-bright":"#fbf8ff","inverse-surface":"#303035","primary-container":"#c8102e","surface-container-highest":"#e4e1e8","surface-variant":"#e4e1e8","secondary-container":"#fd6166","surface-container":"#f0edf4","tertiary":"#624900","border-subtle":"#E8E0E0","on-tertiary-fixed":"#251a00","error-container":"#ffdad6","status-info":"#1F6FD1","surface-base":"#FFFFFF","surface-container-high":"#eae7ee","status-success":"#1E8E5A","on-surface-variant":"#5c403f","tertiary-fixed":"#ffdf9b","secondary-fixed-dim":"#ffb3b1","on-secondary-container":"#640011","secondary":"#b12a34","background":"#fbf8ff","on-primary-fixed":"#410007","on-secondary-fixed-variant":"#8f0c20"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","space-xs":"0.25rem","space-xl":"2.5rem","gutter":"1.5rem","margin":"2rem","space-lg":"1.5rem","space-sm":"0.5rem","margin-mobile":"1rem","gutter-mobile":"0.75rem"},"fontFamily":{"headline-lg":["Be Vietnam Pro"],"code-time":["Be Vietnam Pro"],"body-lg":["Be Vietnam Pro"],"headline-lg-mobile":["Be Vietnam Pro"],"headline-sm":["Be Vietnam Pro"],"display-hero":["Be Vietnam Pro"],"headline-md":["Be Vietnam Pro"],"body-md":["Be Vietnam Pro"],"label-lg":["Be Vietnam Pro"],"label-md":["Be Vietnam Pro"],"display-hero-mobile":["Be Vietnam Pro"],"body-sm":["Be Vietnam Pro"],"label-sm":["Be Vietnam Pro"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"code-time":["13px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"display-hero":["44px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"display-hero-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"800"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script>
+  <!-- HUST Cine Design System Core Assets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+
+</head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">videocam</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">HUST CINE</span><span class="font-label-sm text-label-sm text-text-secondary tracking-widest uppercase">Portal Admin</span></div></div><div class="px-space-md py-space-sm"><span class="font-label-sm text-label-sm text-text-muted px-space-sm uppercase tracking-wider">Điều hành rạp</span></div><nav class="flex-1 px-space-sm space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-bold shadow-[0_2px_6px_-1px_rgba(26,26,31,0.04)]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="quan-ly-phim" href="#"><span class="material-symbols-outlined text-[20px]">movie</span><span>Quản lý Phim</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="rap-va-phong-chieu" href="#"><span class="material-symbols-outlined text-[20px]">meeting_room</span><span>Rạp &amp; Phòng chiếu</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="suat-chieu" href="#"><span class="material-symbols-outlined text-[20px]">schedule</span><span>Suất chiếu</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="bang-gia-ve-va-ghe" href="#"><span class="material-symbols-outlined text-[20px]">event_seat</span><span>Bảng giá vé &amp; Ghế</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="combo-va-dich-vu" href="#"><span class="material-symbols-outlined text-[20px]">fastfood</span><span>Combo &amp; Dịch vụ</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="khuyen-mai-va-voucher" href="#"><span class="material-symbols-outlined text-[20px]">confirmation_number</span><span>Khuyến mãi &amp; Voucher</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="don-hang-va-giao-dich" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Đơn hàng &amp; Giao dịch</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="khach-hang-va-thanh-vien" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Khách hàng &amp; Thành viên</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="bao-cao-doanh-thu" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span>Báo cáo doanh thu</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cai-dat-he-thong" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Cài đặt hệ thống</span></a></nav></div><div class="p-space-md bg-surface-container-lowest m-space-sm rounded-xl"><div class="flex items-center gap-space-sm"><div class="w-2.5 h-2.5 rounded-full bg-status-success animate-pulse"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-bold">Cụm máy chủ HUST-C1</span><span class="font-code-time text-code-time text-text-secondary">SMPTE DCI Online</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[20px]">search</span><input class="w-full h-11 pl-10 pr-space-md rounded-lg bg-surface-alt font-body-md text-body-md text-on-surface placeholder:text-text-muted focus:outline-none focus:bg-surface-base transition-colors" placeholder="Tìm kiếm phim, suất chiếu, khách hàng, mã vé..." type="text"/></div><div class="flex items-center gap-space-xs bg-surface-alt px-space-md py-space-xs rounded-lg whitespace-nowrap"><span class="material-symbols-outlined text-primary text-[18px]">store</span><span class="font-label-md text-label-md text-on-surface font-semibold">HUST Cine Đại Cồ Việt</span><span class="material-symbols-outlined text-text-secondary text-[16px]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-alt text-text-secondary shadow-sm"><span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span><span class="font-code-time text-code-time font-medium">GMT+7 14:32:08 (LIVE)</span></div><button class="relative p-space-xs rounded-lg text-text-secondary hover:text-on-surface hover:bg-surface-alt transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-bold leading-tight">Nguyễn Tuấn Kiệt</span><span class="font-label-sm text-label-sm text-text-secondary leading-tight">Quản lý cụm rạp</span></div></div></div></header><main class="relative pt-16 bg-surface flex-1 w-full px-space-lg py-space-lg"><div class="flex flex-col w-full space-y-space-lg">
+<!-- 1. HEADER & NAVIGATION BREADCRUMB -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col space-y-space-xs">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-space-xs text-text-muted font-body-sm text-body-sm">
+<span class="hover:text-primary transition-colors cursor-pointer">Hệ thống quản trị</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Quản lý F&amp;B</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-text-primary font-semibold">Danh mục Combo &amp; Dịch vụ bắp nước</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-code-time text-code-time text-text-secondary ml-1">Suite v2.4</span>
+</nav>
+<!-- Title & Live Tag -->
+<div class="flex flex-wrap items-center gap-space-sm pt-1">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+          Quản Lý Combo Bắp Nước &amp; Dịch Vụ Ăn Uống
+        </h1>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase tracking-wider font-bold">A7</span>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-status-success font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-status-success animate-ping"></span>
+<span>POS &amp; Kiosk Online Sync</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-text-secondary max-w-3xl">
+        Thiết lập danh mục sản phẩm, định lượng nguyên vật liệu (BoM), điều chỉnh giá bán và theo dõi tồn kho theo thời gian thực tại các quầy Concession cụm HUST.
+      </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="h-11 px-space-md rounded-lg bg-surface-base hover:bg-surface-alt text-text-primary font-label-md text-label-md shadow-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">inventory_2</span>
+<span>Kiểm kê &amp; Nhập hàng</span>
+</button>
+<button class="h-11 px-space-md rounded-lg bg-surface-base hover:bg-surface-alt text-text-primary font-label-md text-label-md shadow-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">bar_chart</span>
+<span>Báo cáo doanh thu F&amp;B</span>
+</button>
+<button class="h-11 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-md transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Thêm Món / Combo Mới</span>
+</button>
+</div>
+</div>
+<!-- 2. KPI OPERATIONAL SUMMARY CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-base p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Doanh thu F&amp;B Hôm Nay</span>
+<div class="w-8 h-8 rounded-lg bg-surface-highlight flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="font-headline-lg text-headline-lg text-text-primary font-extrabold tracking-tight">58.420.000 <span class="font-headline-sm text-headline-sm text-text-muted">₫</span></div>
+<div class="flex items-center gap-1.5 mt-1 font-label-sm text-label-sm text-status-success">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="font-bold">+14.2%</span>
+<span class="text-text-muted font-normal">so với hôm qua</span>
+</div>
+</div>
+<div class="pt-2 bg-surface-alt/60 -mx-space-md -mb-space-md px-space-md py-2 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-secondary">Tỷ trọng rạp:</span>
+<span class="font-label-sm text-label-sm text-text-primary font-bold">29.1% tổng doanh thu</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-base p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Tỷ Lệ Đính Kèm Vé (Attach Rate)</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-status-info">
+<span class="material-symbols-outlined text-[18px]">local_activity</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-text-primary font-extrabold tracking-tight">42.8%</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-status-success font-label-sm text-label-sm font-bold">Mục tiêu 40% (Đạt)</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2.5 overflow-hidden">
+<div class="bg-status-success h-full rounded-full" style="width: 85.6%;"></div>
+</div>
+</div>
+<div class="pt-2 bg-surface-alt/60 -mx-space-md -mb-space-md px-space-md py-2 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-secondary">Tần suất trung bình:</span>
+<span class="font-label-sm text-label-sm text-text-primary font-bold">1.4 món / giao dịch</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-base p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Bán Chạy Nhất (Top Performer)</span>
+<div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-gold-vip">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="font-headline-sm text-headline-sm text-text-primary font-bold truncate">Combo HUST Double</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-code-time text-code-time text-primary font-bold">528 phần</span>
+<span class="text-text-muted font-body-sm text-body-sm">đã xuất bán hôm nay</span>
+</div>
+</div>
+<div class="pt-2 bg-surface-alt/60 -mx-space-md -mb-space-md px-space-md py-2 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-muted truncate">Bắp phô mai 82oz + 2 Pepsi 32oz</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted">chevron_right</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-base p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Cảnh Báo Tồn Kho Quầy</span>
+<div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-status-error">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+</div>
+<div class="my-space-sm">
+<div class="flex items-center gap-2">
+<span class="font-headline-lg text-headline-lg text-status-error font-extrabold tracking-tight">03</span>
+<span class="font-body-sm text-body-sm text-text-secondary leading-tight">Mặt hàng chạm ngưỡng tối thiểu</span>
+</div>
+<div class="flex items-center gap-1.5 mt-2 font-code-time text-code-time text-status-warning">
+<span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span>
+<span>Bột phô mai, Xúc xích, Ly Dune</span>
+</div>
+</div>
+<div class="pt-2 bg-surface-alt/60 -mx-space-md -mb-space-md px-space-md py-2 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-primary font-medium cursor-pointer hover:underline">Điều chuyển từ kho trung tâm</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- 3. FILTER TABS & SEARCH BAR -->
+<div class="bg-surface-base rounded-xl p-space-md shadow-sm space-y-space-md">
+<!-- Category Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 scrollbar-none">
+<button class="px-space-md py-2 rounded-lg bg-surface-highlight text-primary font-label-md text-label-md whitespace-nowrap shadow-sm">
+        Tất cả mặt hàng (32)
+      </button>
+<button class="px-space-md py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-alt font-label-md text-label-md whitespace-nowrap transition-colors">
+        Combo ưu đãi (8)
+      </button>
+<button class="px-space-md py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-alt font-label-md text-label-md whitespace-nowrap transition-colors">
+        Bắp rang bơ (Popcorn) (6)
+      </button>
+<button class="px-space-md py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-alt font-label-md text-label-md whitespace-nowrap transition-colors">
+        Nước ngọt &amp; Trà giải khát (10)
+      </button>
+<button class="px-space-md py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-alt font-label-md text-label-md whitespace-nowrap transition-colors">
+        Snack &amp; Đồ ăn nóng (5)
+      </button>
+<button class="px-space-md py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-alt font-label-md text-label-md whitespace-nowrap transition-colors">
+        Vật phẩm lưu niệm &amp; Ly Cinema (3)
+      </button>
+</div>
+<!-- Search & Quick Filters -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-sm pt-2">
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-space-md rounded-lg bg-surface-alt text-text-primary font-body-md text-body-md placeholder:text-text-muted focus:outline-none focus:bg-surface-base transition-all" placeholder="Tìm theo tên món, mã SKU, barcode..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<!-- Cinema Filter -->
+<div class="flex items-center gap-1.5 px-3 h-10 rounded-lg bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">location_on</span>
+<span>HUST Cine Đại Cồ Việt</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted">arrow_drop_down</span>
+</div>
+<!-- Status Filter -->
+<div class="flex items-center gap-1.5 px-3 h-10 rounded-lg bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="text-text-secondary">Trạng thái:</span>
+<span class="font-semibold">Đang mở bán</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted">arrow_drop_down</span>
+</div>
+<!-- Channel Filter -->
+<div class="flex items-center gap-1.5 px-3 h-10 rounded-lg bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="text-text-secondary">Kênh:</span>
+<span class="font-semibold">Tất cả kênh (POS, Web, Kiosk)</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted">arrow_drop_down</span>
+</div>
+<button class="h-10 w-10 flex items-center justify-center rounded-lg bg-surface-alt text-text-secondary hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4. MAIN 2-COLUMN LAYOUT (70% Table & Inventory / 30% Config Panel) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (70% ~ 8 cols xl: 8 or 9) -->
+<div class="lg:col-span-8 space-y-space-md">
+<!-- PRODUCT TABLE CARD -->
+<div class="bg-surface-base rounded-xl shadow-sm overflow-hidden">
+<div class="px-space-md py-space-sm flex items-center justify-between bg-surface-alt/40">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary">Danh Sách Mặt Hàng F&amp;B</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-code-time text-code-time text-text-secondary">7 món hiển thị</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-alt">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-alt">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+</div>
+</div>
+<!-- Table Responsive -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md">Mặt hàng &amp; Mã SKU</th>
+<th class="py-3 px-space-sm">Size &amp; Vị</th>
+<th class="py-3 px-space-sm text-right">Vốn → Giá bán</th>
+<th class="py-3 px-space-md">Tồn kho quầy</th>
+<th class="py-3 px-space-sm text-center">Kênh</th>
+<th class="py-3 px-space-sm text-center">Mở bán</th>
+<th class="py-3 px-space-md text-right">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-body-md text-body-md">
+<!-- Item 1: Combo HUST Solo -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm flex-shrink-0" data-alt="Combo bắp rang bơ giòn rụm và ly nước ngọt mát lạnh với logo rạp HUST Cine màu đỏ, phong cách chụp studio ẩm thực sắc nét, ánh sáng ấm áp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTorcvHGlbBDoIq04yYSqZPrNQtJ_eAFwedjQdiSltf4YxIcSITDHEkubGGNwpTiKPir-UuLYjxaP81Xg53uVsW3wQv_pwdzLMxvkhQeLzNa6doOHtOoIlHKXRW_A0XZeibaywL0ThtJ9fTVK8oXd7WqhWN6H5RgDAxYHRZhQ-PABqqfcS19UrvWcNoxff9jPSyZx-LT7jR1E4TtO2KPyW4y3zHx3qW1EvjFUcCp5LFL9YJiziQyYu"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-text-primary font-bold truncate">Combo HUST Solo</span>
+<span class="px-1.5 py-0.5 rounded bg-red-50 text-primary font-label-sm text-label-sm font-bold">Bán Chạy Nhất</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted truncate">1 Bắp ngọt 60oz + 1 Nước 32oz</span>
+<span class="font-code-time text-code-time text-text-secondary">SKU: CB-SOLO-01</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-primary">Size M (60oz)</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Vị Ngọt / Mặn</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-primary font-bold">85.000 ₫</span>
+<span class="font-code-time text-code-time text-text-muted">Vốn: 18.000 ₫</span>
+<span class="font-label-sm text-label-sm text-status-success font-semibold">Margin 78.8%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-primary font-bold">210 phần</span>
+<span class="text-status-success font-semibold">An toàn</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-status-success h-full rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<div class="flex items-center justify-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary" title="Web/App">smartphone</span>
+<span class="material-symbols-outlined text-[16px] text-primary" title="Kiosk">touch_app</span>
+<span class="material-symbols-outlined text-[16px] text-primary" title="POS">point_of_sale</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<input checked="" class="w-4 h-4 text-primary rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary" title="Chỉnh sửa">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary" title="Công thức BoM">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary" title="Tùy chọn khác">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 2: Combo HUST Double -->
+<tr class="hover:bg-surface-alt/50 transition-colors bg-surface-highlight/20">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm flex-shrink-0" data-alt="Combo bắp rang bơ cỡ lớn đựng trong xô đỏ HUST Cine kèm 2 ly soda lớn, background rạp chiếu phim mờ ảo lung linh, chất lượng cao phong cách thương mại" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCvJUp-Qlhd0e33y4A5xgGyhj5A5JN_xJLdaaFPRlLOPOHCDm_eO-jsUXcSVbVv4HcfyAF-0w2QkeWxbUuGtMjUIzdnX80FN8G3b1oJqs3z8MmuZyw5ajrsBRrwoXn1HFyvkcNQbLGovwEdUvgzce8KciW1pvNRi5t7CTQtLmpxioLAsMUy3mq7LBPUljYIGyD1We6m_nPR0dQBPjg5bRRkbtH0lkc_STPONqCHeF6GIzu-4FqIRPa"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-text-primary font-bold truncate">Combo HUST Double</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">Khuyên Dùng</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted truncate">1 Bắp lớn 82oz phô mai/caramel + 2 Nước 32oz</span>
+<span class="font-code-time text-code-time text-text-secondary">SKU: CB-DBL-02</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-primary">Size L (82oz)</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Tùy chọn 2 vị</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-primary font-bold">115.000 ₫</span>
+<span class="font-code-time text-code-time text-text-muted">Vốn: 26.000 ₫</span>
+<span class="font-label-sm text-label-sm text-status-success font-semibold">Margin 77.4%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-primary font-bold">88 phần</span>
+<span class="text-status-success font-semibold">An toàn</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-status-success h-full rounded-full" style="width: 55%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<div class="flex items-center justify-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary" title="Web/App">smartphone</span>
+<span class="material-symbols-outlined text-[16px] text-primary" title="Kiosk">touch_app</span>
+<span class="material-symbols-outlined text-[16px] text-primary" title="POS">point_of_sale</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<input checked="" class="w-4 h-4 text-primary rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary" title="Chỉnh sửa">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary" title="Công thức BoM">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary" title="Tùy chọn khác">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 3: Combo Private Lab VIP -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm flex-shrink-0" data-alt="Hộp combo VIP rạp chiếu phim sang trọng gồm chai vang mini cao cấp, bắp truffle đựng trong thố gốm mạ vàng và đĩa hạt điều quả óc chó thượng hạng trên nền nhung đỏ thẫm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByq-7OjLx0TUhNoh7EgSf_76u5QW1FzghS6_Xn47h9aqbAoJIZgQJiN4Rbl_Hxm66P6yR7JWk44VY3njFGDWTJFJt9rJ_o0ivA1H8OkphzXIaHYMp8JHUwAM_ze5I7jSBl9dkXHrR37ct_sn33YYQz33gMmLbtOjRvKKlQ-EARWY_9tTBa5unr0Y7x_ccjdyYrMd9--lXkPsJh_FVsNQlOeMzCPruTn2X490uSondcjYEC91vl1G8g"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-text-primary font-bold truncate">Combo Private Lab VIP</span>
+<span class="px-1.5 py-0.5 rounded bg-amber-50 text-gold-vip font-label-sm text-label-sm font-bold">Flagship Suite</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted truncate">Vang mini/Craft Soda + Bắp Truffle + Hạt VIP</span>
+<span class="font-code-time text-code-time text-text-secondary">SKU: CB-VIP-09</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-gold-vip font-bold">Special Box</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Vị Nấm Truffle</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-gold-vip font-bold">280.000 ₫</span>
+<span class="font-code-time text-code-time text-text-muted">Vốn: 95.000 ₫</span>
+<span class="font-label-sm text-label-sm text-status-success font-semibold">Margin 66.1%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-primary font-bold">14 bộ</span>
+<span class="text-status-warning font-semibold">Giới hạn</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-gold-vip h-full rounded-full" style="width: 35%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<div class="flex items-center justify-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary" title="Web/App">smartphone</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted" title="Kiosk">touch_app</span>
+<span class="material-symbols-outlined text-[16px] text-primary" title="POS">point_of_sale</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<input checked="" class="w-4 h-4 text-primary rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary" title="Chỉnh sửa">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary" title="Công thức BoM">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary" title="Tùy chọn khác">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 4: Bắp Phô Mai Lắc -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm flex-shrink-0" data-alt="Cận cảnh hạt bắp rang bơ vàng óng được phủ lớp bột phô mai cam óng ánh thơm ngậy, đặt trong xô giấy trắng đỏ HUST Cine sắc sảo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3xUueWBlJlH3ZWg4iIdS7X2XQk-vnNCCwhH3HgzD-nMnw9pSpsTEv6r4Y2K72ZDpT_DNy1UoZzK1jPJngIjIf3PSIEo3CulDZAFMtXBww1YRTR7pFpZH7pZ4v9XwGTjmMJPK0p00ykQrLZSqLVNEv7HcfvQkinKSxNQBRPkQ628uBSSYGVk2lU2M0_vHsJobLvz8d9aQ6t1DMvBTjVLd1kHrN2l5KE_4LI27wbglN5dKLmvSYwKov"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-text-primary font-bold truncate">Bắp Phô Mai Lắc Size L</span>
+<span class="font-body-sm text-body-sm text-text-muted truncate">Ngô nổ phô mai Cheddar béo ngậy 82oz</span>
+<span class="font-code-time text-code-time text-text-secondary">SKU: POP-CHZ-01</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-primary">Size L (82oz)</span>
+<span class="font-body-sm text-body-sm text-amber-700">Phô Mai Cheddar</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-text-primary font-bold">69.000 ₫</span>
+<span class="font-code-time text-code-time text-text-muted">Vốn: 14.500 ₫</span>
+<span class="font-label-sm text-label-sm text-status-success font-semibold">Margin 79.0%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-status-warning font-bold">18 phần</span>
+<span class="text-status-warning font-semibold">Sắp hết</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-status-warning h-full rounded-full" style="width: 20%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<div class="flex items-center justify-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">smartphone</span>
+<span class="material-symbols-outlined text-[16px] text-primary">touch_app</span>
+<span class="material-symbols-outlined text-[16px] text-primary">point_of_sale</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<input checked="" class="w-4 h-4 text-primary rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 5: Bắp Caramel Bách Khoa -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm flex-shrink-0" data-alt="Hạt bắp rang phủ lớp đường caramel nâu bóng giòn tan rực rỡ dưới ánh đèn ấm, trang trí đẹp mắt trong xô rạp phim hiện đại" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfkgynA7LXMbeke2tz9rrbzc5KamrnbQR4Q73XJpg6Sm4ZduNQVdqzHsCYvFH9D1tWzQnpAIqpfMCtegxoOjitFBVr0GX34SG64x5dCW58ycb3onScWeQ-iZ-yfKADcd5iQczX4jVWyPGKSFvvdW6ItYuY66Y6HP94MyPeh0Xjh761lSF053957KhSgI77URXTn3oXvc2NGgslU9CmXd59QZ_kPf9im7UaPcxEYMT1Ka2GA5bjaIaG"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-text-primary font-bold truncate">Bắp Rang Caramel Bách Khoa</span>
+<span class="font-body-sm text-body-sm text-text-muted truncate">Công thức caramel bơ Pháp truyền thống 60oz</span>
+<span class="font-code-time text-code-time text-text-secondary">SKU: POP-CRM-02</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-primary">Size M (60oz)</span>
+<span class="font-body-sm text-body-sm text-yellow-800">Caramel Ngọt</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-text-primary font-bold">59.000 ₫</span>
+<span class="font-code-time text-code-time text-text-muted">Vốn: 12.000 ₫</span>
+<span class="font-label-sm text-label-sm text-status-success font-semibold">Margin 79.6%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-primary font-bold">95 phần</span>
+<span class="text-status-success font-semibold">An toàn</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-status-success h-full rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<div class="flex items-center justify-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">smartphone</span>
+<span class="material-symbols-outlined text-[16px] text-primary">touch_app</span>
+<span class="material-symbols-outlined text-[16px] text-primary">point_of_sale</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<input checked="" class="w-4 h-4 text-primary rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 6: Ly Đổi Màu Dune 2 -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm flex-shrink-0" data-alt="Chiếc ly đổi màu phim Dune Part Two phát sáng màu xanh cát sa mạc khi rót nước lạnh, vật phẩm sưu tầm rạp phim phiên bản giới hạn cao cấp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVtN-ginR1H8-pWMIl4Dtk3Kc9_ZcPiTMqxQmZ9YJaWQQSBFUxzfE7FG7v7cXmd-wiSDUeolMK-2Ijk1Ma6IeOAOudckoeYWkEFZBKAlGPwwyxhF_Gv9NZbQX0GY81GfNG_85C9eGf6uko8tHQX8BNAvJqZOTOtxczdkbHGprrfrpns_-EsNOqnwJtc1IoyjbcYEvhBrDAB08HfZ02vFZ23sQR3dMygZXvB9SGPqBG7Ds8h6dSwXV3"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-text-primary font-bold truncate">Ly Đổi Màu Dune: Part Two</span>
+<span class="px-1.5 py-0.5 rounded bg-blue-50 text-status-info font-label-sm text-label-sm font-bold">Limited</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted truncate">Kèm 01 lần rót nước ngọt tự chọn</span>
+<span class="font-code-time text-code-time text-text-secondary">SKU: MERCH-DUNE-01</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-primary">32oz Collectible</span>
+<span class="font-body-sm text-body-sm text-text-muted">Đổi màu cảm nhiệt</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-text-primary font-bold">165.000 ₫</span>
+<span class="font-code-time text-code-time text-text-muted">Vốn: 60.000 ₫</span>
+<span class="font-label-sm text-label-sm text-status-success font-semibold">Margin 63.6%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-text-primary font-bold">142/200 ly</span>
+<span class="text-status-success font-semibold">Còn hàng</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-status-info h-full rounded-full" style="width: 71%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<div class="flex items-center justify-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">smartphone</span>
+<span class="material-symbols-outlined text-[16px] text-primary">touch_app</span>
+<span class="material-symbols-outlined text-[16px] text-primary">point_of_sale</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<input checked="" class="w-4 h-4 text-primary rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 7: Xúc Xích Phô Mai Nướng -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm flex-shrink-0" data-alt="Cây xúc xích phô mai nướng bóng bẩy khứa rãnh thơm phức, kẹp trong bánh mì mềm và sốt mù tạt mật ong tại quầy đồ ăn rạp phim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1RqlXZESedw2Jonp_g4IFk_EfliAe9ZGYSt0XKKUG0Gt1n_EXNp98csarIL5JDbuO-kRsGwPl4_f291tWxlsp9CeO35VOYGVNpEMSkQ1koLo_4nLW8gs0eiTw0R6PSlT-J4m_7J8L9QNqu0XHorAQvP1xgJt2mSVLnxzhcw0ngOQLRIniYSnKewd-bXoo_YfSZQpvYQAHuKBW4z0H43iV7EpLgSv-8C16eL_gmVJUPvU-CDaJe5ZW"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-text-primary font-bold truncate">Xúc Xích Phô Mai Nướng</span>
+<span class="font-body-sm text-body-sm text-text-muted truncate">Xúc xích Đức xông khói phô mai tan chảy</span>
+<span class="font-code-time text-code-time text-text-secondary">SKU: SNK-HOTDOG-01</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-text-primary">1 Cây lớn</span>
+<span class="font-body-sm text-body-sm text-text-muted">Kèm tương cà &amp; mù tạt</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-text-primary font-bold">45.000 ₫</span>
+<span class="font-code-time text-code-time text-text-muted">Vốn: 16.000 ₫</span>
+<span class="font-label-sm text-label-sm text-status-success font-semibold">Margin 64.4%</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col gap-1 w-36">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-status-error font-bold">4 phần</span>
+<span class="text-status-error font-semibold">Sắp hết!</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-status-error h-full rounded-full" style="width: 8%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<div class="flex items-center justify-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-text-muted">smartphone</span>
+<span class="material-symbols-outlined text-[16px] text-primary">touch_app</span>
+<span class="material-symbols-outlined text-[16px] text-primary">point_of_sale</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm text-center">
+<input checked="" class="w-4 h-4 text-primary rounded accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Footer -->
+<div class="p-space-md bg-surface-alt/40 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-text-secondary">
+<div class="flex items-center gap-2">
+<span>Hiển thị</span>
+<select class="bg-surface-base px-2 py-1 rounded text-text-primary font-medium focus:outline-none">
+<option>10</option>
+<option>20</option>
+<option>50</option>
+</select>
+<span>trên tổng số 32 mặt hàng</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-base text-text-muted hover:text-text-primary disabled:opacity-50">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-on-primary font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-base text-text-secondary hover:bg-surface-container-high">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-base text-text-secondary hover:bg-surface-container-high">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-base text-text-muted hover:text-text-primary">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- VISUAL INSIGHT: HOURLY F&B SALES VELOCITY (SVG MINI CHART) -->
+<div class="bg-surface-base rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">show_chart</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Tốc Độ Bán Hàng &amp; Tiêu Thụ Theo Khung Giờ</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted">Cập nhật mỗi 5 phút</span>
+</div>
+<div class="h-28 w-full flex items-end gap-2 pt-2">
+<!-- 12 Hour Bars -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-surface-container-high hover:bg-primary-container rounded-t transition-colors" style="height: 18%;"></div>
+<span class="font-code-time text-code-time text-text-muted">09h</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-surface-container-high hover:bg-primary-container rounded-t transition-colors" style="height: 28%;"></div>
+<span class="font-code-time text-code-time text-text-muted">11h</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-surface-container-high hover:bg-primary-container rounded-t transition-colors" style="height: 45%;"></div>
+<span class="font-code-time text-code-time text-text-muted">13h</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-surface-container-high hover:bg-primary-container rounded-t transition-colors" style="height: 62%;"></div>
+<span class="font-code-time text-code-time text-text-muted">15h</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-surface-container-high hover:bg-primary-container rounded-t transition-colors" style="height: 54%;"></div>
+<span class="font-code-time text-code-time text-text-muted">17h</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-primary-container rounded-t transition-colors relative group" style="height: 94%;">
+<div class="hidden group-hover:block absolute -top-7 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-code-time text-code-time whitespace-nowrap shadow-md z-10">
+                19h: 182 đơn
+              </div>
+</div>
+<span class="font-code-time text-code-time text-primary font-bold">19h</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-primary-container/80 rounded-t transition-colors" style="height: 85%;"></div>
+<span class="font-code-time text-code-time text-text-primary font-semibold">20h</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-surface-container-high hover:bg-primary-container rounded-t transition-colors" style="height: 40%;"></div>
+<span class="font-code-time text-code-time text-text-muted">22h</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (30% ~ 4 cols) - CONFIG, BOM, SYNC RULES -->
+<div class="lg:col-span-4 space-y-space-md">
+<!-- WIDGET 1: UPSELL & ADD-ON RULES MATRIX -->
+<div class="bg-surface-base rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Quy Tắc Upsell &amp; Đổi Vị</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[18px]">tune</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+          Cấu hình mức phụ thu tự động khi khách chọn tùy biến tại Kiosk và Web/App.
+        </p>
+<div class="space-y-space-xs">
+<!-- Rule 1 -->
+<div class="p-space-sm rounded-lg bg-surface-alt/80 hover:bg-surface-alt transition-colors flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-bold">Nâng size Bắp M → Size L</span>
+<span class="font-body-sm text-body-sm text-status-success font-medium">Tỷ lệ chọn: 64%</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold">
+<span>+15.000 ₫</span>
+<input checked="" class="w-4 h-4 rounded accent-primary ml-1" type="checkbox"/>
+</div>
+</div>
+<!-- Rule 2 -->
+<div class="p-space-sm rounded-lg bg-surface-alt/80 hover:bg-surface-alt transition-colors flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-bold">Đổi sang Phô Mai / Caramel</span>
+<span class="font-body-sm text-body-sm text-text-muted">Áp dụng cho mọi cỡ bắp</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold">
+<span>+15.000 ₫</span>
+<input checked="" class="w-4 h-4 rounded accent-primary ml-1" type="checkbox"/>
+</div>
+</div>
+<!-- Rule 3 -->
+<div class="p-space-sm rounded-lg bg-surface-alt/80 hover:bg-surface-alt transition-colors flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-gold-vip font-bold">Thêm Bắp Nấm Truffle VIP</span>
+<span class="font-body-sm text-body-sm text-gold-vip">Hạng phòng Deluxe/VIP</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-md text-label-md text-gold-vip font-bold">
+<span>+35.000 ₫</span>
+<input checked="" class="w-4 h-4 rounded accent-primary ml-1" type="checkbox"/>
+</div>
+</div>
+<!-- Cross-sell Rule -->
+<div class="p-space-sm rounded-lg bg-red-50/70 border border-red-100 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">high_res</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Cross-sell kèm vé xem phim</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Giảm 10% combo F&amp;B khi khách thanh toán vé tại bước chọn ghế (S5).</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-alt hover:bg-surface-container-high text-text-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Thêm Quy Tắc Phụ Thu Mới</span>
+</button>
+</div>
+<!-- WIDGET 2: BOM THRESHOLD & RAW INGREDIENT ALERTS -->
+<div class="bg-surface-base rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-warning text-[20px]">inventory</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Định Lượng &amp; BoM Kho</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-red-50 text-status-error font-code-time text-code-time font-bold">2 Cảnh báo</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+          Ngưỡng an toàn nguyên liệu sản xuất tại quầy pha chế rạp HUST Đại Cồ Việt.
+        </p>
+<div class="space-y-space-sm">
+<!-- Material 1 -->
+<div class="p-space-sm rounded-lg bg-surface-alt/70 space-y-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-text-primary font-bold">Ngô hạt nổ bắp nhập khẩu Mỹ</span>
+<span class="text-status-warning font-bold">Còn 3.5 bao</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>Định lượng bao 25kg</span>
+<span>~2 ngày vận hành</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-status-warning h-full rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Material 2 -->
+<div class="p-space-sm rounded-lg bg-red-50/60 space-y-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-status-error font-bold">Phô mai bột New Zealand</span>
+<span class="text-status-error font-bold">Còn 1.8 hộp</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>Hộp 5kg (Ngưỡng min: 3 hộp)</span>
+<span class="text-status-error font-semibold">Cần đặt thêm</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-status-error h-full rounded-full" style="width: 14%;"></div>
+</div>
+</div>
+<!-- Material 3 -->
+<div class="p-space-sm rounded-lg bg-surface-alt/70 space-y-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-text-primary font-bold">Bình siro Pepsi CO2 20L</span>
+<span class="text-status-success font-bold">Còn 12 bình</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>Ngưỡng tối thiểu: 4 bình</span>
+<span class="text-status-success">Đủ dùng 7 ngày</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-status-success h-full rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-surface-highlight hover:bg-surface-container-highest text-primary font-label-md text-label-md transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span>Tạo Lệnh Xuất Kho Nội Bộ Khẩn Cấp</span>
+</button>
+</div>
+<!-- WIDGET 3: REALTIME CHANNEL AUTO-SYNC RULE -->
+<div class="bg-surface-base rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">sync_saved_locally</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Đồng Bộ Kênh Bán Tự Động</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-alt flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-semibold">Auto-hide khi hết hàng:</span>
+<span class="px-2 py-0.5 rounded bg-emerald-50 text-status-success font-code-time text-code-time font-bold">BẬT (Active)</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+            Khi số lượng tồn kho chạm mức <strong>0</strong> tại POS quầy, hệ thống tự động ẩn món trên màn hình Kiosk &amp; Web/App sau <strong>30 giây</strong> để tránh khiếu nại khách hàng.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. STICKY BOTTOM ACTION BAR -->
+<div class="sticky bottom-0 z-30 -mx-space-lg -mb-space-lg px-space-lg py-space-sm bg-surface-base/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.06)] flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 text-text-secondary font-code-time text-code-time">
+<span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span>
+<span>Đã đồng bộ công thức F&amp;B và bảng giá tới 12 máy POS và 6 Kiosk tại sảnh rạp lúc 19:42:08</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-10 px-space-md rounded-lg bg-surface-alt hover:bg-surface-container-high text-text-secondary font-label-md text-label-md transition-colors">
+        Hủy thay đổi
+      </button>
+<button class="h-10 px-space-md rounded-lg bg-surface-base hover:bg-surface-alt text-text-primary font-label-md text-label-md shadow-sm transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Xuất Menu PDF Quầy</span>
+</button>
+<button class="h-10 px-space-lg rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-md transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">cloud_upload</span>
+<span>Lưu &amp; Áp Dụng Toàn Hệ Thống</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Quick interactive toggle feedback for checkboxes without altering DOM flow
+  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+      const row = e.target.closest('tr');
+      if (row) {
+        if (!e.target.checked) {
+          row.classList.add('opacity-60');
+        } else {
+          row.classList.remove('opacity-60');
+        }
+      }
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-low py-space-sm px-space-lg text-on-surface-variant"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-xs"><div class="flex items-center gap-space-md"><span class="font-code-time text-code-time text-text-secondary">Protocol: SMPTE v4.2 Connected (Sync Node #04)</span><span class="w-1 h-1 rounded-full bg-outline-variant"></span><span class="font-label-sm text-label-sm text-status-success flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span>Health 99.98%</span></div><div class="font-label-sm text-label-sm text-text-muted">© 2025 HUST Cine Portal. Hệ thống quản trị Cụm Rạp Chiếu Phim ĐHBK Hà Nội.</div></div></footer></div>
+  <!-- HUST Cine Dynamic Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+
+</body></html>

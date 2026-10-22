@@ -1,0 +1,82 @@
+/* ==========================================================================
+   HUST Cine - Design System Theme Tokens & CSS Variables
+   Project: Cinema Ticket Booking System (Technical Cinema Theme)
+   Author: StitchMCP / Antigravity
+   ========================================================================== */
+
+:root {
+  /* Brand Primary & Accents */
+  --color-primary: #9e001f;
+  --color-primary-container: #c8102e;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffdad8;
+  --color-primary-fixed: #ffdad8;
+  --color-primary-fixed-dim: #ffb3b1;
+
+  /* Secondary */
+  --color-secondary: #b12a34;
+  --color-secondary-container: #fd6166;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #640011;
+
+  /* Tertiary / Gold VIP */
+  --color-tertiary: #624900;
+  --color-tertiary-container: #806000;
+  --color-tertiary-fixed: #ffdf9b;
+  --color-gold-vip: #B8902A;
+
+  /* Surfaces & Backgrounds */
+  --color-background: #fbf8ff;
+  --color-surface: #fbf8ff;
+  --color-surface-base: #FFFFFF;
+  --color-surface-alt: #F7F4F4;
+  --color-surface-highlight: #FDECEF;
+  --color-surface-dim: #dcd9e0;
+  --color-surface-bright: #fbf8ff;
+  --color-surface-container-low: #f5f2f9;
+  --color-surface-container: #f0edf4;
+  --color-surface-container-high: #eae7ee;
+  --color-surface-container-highest: #e4e1e8;
+
+  /* Text & Inks */
+  --color-text-primary: #1A1A1F;
+  --color-text-secondary: #5B5B66;
+  --color-text-muted: #8A8A94;
+  --color-on-surface: #1b1b20;
+  --color-on-surface-variant: #5c403f;
+  --color-border-subtle: #E8E0E0;
+  --color-outline: #906f6e;
+  --color-outline-variant: #e5bdbb;
+
+  /* Semantics */
+  --color-status-success: #1E8E5A;
+  --color-status-warning: #D98A00;
+  --color-status-error: #B3261E;
+  --color-status-info: #1F6FD1;
+
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --font-be-vietnam: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Dark Mode Overrides */
+html.dark {
+  --color-background: #121216;
+  --color-surface: #18181e;
+  --color-surface-base: #1b1b20;
+  --color-surface-alt: #24242b;
+  --color-surface-highlight: #3b1419;
+  --color-surface-dim: #15151a;
+  --color-text-primary: #fbf8ff;
+  --color-text-secondary: #a9a7b0;
+  --color-text-muted: #8a8a94;
+  --color-border-subtle: #2e2e36;
+  --color-on-surface: #eae7ee;
+  --color-on-surface-variant: #d5c2c1;
+}

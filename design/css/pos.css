@@ -1,0 +1,35 @@
+/* ==========================================================================
+   HUST Cine - Staff Box Office POS Styles
+   ========================================================================== */
+
+.pos-touch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.pos-keypad-btn {
+  height: 56px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #thermal-ticket-print, #thermal-ticket-print * {
+    visibility: visible;
+  }
+  #thermal-ticket-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+  }
+}

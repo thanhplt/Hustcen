@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary":"#ffffff","on-error-container":"#93000a","tertiary-container":"#806000","on-error":"#ffffff","surface-container-lowest":"#ffffff","secondary-fixed":"#ffdad8","on-primary":"#ffffff","on-tertiary-container":"#ffdf9b","inverse-primary":"#ffb3b1","surface-container-low":"#f5f2f9","text-muted":"#8A8A94","on-surface":"#1b1b20","surface-dim":"#dcd9e0","surface":"#fbf8ff","on-primary-container":"#ffdad8","primary-fixed":"#ffdad8","surface-highlight":"#FDECEF","on-secondary-fixed":"#410007","primary-fixed-dim":"#ffb3b1","primary":"#9e001f","outline":"#906f6e","gold-vip":"#B8902A","inverse-on-surface":"#f3eff7","surface-alt":"#F7F4F4","error":"#ba1a1a","text-secondary":"#5B5B66","surface-tint":"#bf0229","text-primary":"#1A1A1F","status-error":"#B3261E","on-tertiary":"#ffffff","on-primary-fixed-variant":"#92001c","tertiary-fixed-dim":"#edc157","status-warning":"#D98A00","on-tertiary-fixed-variant":"#5b4300","outline-variant":"#e5bdbb","on-background":"#1b1b20","surface-bright":"#fbf8ff","inverse-surface":"#303035","primary-container":"#c8102e","surface-container-highest":"#e4e1e8","surface-variant":"#e4e1e8","secondary-container":"#fd6166","surface-container":"#f0edf4","tertiary":"#624900","border-subtle":"#E8E0E0","on-tertiary-fixed":"#251a00","error-container":"#ffdad6","status-info":"#1F6FD1","surface-base":"#FFFFFF","surface-container-high":"#eae7ee","status-success":"#1E8E5A","on-surface-variant":"#5c403f","tertiary-fixed":"#ffdf9b","secondary-fixed-dim":"#ffb3b1","on-secondary-container":"#640011","secondary":"#b12a34","background":"#fbf8ff","on-primary-fixed":"#410007","on-secondary-fixed-variant":"#8f0c20"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","space-xs":"0.25rem","space-xl":"2.5rem","gutter":"1.5rem","margin":"2rem","space-lg":"1.5rem","space-sm":"0.5rem","margin-mobile":"1rem","gutter-mobile":"0.75rem"},"fontFamily":{"headline-lg":["Be Vietnam Pro"],"code-time":["Be Vietnam Pro"],"body-lg":["Be Vietnam Pro"],"headline-lg-mobile":["Be Vietnam Pro"],"headline-sm":["Be Vietnam Pro"],"display-hero":["Be Vietnam Pro"],"headline-md":["Be Vietnam Pro"],"body-md":["Be Vietnam Pro"],"label-lg":["Be Vietnam Pro"],"label-md":["Be Vietnam Pro"],"display-hero-mobile":["Be Vietnam Pro"],"body-sm":["Be Vietnam Pro"],"label-sm":["Be Vietnam Pro"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"code-time":["13px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"display-hero":["44px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"display-hero-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"800"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}]}}}}</script>
+  <!-- HUST Cine Design System Core Assets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+
+</head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">videocam</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">HUST CINE</span><span class="font-label-sm text-label-sm text-text-secondary tracking-widest uppercase">Portal Admin</span></div></div><div class="px-space-md py-space-sm"><span class="font-label-sm text-label-sm text-text-muted px-space-sm uppercase tracking-wider">Điều hành rạp</span></div><nav class="flex-1 px-space-sm space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-bold shadow-[0_2px_6px_-1px_rgba(26,26,31,0.04)]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="quan-ly-phim" href="#"><span class="material-symbols-outlined text-[20px]">movie</span><span>Quản lý Phim</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="rap-va-phong-chieu" href="#"><span class="material-symbols-outlined text-[20px]">meeting_room</span><span>Rạp &amp; Phòng chiếu</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="suat-chieu" href="#"><span class="material-symbols-outlined text-[20px]">schedule</span><span>Suất chiếu</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="bang-gia-ve-va-ghe" href="#"><span class="material-symbols-outlined text-[20px]">event_seat</span><span>Bảng giá vé &amp; Ghế</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="combo-va-dich-vu" href="#"><span class="material-symbols-outlined text-[20px]">fastfood</span><span>Combo &amp; Dịch vụ</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="khuyen-mai-va-voucher" href="#"><span class="material-symbols-outlined text-[20px]">confirmation_number</span><span>Khuyến mãi &amp; Voucher</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="don-hang-va-giao-dich" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Đơn hàng &amp; Giao dịch</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="khach-hang-va-thanh-vien" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Khách hàng &amp; Thành viên</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="bao-cao-doanh-thu" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span>Báo cáo doanh thu</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="cai-dat-he-thong" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Cài đặt hệ thống</span></a></nav></div><div class="p-space-md bg-surface-container-lowest m-space-sm rounded-xl"><div class="flex items-center gap-space-sm"><div class="w-2.5 h-2.5 rounded-full bg-status-success animate-pulse"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-bold">Cụm máy chủ HUST-C1</span><span class="font-code-time text-code-time text-text-secondary">SMPTE DCI Online</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[20px]">search</span><input class="w-full h-11 pl-10 pr-space-md rounded-lg bg-surface-alt font-body-md text-body-md text-on-surface placeholder:text-text-muted focus:outline-none focus:bg-surface-base transition-colors" placeholder="Tìm kiếm phim, suất chiếu, khách hàng, mã vé..." type="text"/></div><div class="flex items-center gap-space-xs bg-surface-alt px-space-md py-space-xs rounded-lg whitespace-nowrap"><span class="material-symbols-outlined text-primary text-[18px]">store</span><span class="font-label-md text-label-md text-on-surface font-semibold">HUST Cine Đại Cồ Việt</span><span class="material-symbols-outlined text-text-secondary text-[16px]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-alt text-text-secondary shadow-sm"><span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span><span class="font-code-time text-code-time font-medium">GMT+7 14:32:08 (LIVE)</span></div><button class="relative p-space-xs rounded-lg text-text-secondary hover:text-on-surface hover:bg-surface-alt transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-bold leading-tight">Nguyễn Tuấn Kiệt</span><span class="font-label-sm text-label-sm text-text-secondary leading-tight">Quản lý cụm rạp</span></div></div></div></header><main class="relative pt-16 bg-surface flex-1 w-full px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Operational Breadcrumb & Financial Controls -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-text-muted">
+<span class="hover:text-primary cursor-pointer transition-colors">Hệ thống quản trị</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Tài chính &amp; Kế toán</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-text-primary font-semibold">Phân tích doanh thu &amp; Đối soát</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-alt text-primary font-code-time text-[10px] tracking-wide uppercase font-bold">Audit Engine v4.0</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm pt-1">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Phân Tích Doanh Thu &amp; Đối Soát Tài Chính</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-highlight text-primary font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+          Kỳ quyết toán: Tháng 10/2026 - Real-time Ledger
+        </span>
+</div>
+</div>
+<!-- Main Toolbar Actions -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-2 h-11 px-space-md rounded-lg bg-surface-base text-text-primary shadow-sm hover:bg-surface-highlight hover:text-primary transition-all font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Xuất báo cáo thuế &amp; Audited Excel</span>
+</button>
+<button class="inline-flex items-center gap-2 h-11 px-space-md rounded-lg bg-primary-container text-on-primary shadow-md hover:bg-primary transition-all font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+<span>Chốt sổ &amp; Khóa kỳ đối soát</span>
+</button>
+</div>
+</div>
+<!-- Filter & Granular Date Controls Strip -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-space-md">
+<!-- Date presets -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mr-2">Thời gian:</span>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-text-secondary hover:bg-surface-alt transition-colors" type="button">Hôm nay</button>
+<button class="px-space-md py-1.5 rounded-lg font-label-md text-label-md text-text-secondary hover:bg-surface-alt transition-colors" type="button">7 ngày qua</button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm" type="button">
+        Tháng này (01/10 - 21/10/2026)
+      </button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-alt text-text-primary font-label-md text-label-md hover:bg-surface-highlight transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Tùy chỉnh ngày</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-alt text-text-secondary font-label-md text-label-md hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">compare_arrows</span>
+<span>So sánh cùng kỳ (MoM +18.4%)</span>
+</button>
+</div>
+<!-- Theater & Unit Filter -->
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Cụm rạp:</span>
+<div class="relative min-w-[240px]">
+<select class="w-full h-10 pl-3 pr-8 rounded-lg bg-surface-alt font-label-md text-label-md text-text-primary appearance-none focus:outline-none cursor-pointer">
+<option>HUST Cine Đại Cồ Việt (Trụ sở chính)</option>
+<option>Tất cả cụm rạp (4 rạp toàn quốc)</option>
+<option>HUST Cine Tạ Quang Bửu</option>
+<option>HUST Cine Trần Đại Nghĩa</option>
+<option>HUST Cine Giải Phóng</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-text-secondary pointer-events-none text-[18px]">expand_more</span>
+</div>
+<button class="w-10 h-10 rounded-lg bg-surface-alt text-text-secondary hover:text-primary flex items-center justify-center transition-colors" title="Làm mới sổ sách" type="button">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Section 2: 4 Financial KPI Hero Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Card 1: Gross Revenue -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-primary/5 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-text-secondary uppercase tracking-wider">Tổng doanh thu thực (Gross)</span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-status-success/10 text-status-success font-code-time text-code-time font-bold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> +18.4%
+          </span>
+</div>
+<div class="font-display-hero text-[32px] leading-tight text-primary font-black tracking-tight mb-1">
+          1.482.650.000 <span class="font-label-md text-label-md font-semibold text-text-secondary">VNĐ</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-text-secondary mb-space-md">
+<span class="font-semibold text-status-success">Đạt 105.8%</span> chỉ tiêu KPI tháng 10
+        </div>
+</div>
+<!-- Stacked bar breakdown -->
+<div class="pt-space-sm bg-surface-alt/60 -mx-space-lg -mb-space-lg p-space-md mt-2">
+<div class="flex justify-between items-center text-[11px] font-label-sm text-text-secondary mb-1.5">
+<span>Bóc tách nguồn thu:</span>
+<span class="font-code-time font-bold text-text-primary">3 danh mục</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden flex mb-2">
+<div class="bg-primary-container" style="width: 68.5%;" title="Vé rạp: 68.5%"></div>
+<div class="bg-gold-vip" style="width: 28.2%;" title="Bắp nước F&amp;B: 28.2%"></div>
+<div class="bg-status-info" style="width: 3.3%;" title="Private hall: 3.3%"></div>
+</div>
+<div class="grid grid-cols-3 gap-1 font-label-sm text-[10px] text-text-secondary leading-tight">
+<div><span class="inline-block w-2 h-2 rounded-full bg-primary-container mr-1"></span>Vé: 1.015 tỷ</div>
+<div><span class="inline-block w-2 h-2 rounded-full bg-gold-vip mr-1"></span>F&amp;B: 418.1 tr</div>
+<div><span class="inline-block w-2 h-2 rounded-full bg-status-info mr-1"></span>Khác: 48.9 tr</div>
+</div>
+</div>
+</div>
+<!-- Card 2: ATV & Spend Per Head -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-text-secondary uppercase tracking-wider">Doanh thu TB / Khách (ATV)</span>
+<div class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="font-display-hero text-[32px] leading-tight text-text-primary font-black tracking-tight mb-1">
+          118.500 <span class="font-label-md text-label-md font-semibold text-text-secondary">VNĐ/vé</span>
+</div>
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-status-success font-medium mb-space-md">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+8.200 VNĐ nhờ upsell Combo Duo</span>
+</div>
+</div>
+<div class="pt-space-sm bg-surface-alt/60 -mx-space-lg -mb-space-lg p-space-md mt-2 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">Chi tiêu vé TB</span>
+<span class="font-code-time text-code-time font-bold text-text-primary">81.200 đ</span>
+</div>
+<div class="h-6 w-px bg-surface-container-high"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">Chi tiêu F&amp;B / Vé</span>
+<span class="font-code-time text-code-time font-bold text-gold-vip">37.300 đ (31.5%)</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Occupancy Rate -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-text-secondary uppercase tracking-wider">Tỷ lệ lấp đầy (Occupancy)</span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-status-info/10 text-status-info font-code-time text-code-time font-bold">
+            Target 70%
+          </span>
+</div>
+<div class="font-display-hero text-[32px] leading-tight text-text-primary font-black tracking-tight mb-1">
+          74.2% <span class="font-label-md text-label-md font-semibold text-status-success">Cao điểm</span>
+</div>
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-text-secondary mb-space-md">
+<span>Cuối tuần chạm đỉnh:</span>
+<span class="font-bold text-primary">92.6% (Phòng IMAX)</span>
+</div>
+</div>
+<div class="pt-space-sm bg-surface-alt/60 -mx-space-lg -mb-space-lg p-space-md mt-2">
+<div class="flex justify-between items-center text-[11px] font-label-sm text-text-secondary mb-1">
+<span>Số ghế bán: 12.511 / 16.860</span>
+<span class="font-code-time font-bold text-primary">8 phòng chiếu</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-status-success rounded-full" style="width: 74.2%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 4: Payment Reconciliation -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-status-warning/5 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-text-secondary uppercase tracking-wider">Quyết toán cổng &amp; Đối soát</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-status-warning/15 text-status-warning font-code-time text-code-time font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span>
+            99.7% Khớp
+          </span>
+</div>
+<div class="font-display-hero text-[32px] leading-tight text-text-primary font-black tracking-tight mb-1">
+          1.478.200.000 <span class="font-label-md text-label-md font-semibold text-text-secondary">VNĐ</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-status-warning font-medium mb-space-md">
+<span class="material-symbols-outlined text-[16px]">pending_actions</span>
+<span>Lệch: 4.450.000 VNĐ đang tra soát</span>
+</div>
+</div>
+<div class="pt-space-sm bg-surface-alt/60 -mx-space-lg -mb-space-lg p-space-md mt-2 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-status-success font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>MoMo &amp; VNPay 100% Khớp</span>
+</div>
+<span class="font-code-time text-code-time text-text-muted">Vietcombank POS #03</span>
+</div>
+</div>
+</div>
+<!-- Section 3: Revenue Visual Analytics (Bento Charts) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Main Daily Revenue Trend Chart (8 cols) -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Biểu Đồ Doanh Thu Theo Ngày (Tháng 10/2026)</h2>
+<span class="px-2 py-0.5 rounded bg-surface-highlight text-primary font-code-time text-[11px] font-bold">21 NGÀY ĐỐI SOÁT</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">So sánh diễn biến tiền bán Vé xem phim vs F&amp;B Bắp nước tự chọn</p>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary-container"></span>
+<span class="text-text-secondary">Tiền Vé Phim</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-gold-vip"></span>
+<span class="text-text-secondary">Doanh Thu F&amp;B</span>
+</div>
+</div>
+</div>
+<!-- Inline SVG Chart with weekend spikes and blockbuster marker -->
+<div class="relative w-full h-64 my-space-sm">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 760 210">
+<defs>
+<lineargradient id="primaryAreaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#c8102e" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#c8102e" stop-opacity="0.00"></stop>
+</lineargradient>
+<lineargradient id="goldAreaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#B8902A" stop-opacity="0.20"></stop>
+<stop offset="100%" stop-color="#B8902A" stop-opacity="0.00"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Grid Lines -->
+<line stroke="#f0edf4" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="760" y1="25" y2="25"></line>
+<line stroke="#f0edf4" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="760" y1="75" y2="75"></line>
+<line stroke="#f0edf4" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="760" y1="125" y2="125"></line>
+<line stroke="#f0edf4" stroke-width="1" x1="0" x2="760" y1="175" y2="175"></line>
+<!-- Highlight weekend blocks (04-05, 11-12, 18-19) -->
+<rect fill="#fbf8ff" height="160" rx="4" width="65" x="135" y="15"></rect>
+<rect fill="#fbf8ff" height="160" rx="4" width="65" x="360" y="15"></rect>
+<rect fill="#fbf8ff" height="160" rx="4" width="65" x="585" y="15"></rect>
+<!-- Area Fills -->
+<path d="M 0,145 Q 60,140 100,135 T 165,65 T 220,130 T 310,120 T 390,45 T 460,115 T 530,95 T 620,28 T 700,90 T 760,80 L 760,175 L 0,175 Z" fill="url(#primaryAreaGrad)"></path>
+<path d="M 0,165 Q 60,160 100,158 T 165,125 T 220,155 T 310,150 T 390,110 T 460,148 T 530,140 T 620,102 T 700,135 T 760,130 L 760,175 L 0,175 Z" fill="url(#goldAreaGrad)"></path>
+<!-- Line 1: Ticket Revenue -->
+<path d="M 0,145 Q 60,140 100,135 T 165,65 T 220,130 T 310,120 T 390,45 T 460,115 T 530,95 T 620,28 T 700,90 T 760,80" fill="none" stroke="#c8102e" stroke-linecap="round" stroke-width="3"></path>
+<!-- Line 2: F&B Revenue -->
+<path d="M 0,165 Q 60,160 100,158 T 165,125 T 220,155 T 310,150 T 390,110 T 460,148 T 530,140 T 620,102 T 700,135 T 760,130" fill="none" stroke="#B8902A" stroke-dasharray="4 2" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Peak Points & Milestones -->
+<!-- Dune 2 Premiere & Weekend Peak 18/10 -->
+<circle cx="620" cy="28" fill="#c8102e" r="5"></circle>
+<circle cx="620" cy="28" fill="#c8102e" opacity="0.25" r="10"></circle>
+<!-- Marker Box at Peak -->
+<g transform="translate(560, -2)">
+<rect fill="#1b1b20" height="26" opacity="0.95" rx="4" width="124"></rect>
+<text fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" x="62" y="16">18/10: 98.4 Triệu (Peak)</text>
+</g>
+</svg>
+<!-- X Axis Labels -->
+<div class="flex justify-between font-code-time text-[11px] text-text-muted mt-2 pt-1">
+<span>01/10</span>
+<span>04/10 (T6)</span>
+<span>08/10</span>
+<span>11/10 (T6)</span>
+<span>15/10</span>
+<span class="text-primary font-bold">18/10 (Dune 2 Sneak)</span>
+<span>21/10 (Hôm nay)</span>
+</div>
+</div>
+<!-- Quick stats underneath chart -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-sm border-t border-surface-container-high">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-text-secondary">Ngày doanh thu kỷ lục</span>
+<span class="font-label-md text-label-md font-bold text-text-primary">18/10/2026 (98.420.000đ)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-gold-vip">
+<span class="material-symbols-outlined text-[18px]">fastfood</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-text-secondary">Tỷ trọng Combo Bắp Nước</span>
+<span class="font-label-md text-label-md font-bold text-text-primary">28.2% (Vượt mức 25%)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-alt flex items-center justify-center text-status-success">
+<span class="material-symbols-outlined text-[18px]">moving</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-text-secondary">Tốc độ tăng trưởng kỳ</span>
+<span class="font-label-md text-label-md font-bold text-status-success">+18.4% so với T09/2026</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side Bento: Channels & Payment Gateway Donuts (4 cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Breakdown by Sales Channel -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex-1 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Kênh Bán Vé &amp; Doanh Số</h3>
+<span class="font-code-time text-code-time text-text-muted">4 Kênh Active</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Web Portal -->
+<div>
+<div class="flex justify-between items-center font-label-md text-label-md mb-1">
+<span class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-primary text-[18px]">language</span>
+                Web Portal Booking
+              </span>
+<span class="font-code-time font-bold text-text-primary">28.5% (422.5 tr)</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary-container" style="width: 28.5%;"></div>
+</div>
+</div>
+<!-- App Mobile -->
+<div>
+<div class="flex justify-between items-center font-label-md text-label-md mb-1">
+<span class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-status-info text-[18px]">phone_iphone</span>
+                HUST Cine Mobile App
+              </span>
+<span class="font-code-time font-bold text-text-primary">25.0% (370.6 tr)</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-status-info" style="width: 25.0%;"></div>
+</div>
+</div>
+<!-- Smart Kiosk -->
+<div>
+<div class="flex justify-between items-center font-label-md text-label-md mb-1">
+<span class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-gold-vip text-[18px]">touch_app</span>
+                Kiosk Tự Động Rạp
+              </span>
+<span class="font-code-time font-bold text-text-primary">24.5% (363.2 tr)</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-gold-vip" style="width: 24.5%;"></div>
+</div>
+</div>
+<!-- POS Box Office -->
+<div>
+<div class="flex justify-between items-center font-label-md text-label-md mb-1">
+<span class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">point_of_sale</span>
+                POS Quầy Bán Trực Tiếp
+              </span>
+<span class="font-code-time font-bold text-text-primary">22.0% (326.1 tr)</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-text-secondary" style="width: 22.0%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Gateways Settlement Ratio -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex-1 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Phương Thức Thanh Toán</h3>
+<span class="font-label-sm text-[11px] text-status-success font-bold">100% Tích hợp</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-alt flex flex-col">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-text-secondary">Ví MoMo</span>
+<span class="font-code-time font-bold text-primary">38%</span>
+</div>
+<span class="font-code-time text-code-time font-bold text-text-primary">563.400.000 đ</span>
+<span class="text-[10px] text-text-muted mt-0.5">Phí API 1.2%</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-alt flex flex-col">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-text-secondary">VNPay-QR</span>
+<span class="font-code-time font-bold text-status-info">31%</span>
+</div>
+<span class="font-code-time text-code-time font-bold text-text-primary">459.200.000 đ</span>
+<span class="text-[10px] text-text-muted mt-0.5">Phí cổng 1.1%</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-alt flex flex-col">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-text-secondary">Thẻ Quốc Tế / POS</span>
+<span class="font-code-time font-bold text-gold-vip">18%</span>
+</div>
+<span class="font-code-time text-code-time font-bold text-text-primary">266.850.000 đ</span>
+<span class="text-[10px] text-status-warning font-semibold mt-0.5">03 GD đang tra soát</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-alt flex flex-col">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-text-secondary">Tiền Mặt Quầy</span>
+<span class="font-code-time font-bold text-text-secondary">13%</span>
+</div>
+<span class="font-code-time text-code-time font-bold text-text-primary">193.200.000 đ</span>
+<span class="text-[10px] text-status-success font-semibold mt-0.5">Bàn giao két 100%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Film Box Office & Studio Royalty Allocation Table -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Phân Bổ Tiền Vé &amp; Trích Bản Quyền Hãng Phim (Studio Royalty &amp; Film Share)</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-alt text-text-secondary font-code-time text-[11px] font-bold">KDM &amp; DCI TRACKED</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Đối soát doanh thu phòng vé thực tế trích trả Warner Bros, CGV Distribution, CJ ENM, Galaxy Studio</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-alt font-label-md text-label-md text-text-secondary hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Lọc hãng phát hành</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-alt font-label-md text-label-md text-text-secondary hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>In biên bản KDM</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-alt font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l-lg">Tên Phim / Nhà Phát Hành</th>
+<th class="py-3 px-3 text-center">Định Dạng</th>
+<th class="py-3 px-3 text-right">Tổng Vé Bán</th>
+<th class="py-3 px-4 text-right">Tổng Doanh Thu</th>
+<th class="py-3 px-3 text-center">Tỷ Lệ Studio</th>
+<th class="py-3 px-4 text-right">Phải Trả Hãng Phim</th>
+<th class="py-3 px-4 text-right">Doanh Thu Thuần Rạp</th>
+<th class="py-3 px-4 rounded-r-lg text-center">Trạng Thái Quyết Toán</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-body-md text-body-md text-text-primary">
+<!-- Row 1: Dune 2 -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded bg-surface-dim overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Official theatrical poster of Dune Part Two cinematic sci-fi movie in orange and sand desert palette with modern typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB51E00QUQaoGar2HuVyor7GYdahrKk9stperA_djX5uvVVNGOXjCwjfA0hSjbFyvaHh4s8Iw0gvBg1K25OxoiTuOXULdtd6pbW3mswRdRT6dYVx8tTwg7eb89gGv6Pb824yeZ9xb8BAWDamICiZQuvO7xVJyW3Od8MGIeKBA9OUOkLo6lsKXdBhCGWjncxzhcQUD8BgdlIsYE7yQ_BtK70iBwn1ljMB72asvUHTDdiSM7i0dRZxTJi"/>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-text-primary hover:text-primary cursor-pointer">Dune: Hành Tinh Cát - Phần Hai</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Warner Bros Pictures / CGV Distribution</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-code-time text-[10px] font-bold">IMAX Laser 2D</span>
+</td>
+<td class="py-3.5 px-3 text-right font-code-time text-code-time font-bold">5.420</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-primary">742.500.000 đ</td>
+<td class="py-3.5 px-3 text-center font-code-time text-code-time font-semibold">50.0%</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-semibold text-text-secondary">371.250.000 đ</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-status-success">371.250.000 đ</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-status-info/10 text-status-info font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">payments</span>
+                Đã thanh toán Đợt 1
+              </span>
+</td>
+</tr>
+<!-- Row 2: Mai -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded bg-surface-dim overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Vietnamese cinema poster of Mai drama movie with warm romantic cinematic mood and crimson tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCIiszm4Ngin8Hq4IPFJM6MW-pgIG1ERoQl8KtZir-NYrzOX0gDYNVwhsw7vS7vAIbTfV2T3-TumhlT_tVti3TcXK1V-q5QUeafU1ZmafvQjs78VeNp6yr2VPkc37j3ua6pxnxyBY5RNF9dTmgnfyuuvtz3oUsDD9-t5VLdStPhA601-6XaSXtYQNEp0SV88G2ersDWyANsZsP15kq0bB-4VHA5KueOVp0E3CgQJAc3MjSFhO_a5cq"/>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-text-primary hover:text-primary cursor-pointer">Mai (Trấn Thành Town)</div>
+<div class="font-body-sm text-body-sm text-text-secondary">CJ HK Entertainment Phân phối</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-surface-alt text-text-primary font-code-time text-[10px] font-bold">2D Digital</span>
+</td>
+<td class="py-3.5 px-3 text-right font-code-time text-code-time font-bold">2.180</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-primary">218.000.000 đ</td>
+<td class="py-3.5 px-3 text-center font-code-time text-code-time font-semibold">45.0%</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-semibold text-text-secondary">98.100.000 đ</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-status-success">119.900.000 đ</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-status-success/10 text-status-success font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                Đã đối soát xong
+              </span>
+</td>
+</tr>
+<!-- Row 3: Godzilla x Kong -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded bg-surface-dim overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Blockbuster poster of Godzilla x Kong The New Empire featuring epic colossal titans battling with neon neon pink and cyan hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsPnIefomLOvMKFadTtNyHZ4LO3aOFAmKQAG8ESFFyl3FJEEIycch31fDxUoJ4_FOuxzoDgzPgDvfQExHqsTdbcd4whzqQNVormu9-GqMREQTcj9y7v8o9isUvm2-_kzyPxPQehvxpDAIZqvkoO8iLLP40V_uA6JMIZWQJCU3skY2tLbMGa3rh_zAMUDsUeun3u0AwCLA_SyexyCLH6u5zWtSE3MmoUYFRu0tAAQKE3BHyuy4L5PU9"/>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-text-primary hover:text-primary cursor-pointer">Godzilla x Kong: Đế Chế Mới</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Legendary Pictures / Warner Bros</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-gold-vip text-surface-base font-code-time text-[10px] font-bold">3D Atmos</span>
+</td>
+<td class="py-3.5 px-3 text-right font-code-time text-code-time font-bold">1.840</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-primary">192.400.000 đ</td>
+<td class="py-3.5 px-3 text-center font-code-time text-code-time font-semibold">50.0%</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-semibold text-text-secondary">96.200.000 đ</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-status-success">96.200.000 đ</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-status-warning/15 text-status-warning font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">receipt</span>
+                Chờ hóa đơn VAT
+              </span>
+</td>
+</tr>
+<!-- Row 4: Kung Fu Panda 4 -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded bg-surface-dim overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Kung Fu Panda 4 colorful animation animated movie poster with energetic martial arts panda and golden glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7sL6X87k5Hj3GUUdwFbshO3AXIuprJkFz_CTLk25JSzO6qg7NMrs43Hrls1zDA4hRCHRKHdiBfxKvg2nlY1e7tJ5Psy-5B4ZNhSLEP0g_J1KzQQGD9_Gvhu5Dx7KZCQn1Nbon8_IWThIpHm7qruhQVCq11A4m_TU3LU_OrYx0EQcfmfY_gp5iS3sZYII3ShSZCsPGamTcaMNiElxIom3bNE3wt4s8W8Q0iVaYmIk8VG1K6J7UArQA"/>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-text-primary hover:text-primary cursor-pointer">Kung Fu Panda 4</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Universal Pictures / CJ CGV</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-surface-alt text-text-primary font-code-time text-[10px] font-bold">2D Lồng Tiếng</span>
+</td>
+<td class="py-3.5 px-3 text-right font-code-time text-code-time font-bold">1.250</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-primary">118.750.000 đ</td>
+<td class="py-3.5 px-3 text-center font-code-time text-code-time font-semibold">45.0%</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-semibold text-text-secondary">53.437.500 đ</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-status-success">65.312.500 đ</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-alt text-text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">folder_special</span>
+                Đã trích lập dự phòng
+              </span>
+</td>
+</tr>
+<!-- Row 5: Exhuma -->
+<tr class="hover:bg-surface-alt/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-14 rounded bg-surface-dim overflow-hidden flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Exhuma mystery horror korean cinematic movie poster with dark atmospheric graveyard aesthetic and eerie earthy tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3kBODSSjJ2W2reiDqO9XJUfKp0aA7jibF-FKjKrtllMKgfRhwGTT4E5C266KNpcBhxSPmze5Q0uYTWicsjdbhaT6cFHBBZuwHQG8rSo51wQG4kMEKE7yRuYdJEfot--dAgQx94IFKYAj55ufAoQTfEBd3jDgMU2AEVvp6BkKxXBZnQbZZ3HaMDrpFj0-KA5ECqNsRxHS3bD16LsNhsCpH8Iyj4NyObAa0i3BIpuNPFMQ2BQvjNQL9"/>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-text-primary hover:text-primary cursor-pointer">Exhuma: Quật Mộ Trùng Ma</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Showbox / Mockingbird Pictures</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="px-2 py-0.5 rounded bg-surface-alt text-text-primary font-code-time text-[10px] font-bold">2D Phụ Đề</span>
+</td>
+<td class="py-3.5 px-3 text-right font-code-time text-code-time font-bold">980</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-primary">95.050.000 đ</td>
+<td class="py-3.5 px-3 text-center font-code-time text-code-time font-semibold">45.0%</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-semibold text-text-secondary">42.772.500 đ</td>
+<td class="py-3.5 px-4 text-right font-code-time text-code-time font-bold text-status-success">52.277.500 đ</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-status-success/10 text-status-success font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                Đã đối soát xong
+              </span>
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-surface-alt/80 font-label-md text-label-md font-bold text-text-primary">
+<td class="py-3 px-4 rounded-l-lg" colspan="2">Tổng Cộng Top 5 Phim Chủ Lực</td>
+<td class="py-3 px-3 text-right font-code-time text-code-time font-black">11.670 vé</td>
+<td class="py-3 px-4 text-right font-code-time text-code-time font-black text-primary">1.366.700.000 đ</td>
+<td class="py-3 px-3 text-center">-</td>
+<td class="py-3 px-4 text-right font-code-time text-code-time font-black text-text-secondary">661.760.000 đ</td>
+<td class="py-3 px-4 text-right font-code-time text-code-time font-black text-status-success">704.940.000 đ</td>
+<td class="py-3 px-4 rounded-r-lg text-center text-[11px] text-text-secondary">Đạt 92.2% doanh số vé</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!-- Section 5: Payment Gateway Reconciliation & Discrepancy Resolution -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Bảng Đối Soát Cổng Thanh Toán &amp; Quỹ Tiền Mặt</h2>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-status-success/10 text-status-success font-code-time text-[10px] font-bold">AUTO-SYNC OK</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Khớp lệnh tự động giữa Server bán vé HUST Cine và Báo cáo quyết toán từ Ngân hàng / Cổng API</p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-alt text-text-primary hover:bg-surface-highlight hover:text-primary transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span>Chạy Tự Động Tái Đối Soát API</span>
+</button>
+</div>
+<div class="space-y-space-sm">
+<!-- Item 1: MoMo -->
+<div class="p-space-md rounded-xl bg-surface-base border-l-4 border-status-success shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#a50064]/10 text-[#a50064] flex items-center justify-center font-bold font-code-time">
+              MoMo
+            </div>
+<div>
+<div class="font-label-md text-label-md font-bold text-text-primary">Ví Điện Tử MoMo API Gateway</div>
+<div class="font-code-time text-code-time text-text-muted">Batch ID: #MM-20261021-9941 | Phí cổng: 1.2% (-6.760.800 đ)</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<div class="font-code-time text-code-time text-text-secondary">Hệ thống: <span class="font-bold text-text-primary">563.400.000 đ</span></div>
+<div class="font-code-time text-code-time text-status-success">Sao kê MoMo: <span class="font-bold">563.400.000 đ</span></div>
+</div>
+<div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-status-success/10 text-status-success font-label-sm text-label-sm font-bold min-w-[110px] justify-center">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Khớp (0đ lệch)
+            </div>
+</div>
+</div>
+<!-- Item 2: VNPay -->
+<div class="p-space-md rounded-xl bg-surface-base border-l-4 border-status-success shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#005baa]/10 text-[#005baa] flex items-center justify-center font-bold font-code-time">
+              VNPay
+            </div>
+<div>
+<div class="font-label-md text-label-md font-bold text-text-primary">Cổng Thanh Toán Quốc Gia VNPay-QR</div>
+<div class="font-code-time text-code-time text-text-muted">Batch ID: #VNP-4819-202610 | Phí cổng: 1.1% (-5.051.200 đ)</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<div class="font-code-time text-code-time text-text-secondary">Hệ thống: <span class="font-bold text-text-primary">459.200.000 đ</span></div>
+<div class="font-code-time text-code-time text-status-success">Sao kê VNPay: <span class="font-bold">459.200.000 đ</span></div>
+</div>
+<div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-status-success/10 text-status-success font-label-sm text-label-sm font-bold min-w-[110px] justify-center">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Khớp (0đ lệch)
+            </div>
+</div>
+</div>
+<!-- Item 3: POS Vietcombank (Discrepancy) -->
+<div class="p-space-md rounded-xl bg-surface-base border-l-4 border-status-warning shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-status-warning/10 text-status-warning flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">credit_card</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-text-primary">POS Cà Thẻ Vietcombank (Quầy Vé + Kiosk)</span>
+<span class="px-2 py-0.2 rounded bg-status-warning/20 text-status-warning font-code-time text-[10px] font-bold">LỆCH GD</span>
+</div>
+<div class="font-code-time text-code-time text-text-secondary">03 giao dịch lỗi timeout lúc 20:15 ngày 18/10 (Terminal #VCB-04)</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<div class="font-code-time text-code-time text-text-secondary">Hệ thống: <span class="font-bold text-text-primary">266.850.000 đ</span></div>
+<div class="font-code-time text-code-time text-status-warning">Sao kê NH: <span class="font-bold">262.400.000 đ</span></div>
+</div>
+<div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-status-warning/15 text-status-warning font-label-sm text-label-sm font-bold min-w-[110px] justify-center">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+              Lệch -4.450.000 đ
+            </div>
+</div>
+</div>
+<!-- Item 4: Cash Drawer -->
+<div class="p-space-md rounded-xl bg-surface-base border-l-4 border-status-success shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-alt text-text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-text-primary">Quỹ Tiền Mặt Thu Ngân 4 Ca (Cash Safe)</div>
+<div class="font-code-time text-code-time text-text-muted">Biên bản bàn giao số: #BB-CS-1021 | Kế toán trưởng duyệt: Trần Mai Lan</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<div class="font-code-time text-code-time text-text-secondary">Tiền nộp két: <span class="font-bold text-text-primary">193.200.000 đ</span></div>
+<div class="font-code-time text-code-time text-status-success">Biên bản kiểm đếm: <span class="font-bold">193.200.000 đ</span></div>
+</div>
+<div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-status-success/10 text-status-success font-label-sm text-label-sm font-bold min-w-[110px] justify-center">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Khớp 100%
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Discrepancy Ticket Resolution Box (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-text-primary">Phiếu Xử Lý Chênh Lệch</span>
+<span class="w-2.5 h-2.5 rounded-full bg-status-warning animate-ping"></span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+          Chi tiết 03 giao dịch POS Vietcombank bị gián đoạn mạng, khách đã bị trừ tiền nhưng rạp chưa nhận webhook:
+        </p>
+<!-- Discrepancy tickets list -->
+<div class="space-y-space-xs font-code-time text-[12px] mb-space-md">
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-center justify-between">
+<div>
+<div class="font-bold text-text-primary">Mã GD: #TX-91028 (18/10 20:14)</div>
+<div class="text-text-muted text-[11px]">Ghế H11, H12 - Phòng IMAX</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-status-warning">1.450.000 đ</span>
+<div class="text-[10px] text-status-info">Đang tra soát NH</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-center justify-between">
+<div>
+<div class="font-bold text-text-primary">Mã GD: #TX-91044 (18/10 20:18)</div>
+<div class="text-text-muted text-[11px]">Combo 2 Bắp + 2 Nước Lớn</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-status-warning">380.000 đ</span>
+<div class="text-[10px] text-status-info">Chờ hoàn tiền</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-center justify-between">
+<div>
+<div class="font-bold text-text-primary">Mã GD: #TX-91055 (18/10 20:25)</div>
+<div class="text-text-muted text-[11px]">Ghế VIP J05-J08 (4 vé Dune)</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-status-warning">2.620.000 đ</span>
+<div class="text-[10px] text-status-info">Đã cấp vé bù</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-sm space-y-space-xs">
+<button class="w-full h-10 rounded-lg bg-surface-alt hover:bg-surface-highlight text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">post_add</span>
+<span>Tạo Phiếu Điều Chỉnh Kế Toán</span>
+</button>
+<button class="w-full h-10 rounded-lg bg-surface-container-high hover:bg-surface-variant text-text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">contact_support</span>
+<span>Gửi Tra Soát Vietcombank Merchant</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section 6: Sticky Bottom Audit Action Bar & Real-time Signature -->
+<div class="sticky bottom-4 z-30 bg-surface-container-lowest/95 backdrop-blur-md rounded-2xl p-space-md shadow-xl flex flex-col md:flex-row items-center justify-between gap-space-md border border-surface-container-high/60">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-status-success/10 text-status-success flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-text-primary font-bold">Dữ liệu kế toán tự động đồng bộ từ SAP ERP &amp; POS Server</span>
+<span class="px-2 py-0.2 rounded-full bg-surface-alt font-code-time text-[10px] text-text-secondary">Snapshot #2819-FIN</span>
+</div>
+<span class="font-code-time text-code-time text-text-muted">Kiểm toán viên phụ trách: Nguyễn Tuấn Kiệt (Quản lý cụm) - Chứng thư số HUST-CA v2</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-surface-alt text-text-secondary hover:text-text-primary transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Tải file sao kê chi tiết</span>
+</button>
+<button class="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-surface-alt text-text-secondary hover:text-text-primary transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>In bảng cân đối doanh thu (PDF)</span>
+</button>
+<button class="inline-flex items-center gap-2 h-10 px-5 rounded-lg bg-primary-container text-on-primary hover:bg-primary shadow-md transition-all font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>Xác Nhận &amp; Khóa Sổ Kỳ Tháng 10</span>
+</button>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low py-space-sm px-space-lg text-on-surface-variant"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-xs"><div class="flex items-center gap-space-md"><span class="font-code-time text-code-time text-text-secondary">Protocol: SMPTE v4.2 Connected (Sync Node #04)</span><span class="w-1 h-1 rounded-full bg-outline-variant"></span><span class="font-label-sm text-label-sm text-status-success flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span>Health 99.98%</span></div><div class="font-label-sm text-label-sm text-text-muted">© 2025 HUST Cine Portal. Hệ thống quản trị Cụm Rạp Chiếu Phim ĐHBK Hà Nội.</div></div></footer></div>
+  <!-- HUST Cine Dynamic Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+
+</body></html>

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>HUST Cine - Hệ Thống Đặt Vé Phim Số 1</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-container": "#c8102e",
+          "on-primary": "#ffffff",
+          "surface-dim": "#dcd9e0",
+          "gold-vip": "#B8902A",
+          "tertiary-fixed": "#ffdf9b",
+          "background": "#fbf8ff",
+          "secondary-container": "#fd6166",
+          "inverse-on-surface": "#f3eff7",
+          "on-primary-fixed-variant": "#92001c",
+          "on-error": "#ffffff",
+          "error-container": "#ffdad6",
+          "surface-bright": "#fbf8ff",
+          "surface-highlight": "#FDECEF",
+          "status-error": "#B3261E",
+          "outline-variant": "#e5bdbb",
+          "on-secondary-fixed-variant": "#8f0c20",
+          "on-secondary-fixed": "#410007",
+          "surface-base": "#FFFFFF",
+          "surface-container-low": "#f5f2f9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#f0edf4",
+          "on-background": "#1b1b20",
+          "border-subtle": "#E8E0E0",
+          "text-primary": "#1A1A1F",
+          "on-primary-fixed": "#410007",
+          "text-muted": "#8A8A94",
+          "secondary-fixed-dim": "#ffb3b1",
+          "inverse-surface": "#303035",
+          "primary-fixed-dim": "#ffb3b1",
+          "status-info": "#1F6FD1",
+          "tertiary-fixed-dim": "#edc157",
+          "tertiary": "#624900",
+          "status-success": "#1E8E5A",
+          "surface-variant": "#e4e1e8",
+          "on-primary-container": "#ffdad8",
+          "on-tertiary-fixed": "#251a00",
+          "error": "#ba1a1a",
+          "surface": "#fbf8ff",
+          "on-tertiary-container": "#ffdf9b",
+          "surface-tint": "#bf0229",
+          "status-warning": "#D98A00",
+          "on-secondary-container": "#640011",
+          "inverse-primary": "#ffb3b1",
+          "secondary": "#b12a34",
+          "on-error-container": "#93000a",
+          "secondary-fixed": "#ffdad8",
+          "on-surface": "#1b1b20",
+          "surface-container-highest": "#e4e1e8",
+          "surface-container-high": "#eae7ee",
+          "on-tertiary-fixed-variant": "#5b4300",
+          "on-surface-variant": "#5c403f",
+          "text-secondary": "#5B5B66",
+          "on-tertiary": "#ffffff",
+          "primary": "#9e001f",
+          "on-secondary": "#ffffff",
+          "primary-fixed": "#ffdad8",
+          "tertiary-container": "#806000",
+          "outline": "#906f6e",
+          "surface-alt": "#F7F4F4"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Be Vietnam Pro"],
+          "headline-sm": ["Be Vietnam Pro"],
+          "body-sm": ["Be Vietnam Pro"],
+          "display-hero-mobile": ["Be Vietnam Pro"],
+          "code-time": ["Be Vietnam Pro"],
+          "display-hero": ["Be Vietnam Pro"],
+          "body-lg": ["Be Vietnam Pro"],
+          "label-lg": ["Be Vietnam Pro"],
+          "headline-lg": ["Be Vietnam Pro"],
+          "body-md": ["Be Vietnam Pro"],
+          "headline-lg-mobile": ["Be Vietnam Pro"],
+          "label-md": ["Be Vietnam Pro"],
+          "label-sm": ["Be Vietnam Pro"]
+        },
+        "fontSize": {
+          "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+          "display-hero-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+          "code-time": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "display-hero": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script>
+  <!-- HUST Cine Design System Core Assets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+
+</head><body class="bg-surface-base font-body-md text-text-primary antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface-base/95 backdrop-blur-md shadow-[0_1px_8px_rgba(26,26,31,0.06)]"><div class="h-20 w-full max-w-[1280px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg flex-shrink-0"><a class="flex items-center gap-space-sm" data-path="trang-chu" href="#"><img alt="HUST Cine Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xc2DBjIbyU2iCW8pkrtHDbQk3KCXkj2oYeO7QzyUGo-jOvqUf1a1whNKtPGf4iPE9yfgSdydVixM3zDARXjjs7PcLKQLPBofwkxCjkX2geOJ1bxtvahqNZTw0FUp3bWRbXcc1YaF3FISrHqUMmjjU82w35woh-wKiu4_wRSFTppvta_VioXu-DOkftFsqmhMTzyxI58OHFirBwflYeOvmjq8aU8IDDfEDj3uImavJnmNQb-5Q_ei5qjA"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">HUST Cine</span></a></div><div class="hidden xl:flex items-center gap-space-md flex-1 max-w-2xl px-space-md"><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-base">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-alt text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Tìm kiếm phim, rạp chiếu..." type="text"/></div><div class="relative flex-shrink-0"><button class="h-10 px-space-md rounded-lg bg-surface-alt hover:bg-surface-highlight hover:text-primary transition-colors flex items-center gap-space-xs font-label-md text-label-md text-text-secondary" type="button"><span class="material-symbols-outlined text-sm text-primary">location_on</span><span>HUST Cine Đại Cồ Việt</span><span class="material-symbols-outlined text-xs">arrow_drop_down</span></button></div><div class="hidden 2xl:flex items-center gap-space-xs h-10 px-3 rounded-full bg-surface-alt font-code-time text-code-time text-text-secondary flex-shrink-0"><span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span><span>Thứ Tư, 21/10/2026 · 14:32</span></div></div><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center bg-surface-alt rounded-full p-1"><button class="px-2.5 py-1 rounded-full bg-surface-base text-primary font-label-sm text-label-sm shadow-[0_1px_3px_rgba(0,0,0,0.08)]" type="button">VI</button><button class="px-2.5 py-1 rounded-full text-text-muted hover:text-text-primary font-label-sm text-label-sm transition-colors" type="button">EN</button></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex items-center gap-space-xs bg-surface-highlight px-2.5 py-1 rounded-full"><span class="material-symbols-outlined text-gold-vip text-sm">stars</span><span class="font-label-sm text-label-sm text-primary">850 pts</span></div><a class="flex items-center" data-path="tai-khoan" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20 hover:ring-primary-container transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcxI79qWjeicOl3j4uhRuKPIB3vlSXOQAdC6LSR-LuCGDfeDPYKR3J9waACkCeh4cAyzuiwbkYycaOHexznv8gGvGW_tQrkj9aeym1y226sxz2mrhhVlW6_Q5fNjCwh379MkGxh1D1UtasOLSolXZAxzy-i4i43I-OSO7IgyFmHPJ5FcnKEiuNzxcNsrrCd1WvcFsu8Ok0neDM2DAZ9dR3pOm32Yq0GDGnDyjP5grqNNWclkwviJ-s"/></a></div></div></div><div class="w-full bg-surface-base border-t border-border-subtle"><div class="max-w-[1280px] mx-auto px-margin flex items-center justify-between"><nav class="flex items-center gap-space-lg overflow-x-auto" data-active-classes="text-primary font-label-lg border-b-2 border-primary-container py-2.5"><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="trang-chu" href="#">Trang chủ</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="danh-sach-phim" href="#">Phim</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="lich-chieu" href="#">Lịch chiếu</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="rap-va-gia-ve" href="#">Rạp &amp; Giá vé</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="uu-dai" href="#">Ưu đãi</a><a class="py-2.5 font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="phong-private" href="#">Phòng Private</a></nav><div class="xl:hidden flex items-center py-2"><span class="material-symbols-outlined text-text-secondary">search</span></div></div></div></header><main class="w-full pt-28 bg-surface-base flex-1"><div class="flex flex-col w-full">
+<!-- Top Breadcrumb & Status Navigation Bar -->
+<section class="w-full bg-surface-alt">
+<div class="max-w-[1280px] mx-auto px-margin py-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-body-sm text-body-sm text-text-secondary">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+          Trang chủ
+        </a>
+<span class="text-text-muted">/</span>
+<a class="hover:text-primary transition-colors" href="#">Cụm rạp</a>
+<span class="text-text-muted">/</span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Hệ thống rạp &amp; Bản đồ trải nghiệm</span>
+</nav>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-code-time text-code-time text-text-secondary bg-surface-base px-3 py-1 rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span>
+<span>4 Cụm rạp sẵn sàng phục vụ · Hà Nội</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Architectural Hero Section -->
+<section class="w-full bg-surface-base relative overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-margin pt-space-xl pb-space-lg relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end">
+<div class="lg:col-span-8 flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="px-2.5 py-0.5 rounded bg-surface-highlight text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+              Kỹ nghệ trình chiếu 2026
+            </span>
+<span class="font-code-time text-code-time text-text-muted">HUST_GEO_SYSTEM // v4.2</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-text-primary tracking-tight">
+            Hệ Thống Cụm Rạp <span class="text-primary underline decoration-primary-container decoration-4 underline-offset-8">HUST Cine</span>
+</h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mt-space-sm">
+            Tổ hợp điện ảnh công nghệ cao tại Hà Nội với tiêu chuẩn khắt khe: phòng chiếu Laser 4K kép, màn cong IMAX Laser 24m, chuẩn âm học vòm Dolby Atmos và hệ thống Private Studio Lab độc bản.
+          </p>
+</div>
+<!-- Quick Spec Highlights Bento -->
+<div class="lg:col-span-4 grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-alt p-space-md rounded-xl flex flex-col justify-between">
+<span class="font-code-time text-code-time text-text-muted">TỔNG PHÒNG CHIẾU</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">19</span>
+<span class="font-label-sm text-label-sm text-text-secondary">phòng Laser</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-status-success">verified</span> Chuẩn DCI-P3
+            </span>
+</div>
+<div class="bg-surface-highlight p-space-md rounded-xl flex flex-col justify-between">
+<span class="font-code-time text-code-time text-primary">SỨC CHỨA TỐI ĐA</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">2.450+</span>
+<span class="font-label-sm text-label-sm text-text-secondary">ghế</span>
+</div>
+<span class="font-body-sm text-body-sm text-gold-vip mt-1 flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-sm">stars</span> 100% Ghế Ergonomic
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter & Interactive Control Bar -->
+<section class="sticky top-20 z-30 w-full bg-surface-base/95 backdrop-blur-md shadow-sm">
+<div class="max-w-[1280px] mx-auto px-margin py-space-md">
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md">
+<!-- Area Filter Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 md:pb-0" id="cinema-filter-tabs">
+<button class="filter-tab active h-10 px-space-md rounded-lg bg-primary-container text-on-primary font-label-md text-label-md transition-all whitespace-nowrap shadow-sm" data-filter="all">
+            Tất cả cơ sở (4)
+          </button>
+<button class="filter-tab h-10 px-space-md rounded-lg bg-surface-alt hover:bg-surface-highlight text-text-secondary hover:text-primary font-label-md text-label-md transition-all whitespace-nowrap" data-filter="hai-ba-trung">
+            Quận Hai Bà Trưng (2)
+          </button>
+<button class="filter-tab h-10 px-space-md rounded-lg bg-surface-alt hover:bg-surface-highlight text-text-secondary hover:text-primary font-label-md text-label-md transition-all whitespace-nowrap" data-filter="cau-giay">
+            Quận Cầu Giấy (1)
+          </button>
+<button class="filter-tab h-10 px-space-md rounded-lg bg-surface-alt hover:bg-surface-highlight text-text-secondary hover:text-primary font-label-md text-label-md transition-all whitespace-nowrap" data-filter="private">
+            Phòng Private Lab (1)
+          </button>
+</div>
+<!-- Search & Amenities Quick Toggles -->
+<div class="flex items-center gap-space-sm flex-1 md:max-w-md">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-base">search</span>
+<input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-alt text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none focus:bg-surface-base focus:shadow-md transition-all" id="cinema-search-input" placeholder="Tìm theo phố, quận, tên cụm rạp..." type="text"/>
+</div>
+<button class="h-10 px-3 rounded-lg bg-surface-alt hover:bg-surface-highlight text-text-secondary hover:text-primary transition-colors flex items-center gap-1 font-label-sm text-label-sm" title="Lọc tiện ích">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="hidden sm:inline">Tiện ích</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Dual Panel: Cinema Cards (Left) & Interactive Tech Map (Right) -->
+<section class="w-full bg-surface-base py-space-lg">
+<div class="max-w-[1280px] mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Cinema Cards List (lg:col-span-7) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg" id="cinemas-list-container">
+<!-- Cinema 1 (Flagship Campus Cinema) -->
+<article class="cinema-card group bg-surface-base rounded-xl p-space-md shadow-md hover:shadow-xl transition-all duration-300 relative overflow-hidden" data-area="hai-ba-trung" data-id="hust-dcv" data-lat="21.0048" data-lng="105.8458">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary-container"></div>
+<div class="flex flex-col md:flex-row gap-space-md">
+<!-- Poster / Entrance Photo -->
+<div class="w-full md:w-56 h-48 md:h-auto flex-shrink-0 relative rounded-lg overflow-hidden bg-surface-alt">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern architectural cinema entrance at Hanoi University of Science and Technology, sharp red and pure white minimalist design, students gathering under digital screen displays and Ta Quang Buu library background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtjSvFNBOjfJtRukgBPkSzC_dOOyW_e8L5FXj3uf735HPQIL4Rcr4eky0ef22bjLyEdThQKyvu1znVDa8d5S8YcIz6Uug_ZzgVAAU-WFtGZQi6ku092eBBhxTiNatnJ-NTev6ulgxK1IubcNkn_ka0ka3H5yBWnFM6Ad7D0X0Aqwuls_Q1ftjCqHNyrmFcyXSX3HgsQihlD08vy0UeDUGj6uhp-RzQ15I0Sll2JnrPBR50Q5n3i_5N"/>
+<div class="absolute top-2 left-2 bg-primary-container text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded shadow">
+                  Cơ sở Flagship
+                </div>
+<div class="absolute bottom-2 left-2 right-2 bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface px-2 py-1 rounded text-[11px] flex items-center justify-between">
+<span class="flex items-center gap-1 text-gold-vip"><span class="material-symbols-outlined text-xs">local_movies</span> 6 Phòng</span>
+<span class="font-code-time">Tòa Tạ Quang Bửu</span>
+</div>
+</div>
+<!-- Main Details -->
+<div class="flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">
+                        HUST Cine Đại Cồ Việt
+                      </h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary flex-shrink-0">location_on</span>
+                        Số 1 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội
+                      </p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-highlight text-primary font-code-time text-code-time font-semibold flex-shrink-0">
+                      Cách 1.2 km
+                    </span>
+</div>
+<!-- Cinema Specs Badge List -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs text-primary">view_carousel</span> IMAX Laser 24m (260 chỗ)
+                    </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs text-text-secondary">surround_sound</span> Dolby Atmos 360°
+                    </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-highlight text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">science</span> Studio Lab Private
+                    </span>
+</div>
+<!-- Amenities -->
+<div class="mt-space-sm pt-space-xs grid grid-cols-2 sm:grid-cols-3 gap-1 text-[11px] text-text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Gửi xe HUST miễn phí</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Quầy HUST Express</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Thang máy riêng</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Khu trải nghiệm VR Lab</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Không gian cà phê 24/7</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Trạm sạc pin laptop</span>
+</div>
+</div>
+<!-- Live Screening Chips Shortcut -->
+<div class="mt-space-sm bg-surface-alt p-space-sm rounded-lg">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wide flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-success"></span> Suất chiếu hôm nay (21/10)
+                    </span>
+<a class="font-label-sm text-label-sm text-primary hover:underline font-semibold" href="#">Xem toàn bộ lịch →</a>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<a class="px-2.5 py-1 rounded bg-surface-base hover:bg-primary-container hover:text-on-primary text-text-primary transition-colors shadow-sm flex items-center gap-1.5 group/chip" href="#">
+<span class="font-label-md text-label-md font-semibold">18:30</span>
+<span class="text-[10px] px-1 rounded bg-surface-highlight text-primary group-hover/chip:bg-white/20 group-hover/chip:text-on-primary">IMAX 3D</span>
+</a>
+<a class="px-2.5 py-1 rounded bg-surface-base hover:bg-primary-container hover:text-on-primary text-text-primary transition-colors shadow-sm flex items-center gap-1.5 group/chip" href="#">
+<span class="font-label-md text-label-md font-semibold">19:30</span>
+<span class="text-[10px] px-1 rounded bg-surface-alt text-text-secondary group-hover/chip:bg-white/20 group-hover/chip:text-on-primary">Laser 4K</span>
+</a>
+<a class="px-2.5 py-1 rounded bg-surface-base hover:bg-primary-container hover:text-on-primary text-text-primary transition-colors shadow-sm flex items-center gap-1.5 group/chip" href="#">
+<span class="font-label-md text-label-md font-semibold">20:15</span>
+<span class="text-[10px] px-1 rounded bg-surface-alt text-text-secondary group-hover/chip:bg-white/20 group-hover/chip:text-on-primary">Laser 2D</span>
+</a>
+</div>
+</div>
+<!-- Action CTA Cluster -->
+<div class="flex items-center justify-between gap-space-sm pt-space-xs mt-1">
+<div class="flex items-center gap-space-xs">
+<button class="select-pin-btn h-9 px-3 rounded-lg bg-surface-alt hover:bg-surface-highlight text-primary font-label-sm text-label-sm transition-colors flex items-center gap-1" data-target="hust-dcv">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span> Xem trên bản đồ
+                    </button>
+<a class="h-9 px-3 rounded-lg bg-surface-alt hover:bg-surface-container text-text-secondary hover:text-text-primary font-label-sm text-label-sm transition-colors flex items-center gap-1" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">directions</span> Chỉ đường
+                    </a>
+</div>
+<a class="h-9 px-4 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md transition-all shadow-sm flex items-center gap-1.5" href="#">
+<span>Đặt vé rạp này</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Cinema 2: Times City -->
+<article class="cinema-card group bg-surface-base rounded-xl p-space-md shadow-md hover:shadow-xl transition-all duration-300 relative overflow-hidden" data-area="hai-ba-trung" data-id="hust-timescity" data-lat="20.9950" data-lng="105.8674">
+<div class="flex flex-col md:flex-row gap-space-md">
+<div class="w-full md:w-56 h-48 md:h-auto flex-shrink-0 relative rounded-lg overflow-hidden bg-surface-alt">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Spacious shopping mall cinema foyer with glowing red LED typography, ticket kiosks, and plush velvet waiting lounge at Times City Hanoi, architectural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl6Xz6iCzVWSONIqNyT5aJT-xnNxFJYnvwO9Qgg5ZxfK34CKHwZzMwFUdb-_nH56tZyrlLWJqFUkx3bwuVNYdpFJh3PUV_vFyJtjFoqyBq8GpUoirAORP3SNmFEK_6nOFxGChls_KGHaZS_4swWrr3CG75UoQJfpZRQYRtF0yfXDF53b7gxKaWCx9nLQTEcFfa4_4k9ajvIy97ZoS7zW9GlO3vSZGeDBPaxwfgzVCQMu6sa_g2MQFc"/>
+<div class="absolute bottom-2 left-2 right-2 bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface px-2 py-1 rounded text-[11px] flex items-center justify-between">
+<span class="flex items-center gap-1 text-gold-vip"><span class="material-symbols-outlined text-xs">local_movies</span> 6 Phòng</span>
+<span class="font-code-time">Vincom Mega Mall B1</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">
+                        HUST Cine Times City
+                      </h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary flex-shrink-0">location_on</span>
+                        Tầng B1, TTTM Vincom Mega Mall, 458 Minh Khai, Hai Bà Trưng, Hà Nội
+                      </p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-alt text-text-secondary font-code-time text-code-time flex-shrink-0">
+                      Cách 3.8 km
+                    </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs text-primary">theater_comedy</span> 5 Phòng Laser 3D
+                    </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-highlight text-gold-vip font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">weekend</span> Ghế đôi Sweetbox Sofa
+                    </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">fastfood</span> Snack Bar đa dạng
+                    </span>
+</div>
+<div class="mt-space-sm pt-space-xs grid grid-cols-2 sm:grid-cols-3 gap-1 text-[11px] text-text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Bãi đỗ xe hầm B2-B3</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Liền kề ẩm thực TTTM</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Kiosk lấy vé tự động 30s</span>
+</div>
+</div>
+<div class="mt-space-sm bg-surface-alt p-space-sm rounded-lg">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wide">Suất chiếu kế tiếp</span>
+<a class="font-label-sm text-label-sm text-primary hover:underline font-semibold" href="#">Xem chi tiết →</a>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<a class="px-2.5 py-1 rounded bg-surface-base hover:bg-primary-container hover:text-on-primary text-text-primary transition-colors shadow-sm flex items-center gap-1 text-label-md font-semibold" href="#">18:45</a>
+<a class="px-2.5 py-1 rounded bg-surface-base hover:bg-primary-container hover:text-on-primary text-text-primary transition-colors shadow-sm flex items-center gap-1 text-label-md font-semibold" href="#">20:00</a>
+<a class="px-2.5 py-1 rounded bg-surface-base hover:bg-primary-container hover:text-on-primary text-text-primary transition-colors shadow-sm flex items-center gap-1 text-label-md font-semibold" href="#">21:30</a>
+</div>
+</div>
+<div class="flex items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="select-pin-btn h-9 px-3 rounded-lg bg-surface-alt hover:bg-surface-highlight text-primary font-label-sm text-label-sm transition-colors flex items-center gap-1" data-target="hust-timescity">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span> Bản đồ
+                    </button>
+<a class="h-9 px-3 rounded-lg bg-surface-alt hover:bg-surface-container text-text-secondary font-label-sm text-label-sm transition-colors flex items-center gap-1" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">directions</span> Chỉ đường
+                    </a>
+</div>
+<a class="h-9 px-4 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md transition-all shadow-sm flex items-center gap-1" href="#">
+<span>Đặt vé ngay</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Cinema 3: Cau Giay -->
+<article class="cinema-card group bg-surface-base rounded-xl p-space-md shadow-md hover:shadow-xl transition-all duration-300 relative overflow-hidden" data-area="cau-giay" data-id="hust-caugiay" data-lat="21.0368" data-lng="105.7832">
+<div class="flex flex-col md:flex-row gap-space-md">
+<div class="w-full md:w-56 h-48 md:h-auto flex-shrink-0 relative rounded-lg overflow-hidden bg-surface-alt">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cozy and youthful cinema hall entrance with student study cafe spaces, warm wood elements, red geometric acoustics panels in Cau Giay Hanoi." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJjzd1Rn8AUR81x3WB6yYcXhqQaa05fV7aoHiMoyLmFiE0NwM_m6fvCwHVGU1dF9MM8BgHWiwVj6NWen2KWmlAOoB6X6D8gwCfaNAaTvIzetJEtw5qrlqO0qx-neaOhBG0Jstq0h-4Is47Oxr-YDRnAtXdipLY3UlLMztMy3qZjB6rtugYi2sWbeIYdJZePghOtWBHAOWy9l95SXigoODNw0hAFmhUJzrggGYfEdYdCztWnJib1EhB"/>
+<div class="absolute top-2 left-2 bg-gold-vip text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded shadow">
+                  Student Hub 55K
+                </div>
+<div class="absolute bottom-2 left-2 right-2 bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface px-2 py-1 rounded text-[11px] flex items-center justify-between">
+<span class="flex items-center gap-1 text-gold-vip"><span class="material-symbols-outlined text-xs">local_movies</span> 4 Phòng</span>
+<span class="font-code-time">Xuân Thủy Campus</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors">
+                        HUST Cine Cầu Giấy
+                      </h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary flex-shrink-0">location_on</span>
+                        144 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội
+                      </p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-alt text-text-secondary font-code-time text-code-time flex-shrink-0">
+                      Cách 6.5 km
+                    </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs text-primary">tv</span> 4 Phòng Standard Laser
+                    </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-highlight text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">school</span> Đồng giá sinh viên 55K
+                    </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">local_cafe</span> Cine-Work Lounge
+                    </span>
+</div>
+<div class="mt-space-sm pt-space-xs grid grid-cols-2 sm:grid-cols-3 gap-1 text-[11px] text-text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Trạm sạc xe điện VinFast</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> WiFi tốc độ cao 1Gbps</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-status-success">check_circle</span> Ghế bọc da Ergonomic</span>
+</div>
+</div>
+<div class="mt-space-sm bg-surface-alt p-space-sm rounded-lg">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wide">Suất chiếu hôm nay</span>
+<a class="font-label-sm text-label-sm text-primary hover:underline font-semibold" href="#">Xem toàn bộ →</a>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<a class="px-2.5 py-1 rounded bg-surface-base hover:bg-primary-container hover:text-on-primary text-text-primary transition-colors shadow-sm flex items-center gap-1 text-label-md font-semibold" href="#">18:00</a>
+<a class="px-2.5 py-1 rounded bg-surface-base hover:bg-primary-container hover:text-on-primary text-text-primary transition-colors shadow-sm flex items-center gap-1 text-label-md font-semibold" href="#">19:40</a>
+<a class="px-2.5 py-1 rounded bg-surface-base hover:bg-primary-container hover:text-on-primary text-text-primary transition-colors shadow-sm flex items-center gap-1 text-label-md font-semibold" href="#">21:10</a>
+</div>
+</div>
+<div class="flex items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="select-pin-btn h-9 px-3 rounded-lg bg-surface-alt hover:bg-surface-highlight text-primary font-label-sm text-label-sm transition-colors flex items-center gap-1" data-target="hust-caugiay">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span> Bản đồ
+                    </button>
+<a class="h-9 px-3 rounded-lg bg-surface-alt hover:bg-surface-container text-text-secondary font-label-sm text-label-sm transition-colors flex items-center gap-1" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">directions</span> Chỉ đường
+                    </a>
+</div>
+<a class="h-9 px-4 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md transition-all shadow-sm flex items-center gap-1" href="#">
+<span>Đặt vé ngay</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Cinema 4: Studio Lab Private -->
+<article class="cinema-card group bg-surface-base rounded-xl p-space-md shadow-md hover:shadow-xl transition-all duration-300 relative overflow-hidden" data-area="private" data-id="hust-privatelab" data-lat="21.0062" data-lng="105.8435">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-gold-vip"></div>
+<div class="flex flex-col md:flex-row gap-space-md">
+<div class="w-full md:w-56 h-48 md:h-auto flex-shrink-0 relative rounded-lg overflow-hidden bg-surface-alt">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic cinema screening studio lab with modular recliner armchairs, ultra short throw 4K laser projector, acoustic sound insulation panels, warm ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNXNniwAu2wpRyc--QORWFwCLSYOti7ZgInRLLXjPGOoFGa7A6F4rODQnL8xJ60WpAErEAKlSPo7fhR9-wWwGnEeogaqrLW956-D2LLsBmXJWJyEDoQcf8yXON5QrWJ_PHI3WaKzaFwNSxvCd28rkFiFX8yQ1kbP8qY-jp6OLuSp8y5DM1odzCglj_HHbybljAKDmg7X8oK7Hdq3kra0YOboHvj05NT6S3uwk1RFVzXZIiVgcI7tf5"/>
+<div class="absolute top-2 left-2 bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded shadow">
+                  Private &amp; Corporate
+                </div>
+<div class="absolute bottom-2 left-2 right-2 bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface px-2 py-1 rounded text-[11px] flex items-center justify-between">
+<span class="flex items-center gap-1 text-gold-vip"><span class="material-symbols-outlined text-xs">lock</span> 1 Phòng VIP</span>
+<span class="font-code-time">30 Ghế Recliner</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-primary transition-colors flex items-center gap-2">
+                        HUST Cine Studio Lab Private
+                        <span class="material-symbols-outlined text-gold-vip text-sm">verified</span>
+</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-gold-vip flex-shrink-0">apartment</span>
+                        Tầng 4, Tòa Nhà Sáng Tạo Bách Khoa, Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội
+                      </p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-highlight text-primary font-code-time text-code-time flex-shrink-0">
+                      Thuê bao rạp
+                    </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs text-gold-vip">meeting_room</span> Bao trọn phòng theo ca
+                    </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-alt text-text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs text-primary">record_voice_over</span> Micro hội thảo &amp; Thiết bị thuyết trình
+                    </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-highlight text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">room_service</span> Dịch vụ tiệc Teabreak
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm">
+                    Không gian lý tưởng cho chiếu thử nghiệm phim ngắn, bảo vệ đồ án tốt nghiệp, hội thảo chuyên đề nghiên cứu khoa học và sinh nhật riêng tư.
+                  </p>
+</div>
+<div class="flex items-center justify-between gap-space-sm pt-space-xs mt-1">
+<div class="flex items-center gap-space-xs">
+<button class="select-pin-btn h-9 px-3 rounded-lg bg-surface-alt hover:bg-surface-highlight text-primary font-label-sm text-label-sm transition-colors flex items-center gap-1" data-target="hust-privatelab">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span> Bản đồ
+                    </button>
+<a class="h-9 px-3 rounded-lg bg-surface-alt hover:bg-surface-container text-text-secondary font-label-sm text-label-sm transition-colors flex items-center gap-1" href="tel:19002026">
+<span class="material-symbols-outlined text-[16px]">call</span> Tư vấn ca riêng
+                    </a>
+</div>
+<a class="h-9 px-4 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md transition-all shadow-sm flex items-center gap-1" href="#">
+<span>Đăng ký thuê phòng</span>
+<span class="material-symbols-outlined text-[16px]">event</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- RIGHT COLUMN: Interactive Tech Map & Realtime Location Card (lg:col-span-5) -->
+<div class="lg:col-span-5 sticky top-40 flex flex-col gap-space-md">
+<!-- Map Canvas Wrapper -->
+<div class="w-full bg-surface-alt rounded-2xl shadow-xl overflow-hidden relative" style="height: 600px;">
+<!-- Map Static Imagery Pipeline Component -->
+<div class="w-full h-full bg-cover bg-center relative" data-location="Hanoi University of Science and Technology, Hai Ba Trung, Hanoi" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCm-UlERQLMSt13jl4mn0OMxrr9_hhcVawPLDgtZvjVdmfi3n1ZUOP0s7fb2u_M1lUgIWdvKjPud6Y_UeWgY_hhb39P2PzjFMlPTWpiRlZvjf7D6zEDlifps2DvBqMmLyTyI-ifMMgPjzpMYv9ICtSuSLMEEFW5jfH0zjJrdceUPpZSbssDQtNeaIhyZBbvHZdhZGkjmyVuN0cayT5Vo5xklTuG-P4g79TjWfwSZ7l6h91n_oCILTdC')">
+<!-- Engineering Mesh Grid Overlay (Design Token Alignment) -->
+<div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: radial-gradient(#9e001f 1px, transparent 1px); background-size: 20px 20px;"></div>
+<!-- Tech Map UI Controls (Top Right) -->
+<div class="absolute top-4 right-4 z-20 flex flex-col gap-2">
+<button class="w-9 h-9 bg-surface-base text-text-primary hover:text-primary rounded-lg shadow-md flex items-center justify-center font-bold text-lg transition-colors" title="Phóng to">
+                  +
+                </button>
+<button class="w-9 h-9 bg-surface-base text-text-primary hover:text-primary rounded-lg shadow-md flex items-center justify-center font-bold text-lg transition-colors" title="Thu nhỏ">
+                  -
+                </button>
+<button class="w-9 h-9 bg-surface-base text-primary rounded-lg shadow-md flex items-center justify-center transition-colors" title="Vị trí của tôi (GPS)">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+</button>
+<button class="w-9 h-9 bg-surface-base text-text-secondary hover:text-primary rounded-lg shadow-md flex items-center justify-center transition-colors" title="Lớp bản đồ vệ tinh">
+<span class="material-symbols-outlined text-[18px]">layers</span>
+</button>
+</div>
+<!-- Amenity Filter Badges (Top Left of Map) -->
+<div class="absolute top-4 left-4 z-20 flex flex-wrap gap-1.5 max-w-[280px]">
+<button class="px-2.5 py-1 rounded-full bg-surface-base/90 backdrop-blur-sm text-text-primary hover:text-primary text-[11px] font-label-sm font-semibold shadow-sm flex items-center gap-1 transition-all">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Có đỗ ô tô
+                </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-base/90 backdrop-blur-sm text-text-primary hover:text-primary text-[11px] font-label-sm font-semibold shadow-sm flex items-center gap-1 transition-all">
+<span class="w-1.5 h-1.5 rounded-full bg-gold-vip"></span> Rạp IMAX
+                </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-base/90 backdrop-blur-sm text-text-primary hover:text-primary text-[11px] font-label-sm font-semibold shadow-sm flex items-center gap-1 transition-all">
+<span class="w-1.5 h-1.5 rounded-full bg-status-success"></span> Mở cửa đêm
+                </button>
+</div>
+<!-- Interactive Simulated Pins on Visual Plane -->
+<!-- Pin 1: Dai Co Viet (Active Selection) -->
+<div class="cinema-map-pin absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20 group" id="pin-hust-dcv">
+<div class="relative flex items-center justify-center">
+<!-- Pulsing Radar Animation -->
+<span class="absolute w-12 h-12 rounded-full bg-primary-container/20 animate-ping"></span>
+<span class="absolute w-8 h-8 rounded-full bg-primary-container/40"></span>
+<!-- Main Core Pin -->
+<div class="relative w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg border-2 border-white ring-2 ring-primary">
+<span class="material-symbols-outlined text-[18px]">theater_comedy</span>
+</div>
+<!-- Label Chip -->
+<div class="absolute top-10 whitespace-nowrap bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm shadow-md pointer-events-none flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-success"></span> Đại Cồ Việt (Cơ sở chính)
+                  </div>
+</div>
+</div>
+<!-- Pin 2: Times City -->
+<div class="cinema-map-pin absolute top-[68%] left-[72%] -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 group" id="pin-hust-timescity">
+<div class="relative flex items-center justify-center">
+<div class="w-7 h-7 rounded-full bg-surface-base text-primary shadow-md flex items-center justify-center border-2 border-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[14px]">movie</span>
+</div>
+<div class="hidden group-hover:block absolute top-8 whitespace-nowrap bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm shadow-md">
+                    Times City
+                  </div>
+</div>
+</div>
+<!-- Pin 3: Cau Giay -->
+<div class="cinema-map-pin absolute top-[28%] left-[25%] -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 group" id="pin-hust-caugiay">
+<div class="relative flex items-center justify-center">
+<div class="w-7 h-7 rounded-full bg-surface-base text-primary shadow-md flex items-center justify-center border-2 border-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[14px]">school</span>
+</div>
+<div class="hidden group-hover:block absolute top-8 whitespace-nowrap bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm shadow-md">
+                    Cầu Giấy
+                  </div>
+</div>
+</div>
+<!-- Pin 4: Studio Lab -->
+<div class="cinema-map-pin absolute top-[44%] left-[45%] -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10 group" id="pin-hust-privatelab">
+<div class="relative flex items-center justify-center">
+<div class="w-7 h-7 rounded-full bg-surface-base text-gold-vip shadow-md flex items-center justify-center border-2 border-gold-vip hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[14px]">science</span>
+</div>
+<div class="hidden group-hover:block absolute top-8 whitespace-nowrap bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm shadow-md">
+                    Studio Lab Private
+                  </div>
+</div>
+</div>
+<!-- FLOATING ACTIVE CARD OVERLAY (Dynamic Detail Card on Map) -->
+<div class="absolute bottom-4 left-4 right-4 z-20 bg-surface-base/95 backdrop-blur-md p-space-md rounded-xl shadow-xl transition-all" id="map-active-cinema-card">
+<div class="flex items-start gap-space-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-alt">
+<img class="w-full h-full object-cover" data-alt="Modern cinema hall projection screen and red seats, clean architectural view, HUST Cine ambiance." id="card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAEBe9S9JmL1O2kOpjWgc6vEVOfDNe0-BmlxJkm9wIVyhRKG-0WXOjiF-o1_KD7Omr_K_0sqbZnNMARIQmiBerN04v4HJLcL7Kp57b_eEfBQAyj_kVL10dgyd8N9YvVDYGJC4FwKB7fZuoAC3U1vBFwZ4jHFgL_9OlKMvLSzUzR2WR97Op-QrLlkFGNxfx5ognHw-EkYnXlTx0dRAY8zlVc4G9kbzz89sY3V7dtPuQuvqgotn6kMCf"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-status-success font-semibold" id="card-status">
+<span class="w-1.5 h-1.5 rounded-full bg-status-success animate-pulse"></span> Đang mở cửa · 08:00 - 24:00
+                      </span>
+<span class="font-code-time text-code-time text-primary font-bold" id="card-dist">1.2 km</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary truncate mt-0.5" id="card-title">
+                      HUST Cine Đại Cồ Việt
+                    </h4>
+<p class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5" id="card-address">
+                      Tòa nhà Thư viện Tạ Quang Bửu, Số 1 Đại Cồ Việt
+                    </p>
+<div class="flex items-center gap-space-xs mt-space-sm">
+<a class="flex-1 h-8 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center gap-1 shadow-sm hover:bg-secondary transition-colors" href="https://maps.google.com" id="card-direct-btn" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[15px]">navigation</span> Dẫn đường
+                      </a>
+<a class="h-8 px-3 rounded-lg bg-surface-alt text-text-primary hover:text-primary font-label-sm text-label-sm flex items-center justify-center gap-1 transition-colors" href="tel:19002026" id="card-call-btn">
+<span class="material-symbols-outlined text-[15px]">call</span> Hotline
+                      </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Facility Indicators -->
+<div class="bg-surface-alt p-space-md rounded-xl flex items-center justify-between text-text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-status-info text-[20px]">info</span>
+<span>Định vị hiển thị khoảng cách theo thời gian thực từ vị trí của bạn.</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold flex-shrink-0">
+              Cập nhật GPS
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Corporate / Academic Event Rental Section -->
+<section class="w-full bg-surface-alt py-space-xl relative overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-margin relative z-10">
+<div class="bg-surface-base rounded-2xl p-space-lg lg:p-space-xl shadow-lg relative overflow-hidden">
+<!-- Subtle Top Accent Band -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary-container via-secondary to-gold-vip"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-7 flex flex-col gap-space-sm">
+<span class="font-code-time text-code-time text-primary font-bold uppercase tracking-wider">
+              DỊCH VỤ DOANH NGHIỆP &amp; HỌC THUẬT
+            </span>
+<h3 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+              Thuê Trọn Cụm Rạp Tổ Chức Hội Thảo Kỹ Thuật &amp; Sự Kiện Điện Ảnh
+            </h3>
+<p class="font-body-lg text-body-lg text-text-secondary">
+              Hệ thống phòng chiếu tại Đại học Bách Khoa Hà Nội được thiết kế chuyên dụng cho việc trình diễn đồ họa kỹ thuật số, hội nghị khoa học, bảo vệ đồ án tốt nghiệp cử nhân/thạc sĩ và chiếu thử nghiệm tác phẩm điện ảnh độc lập.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md mt-space-sm">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">videocam</span>
+<div>
+<div class="font-label-md text-label-md text-text-primary font-semibold">Tín hiệu 4K DCI Không Nén</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Kết nối trực tiếp máy trạm kỹ thuật qua chuẩn SDI/HDMI quang.</div>
+</div>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">mic</span>
+<div>
+<div class="font-label-md text-label-md text-text-primary font-semibold">Hệ Âm Thanh Hội Thảo</div>
+<div class="font-body-sm text-body-sm text-text-secondary">Bộ micro không dây Shure chuyên nghiệp lọc âm chống vọng.</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm mt-space-md">
+<a class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-lg text-label-lg transition-colors shadow-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                Tải Báo Giá Thuê Phòng Chiếu 2026
+              </a>
+<a class="h-11 px-space-lg rounded-lg bg-surface-alt hover:bg-surface-highlight text-text-primary font-label-lg text-label-lg transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                Liên hệ Chuyên viên Đoàn thể
+              </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="w-full h-80 rounded-xl overflow-hidden shadow-md relative bg-surface-alt">
+<img class="w-full h-full object-cover" data-alt="Technical presentation inside a modern university cinema auditorium, students and researchers viewing high resolution scientific visualisations on huge IMAX screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX-Uzl6QqxfQBaWynocU9oqE0xtG7VyrSYNrjrfm0EOX8hWCppfaCRhgxGQmQJlf9VhG0hJ0FykWgp6NlD7K8SSsi4B7-aiV4auQlm03rmYfuQE1XzuwP9wo7OMuQoq1yaQsV4FIl3zdBLh1KNFm77fDPP759U0xits2TwLJGqYUDs-F6QZniOPgiYHCXreVk1RNO0eAXZ7wqxP4Dv6BbnrdLbDL00z01tR0DLtjoyaocH31NiAfl6"/>
+<div class="absolute bottom-3 left-3 right-3 bg-inverse-surface/90 backdrop-blur-md p-space-sm rounded-lg text-inverse-on-surface">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold">Hỗ trợ kỹ thuật viên rạp 1-1</span>
+<span class="font-code-time text-gold-vip text-xs">Hotline: 1900 2026 (Ext 2)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Cinema FAQ Section -->
+<section class="w-full bg-surface-base py-space-xl">
+<div class="max-w-[1280px] mx-auto px-margin">
+<div class="max-w-3xl mx-auto flex flex-col gap-space-lg">
+<div class="text-center flex flex-col gap-space-xs">
+<span class="font-code-time text-code-time text-primary uppercase font-bold tracking-wider">HỎI ĐÁP TIỆN ÍCH &amp; ĐI LẠI</span>
+<h3 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+            Câu Hỏi Thường Gặp Về Cụm Rạp
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary">
+            Mọi thông tin cần thiết về gửi xe, thẻ sinh viên và quy trình nhận phòng chiếu.
+          </p>
+</div>
+<div class="flex flex-col gap-space-sm" id="faq-accordion">
+<!-- FAQ Item 1 -->
+<div class="faq-card bg-surface-alt rounded-xl p-space-md transition-all cursor-pointer">
+<div class="flex items-center justify-between gap-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">two_wheeler</span>
+                Chính sách gửi xe máy và ô tô tại rạp HUST Cine Đại Cồ Việt như thế nào?
+              </h4>
+<span class="faq-icon material-symbols-outlined text-text-muted transition-transform">expand_more</span>
+</div>
+<div class="faq-content hidden mt-space-sm pt-space-xs text-text-secondary font-body-md text-body-md">
+              Khách hàng và sinh viên xem phim tại cơ sở Đại Cồ Việt được miễn phí gửi xe máy tại bãi xe Thư viện Tạ Quang Bửu (chỉ cần xuất trình vé xem phim hoặc vé điện tử trên app khi ra cổng). Đối với ô tô, bãi đỗ xe Cổng Parabol (đường Giải Phóng) phục vụ 24/7 với phí tiêu chuẩn trường quy định.
+            </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-card bg-surface-alt rounded-xl p-space-md transition-all cursor-pointer">
+<div class="flex items-center justify-between gap-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+                Làm sao để hưởng chính sách ưu đãi vé Sinh viên Bách Khoa &amp; các trường ĐH?
+              </h4>
+<span class="faq-icon material-symbols-outlined text-text-muted transition-transform">expand_more</span>
+</div>
+<div class="faq-content hidden mt-space-sm pt-space-xs text-text-secondary font-body-md text-body-md">
+              Sinh viên toàn quốc (dưới 22 tuổi) chỉ cần mang theo thẻ sinh viên có dán ảnh hoặc ứng dụng VNeID/eHUST để nhận mức đồng giá 55.000 VNĐ cho toàn bộ suất chiếu 2D Standard từ Thứ Hai đến Thứ Năm hàng tuần. Sinh viên trường HUST được cộng thêm 10% điểm tích lũy vào tài khoản hội viên.
+            </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-card bg-surface-alt rounded-xl p-space-md transition-all cursor-pointer">
+<div class="flex items-center justify-between gap-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">theaters</span>
+                Quy trình đăng ký chiếu phim đồ án tốt nghiệp tại HUST Studio Lab Private?
+              </h4>
+<span class="faq-icon material-symbols-outlined text-text-muted transition-transform">expand_more</span>
+</div>
+<div class="faq-content hidden mt-space-sm pt-space-xs text-text-secondary font-body-md text-body-md">
+              Sinh viên ngành Kỹ thuật Truyền thông, Đồ họa hoặc Điện ảnh cần gửi đơn đăng ký trước ít nhất 3 ngày làm việc kèm file DCP hoặc MP4/ProRes tiêu chuẩn. Bộ phận kỹ thuật sẽ hỗ trợ test tín hiệu hình ảnh và cân chỉnh hệ thống Dolby Atmos 7.1.4 miễn phí 30 phút trước buổi chiếu.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript Handling Filtering, Pin Switching, and FAQs -->
+<script>
+    (function initCinemaMapPage() {
+      // Cinema mock database for map sync
+      const cinemaDatabase = {
+        'hust-dcv': {
+          title: 'HUST Cine Đại Cồ Việt',
+          address: 'Tòa nhà Thư viện Tạ Quang Bửu, Số 1 Đại Cồ Việt',
+          dist: '1.2 km',
+          status: 'Đang mở cửa · 08:00 - 24:00',
+          pinSelector: '#pin-hust-dcv'
+        },
+        'hust-timescity': {
+          title: 'HUST Cine Times City',
+          address: 'Tầng B1, TTTM Vincom Mega Mall, 458 Minh Khai',
+          dist: '3.8 km',
+          status: 'Đang mở cửa · 09:00 - 23:30',
+          pinSelector: '#pin-hust-timescity'
+        },
+        'hust-caugiay': {
+          title: 'HUST Cine Cầu Giấy',
+          address: '144 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội',
+          dist: '6.5 km',
+          status: 'Đang mở cửa · 08:30 - 23:30',
+          pinSelector: '#pin-hust-caugiay'
+        },
+        'hust-privatelab': {
+          title: 'HUST Cine Studio Lab Private',
+          address: 'Tầng 4, Tòa Nhà Sáng Tạo Bách Khoa, Trần Đại Nghĩa',
+          dist: '1.4 km',
+          status: 'Đặt phòng theo ca · 08:00 - 22:00',
+          pinSelector: '#pin-hust-privatelab'
+        }
+      };
+
+      // 1. Tab Filtering
+      const tabs = document.querySelectorAll('#cinema-filter-tabs .filter-tab');
+      const cards = document.querySelectorAll('#cinemas-list-container .cinema-card');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+            t.classList.add('bg-surface-alt', 'text-text-secondary');
+          });
+          tab.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+          tab.classList.remove('bg-surface-alt', 'text-text-secondary');
+
+          const filter = tab.getAttribute('data-filter');
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-area') === filter) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 2. Search Box Input Filter
+      const searchInput = document.getElementById('cinema-search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const val = e.target.value.toLowerCase().trim();
+          cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            if (text.includes(val)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      }
+
+      // 3. Map Card Sync on Pin or Button Click
+      const cardTitle = document.getElementById('card-title');
+      const cardAddress = document.getElementById('card-address');
+      const cardDist = document.getElementById('card-dist');
+      const cardStatus = document.getElementById('card-status');
+
+      function activateCinema(cinemaId) {
+        const item = cinemaDatabase[cinemaId];
+        if (!item) return;
+
+        if (cardTitle) cardTitle.textContent = item.title;
+        if (cardAddress) cardAddress.textContent = item.address;
+        if (cardDist) cardDist.textContent = item.dist;
+        if (cardStatus) cardStatus.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-status-success animate-pulse"></span> ' + item.status;
+
+        // Visual highlight on pins
+        document.querySelectorAll('.cinema-map-pin').forEach(p => {
+          p.classList.remove('z-20');
+          p.classList.add('z-10');
+          const innerCore = p.querySelector('div > div');
+          if (innerCore) {
+            innerCore.classList.remove('bg-primary-container', 'text-on-primary', 'w-9', 'h-9');
+            innerCore.classList.add('bg-surface-base', 'text-primary', 'w-7', 'h-7');
+          }
+        });
+
+        const activePin = document.querySelector(item.pinSelector);
+        if (activePin) {
+          activePin.classList.remove('z-10');
+          activePin.classList.add('z-20');
+          const innerCore = activePin.querySelector('div > div');
+          if (innerCore) {
+            innerCore.classList.remove('bg-surface-base', 'text-primary', 'w-7', 'h-7');
+            innerCore.classList.add('bg-primary-container', 'text-on-primary', 'w-9', 'h-9');
+          }
+        }
+      }
+
+      // Add click listeners to select buttons on cards
+      document.querySelectorAll('.select-pin-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const target = btn.getAttribute('data-target');
+          activateCinema(target);
+          const mapEl = document.querySelector('[data-location]');
+          if (mapEl && window.innerWidth < 1024) {
+            mapEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      });
+
+      // Pin clicks
+      document.querySelectorAll('.cinema-map-pin').forEach(pin => {
+        pin.addEventListener('click', () => {
+          const id = pin.id.replace('pin-', '');
+          activateCinema(id);
+        });
+      });
+
+      // 4. FAQ Accordion Toggle
+      const faqCards = document.querySelectorAll('#faq-accordion .faq-card');
+      faqCards.forEach(faq => {
+        faq.addEventListener('click', () => {
+          const content = faq.querySelector('.faq-content');
+          const icon = faq.querySelector('.faq-icon');
+          const isHidden = content.classList.contains('hidden');
+          
+          // Collapse other FAQs
+          faqCards.forEach(otherFaq => {
+            const otherContent = otherFaq.querySelector('.faq-content');
+            const otherIcon = otherFaq.querySelector('.faq-icon');
+            otherContent.classList.add('hidden');
+            otherIcon.textContent = 'expand_more';
+          });
+
+          if (isHidden) {
+            content.classList.remove('hidden');
+            icon.textContent = 'expand_less';
+          }
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-[#8E0B1F] text-on-primary relative overflow-hidden"><div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 24px 24px;"></div><div class="max-w-[1280px] mx-auto px-margin py-space-xl relative z-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-lg text-headline-lg text-on-primary tracking-tight font-extrabold">HUST Cine</span></div><p class="font-body-md text-body-md text-on-primary-container max-w-sm">Hệ thống rạp chiếu phim hiện đại kỹ thuật số thuộc Trường Đại học Bách Khoa Hà Nội, kết hợp kỹ thuật trình chiếu đỉnh cao và không gian điện ảnh tiên phong.</p><div class="flex flex-col gap-space-xs mt-space-sm"><span class="font-label-md text-label-md text-tertiary-fixed font-semibold">ĐĂNG KÝ NHẬN TIN KHUYẾN MÃI</span><div class="flex gap-space-xs max-w-md"><input class="flex-1 h-11 px-space-md rounded-lg bg-surface-base text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none" placeholder="Nhập email của bạn..." type="email"/><button class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-lg text-label-lg transition-colors shadow-sm" type="button">Gửi</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Chính sách &amp; Quy định</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-dieu-khoan" href="#">Điều khoản sử dụng</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-thanh-toan" href="#">Chính sách thanh toán</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-bao-mat" href="#">Chính sách bảo mật</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-hoan-ve" href="#">Chính sách hoàn vé</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Cụm rạp HUST Cine</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Đại Cồ Việt (Hai Bà Trưng)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Times City (Minh Khai)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Cầu Giấy (Xuân Thủy)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="phong-private" href="#">HUST Cine Studio Lab Private</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Liên hệ &amp; Hỗ trợ</span><span class="font-body-sm text-body-sm text-on-primary-container">Hotline: 1900 2026 (8:00 - 23:00)</span><span class="font-body-sm text-body-sm text-on-primary-container">Email: contact@hustcine.edu.vn</span><span class="font-body-sm text-body-sm text-on-primary-container">Địa chỉ: 1 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội</span><div class="flex items-center gap-space-sm pt-space-xs"><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">share</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">public</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">mail</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">forum</span></div></div></div><div class="pt-space-lg border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-primary-container">© 2026 HUST Cine. Hệ thống rạp chiếu phim hiện đại kỹ thuật số.</p><p class="font-body-sm text-body-sm text-on-primary-container/80">Đại học Bách Khoa Hà Nội • Viện Điện ảnh &amp; Kỹ thuật Số</p></div></div></footer>
+  <!-- HUST Cine Dynamic Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+
+</body></html>

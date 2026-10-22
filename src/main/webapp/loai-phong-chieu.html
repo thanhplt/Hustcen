@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>HUST Cine - Hệ Thống Đặt Vé Phim Số 1</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-container": "#c8102e",
+          "on-primary": "#ffffff",
+          "surface-dim": "#dcd9e0",
+          "gold-vip": "#B8902A",
+          "tertiary-fixed": "#ffdf9b",
+          "background": "#fbf8ff",
+          "secondary-container": "#fd6166",
+          "inverse-on-surface": "#f3eff7",
+          "on-primary-fixed-variant": "#92001c",
+          "on-error": "#ffffff",
+          "error-container": "#ffdad6",
+          "surface-bright": "#fbf8ff",
+          "surface-highlight": "#FDECEF",
+          "status-error": "#B3261E",
+          "outline-variant": "#e5bdbb",
+          "on-secondary-fixed-variant": "#8f0c20",
+          "on-secondary-fixed": "#410007",
+          "surface-base": "#FFFFFF",
+          "surface-container-low": "#f5f2f9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container": "#f0edf4",
+          "on-background": "#1b1b20",
+          "border-subtle": "#E8E0E0",
+          "text-primary": "#1A1A1F",
+          "on-primary-fixed": "#410007",
+          "text-muted": "#8A8A94",
+          "secondary-fixed-dim": "#ffb3b1",
+          "inverse-surface": "#303035",
+          "primary-fixed-dim": "#ffb3b1",
+          "status-info": "#1F6FD1",
+          "tertiary-fixed-dim": "#edc157",
+          "tertiary": "#624900",
+          "status-success": "#1E8E5A",
+          "surface-variant": "#e4e1e8",
+          "on-primary-container": "#ffdad8",
+          "on-tertiary-fixed": "#251a00",
+          "error": "#ba1a1a",
+          "surface": "#fbf8ff",
+          "on-tertiary-container": "#ffdf9b",
+          "surface-tint": "#bf0229",
+          "status-warning": "#D98A00",
+          "on-secondary-container": "#640011",
+          "inverse-primary": "#ffb3b1",
+          "secondary": "#b12a34",
+          "on-error-container": "#93000a",
+          "secondary-fixed": "#ffdad8",
+          "on-surface": "#1b1b20",
+          "surface-container-highest": "#e4e1e8",
+          "surface-container-high": "#eae7ee",
+          "on-tertiary-fixed-variant": "#5b4300",
+          "on-surface-variant": "#5c403f",
+          "text-secondary": "#5B5B66",
+          "on-tertiary": "#ffffff",
+          "primary": "#9e001f",
+          "on-secondary": "#ffffff",
+          "primary-fixed": "#ffdad8",
+          "tertiary-container": "#806000",
+          "outline": "#906f6e",
+          "surface-alt": "#F7F4F4"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "gutter-mobile": "0.75rem",
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "headline-md": ["Be Vietnam Pro"],
+          "headline-sm": ["Be Vietnam Pro"],
+          "body-sm": ["Be Vietnam Pro"],
+          "display-hero-mobile": ["Be Vietnam Pro"],
+          "code-time": ["Be Vietnam Pro"],
+          "display-hero": ["Be Vietnam Pro"],
+          "body-lg": ["Be Vietnam Pro"],
+          "label-lg": ["Be Vietnam Pro"],
+          "headline-lg": ["Be Vietnam Pro"],
+          "body-md": ["Be Vietnam Pro"],
+          "headline-lg-mobile": ["Be Vietnam Pro"],
+          "label-md": ["Be Vietnam Pro"],
+          "label-sm": ["Be Vietnam Pro"]
+        },
+        "fontSize": {
+          "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+          "display-hero-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+          "code-time": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "display-hero": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script>
+  <!-- HUST Cine Design System Core Assets -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/tailwind.config.js"></script>
+
+</head><body class="bg-surface-base font-body-md text-text-primary antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-base/95 backdrop-blur-md shadow-[0_1px_8px_rgba(26,26,31,0.06)]"><div class="h-28 flex flex-col justify-between"><div class="h-16 w-full max-w-[1280px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg flex-shrink-0"><a class="flex items-center gap-space-sm" data-path="trang-chu" href="#"><img alt="HUST Cine Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xc2DBjIbyU2iCW8pkrtHDbQk3KCXkj2oYeO7QzyUGo-jOvqUf1a1whNKtPGf4iPE9yfgSdydVixM3zDARXjjs7PcLKQLPBofwkxCjkX2geOJ1bxtvahqNZTw0FUp3bWRbXcc1YaF3FISrHqUMmjjU82w35woh-wKiu4_wRSFTppvta_VioXu-DOkftFsqmhMTzyxI58OHFirBwflYeOvmjq8aU8IDDfEDj3uImavJnmNQb-5Q_ei5qjA"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">HUST Cine</span></a></div><div class="hidden xl:flex items-center gap-space-md flex-1 max-w-2xl px-space-md"><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-base">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-alt text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Tìm kiếm phim, rạp chiếu..." type="text"/></div><div class="relative flex-shrink-0"><button class="h-10 px-space-md rounded-lg bg-surface-alt hover:bg-surface-highlight hover:text-primary transition-colors flex items-center gap-space-xs font-label-md text-label-md text-text-secondary" type="button"><span class="material-symbols-outlined text-sm text-primary">location_on</span><span>HUST Cine Đại Cồ Việt</span><span class="material-symbols-outlined text-xs">arrow_drop_down</span></button></div><div class="hidden 2xl:flex items-center gap-space-xs h-10 px-3 rounded-full bg-surface-alt font-code-time text-code-time text-text-secondary flex-shrink-0"><span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span><span>Thứ Tư, 21/10/2026 · 14:32</span></div></div><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center bg-surface-alt rounded-full p-1"><button class="px-2.5 py-1 rounded-full bg-surface-base text-primary font-label-sm text-label-sm shadow-[0_1px_3px_rgba(0,0,0,0.08)]" type="button">VI</button><button class="px-2.5 py-1 rounded-full text-text-muted hover:text-text-primary font-label-sm text-label-sm transition-colors" type="button">EN</button></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex items-center gap-space-xs bg-surface-highlight px-2.5 py-1 rounded-full"><span class="material-symbols-outlined text-gold-vip text-sm">stars</span><span class="font-label-sm text-label-sm text-primary">850 pts</span></div><a class="flex items-center" data-path="tai-khoan" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20 hover:ring-primary-container transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcxI79qWjeicOl3j4uhRuKPIB3vlSXOQAdC6LSR-LuCGDfeDPYKR3J9waACkCeh4cAyzuiwbkYycaOHexznv8gGvGW_tQrkj9aeym1y226sxz2mrhhVlW6_Q5fNjCwh379MkGxh1D1UtasOLSolXZAxzy-i4i43I-OSO7IgyFmHPJ5FcnKEiuNzxcNsrrCd1WvcFsu8Ok0neDM2DAZ9dR3pOm32Yq0GDGnDyjP5grqNNWclkwviJ-s"/></a></div></div></div><div class="w-full h-12 bg-surface-base border-t border-border-subtle"><div class="max-w-[1280px] mx-auto px-margin h-full flex items-center justify-between"><nav class="flex items-center gap-space-lg overflow-x-auto h-full" data-active-classes="text-primary font-label-lg border-b-2 border-primary-container"><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="trang-chu" href="#">Trang chủ</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="danh-sach-phim" href="#">Phim</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="lich-chieu" href="#">Lịch chiếu</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="rap-va-gia-ve" href="#">Rạp &amp; Giá vé</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="phong-chieu-chuan-ky-thuat" href="#">Phòng chiếu chuẩn kỹ thuật</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="phong-trai-nghiem-studio-lab" href="#">Phòng trải nghiệm Studio Lab</a><a class="h-full flex items-center font-label-lg text-label-lg text-text-secondary hover:text-primary transition-colors whitespace-nowrap" data-path="uu-dai" href="#">Ưu đãi</a></nav><div class="xl:hidden flex items-center py-2"><span class="material-symbols-outlined text-text-secondary">search</span></div></div></div></div></header><main class="w-full pt-28 bg-surface-base min-h-[calc(100vh-112px)]"><div class="flex flex-col w-full">
+<!-- HERO HEADER & TECHNICAL BENCHMARK OVERVIEW -->
+<section class="w-full bg-[#8E0B1F] text-on-primary relative overflow-hidden">
+<!-- Subtle Isometric Blueprint Grid Texture -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 32px 32px;"></div>
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin py-space-xl relative z-10 flex flex-col gap-space-lg">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-primary-container">
+<a class="hover:text-on-primary transition-colors" href="#">Trang chủ</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="hover:text-on-primary cursor-default">Trải nghiệm điện ảnh</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-tertiary-fixed font-medium">Hệ thống phòng chiếu &amp; So sánh kỹ thuật</span>
+</nav>
+<!-- Main Headline Block -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-sm max-w-3xl">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-white/10 backdrop-blur-md w-fit text-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed">verified</span>
+<span>Chuẩn Trình Chiếu Kỹ Thuật Số Quốc Tế</span>
+</div>
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-primary tracking-tight font-extrabold uppercase">
+            HỆ THỐNG PHÒNG CHIẾU CHUẨN KỸ THUẬT
+          </h1>
+<p class="font-body-lg text-body-lg text-on-primary-container leading-relaxed">
+            HUST Cine tiên phong ứng dụng công nghệ điện ảnh hàng đầu thế giới: Hệ thống máy chiếu Laser 4K RGB thế hệ mới, vòm âm thanh Dolby Atmos 128 đối tượng, đại khán phòng IMAX Laser cực đại cùng không gian thượng hạng Recliner và Studio Lab độc quyền Đại học Bách Khoa Hà Nội.
+          </p>
+</div>
+<!-- Quick Jump Filter Pills -->
+<div class="flex flex-wrap lg:flex-col items-start lg:items-end gap-space-xs flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wide">Điều hướng nhanh</span>
+<div class="flex items-center gap-2">
+<a class="px-3 py-1.5 rounded-lg bg-surface-base text-primary font-label-sm text-label-sm hover:bg-surface-highlight transition-colors flex items-center gap-1 shadow-sm" href="#danh-sach-phong">
+<span class="material-symbols-outlined text-sm">view_carousel</span>
+              5 Định dạng phòng
+            </a>
+<a class="px-3 py-1.5 rounded-lg bg-white/15 text-on-primary font-label-sm text-label-sm hover:bg-white/25 transition-colors flex items-center gap-1" href="#bang-so-sanh">
+<span class="material-symbols-outlined text-sm">table_chart</span>
+              Bảng đối chiếu thông số
+            </a>
+</div>
+</div>
+</div>
+<!-- Quick Technical Benchmark Cards -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-md border-t border-white/15">
+<div class="flex items-center gap-space-sm bg-white/5 p-space-md rounded-xl backdrop-blur-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-base/10 flex items-center justify-center text-tertiary-fixed flex-shrink-0">
+<span class="material-symbols-outlined">theaters</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">5 Phân Hạng</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Từ Standard đến Private VIP</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-white/5 p-space-md rounded-xl backdrop-blur-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-base/10 flex items-center justify-center text-tertiary-fixed flex-shrink-0">
+<span class="material-symbols-outlined">videocam</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">100% Laser 4K</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Độ phân giải &amp; Tương phản siêu cao</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-white/5 p-space-md rounded-xl backdrop-blur-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-base/10 flex items-center justify-center text-tertiary-fixed flex-shrink-0">
+<span class="material-symbols-outlined">surround_sound</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">12-Ch / Atmos</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Âm thanh vòm giải mã 3D chân thực</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-white/5 p-space-md rounded-xl backdrop-blur-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-base/10 flex items-center justify-center text-tertiary-fixed flex-shrink-0">
+<span class="material-symbols-outlined">stairs</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">Stadium Rake</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Độ dốc khán đài không che khuất</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 1: 5 LARGE ROOM TYPE SHOWCASE CARDS -->
+<section class="w-full bg-surface-alt py-space-xl" id="danh-sach-phong">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-xl">
+<!-- Section Title Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-sm border-b border-border-subtle">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Trải Nghiệm Khán Phòng Chi Tiết</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary tracking-tight">
+            5 Định Dạng Phòng Chiếu Tại HUST Cine
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-text-secondary max-w-md">
+          Mỗi cấu trúc phòng chiếu được tính toán kỹ thuật về âm học, tiêu cự góc nhìn và độ cong màn chiếu theo tiêu chuẩn kỹ thuật SMPTE &amp; DCI.
+        </p>
+</div>
+<!-- CARD 1: PHÒNG TIÊU CHUẨN (STANDARD LASER) -->
+<div class="w-full bg-surface-base rounded-xl border border-border-subtle shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 transition-all hover:shadow-md">
+<!-- Visual & Badges -->
+<div class="lg:col-span-5 relative flex flex-col">
+<img class="w-full h-64 lg:h-full object-cover" data-alt="A modern cinema auditorium with clean rows of comfortable fabric upholstered cinema seats, a bright high-gain silver projection screen at the front, subtle crimson step lighting, high contrast cinematic interior, captured in an engineering-precise architectural photograph with warm ambience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5LCanCp65hSR0ig3QyQyh95q62fn58GOooBGtJfzdtLz-hyqdnwGSgP2UYQs8dQtAtC77Gj1h-cg5KWztSOQKvXZ8VWOritGHJoPahPveFmfsDH6VYDW2YEBUs4a-15WQHn0RWFzYKnwHJxTZ0GbCFAP1YOfOXHTOL44ZMmDbNB48THbkZpTf-7NZXRjZ7Wn3O17_wHSAE7ZdqFfs_JiqLq4BZhjn4Qrt5AX6JjI3No2_5JqlmmoT"/>
+<div class="absolute top-4 left-4 flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-[#8E0B1F] text-on-primary font-label-sm text-label-sm uppercase font-semibold">Tiêu Chuẩn Kỹ Thuật</span>
+<span class="px-2.5 py-1 rounded bg-surface-base/90 text-text-primary font-label-sm text-label-sm backdrop-blur-sm">120 Ghế</span>
+</div>
+<div class="absolute bottom-4 left-4 bg-surface-base/95 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-border-subtle">
+<span class="font-label-sm text-label-sm text-text-secondary block">Giá vé tham khảo</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Từ 75.000đ</span>
+</div>
+</div>
+<!-- Info & Specifications Content -->
+<div class="lg:col-span-7 p-space-md md:p-space-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-text-primary">PHÒNG TIÊU CHUẨN (Standard Laser)</h3>
+<span class="font-code-time text-code-time text-status-success px-2 py-0.5 rounded-full bg-status-success/10 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-success"></span> Hoạt động hàng ngày
+              </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">
+              Không gian điện ảnh tiêu chuẩn tối ưu hóa cho đại chúng, trang bị máy chiếu Laser độ nét cao cùng hệ thống âm thanh vòm Dolby Digital 7.1 cân bằng chi tiết.
+            </p>
+<!-- Technical Spec Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">chair</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Sức chứa &amp; Ghế</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">120 ghế (A–J × 12), nỉ Ergonomic, Sweetbox đôi</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">aspect_ratio</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Màn chiếu &amp; Tương phản</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Bạc Silver Screen 14m, tỷ lệ 2.500:1 High-Gain</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">volume_up</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Hệ thống âm thanh</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Dolby Digital 7.1 Surround đa hướng 360°</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">location_on</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Cụm rạp khả dụng</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Đại Cồ Việt, Times City, Cầu Giấy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom: Mini Seat Map Schematic & CTA -->
+<div class="pt-space-sm border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<!-- Mini Schematic Visualization (120 Seats) -->
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="w-36 h-12 bg-surface-alt rounded border border-border-subtle flex flex-col items-center justify-center p-1 relative overflow-hidden">
+<div class="w-24 h-1 bg-primary rounded-full mb-1 opacity-70"></div>
+<div class="grid grid-cols-10 gap-0.5 opacity-60">
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+</div>
+<span class="font-label-sm text-[9px] text-text-muted leading-tight mt-0.5">Sơ đồ 10 Hàng × 12 Ghế</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted hidden md:inline">Ghế nỉ êm ái, hàng Sweetbox J</span>
+</div>
+<!-- CTA Action -->
+<a class="w-full sm:w-auto h-11 px-space-lg rounded-lg border border-primary text-primary hover:bg-surface-highlight font-label-lg text-label-lg transition-colors flex items-center justify-center gap-1" href="#">
+<span>Xem suất chiếu Tiêu Chuẩn</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- CARD 2: PHÒNG SIÊU RỘNG (GRAND HALL 4K) -->
+<div class="w-full bg-surface-base rounded-xl border border-border-subtle shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 transition-all hover:shadow-md">
+<!-- Visual & Badges -->
+<div class="lg:col-span-5 relative flex flex-col">
+<img class="w-full h-64 lg:h-full object-cover" data-alt="Expansive panoramic wide cinema hall with majestic atmospheric crimson and deep violet backlighting, 18-meter curved silver screen projecting high-resolution landscape, amphitheater seating rake with premium leather seating, architectural photography from back row." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt4gipYMOM0YB7wVClPFwv-LYjclP_sAXOwwUyBbOFvltKKterEBQKdCT9Zir3FaCGcs2YtsDV7U_5bl8dV0tgS6pT1900W2Fc1akZCCrC_Kn6Xni9g6wneIwOrsa7ljEP049-VWqeCg8-WbfqcQ1yOC5lS7KoFFTl0kof6_ZYIziR1aQha7jGLD_6-oD1PrfuEifXo1vwvXgd7T0Fhbtz-nmGKBTlHX1wvwbVehirQNJ37m3SlcI_"/>
+<div class="absolute top-4 left-4 flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-[#8E0B1F] text-on-primary font-label-sm text-label-sm uppercase font-semibold">Màn Ảnh Siêu Rộng Scope</span>
+<span class="px-2.5 py-1 rounded bg-surface-base/90 text-text-primary font-label-sm text-label-sm backdrop-blur-sm">200 Ghế</span>
+</div>
+<div class="absolute bottom-4 left-4 bg-surface-base/95 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-border-subtle">
+<span class="font-label-sm text-label-sm text-text-secondary block">Giá vé tham khảo</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Từ 95.000đ</span>
+</div>
+</div>
+<!-- Info & Specifications Content -->
+<div class="lg:col-span-7 p-space-md md:p-space-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-text-primary">PHÒNG SIÊU RỘNG (Grand Hall 4K)</h3>
+<span class="font-code-time text-code-time text-status-info px-2 py-0.5 rounded-full bg-status-info/10 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-info"></span> Dolby Atmos 7.1.4
+              </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">
+              Khán phòng đại diện cho những bom tấn hành động kỹ xảo với màn chiếu cong Panavision 18m và dàn loa trần vòm lập thể mang lại trường âm bao phủ tuyệt đối.
+            </p>
+<!-- Technical Spec Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">airline_seat_recline_extra</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Sức chứa &amp; Ghế</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">200 ghế (A–L × 18), Da nhập khẩu, góc ngả 115°</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">fullscreen</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Màn chiếu &amp; Tỷ lệ</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Curved Silver 18m, chuẩn Scope 2.39:1 Panavision</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">new_window</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Hệ thống âm thanh</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Dolby Atmos 7.1.4 trần vòm lập thể chuyển động</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">domain</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Cụm rạp khả dụng</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">HUST Cine Đại Cồ Việt, HUST Cine Times City</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom: Mini Seat Map Schematic & CTA -->
+<div class="pt-space-sm border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="w-36 h-12 bg-surface-alt rounded border border-border-subtle flex flex-col items-center justify-center p-1 relative overflow-hidden">
+<div class="w-28 h-1.5 bg-primary/80 rounded-full mb-1"></div>
+<div class="grid grid-cols-12 gap-0.5 opacity-60">
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-text-muted"></span>
+</div>
+<span class="font-label-sm text-[9px] text-text-muted leading-tight mt-0.5">Sơ đồ 12 Hàng × 18 Ghế</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted hidden md:inline">Góc nhìn rộng không góc chết</span>
+</div>
+<a class="w-full sm:w-auto h-11 px-space-lg rounded-lg border border-primary text-primary hover:bg-surface-highlight font-label-lg text-label-lg transition-colors flex items-center justify-center gap-1" href="#">
+<span>Xem suất chiếu Grand Hall</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- CARD 3: ĐẠI KHÁN PHÒNG IMAX LASER (FLAGSHIP HIGHLIGHTED CARD) -->
+<div class="w-full bg-surface-base rounded-2xl border-2 border-primary-container shadow-[0_4px_24px_rgba(200,16,46,0.12)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 relative">
+<!-- Golden Flagship Ribbon Tag -->
+<div class="absolute top-0 right-0 bg-gradient-to-l from-[#B8902A] to-tertiary-fixed text-[#1A1A1F] px-4 py-1 rounded-bl-xl font-label-sm text-label-sm font-extrabold uppercase tracking-widest z-20 flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">workspace_premium</span>
+          FLAGSHIP ĐỘC QUYỀN HUST
+        </div>
+<!-- Visual & Badges -->
+<div class="lg:col-span-5 relative flex flex-col">
+<img class="w-full h-72 lg:h-full object-cover" data-alt="Monolithic giant curved IMAX Laser cinema screen standing 24 meters tall, dual laser blue-cyan projector beam cutting through theatrical haze, steep stadium rake rake seating filled with high-end ergonomic auditorium seats, deep ruby red floor guiding light accents, cutting-edge university cinema flagship hall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb5uRu6cYBzuufsjNQDFo9Q3HJfWCAv8y6TP9RA1cZcC84svtJaH-T4Ek6dRczZPCPS4Cma8CxRmr7hDICqESItFBLnLovw5KjeHHG3EG0UNdobw6N9-injIk0tYz5jfvVQvfGXv3klhVCh3NGCZZk8VVYAb-M6oVEfykwVNC_CzMVSk2g5ZvNGgg9GZ6vihtxpuKQlFm40HTeYXDj2dv-jFpNlTrr3YWRy-LES8PI_DOpcKdV_fIB"/>
+<div class="absolute top-4 left-4 flex flex-col gap-1 z-10">
+<span class="px-3 py-1 rounded bg-primary-container text-on-primary font-label-sm text-label-sm uppercase font-extrabold tracking-wider shadow-sm">
+              CÔNG NGHỆ FLAGSHIP SỐ 1
+            </span>
+<span class="px-2.5 py-1 rounded bg-[#1A1A1F]/90 text-tertiary-fixed font-code-time text-code-time backdrop-blur-sm w-fit">
+              4K DUAL LASER RGB
+            </span>
+</div>
+<div class="absolute bottom-4 left-4 bg-surface-base/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-primary-container/30 shadow-md">
+<span class="font-label-sm text-label-sm text-text-secondary block">Giá vé tham khảo</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Từ 145.000đ</span>
+</div>
+</div>
+<!-- Info & Specifications Content -->
+<div class="lg:col-span-7 p-space-md md:p-space-lg flex flex-col justify-between gap-space-md bg-gradient-to-b from-surface-highlight/30 via-surface-base to-surface-base">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2 pt-2 lg:pt-0">
+<div class="flex items-center gap-2">
+<span class="font-display-hero-mobile text-headline-md md:text-headline-lg text-primary font-black tracking-tight">IMAX</span>
+<span class="font-headline-md text-headline-md text-text-primary">with Laser (Đại Khán Phòng)</span>
+</div>
+<span class="font-code-time text-code-time text-primary font-bold px-2.5 py-1 rounded-full bg-surface-highlight border border-primary-container/20">
+                Tòa Thư Viện Tạ Quang Bửu
+              </span>
+</div>
+<p class="font-body-md text-body-md text-text-primary font-medium leading-relaxed">
+              Chuẩn mực điện ảnh đỉnh cao nhất của HUST Cine. Hệ thống trình chiếu IMAX Dual Laser 4K kết hợp tỷ lệ khung hình mở rộng 1.90:1 cùng dàn âm thanh 12 kênh độc quyền mang lại trải nghiệm nhập vai trọn vẹn từng khung hình.
+            </p>
+<!-- Technical Spec Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-3 rounded-xl bg-surface-base border border-border-subtle shadow-xs flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-lg flex-shrink-0 mt-0.5">airline_seat_recline_normal</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Sức chứa &amp; Khán đài</span>
+<span class="font-body-sm text-body-sm text-text-primary font-semibold">260 ghế (A–M × 20) Stadium Rake 100% không che</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-base border border-border-subtle shadow-xs flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-lg flex-shrink-0 mt-0.5">smart_display</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Màn chiếu khổng lồ</span>
+<span class="font-body-sm text-body-sm text-text-primary font-semibold">IMAX Laser cao 24m, độ tương phản tuyệt đối HDR</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-base border border-border-subtle shadow-xs flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-lg flex-shrink-0 mt-0.5">speaker</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Hệ thống âm thanh</span>
+<span class="font-body-sm text-body-sm text-text-primary font-semibold">IMAX Sound 12-Kênh riêng biệt, sub siêu trầm 16Hz</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-base border border-border-subtle shadow-xs flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-gold-vip text-lg flex-shrink-0 mt-0.5">stars</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Đặc quyền khán phòng</span>
+<span class="font-body-sm text-body-sm text-text-primary font-semibold">Vùng Sweet Spot trung tâm tối ưu tầm mắt 100%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom: Mini Seat Map Schematic & CTA -->
+<div class="pt-space-sm border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<!-- Schematic with highlighted Sweet Spot -->
+<div class="w-40 h-14 bg-surface-base rounded-lg border border-primary-container/40 flex flex-col items-center justify-center p-1 relative shadow-inner">
+<div class="w-32 h-1.5 bg-[#8E0B1F] rounded-full mb-1"></div>
+<div class="grid grid-cols-12 gap-0.5">
+<span class="w-1.5 h-1.5 rounded-xs bg-border-subtle"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-border-subtle"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary-container animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary-container animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary-container animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary-container animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary-container animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-primary-container animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-border-subtle"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-border-subtle"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+<span class="w-1.5 h-1.5 rounded-xs bg-gold-vip"></span>
+</div>
+<span class="font-label-sm text-[9px] text-primary font-bold leading-tight mt-0.5">Đặc khu Hàng G–J Sweet Spot</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary hidden md:inline">260 ghế dốc Stadium, hàng M Couple</span>
+</div>
+<a class="w-full sm:w-auto h-12 px-space-xl rounded-lg bg-primary-container hover:bg-[#A50D25] text-on-primary font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2 shadow-md" href="#">
+<span class="material-symbols-outlined text-lg">confirmation_number</span>
+<span>Xem suất chiếu IMAX Laser</span>
+</a>
+</div>
+</div>
+</div>
+<!-- CARD 4: PHÒNG HẠNG SANG RECLINER (LUXURY SUITE) -->
+<div class="w-full bg-surface-base rounded-xl border border-border-subtle shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 transition-all hover:shadow-md">
+<!-- Visual & Badges -->
+<div class="lg:col-span-5 relative flex flex-col">
+<img class="w-full h-64 lg:h-full object-cover" data-alt="High-end luxury cinema screening suite with plush oversized leather electric recliner armchairs, individual glowing side tables with drinks, warm ambient dim sconce lighting, ultra-cozy private theater aesthetic with cashmere blankets." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRJuQl4Yq4ATks8TJrRP1IMQYXUCsG1eOXu5kamp-tAXl346hzvZlH5i3k9UrHhK85U8a8-tnJAWih8pCoyGuZV5oSdox1h6WANGmMt84-rja5sfgm8ZklomxEUwRA70qRe9g9dmB0vlPo4Eh73oNi_1nAnmJoPkI1dEMZLlhXsF3rMgJOJFaesPKzXf0ffTuDVw3b0fwrsLfyHGTlD00a38HFt8piKi2y1YiI9l-563-3TwznEx_x"/>
+<div class="absolute top-4 left-4 flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-[#B8902A] text-surface-base font-label-sm text-label-sm uppercase font-bold">Đẳng Cấp Thương Gia</span>
+<span class="px-2.5 py-1 rounded bg-surface-base/90 text-text-primary font-label-sm text-label-sm backdrop-blur-sm">40 Ghế Recliner</span>
+</div>
+<div class="absolute bottom-4 left-4 bg-surface-base/95 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-border-subtle">
+<span class="font-label-sm text-label-sm text-text-secondary block">Giá vé tham khảo</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Từ 180.000đ</span>
+</div>
+</div>
+<!-- Info & Specifications Content -->
+<div class="lg:col-span-7 p-space-md md:p-space-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-text-primary">PHÒNG HẠNG SANG (Luxury Recliner Suite)</h3>
+<span class="font-code-time text-code-time text-gold-vip px-2 py-0.5 rounded-full bg-gold-vip/10 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">room_service</span> Nút gọi món tại ghế
+              </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">
+              Định nghĩa lại sự thư thái khi thưởng thức điện ảnh: Ghế sofa da bò chỉnh điện ngả 160 độ, chăn ấm cashmere, welcome drink và menu phục vụ ẩm thực nóng sốt ngay tại chỗ.
+            </p>
+<!-- Technical Spec Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-gold-vip text-base flex-shrink-0 mt-0.5">weekend</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Ghế &amp; Tiện ích</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">40 ghế Recliner ngả 160°, bàn ăn gỗ &amp; sạc không dây</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-gold-vip text-base flex-shrink-0 mt-0.5">tv</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Màn chiếu &amp; Âm thanh</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Micro-Perforated 16m 4K, Dolby Atmos Studio Tuning</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-gold-vip text-base flex-shrink-0 mt-0.5">local_bar</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Dịch vụ đặc quyền</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Welcome Drink, gối mền tiệt trùng, phục vụ tận ghế</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-gold-vip text-base flex-shrink-0 mt-0.5">location_on</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Cụm rạp khả dụng</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">HUST Cine Times City &amp; Đại Cồ Việt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom: Mini Seat Map Schematic & CTA -->
+<div class="pt-space-sm border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="w-36 h-12 bg-surface-alt rounded border border-border-subtle flex flex-col items-center justify-center p-1 relative overflow-hidden">
+<div class="w-20 h-1 bg-gold-vip rounded-full mb-1"></div>
+<div class="grid grid-cols-6 gap-1 opacity-70">
+<span class="w-2 h-2 rounded bg-gold-vip"></span>
+<span class="w-2 h-2 rounded bg-gold-vip"></span>
+<span class="w-2 h-2 rounded bg-gold-vip"></span>
+<span class="w-2 h-2 rounded bg-gold-vip"></span>
+<span class="w-2 h-2 rounded bg-gold-vip"></span>
+<span class="w-2 h-2 rounded bg-gold-vip"></span>
+</div>
+<span class="font-label-sm text-[9px] text-text-muted leading-tight mt-0.5">5 Hàng × 8 Recliners giãn cách 1.8m</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted hidden md:inline">Khoảng cách hàng siêu thoáng</span>
+</div>
+<a class="w-full sm:w-auto h-11 px-space-lg rounded-lg border border-primary text-primary hover:bg-surface-highlight font-label-lg text-label-lg transition-colors flex items-center justify-center gap-1" href="#">
+<span>Xem suất chiếu Hạng Sang</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- CARD 5: STUDIO LAB PRIVATE (PHÒNG RIÊNG TRỌN GÓI) -->
+<div class="w-full bg-surface-base rounded-xl border border-border-subtle shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 transition-all hover:shadow-md">
+<!-- Visual & Badges -->
+<div class="lg:col-span-5 relative flex flex-col">
+<img class="w-full h-64 lg:h-full object-cover" data-alt="Intimate modern private VIP cinema studio lounge with cozy leather sectional sofas, polished technical mixer control desk, high-end Micro-LED display wall, subtle neon trim, mini mocktail beverage bar, university digital media lab screening room vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAiPZFvHTAx_78QZ8xK0WDgX5cXpLyrs-RMAlPeE0_nIJJacAWNAoGPLb6BwogRet-KP648dXWPvJOXPJbCkyWs2-02LAe4nKrDMDxCmDRkbmiBuYm48my41kxFXc8r-5khCz0G-7AsW-zj0TAc0ExN-WW_uXx5_lUjSmtyODxxAoYBUplzn8Pr_mkL2UDNWJkEb9rKE0AjzKMCrqAEC-hb9Xh5s6Mes3W5d01GNx6RmqXZBNcnqu5"/>
+<div class="absolute top-4 left-4 flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-[#1A1A1F] text-tertiary-fixed font-label-sm text-label-sm uppercase font-bold">Thuê Bao Trọn Phòng</span>
+<span class="px-2.5 py-1 rounded bg-surface-base/90 text-text-primary font-label-sm text-label-sm backdrop-blur-sm">Tối Đa 10 Khách</span>
+</div>
+<div class="absolute bottom-4 left-4 bg-surface-base/95 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-border-subtle">
+<span class="font-label-sm text-label-sm text-text-secondary block">Trọn gói ca chiếu 2.5 giờ</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">650.000đ / Ca</span>
+</div>
+</div>
+<!-- Info & Specifications Content -->
+<div class="lg:col-span-7 p-space-md md:p-space-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-text-primary">STUDIO LAB PRIVATE (Phòng Riêng Trọn Gói)</h3>
+<span class="font-code-time text-code-time text-primary px-2 py-0.5 rounded-full bg-surface-highlight flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">cast</span> Cổng HDMI 2.1 &amp; AirPlay
+              </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">
+              Không gian cá nhân hóa biệt lập dành cho nhóm bạn, gia đình hoặc buổi báo cáo đồ án điện ảnh Bách Khoa. Khách hàng hoàn toàn chủ động nội dung phim hoặc chiếu tác phẩm tự biên tập.
+            </p>
+<!-- Technical Spec Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">groups</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Quy mô &amp; Thiết kế</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">10 khách, 2 hàng sofa da rộng, sảnh riêng &amp; WC Ensuite</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">display_settings</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Hiển thị kỹ thuật số</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Màn Micro-LED 150-inch 4K HDR10+, độ sáng 1000 nits</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">tune</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Âm thanh &amp; Mixer</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Dolby Atmos 7.1.4 độc lập kèm bàn chỉnh cá nhân</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-alt flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">location_on</span>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">Địa điểm thực nghiệm</span>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Studio Lab (Trần Đại Nghĩa) &amp; Đại Cồ Việt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom: Mini Seat Map Schematic & CTA -->
+<div class="pt-space-sm border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="w-36 h-12 bg-surface-alt rounded border border-border-subtle flex flex-col items-center justify-center p-1 relative overflow-hidden">
+<div class="w-16 h-1 bg-text-primary rounded-full mb-1"></div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-2.5 bg-text-secondary rounded-sm"></div>
+<div class="w-8 h-2.5 bg-text-secondary rounded-sm"></div>
+</div>
+<span class="font-label-sm text-[9px] text-text-muted leading-tight mt-0.5">Sofa Lounge đôi biệt lập</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted hidden md:inline">Tự do tùy chỉnh ánh sáng &amp; máy lạnh</span>
+</div>
+<a class="w-full sm:w-auto h-11 px-space-lg rounded-lg bg-primary text-on-primary hover:bg-[#8E0B1F] font-label-lg text-label-lg transition-colors flex items-center justify-center gap-1 shadow-sm" href="#">
+<span>Đặt trọn phòng Private Lab</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: BẢNG SO SÁNH KỸ THUẬT CHI TIẾT (COMPREHENSIVE TECHNICAL COMPARISON TABLE) -->
+<section class="w-full bg-surface-base py-space-xl" id="bang-so-sanh">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-lg">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-sm border-b border-border-subtle">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Ma Trận Kỹ Thuật Điện Ảnh</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary tracking-tight">
+            Bảng Đối Chiếu Thông Số 5 Định Dạng Phòng Chiếu
+          </h2>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary max-w-md">
+          Số liệu kiểm định thực tế theo tiêu chuẩn đo lường quang học và âm học của Viện Điện ảnh &amp; Kỹ thuật Số - Đại học Bách Khoa Hà Nội.
+        </p>
+</div>
+<!-- Responsive Table Container -->
+<div class="w-full overflow-x-auto rounded-xl border border-border-subtle shadow-sm bg-surface-base">
+<table class="w-full min-w-[960px] border-collapse text-left">
+<thead>
+<tr class="bg-surface-alt border-b border-border-subtle">
+<th class="p-space-md w-1/6 font-label-md text-label-md text-text-secondary uppercase tracking-wider">
+                Tiêu chí kỹ thuật
+              </th>
+<th class="p-space-md w-1/6 font-label-md text-label-md text-text-primary text-center">
+<span class="block font-bold">Phòng Tiêu Chuẩn</span>
+<span class="font-body-sm text-[11px] text-text-muted">Standard Laser</span>
+</th>
+<th class="p-space-md w-1/6 font-label-md text-label-md text-text-primary text-center">
+<span class="block font-bold">Phòng Siêu Rộng</span>
+<span class="font-body-sm text-[11px] text-text-muted">Grand Hall 4K</span>
+</th>
+<!-- Highlighted Flagship IMAX Column Header -->
+<th class="p-space-md w-1/6 bg-surface-highlight text-primary text-center border-x-2 border-t-2 border-primary-container relative">
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-[10px] uppercase font-bold mb-1 inline-block">Flagship HUST</span>
+<span class="block font-headline-sm text-headline-sm font-black">IMAX Laser</span>
+<span class="font-body-sm text-[11px] text-primary">Đại Khán Phòng</span>
+</th>
+<th class="p-space-md w-1/6 font-label-md text-label-md text-text-primary text-center">
+<span class="block font-bold">Hạng Sang</span>
+<span class="font-body-sm text-[11px] text-text-muted">Luxury Recliner</span>
+</th>
+<th class="p-space-md w-1/6 font-label-md text-label-md text-text-primary text-center">
+<span class="block font-bold">Studio Lab</span>
+<span class="font-body-sm text-[11px] text-text-muted">Private Suite</span>
+</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle font-body-sm text-body-sm">
+<!-- CATEGORY 1: QUY MÔ & GHẾ NGỒI -->
+<tr class="bg-surface-alt/70 font-label-md text-label-md text-text-primary">
+<td class="px-space-md py-2.5 bg-surface-container font-semibold flex items-center gap-2 text-primary" colspan="6">
+<span class="material-symbols-outlined text-sm">event_seat</span>
+                1. QUY MÔ &amp; THIẾT KẾ KHÁN ĐÀI
+              </td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Sức chứa tối đa</td>
+<td class="p-space-md text-center text-text-primary">120 ghế</td>
+<td class="p-space-md text-center text-text-primary">200 ghế</td>
+<td class="p-space-md text-center font-bold text-primary bg-surface-highlight/30 border-x-2 border-primary-container">260 ghế</td>
+<td class="p-space-md text-center text-text-primary">40 ghế</td>
+<td class="p-space-md text-center text-text-primary">1 – 10 khách</td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Chất liệu &amp; Loại ghế</td>
+<td class="p-space-md text-center text-text-primary">Nỉ bọc êm Ergonomic</td>
+<td class="p-space-md text-center text-text-primary">Da nhập khẩu, ngả 115°</td>
+<td class="p-space-md text-center font-semibold text-text-primary bg-surface-highlight/30 border-x-2 border-primary-container">Da Ergonomic + Sweet Spot</td>
+<td class="p-space-md text-center text-text-primary">Recliner da chỉnh điện ngả 160°</td>
+<td class="p-space-md text-center text-text-primary">Sofa da Modular cao cấp</td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Khoảng cách hàng ghế</td>
+<td class="p-space-md text-center text-text-primary">1.10 mét</td>
+<td class="p-space-md text-center text-text-primary">1.25 mét</td>
+<td class="p-space-md text-center font-semibold text-text-primary bg-surface-highlight/30 border-x-2 border-primary-container">1.35m Stadium Rake</td>
+<td class="p-space-md text-center font-semibold text-text-primary">1.80m Siêu thoáng</td>
+<td class="p-space-md text-center text-text-primary">Không gian phòng 45m²</td>
+</tr>
+<!-- CATEGORY 2: CÔNG NGHỆ HÌNH ẢNH -->
+<tr class="bg-surface-alt/70 font-label-md text-label-md text-text-primary">
+<td class="px-space-md py-2.5 bg-surface-container font-semibold flex items-center gap-2 text-primary" colspan="6">
+<span class="material-symbols-outlined text-sm">tv</span>
+                2. CÔNG NGHỆ HÌNH ẢNH &amp; MÀN CHIẾU
+              </td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Kích thước màn hình</td>
+<td class="p-space-md text-center text-text-primary">14m Bạc High-Gain</td>
+<td class="p-space-md text-center text-text-primary">18m Curved Scope</td>
+<td class="p-space-md text-center font-bold text-primary bg-surface-highlight/30 border-x-2 border-primary-container">24m IMAX Cực Đại</td>
+<td class="p-space-md text-center text-text-primary">16m Micro-Perf Laser</td>
+<td class="p-space-md text-center text-text-primary">150-inch Micro-LED</td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Máy chiếu &amp; Phân giải</td>
+<td class="p-space-md text-center text-text-primary">Laser 4K Christie</td>
+<td class="p-space-md text-center text-text-primary">Laser 4K Dual Engine</td>
+<td class="p-space-md text-center font-bold text-text-primary bg-surface-highlight/30 border-x-2 border-primary-container">IMAX Dual Laser 4K RGB</td>
+<td class="p-space-md text-center text-text-primary">Laser 4K Barco Cine</td>
+<td class="p-space-md text-center text-text-primary">Studio Micro-LED 4K</td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Không gian màu &amp; Tương phản</td>
+<td class="p-space-md text-center text-text-primary">DCI-P3 95% (2.500:1)</td>
+<td class="p-space-md text-center text-text-primary">DCI-P3 98% (4.000:1)</td>
+<td class="p-space-md text-center font-bold text-text-primary bg-surface-highlight/30 border-x-2 border-primary-container">DCI-P3 100% Dynamic</td>
+<td class="p-space-md text-center text-text-primary">DCI-P3 98% Ultra Tone</td>
+<td class="p-space-md text-center text-text-primary">HDR10+ / Dolby Vision</td>
+</tr>
+<!-- CATEGORY 3: HỆ THỐNG ÂM THANH -->
+<tr class="bg-surface-alt/70 font-label-md text-label-md text-text-primary">
+<td class="px-space-md py-2.5 bg-surface-container font-semibold flex items-center gap-2 text-primary" colspan="6">
+<span class="material-symbols-outlined text-sm">spatial_audio</span>
+                3. HỆ THỐNG ÂM THANH KỸ THUẬT SỐ
+              </td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Chuẩn giải mã âm thanh</td>
+<td class="p-space-md text-center text-text-primary">Dolby 7.1 Surround</td>
+<td class="p-space-md text-center text-text-primary">Dolby Atmos 7.1.4</td>
+<td class="p-space-md text-center font-bold text-primary bg-surface-highlight/30 border-x-2 border-primary-container">IMAX Sound 12-Kênh</td>
+<td class="p-space-md text-center text-text-primary">Dolby Atmos Studio</td>
+<td class="p-space-md text-center text-text-primary">Dolby Atmos Biệt Lập</td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Dải tần đáp ứng</td>
+<td class="p-space-md text-center text-text-primary">35Hz – 18kHz</td>
+<td class="p-space-md text-center text-text-primary">25Hz – 20kHz</td>
+<td class="p-space-md text-center font-bold text-text-primary bg-surface-highlight/30 border-x-2 border-primary-container">16Hz – 22kHz (Rung sàn)</td>
+<td class="p-space-md text-center text-text-primary">20Hz – 20kHz</td>
+<td class="p-space-md text-center text-text-primary">20Hz – 20kHz</td>
+</tr>
+<!-- CATEGORY 4: DỊCH VỤ & TIỆN ÍCH ĐI KÈM -->
+<tr class="bg-surface-alt/70 font-label-md text-label-md text-text-primary">
+<td class="px-space-md py-2.5 bg-surface-container font-semibold flex items-center gap-2 text-primary" colspan="6">
+<span class="material-symbols-outlined text-sm">room_service</span>
+                4. DỊCH VỤ &amp; GIÁ VÉ KHỞI ĐIỂM
+              </td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Phục vụ tại chỗ</td>
+<td class="p-space-md text-center text-text-muted">Không áp dụng</td>
+<td class="p-space-md text-center text-text-muted">Không áp dụng</td>
+<td class="p-space-md text-center text-text-primary bg-surface-highlight/30 border-x-2 border-primary-container">Đặt bắp nước mang vào</td>
+<td class="p-space-md text-center font-bold text-gold-vip">Nút bấm gọi món tại ghế</td>
+<td class="p-space-md text-center font-semibold text-text-primary">Mini bar + Hỗ trợ kỹ thuật</td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors">
+<td class="p-space-md font-medium text-text-secondary">Kính 3D định dạng</td>
+<td class="p-space-md text-center text-text-primary">Kính phân cực chuẩn</td>
+<td class="p-space-md text-center text-text-primary">Kính phân cực cao cấp</td>
+<td class="p-space-md text-center font-bold text-text-primary bg-surface-highlight/30 border-x-2 border-primary-container">Kính IMAX 3D độc quyền</td>
+<td class="p-space-md text-center text-text-primary">Kính 3D siêu nhẹ</td>
+<td class="p-space-md text-center text-text-primary">Hỗ trợ 2D / 3D theo yêu cầu</td>
+</tr>
+<tr class="hover:bg-surface-alt/40 transition-colors bg-surface-alt/20">
+<td class="p-space-md font-bold text-text-primary">Mức giá tham khảo</td>
+<td class="p-space-md text-center font-bold text-primary">Từ 75.000đ</td>
+<td class="p-space-md text-center font-bold text-primary">Từ 95.000đ</td>
+<td class="p-space-md text-center font-extrabold text-primary text-base bg-surface-highlight/40 border-x-2 border-primary-container">Từ 145.000đ</td>
+<td class="p-space-md text-center font-bold text-gold-vip">Từ 180.000đ</td>
+<td class="p-space-md text-center font-bold text-text-primary">650.000đ / Ca</td>
+</tr>
+<!-- CTA ACTION ROW -->
+<tr class="bg-surface-base">
+<td class="p-space-md font-label-md text-label-md text-text-muted">Đặt vé trải nghiệm</td>
+<td class="p-space-md text-center">
+<a class="px-3 py-1.5 rounded-lg border border-border-subtle hover:border-primary hover:bg-surface-highlight text-primary font-label-sm text-label-sm inline-block transition-colors" href="#">
+                  Chọn phòng
+                </a>
+</td>
+<td class="p-space-md text-center">
+<a class="px-3 py-1.5 rounded-lg border border-border-subtle hover:border-primary hover:bg-surface-highlight text-primary font-label-sm text-label-sm inline-block transition-colors" href="#">
+                  Chọn phòng
+                </a>
+</td>
+<!-- Highlighted CTA Button -->
+<td class="p-space-md text-center bg-surface-highlight/30 border-x-2 border-b-2 border-primary-container">
+<a class="px-4 py-2 rounded-lg bg-primary-container hover:bg-[#A50D25] text-on-primary font-label-sm text-label-sm uppercase font-bold inline-block transition-colors shadow-sm" href="#">
+                  Đặt vé IMAX
+                </a>
+</td>
+<td class="p-space-md text-center">
+<a class="px-3 py-1.5 rounded-lg border border-border-subtle hover:border-primary hover:bg-surface-highlight text-primary font-label-sm text-label-sm inline-block transition-colors" href="#">
+                  Chọn phòng
+                </a>
+</td>
+<td class="p-space-md text-center">
+<a class="px-3 py-1.5 rounded-lg bg-text-primary hover:bg-[#303035] text-on-primary font-label-sm text-label-sm inline-block transition-colors" href="#">
+                  Đặt trọn gói
+                </a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- SECTION 3: FAQ & HƯỚNG DẪN TRẢI NGHIỆM ĐIỆN ẢNH ĐỈNH CAO (CINEMA AUDIOPHILE TIPS) -->
+<section class="w-full bg-surface-alt py-space-xl border-t border-border-subtle">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-lg">
+<div class="flex flex-col gap-1 pb-space-sm border-b border-border-subtle">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Cẩm Nang Kỹ Thuật Số HUST Cine</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-text-primary tracking-tight">
+          Bí Quyết Chọn Chỗ Ngồi &amp; Quy Chuẩn Trình Chiếu
+        </h2>
+</div>
+<!-- 3 Informative Bento Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Tip 1: Sweet Spot Guide -->
+<div class="bg-surface-base p-space-lg rounded-xl border border-border-subtle shadow-sm flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-highlight text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">center_focus_strong</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Vị Trí Vàng "Sweet Spot"</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Để đạt góc nhìn 36° tiêu chuẩn SMPTE và trung hòa áp suất âm vòm, các kỹ sư khuyến nghị:
+          </p>
+<ul class="space-y-2 font-body-sm text-body-sm text-text-primary pt-1">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+<span><strong>Phòng Tiêu Chuẩn:</strong> Hàng F–H, các ghế trung tâm 06–09.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+<span><strong>IMAX Laser:</strong> Hàng G–J, ghế 08–14 cho độ mở góc mắt 100%.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+<span><strong>Hạng Sang Recliner:</strong> Hàng C–D trung tâm để tầm mắt cân bằng tự nhiên.</span>
+</li>
+</ul>
+</div>
+<!-- Tip 2: 3D Glasses & Technical Maintenance -->
+<div class="bg-surface-base p-space-lg rounded-xl border border-border-subtle shadow-sm flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-highlight text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">visibility</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Quy Chuẩn Kính 3D &amp; Thiết Bị</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            HUST Cine áp dụng quy trình tiệt trùng tia UV-C cho 100% kính xem phim sau mỗi suất chiếu:
+          </p>
+<ul class="space-y-2 font-body-sm text-body-sm text-text-primary pt-1">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+<span><strong>Kính IMAX 3D:</strong> Sử dụng kính phân cực kích thước lớn, vừa vặn cả người đeo kính cận.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+<span><strong>Bảo quản:</strong> Khách hàng vui lòng hoàn trả kính tại cửa thoát sau buổi chiếu.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+<span><strong>Khử trùng:</strong> Tủ sấy Ozone chuyên dụng bảo đảm an toàn thị lực tuyệt đối.</span>
+</li>
+</ul>
+</div>
+<!-- Tip 3: Student Privileges & Academic Support -->
+<div class="bg-surface-base p-space-lg rounded-xl border border-border-subtle shadow-sm flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-highlight text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Đặc Quyền Sinh Viên HUST</h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Chính sách hỗ trợ học thuật và giải trí dành riêng cho sinh viên &amp; cán bộ Bách Khoa:
+          </p>
+<ul class="space-y-2 font-body-sm text-body-sm text-text-primary pt-1">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+<span><strong>Đồng giá U22:</strong> 55.000đ/vé phòng Thường và 115.000đ/vé IMAX trước 17:00.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+<span><strong>Studio Lab:</strong> Giảm 30% kinh phí thuê phòng duyệt đồ án tốt nghiệp media/cinema.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>
+<span><strong>Tích điểm:</strong> Hoàn 5% điểm thưởng quy đổi combo bắp nước tự động qua mã SV.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Assistance Footer Callout -->
+<div class="p-space-lg rounded-xl bg-surface-base border border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-3xl text-primary">contact_support</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary">Bạn cần tư vấn thuê trọn phòng hoặc sự kiện điện ảnh?</h4>
+<p class="font-body-sm text-body-sm text-text-secondary">Bộ phận kỹ thuật &amp; sự kiện HUST Cine sẵn sàng hỗ trợ thiết lập đường truyền chiếu chuyên dụng.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<a class="h-11 px-space-lg rounded-lg border border-primary text-primary hover:bg-surface-highlight font-label-md text-label-md transition-colors flex items-center justify-center" href="#">
+            Hotline: 1900 2026
+          </a>
+<a class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-[#A50D25] text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center" href="#">
+            Gửi yêu cầu sự kiện
+          </a>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-[#8E0B1F] text-on-primary relative overflow-hidden"><div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 24px 24px;"></div><div class="max-w-[1280px] mx-auto px-margin py-space-xl relative z-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-lg text-headline-lg text-on-primary tracking-tight font-extrabold">HUST Cine</span></div><p class="font-body-md text-body-md text-on-primary-container max-w-sm">Hệ thống rạp chiếu phim hiện đại kỹ thuật số thuộc Trường Đại học Bách Khoa Hà Nội, kết hợp kỹ thuật trình chiếu đỉnh cao và không gian điện ảnh tiên phong.</p><div class="flex flex-col gap-space-xs mt-space-sm"><span class="font-label-md text-label-md text-tertiary-fixed font-semibold">ĐĂNG KÝ NHẬN TIN KHUYẾN MÃI</span><div class="flex gap-space-xs max-w-md"><input class="flex-1 h-11 px-space-md rounded-lg bg-surface-base text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none" placeholder="Nhập email của bạn..." type="email"/><button class="h-11 px-space-lg rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-lg text-label-lg transition-colors shadow-sm" type="button">Gửi</button></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Chính sách &amp; Quy định</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-dieu-khoan" href="#">Điều khoản sử dụng</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-thanh-toan" href="#">Chính sách thanh toán</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-bao-mat" href="#">Chính sách bảo mật</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="chinh-sach-hoan-ve" href="#">Chính sách hoàn vé</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Cụm rạp &amp; Phòng chiếu</span><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="rap-va-gia-ve" href="#">HUST Cine Đại Cồ Việt (Hai Bà Trưng)</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="phong-chieu-chuan-ky-thuat" href="#">Phòng Laser 4K Dolby Atmos Bách Khoa</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="phong-chieu-chuan-ky-thuat" href="#">Phòng IMAX Laser HUST</a><a class="font-body-sm text-body-sm text-on-primary-container hover:text-on-primary transition-colors" data-path="phong-trai-nghiem-studio-lab" href="#">HUST Cine Studio Lab &amp; Private Cinema</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-tertiary-fixed uppercase font-semibold">Liên hệ &amp; Hỗ trợ</span><span class="font-body-sm text-body-sm text-on-primary-container">Hotline: 1900 2026 (8:00 - 23:00)</span><span class="font-body-sm text-body-sm text-on-primary-container">Email: contact@hustcine.edu.vn</span><span class="font-body-sm text-body-sm text-on-primary-container">Địa chỉ: 1 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội</span><div class="flex items-center gap-space-sm pt-space-xs"><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">share</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">public</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">mail</span><span class="material-symbols-outlined text-on-primary-container hover:text-on-primary cursor-pointer transition-colors">forum</span></div></div></div><div class="pt-space-lg border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-on-primary-container">© 2026 HUST Cine. Hệ thống rạp chiếu phim hiện đại kỹ thuật số.</p><p class="font-body-sm text-body-sm text-on-primary-container/80">Đại học Bách Khoa Hà Nội • Viện Điện ảnh &amp; Kỹ thuật Số</p></div></div></footer>
+  <!-- HUST Cine Dynamic Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/main.js"></script>
+
+</body></html>
