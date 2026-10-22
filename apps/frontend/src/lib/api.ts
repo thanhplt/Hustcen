@@ -231,6 +231,16 @@ export const api = {
       original: data.posterUrl,
     };
   },
+  updateMovie: (id: string, data: any) =>
+    request(`/admin/movies/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(data),
+    }),
+  validateTrailer: (trailerUrl: string) =>
+    request('/admin/movies/validate-trailer', {
+      method: 'POST',
+      body: JSON.stringify({ trailerUrl }),
+    }),
   deleteMovie: (id: string) =>
     request(`/admin/movies/${id}`, {
       method: 'DELETE',
