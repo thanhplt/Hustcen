@@ -71,16 +71,16 @@ export default function MoviesPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
           Danh Mục Phim Chiếu Rạp
         </h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           Khám phá những tác phẩm điện ảnh bom tấn và đặc sắc tại cụm rạp HUST Cine
         </p>
       </div>
 
       {/* Filter Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-border-subtle shadow-sm mb-8 space-y-4">
+      <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-border-subtle dark:border-slate-800 shadow-sm mb-8 space-y-4">
         {/* Search Input */}
         <div className="relative">
           <Search className="w-5 h-5 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -89,18 +89,18 @@ export default function MoviesPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Tìm kiếm phim theo tên, tác giả, diễn viên..."
-            className="w-full pl-11 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#c8102e] focus:ring-1 focus:ring-[#c8102e]"
+            className="w-full pl-11 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-900 dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#c8102e] focus:ring-1 focus:ring-[#c8102e]"
           />
         </div>
 
         {/* Filter Dropdowns */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 text-xs">
           <div>
-            <label className="block text-gray-500 font-semibold mb-1">Trạng Thái</label>
+            <label className="block text-gray-500 dark:text-gray-400 font-semibold mb-1">Trạng Thái</label>
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg p-2 font-medium text-gray-800 focus:outline-none focus:border-[#c8102e]"
+              className="w-full border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-lg p-2 font-medium text-gray-800 dark:text-gray-200 focus:outline-none focus:border-[#c8102e]"
             >
               <option value="ALL">Tất cả trạng thái</option>
               <option value="NOW_SHOWING">Đang chiếu</option>
@@ -109,11 +109,11 @@ export default function MoviesPage() {
           </div>
 
           <div>
-            <label className="block text-gray-500 font-semibold mb-1">Định Dạng</label>
+            <label className="block text-gray-500 dark:text-gray-400 font-semibold mb-1">Định Dạng</label>
             <select
               value={selectedFormat}
               onChange={(e) => setSelectedFormat(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg p-2 font-medium text-gray-800 focus:outline-none focus:border-[#c8102e]"
+              className="w-full border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-lg p-2 font-medium text-gray-800 dark:text-gray-200 focus:outline-none focus:border-[#c8102e]"
             >
               <option value="ALL">Tất cả định dạng</option>
               <option value="2D">2D Kỹ Thuật Số</option>
@@ -123,11 +123,11 @@ export default function MoviesPage() {
           </div>
 
           <div>
-            <label className="block text-gray-500 font-semibold mb-1">Độ Tuổi</label>
+            <label className="block text-gray-500 dark:text-gray-400 font-semibold mb-1">Độ Tuổi</label>
             <select
               value={selectedAge}
               onChange={(e) => setSelectedAge(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg p-2 font-medium text-gray-800 focus:outline-none focus:border-[#c8102e]"
+              className="w-full border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-lg p-2 font-medium text-gray-800 dark:text-gray-200 focus:outline-none focus:border-[#c8102e]"
             >
               <option value="ALL">Tất cả độ tuổi</option>
               <option value="P">P - Phổ biến mọi lứa tuổi</option>
@@ -146,7 +146,7 @@ export default function MoviesPage() {
                 setSelectedFormat('ALL');
                 setSelectedAge('ALL');
               }}
-              className="w-full py-2 rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 font-semibold transition-colors"
+              className="w-full py-2 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 font-semibold transition-colors"
             >
               Đặt Lại Bộ Lọc
             </button>
@@ -155,15 +155,15 @@ export default function MoviesPage() {
       </div>
 
       {/* Results Count */}
-      <div className="text-xs text-gray-500 font-medium mb-6">
-        Tìm thấy <strong>{filtered.length}</strong> bộ phim phù hợp
+      <div className="text-xs text-gray-500 dark:text-gray-400 font-medium mb-6">
+        Tìm thấy <strong className="text-gray-800 dark:text-gray-200">{filtered.length}</strong> bộ phim phù hợp
       </div>
 
       {/* Grid */}
       {loading ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {Array.from({ length: 10 }).map((_, i) => (
-            <div key={i} className="animate-pulse bg-gray-200 aspect-[2/3] rounded-2xl" />
+            <div key={i} className="animate-pulse bg-gray-200 dark:bg-slate-800 aspect-[2/3] rounded-2xl" />
           ))}
         </div>
       ) : filtered.length > 0 ? (
@@ -173,9 +173,9 @@ export default function MoviesPage() {
           ))}
         </div>
       ) : (
-        <div className="py-24 text-center text-gray-400 bg-white rounded-3xl border border-gray-100">
+        <div className="py-24 text-center text-gray-400 bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800">
           <Film className="w-12 h-12 mx-auto mb-3 opacity-30 text-[#c8102e]" />
-          <p className="text-base font-semibold text-gray-700">Không có bộ phim nào phù hợp</p>
+          <p className="text-base font-semibold text-gray-700 dark:text-gray-300">Không có bộ phim nào phù hợp</p>
           <p className="text-xs text-gray-400 mt-1">Thử thay đổi từ khóa hoặc bộ lọc tìm kiếm.</p>
         </div>
       )}

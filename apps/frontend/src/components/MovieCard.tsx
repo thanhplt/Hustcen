@@ -51,12 +51,12 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
   return (
     <>
       <div
-        className="group/card flex flex-col bg-white rounded-2xl overflow-hidden border border-border-subtle shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative"
+        className="group/card flex flex-col bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-border-subtle dark:border-slate-800 shadow-sm hover:shadow-xl dark:hover:shadow-slate-950/70 transition-all duration-300 hover:-translate-y-1 relative"
         onMouseLeave={() => setIsTrailerActive(false)}
       >
         {/* Poster Container */}
         <div
-          className="relative aspect-[2/3] w-full overflow-hidden bg-gray-100 cursor-pointer"
+          className="relative aspect-[2/3] w-full overflow-hidden bg-gray-100 dark:bg-slate-800 cursor-pointer"
           onClick={() => {
             if (movie.trailer?.embedUrl) {
               setIsTrailerActive((prev) => !prev);
@@ -139,8 +139,8 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
         {/* Content */}
         <div className="p-4 flex flex-col flex-1 justify-between">
           <div>
-            <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-1">
-              <Clock className="w-3 h-3 text-gray-400" />
+            <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 mb-1">
+              <Clock className="w-3 h-3 text-gray-400 dark:text-gray-500" />
               <span>{movie.durationMinutes} phút</span>
               {movie.genres && movie.genres.length > 0 && (
                 <>
@@ -151,25 +151,25 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
             </div>
 
             <Link href={`/phim/${movie.slug}`}>
-              <h3 className="font-bold text-gray-900 text-sm hover:text-[#c8102e] transition-colors line-clamp-1">
+              <h3 className="font-bold text-gray-900 dark:text-white text-sm hover:text-[#c8102e] dark:hover:text-red-400 transition-colors line-clamp-1">
                 {movie.title}
               </h3>
             </Link>
 
             {movie.originalTitle && (
-              <p className="text-xs text-gray-500 italic line-clamp-1 mt-0.5">{movie.originalTitle}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 italic line-clamp-1 mt-0.5">{movie.originalTitle}</p>
             )}
           </div>
 
           {/* Action Button */}
-          <div className="mt-3.5 pt-3 border-t border-gray-100 flex items-center gap-2">
+          <div className="mt-3.5 pt-3 border-t border-gray-100 dark:border-slate-800 flex items-center gap-2">
             {movie.trailer?.embedUrl && (
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   setTrailerOpen(true);
                 }}
-                className={`px-2.5 py-2 rounded-xl border border-border-subtle hover:bg-surface-highlight text-gray-700 hover:text-[#c8102e] text-xs font-semibold items-center gap-1 transition-all ${
+                className={`px-2.5 py-2 rounded-xl border border-border-subtle dark:border-slate-700 hover:bg-surface-highlight dark:hover:bg-slate-800 text-gray-700 dark:text-gray-200 hover:text-[#c8102e] dark:hover:text-red-400 text-xs font-semibold items-center gap-1 transition-all ${
                   isTrailerActive ? 'flex' : 'hidden group-hover/card:flex'
                 }`}
                 title="Trailer"
@@ -196,7 +196,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
             ) : (
               <Link
                 href={`/phim/${movie.slug}`}
-                className="flex-1 py-2 text-center rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-xs transition-colors"
+                className="flex-1 py-2 text-center rounded-xl bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-800 dark:text-gray-200 font-bold text-xs transition-colors"
               >
                 Chi Tiết
               </Link>

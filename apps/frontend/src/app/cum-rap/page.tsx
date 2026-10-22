@@ -238,8 +238,8 @@ function CinemasContent() {
                   onClick={() => handleSelectCinema(cin)}
                   className={`p-3.5 rounded-2xl text-left border transition-all flex flex-col justify-between space-y-1.5 ${
                     isSelected
-                      ? 'bg-white border-[#c8102e] shadow-md ring-2 ring-[#c8102e]/20 scale-[1.02]'
-                      : 'bg-white border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                      ? 'bg-white dark:bg-slate-900 border-[#c8102e] shadow-md ring-2 ring-[#c8102e]/20 scale-[1.02]'
+                      : 'bg-white dark:bg-slate-900 border-gray-200 dark:border-slate-800 hover:border-gray-300 dark:hover:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800/60'
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -250,7 +250,7 @@ function CinemasContent() {
                   </div>
                   <div
                     className={`font-black text-xs sm:text-sm leading-snug line-clamp-2 ${
-                      isSelected ? 'text-[#c8102e]' : 'text-gray-900'
+                      isSelected ? 'text-[#c8102e] dark:text-red-400' : 'text-gray-900 dark:text-white'
                     }`}
                   >
                     {cin.name}
@@ -263,26 +263,26 @@ function CinemasContent() {
 
         {/* 3. Selected Cinema Details Card */}
         {selectedCinema && (
-          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-border-subtle shadow-sm space-y-4">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-gray-100">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-border-subtle dark:border-slate-800 shadow-sm space-y-4">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-gray-100 dark:border-slate-800">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <h2 className="text-xl sm:text-2xl font-black text-gray-900">
+                  <h2 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
                     {selectedCinema.name}
                   </h2>
-                  <span className="bg-red-50 text-[#c8102e] text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+                  <span className="bg-red-50 dark:bg-red-950/60 text-[#c8102e] dark:text-red-400 text-[11px] font-bold px-2.5 py-0.5 rounded-full">
                     Đang Hoạt Động
                   </span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-gray-500">
+                <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                   <MapPin className="w-3.5 h-3.5 text-[#c8102e] shrink-0" />
                   <span>{selectedCinema.address}</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-4 text-xs shrink-0">
-                <div className="text-gray-500">
-                  Hotline: <strong className="text-gray-900 font-bold">{selectedCinema.phone || '1900 2026'}</strong>
+                <div className="text-gray-500 dark:text-gray-400">
+                  Hotline: <strong className="text-gray-900 dark:text-white font-bold">{selectedCinema.phone || '1900 2026'}</strong>
                 </div>
               </div>
             </div>
@@ -306,8 +306,8 @@ function CinemasContent() {
         )}
 
         {/* 4. Date Picker Tabs */}
-        <div className="bg-white p-4 rounded-3xl border border-border-subtle shadow-sm space-y-3">
-          <div className="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-wider">
+        <div className="bg-white dark:bg-slate-900 p-4 rounded-3xl border border-border-subtle dark:border-slate-800 shadow-sm space-y-3">
+          <div className="flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
             <Calendar className="w-4 h-4 text-[#c8102e]" />
             <span>Chọn Ngày Chiếu:</span>
           </div>
@@ -322,7 +322,7 @@ function CinemasContent() {
                   className={`flex flex-col items-center min-w-[76px] px-3 py-2.5 rounded-2xl transition-all shrink-0 ${
                     isSelected
                       ? 'bg-[#c8102e] text-white shadow-md shadow-red-900/30 scale-105'
-                      : 'bg-gray-50 hover:bg-gray-100 text-gray-700 border border-gray-100'
+                      : 'bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-200 border border-gray-100 dark:border-slate-700'
                   }`}
                 >
                   <span className="text-[10px] font-bold uppercase tracking-wider opacity-90">
@@ -338,13 +338,13 @@ function CinemasContent() {
         {/* 5. Filter & Search Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Status Tabs */}
-          <div className="flex items-center gap-1.5 bg-gray-200/60 p-1 rounded-2xl w-full sm:w-auto">
+          <div className="flex items-center gap-1.5 bg-gray-200/60 dark:bg-slate-800/80 p-1 rounded-2xl w-full sm:w-auto">
             <button
               onClick={() => setActiveFilter('ALL')}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex-1 sm:flex-none ${
                 activeFilter === 'ALL'
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-sm'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               Tất Cả Phim ({moviesGrouped.length})
@@ -353,8 +353,8 @@ function CinemasContent() {
               onClick={() => setActiveFilter('NOW_SHOWING')}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex-1 sm:flex-none ${
                 activeFilter === 'NOW_SHOWING'
-                  ? 'bg-white text-[#c8102e] shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white dark:bg-slate-900 text-[#c8102e] dark:text-red-400 shadow-sm'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               Phim Đang Chiếu
@@ -363,8 +363,8 @@ function CinemasContent() {
               onClick={() => setActiveFilter('COMING_SOON')}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex-1 sm:flex-none ${
                 activeFilter === 'COMING_SOON'
-                  ? 'bg-white text-[#c8102e] shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white dark:bg-slate-900 text-[#c8102e] dark:text-red-400 shadow-sm'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
               Phim Sắp Chiếu / Suất Sớm
@@ -379,13 +379,13 @@ function CinemasContent() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Tìm phim theo tên..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl border border-gray-200 bg-white text-xs focus:outline-none focus:border-[#c8102e] focus:ring-1 focus:ring-[#c8102e]"
+              className="w-full pl-9 pr-4 py-2 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-gray-900 dark:text-white placeholder-gray-400 text-xs focus:outline-none focus:border-[#c8102e] focus:ring-1 focus:ring-[#c8102e]"
             />
           </div>
         </div>
 
         {/* 6. Movies & Showtimes Schedule (Matches Reference Image) */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-border-subtle shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 border border-border-subtle dark:border-slate-800 shadow-sm">
           {loadingSchedule ? (
             <div className="py-20 text-center text-gray-400 space-y-3">
               <div className="w-8 h-8 border-4 border-[#c8102e] border-t-transparent rounded-full animate-spin mx-auto" />
@@ -405,13 +405,13 @@ function CinemasContent() {
                     <div className="flex flex-wrap items-center gap-2.5">
                       <Link
                         href={`/phim/${movie.slug}`}
-                        className="text-lg sm:text-2xl font-black text-gray-900 hover:text-[#c8102e] transition-colors uppercase tracking-tight"
+                        className="text-lg sm:text-2xl font-black text-gray-900 dark:text-white hover:text-[#c8102e] dark:hover:text-red-400 transition-colors uppercase tracking-tight"
                       >
                         {movie.title}
                       </Link>
                       {renderAgeBadge(movie.ageRating)}
                       {isComingSoon && (
-                        <span className="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
+                        <span className="bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
                           Suất Chiếu Sớm
                         </span>
                       )}
@@ -427,7 +427,7 @@ function CinemasContent() {
                       {/* Left: Poster */}
                       <Link
                         href={`/phim/${movie.slug}`}
-                        className="w-32 sm:w-36 md:w-44 aspect-[2/3] shrink-0 rounded-2xl overflow-hidden shadow-md border border-gray-100 group block relative bg-gray-100 hover:shadow-xl transition-all"
+                        className="w-32 sm:w-36 md:w-44 aspect-[2/3] shrink-0 rounded-2xl overflow-hidden shadow-md border border-gray-100 dark:border-slate-800 group block relative bg-gray-100 dark:bg-slate-800 hover:shadow-xl transition-all"
                       >
                         <img
                           src={movie.posterUrl || ''}
@@ -447,7 +447,7 @@ function CinemasContent() {
                           formatGroups.map((group: ShowtimeFormatGroup, gIdx: number) => (
                             <div key={gIdx} className="space-y-2">
                               {/* Format Title (e.g. "2D Phụ Đề Anh & Việt | Rạp STARIUM") */}
-                              <div className="text-xs sm:text-sm font-bold text-gray-800 tracking-tight flex items-center gap-2">
+                              <div className="text-xs sm:text-sm font-bold text-gray-800 dark:text-gray-200 tracking-tight flex items-center gap-2">
                                 <span>{group.formatLabel}</span>
                               </div>
 
@@ -464,7 +464,7 @@ function CinemasContent() {
                                       key={st.id}
                                       href={targetUrl}
                                       title={`${st.timeDisplay} • ${formatVnd(st.priceFrom)} • Còn ${st.seatsLeft} ghế`}
-                                      className="px-3.5 py-1.5 rounded-md border border-gray-300 bg-white hover:border-[#c8102e] hover:text-[#c8102e] hover:bg-red-50/50 text-gray-800 text-sm font-semibold transition-all shadow-sm active:scale-95 flex items-center justify-center group"
+                                      className="px-3.5 py-1.5 rounded-md border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-[#c8102e] dark:hover:border-red-500 hover:text-[#c8102e] dark:hover:text-red-400 hover:bg-red-50/50 dark:hover:bg-red-950/30 text-gray-800 dark:text-gray-200 text-sm font-semibold transition-all shadow-sm active:scale-95 flex items-center justify-center group"
                                     >
                                       <span>{st.startTime}</span>
                                     </Link>
@@ -472,7 +472,7 @@ function CinemasContent() {
                                     <div
                                       key={st.id}
                                       title="Suất chiếu đã bắt đầu hoặc đã đóng"
-                                      className="px-3.5 py-1.5 rounded-md border border-gray-200 bg-gray-50 text-gray-400 text-sm font-semibold cursor-not-allowed opacity-50"
+                                      className="px-3.5 py-1.5 rounded-md border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-800/40 text-gray-400 dark:text-slate-600 text-sm font-semibold cursor-not-allowed opacity-50"
                                     >
                                       <span>{st.startTime}</span>
                                     </div>
@@ -491,7 +491,7 @@ function CinemasContent() {
 
                     {/* Divider between movies */}
                     {index < filteredMovies.length - 1 && (
-                      <div className="border-b border-gray-200/80 pt-6" />
+                      <div className="border-b border-gray-200/80 dark:border-slate-800 pt-6" />
                     )}
                   </div>
                 );
@@ -500,7 +500,7 @@ function CinemasContent() {
           ) : (
             <div className="py-20 text-center text-gray-400 space-y-3">
               <Film className="w-12 h-12 text-[#c8102e] opacity-30 mx-auto" />
-              <p className="text-base font-bold text-gray-700">
+              <p className="text-base font-bold text-gray-700 dark:text-gray-300">
                 Không có suất chiếu nào phù hợp
               </p>
               <p className="text-xs text-gray-400 max-w-md mx-auto">

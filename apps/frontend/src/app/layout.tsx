@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
+import { ThemeProvider } from '../context/ThemeContext';
 import { AuthProvider } from '../context/AuthContext';
 import { LanguageProvider } from '../context/LanguageContext';
 import { ClockProvider } from '../context/ClockContext';
@@ -19,18 +20,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="vi">
+    <html lang="vi" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var s = localStorage.getItem('hustcen_theme');
+                var d = s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (d) {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  document.documentElement.style.colorScheme = 'dark';
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body className="bg-background text-text-primary min-h-screen flex flex-col antialiased selection:bg-red-500 selection:text-white">
-        <AuthProvider>
-          <LanguageProvider>
-            <ClockProvider>
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <DevClockWidget />
-            </ClockProvider>
-          </LanguageProvider>
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <LanguageProvider>
+              <ClockProvider>
+                <Header />
+                <main className="flex-1">{children}</main>
+                <Footer />
+                <DevClockWidget />
+              </ClockProvider>
+            </LanguageProvider>
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

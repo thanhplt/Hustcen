@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useAuth } from '../context/AuthContext';
 import { useLang } from '../context/LanguageContext';
 import { useClock } from '../context/ClockContext';
+import { ThemeToggle } from './ThemeToggle';
 import {
   Film,
   Clock,
@@ -35,8 +36,8 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-border-subtle shadow-sm">
-      {/* Top Utility Bar: Clock & Dev Quick Links */}
+    <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-md border-b border-border-subtle dark:border-slate-800 shadow-sm transition-colors duration-200">
+      {/* Top Utility Bar: Clock, Lang & Theme Quick Links */}
       <div className="bg-[#1A1A1F] text-white text-xs py-1.5 px-4 sm:px-8 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <Clock className={`w-3.5 h-3.5 ${isSimulated ? 'text-amber-400 animate-pulse' : 'text-red-400'}`} />
@@ -48,7 +49,7 @@ export const Header: React.FC = () => {
           )}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <button
             onClick={toggleLang}
             className="flex items-center gap-1 hover:text-red-300 font-semibold transition-colors"
@@ -97,9 +98,9 @@ export const Header: React.FC = () => {
           <div>
             <div className="flex items-center gap-1.5">
               <span className="font-extrabold text-xl tracking-tight text-[#c8102e]">HUST</span>
-              <span className="font-bold text-xl tracking-tight text-gray-900">Cine</span>
+              <span className="font-bold text-xl tracking-tight text-gray-900 dark:text-white">Cine</span>
             </div>
-            <p className="text-[10px] text-gray-500 font-medium tracking-wide uppercase">
+            <p className="text-[10px] text-gray-500 dark:text-gray-400 font-medium tracking-wide uppercase">
               {t('brand_sub')}
             </p>
           </div>
@@ -115,8 +116,8 @@ export const Header: React.FC = () => {
                 href={link.href}
                 className={`transition-colors py-1 border-b-2 ${
                   active
-                    ? 'text-[#c8102e] border-[#c8102e] font-semibold'
-                    : 'text-gray-700 border-transparent hover:text-[#c8102e]'
+                    ? 'text-[#c8102e] border-[#c8102e] font-semibold dark:text-red-400 dark:border-red-500'
+                    : 'text-gray-700 dark:text-gray-300 border-transparent hover:text-[#c8102e] dark:hover:text-red-400'
                 }`}
               >
                 {link.label}
@@ -125,131 +126,137 @@ export const Header: React.FC = () => {
           })}
         </nav>
 
-        {/* User / Auth Menu */}
-        <div className="relative">
-          {user ? (
-            <div className="relative">
-              <button
-                onClick={() => setUserDropdown(!userDropdown)}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border-subtle hover:bg-surface-alt transition-colors"
-              >
-                <div className="w-7 h-7 rounded-full bg-red-100 text-[#c8102e] font-bold text-xs flex items-center justify-center">
-                  {user.fullName.charAt(0)}
-                </div>
-                <div className="text-left hidden sm:block">
-                  <div className="text-xs font-semibold text-gray-900 line-clamp-1">{user.fullName}</div>
-                  <div className="text-[10px] text-gray-500">{user.role}</div>
-                </div>
-                <ChevronDown className="w-4 h-4 text-gray-400" />
-              </button>
+        {/* Right Action Cluster: Light/Dark Mode Switcher & User/Auth Menu */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* Light / Dark Mode Toggle Button */}
+          <ThemeToggle />
 
-              {userDropdown && (
-                <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50 text-sm">
-                  <div className="px-4 py-2 border-b border-gray-100">
-                    <div className="font-semibold text-gray-900">{user.fullName}</div>
-                    <div className="text-xs text-gray-500">{user.email}</div>
-                  </div>
-
-                  <Link
-                    href="/tai-khoan"
-                    onClick={() => setUserDropdown(false)}
-                    className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 text-gray-700 hover:text-[#c8102e]"
-                  >
-                    <UserIcon className="w-4 h-4" /> Tài Khoản & Điểm Thưởng
-                  </Link>
-
-                  <Link
-                    href="/tai-khoan"
-                    onClick={() => setUserDropdown(false)}
-                    className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 text-gray-700 hover:text-[#c8102e]"
-                  >
-                    <Ticket className="w-4 h-4" /> Vé Phim Của Tôi
-                  </Link>
-
-                  {isAdmin && (
-                    <Link
-                      href="/admin"
-                      onClick={() => setUserDropdown(false)}
-                      className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 text-gray-700 hover:text-[#c8102e]"
-                    >
-                      <LayoutDashboard className="w-4 h-4" /> Bảng Điều Khiển Admin
-                    </Link>
-                  )}
-
-                  {isStaff && (
-                    <>
-                      <Link
-                        href="/staff/pos"
-                        onClick={() => setUserDropdown(false)}
-                        className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 text-gray-700 hover:text-[#c8102e]"
-                      >
-                        <Receipt className="w-4 h-4" /> Bán Vé POS
-                      </Link>
-                      <Link
-                        href="/staff/scanner"
-                        onClick={() => setUserDropdown(false)}
-                        className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 text-gray-700 hover:text-[#c8102e]"
-                      >
-                        <ScanLine className="w-4 h-4" /> Soát Vé QR
-                      </Link>
-                    </>
-                  )}
-
-                  <button
-                    onClick={() => {
-                      logout();
-                      setUserDropdown(false);
-                    }}
-                    className="w-full text-left flex items-center gap-2 px-4 py-2 text-red-600 hover:bg-red-50 transition-colors border-t border-gray-100 mt-1"
-                  >
-                    <LogOut className="w-4 h-4" /> {t('logout')}
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="flex items-center gap-2">
-              <Link
-                href="/auth/login"
-                className="px-4 py-2 rounded-lg bg-[#c8102e] hover:bg-[#8e0b1f] text-white font-semibold text-sm shadow-sm transition-all hover:shadow"
-              >
-                {t('login')}
-              </Link>
-
-              {/* Quick Demo Accounts Switcher */}
-              <div className="relative group">
+          {/* User / Auth Menu */}
+          <div className="relative">
+            {user ? (
+              <div className="relative">
                 <button
-                  className="p-2 rounded-lg border border-border-subtle hover:bg-surface-alt text-gray-600 hover:text-[#c8102e] transition-colors"
-                  title="Đăng nhập tài khoản demo nhanh"
+                  onClick={() => setUserDropdown(!userDropdown)}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border-subtle dark:border-slate-700 hover:bg-surface-alt dark:hover:bg-slate-800 transition-colors"
                 >
-                  <Sparkles className="w-4 h-4" />
-                </button>
-                <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 p-2 hidden group-hover:block z-50">
-                  <div className="text-[10px] font-bold text-gray-400 px-2 py-1 uppercase tracking-wider">
-                    Đăng Nhập Nhanh Demo
+                  <div className="w-7 h-7 rounded-full bg-red-100 dark:bg-red-950/60 text-[#c8102e] dark:text-red-400 font-bold text-xs flex items-center justify-center">
+                    {user.fullName.charAt(0)}
                   </div>
+                  <div className="text-left hidden sm:block">
+                    <div className="text-xs font-semibold text-gray-900 dark:text-white line-clamp-1">{user.fullName}</div>
+                    <div className="text-[10px] text-gray-500 dark:text-gray-400">{user.role}</div>
+                  </div>
+                  <ChevronDown className="w-4 h-4 text-gray-400" />
+                </button>
+
+                {userDropdown && (
+                  <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-gray-100 dark:border-slate-800 py-2 z-50 text-sm">
+                    <div className="px-4 py-2 border-b border-gray-100 dark:border-slate-800">
+                      <div className="font-semibold text-gray-900 dark:text-white">{user.fullName}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">{user.email}</div>
+                    </div>
+
+                    <Link
+                      href="/tai-khoan"
+                      onClick={() => setUserDropdown(false)}
+                      className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-950/30 text-gray-700 dark:text-gray-200 hover:text-[#c8102e] dark:hover:text-red-400"
+                    >
+                      <UserIcon className="w-4 h-4" /> Tài Khoản & Điểm Thưởng
+                    </Link>
+
+                    <Link
+                      href="/tai-khoan"
+                      onClick={() => setUserDropdown(false)}
+                      className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-950/30 text-gray-700 dark:text-gray-200 hover:text-[#c8102e] dark:hover:text-red-400"
+                    >
+                      <Ticket className="w-4 h-4" /> Vé Phim Của Tôi
+                    </Link>
+
+                    {isAdmin && (
+                      <Link
+                        href="/admin"
+                        onClick={() => setUserDropdown(false)}
+                        className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-950/30 text-gray-700 dark:text-gray-200 hover:text-[#c8102e] dark:hover:text-red-400"
+                      >
+                        <LayoutDashboard className="w-4 h-4" /> Bảng Điều Khiển Admin
+                      </Link>
+                    )}
+
+                    {isStaff && (
+                      <>
+                        <Link
+                          href="/staff/pos"
+                          onClick={() => setUserDropdown(false)}
+                          className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-950/30 text-gray-700 dark:text-gray-200 hover:text-[#c8102e] dark:hover:text-red-400"
+                        >
+                          <Receipt className="w-4 h-4" /> Bán Vé POS
+                        </Link>
+                        <Link
+                          href="/staff/scanner"
+                          onClick={() => setUserDropdown(false)}
+                          className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-950/30 text-gray-700 dark:text-gray-200 hover:text-[#c8102e] dark:hover:text-red-400"
+                        >
+                          <ScanLine className="w-4 h-4" /> Soát Vé QR
+                        </Link>
+                      </>
+                    )}
+
+                    <button
+                      onClick={() => {
+                        logout();
+                        setUserDropdown(false);
+                      }}
+                      className="w-full text-left flex items-center gap-2 px-4 py-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors border-t border-gray-100 dark:border-slate-800 mt-1"
+                    >
+                      <LogOut className="w-4 h-4" /> {t('logout')}
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <Link
+                  href="/auth/login"
+                  className="px-4 py-2 rounded-lg bg-[#c8102e] hover:bg-[#8e0b1f] text-white font-semibold text-sm shadow-sm transition-all hover:shadow"
+                >
+                  {t('login')}
+                </Link>
+
+                {/* Quick Demo Accounts Switcher */}
+                <div className="relative group">
                   <button
-                    onClick={() => quickLoginDemo('ADMIN')}
-                    className="w-full text-left px-2 py-1.5 text-xs hover:bg-red-50 rounded text-gray-800 font-medium hover:text-[#c8102e]"
+                    className="p-2 rounded-lg border border-border-subtle dark:border-slate-700 hover:bg-surface-alt dark:hover:bg-slate-800 text-gray-600 dark:text-gray-300 hover:text-[#c8102e] dark:hover:text-red-400 transition-colors"
+                    title="Đăng nhập tài khoản demo nhanh"
                   >
-                    👑 Quản Trị Viên (Admin)
+                    <Sparkles className="w-4 h-4" />
                   </button>
-                  <button
-                    onClick={() => quickLoginDemo('STAFF')}
-                    className="w-full text-left px-2 py-1.5 text-xs hover:bg-red-50 rounded text-gray-800 font-medium hover:text-[#c8102e]"
-                  >
-                    🎫 Nhân Viên POS (Staff)
-                  </button>
-                  <button
-                    onClick={() => quickLoginDemo('CUSTOMER')}
-                    className="w-full text-left px-2 py-1.5 text-xs hover:bg-red-50 rounded text-gray-800 font-medium hover:text-[#c8102e]"
-                  >
-                    👤 Khách Hàng (Customer)
-                  </button>
+                  <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-gray-100 dark:border-slate-800 p-2 hidden group-hover:block z-50">
+                    <div className="text-[10px] font-bold text-gray-400 px-2 py-1 uppercase tracking-wider">
+                      Đăng Nhập Nhanh Demo
+                    </div>
+                    <button
+                      onClick={() => quickLoginDemo('ADMIN')}
+                      className="w-full text-left px-2 py-1.5 text-xs hover:bg-red-50 dark:hover:bg-red-950/30 rounded text-gray-800 dark:text-gray-200 font-medium hover:text-[#c8102e] dark:hover:text-red-400"
+                    >
+                      👑 Quản Trị Viên (Admin)
+                    </button>
+                    <button
+                      onClick={() => quickLoginDemo('STAFF')}
+                      className="w-full text-left px-2 py-1.5 text-xs hover:bg-red-50 dark:hover:bg-red-950/30 rounded text-gray-800 dark:text-gray-200 font-medium hover:text-[#c8102e] dark:hover:text-red-400"
+                    >
+                      🎫 Nhân Viên POS (Staff)
+                    </button>
+                    <button
+                      onClick={() => quickLoginDemo('CUSTOMER')}
+                      className="w-full text-left px-2 py-1.5 text-xs hover:bg-red-50 dark:hover:bg-red-950/30 rounded text-gray-800 dark:text-gray-200 font-medium hover:text-[#c8102e] dark:hover:text-red-400"
+                    >
+                      👤 Khách Hàng (Customer)
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </header>

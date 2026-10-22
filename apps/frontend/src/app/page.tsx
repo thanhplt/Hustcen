@@ -189,14 +189,14 @@ export default function HomePage() {
       )}
 
       {/* 2. Quick Cinema Selector & Tech Highlights */}
-      <section className="bg-white border-b border-border-subtle py-4 shadow-sm">
+      <section className="bg-white dark:bg-slate-900/90 border-b border-border-subtle dark:border-slate-800 py-4 shadow-sm transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 w-full md:w-auto">
-            <div className="p-2 rounded-lg bg-red-50 text-[#c8102e]">
+            <div className="p-2 rounded-lg bg-red-50 dark:bg-red-950/40 text-[#c8102e] dark:text-red-400">
               <MapPin className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xs text-gray-500 font-medium">Chọn cụm rạp xem lịch chiếu</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-medium">Chọn cụm rạp xem lịch chiếu</div>
               <div className="flex items-center gap-2">
                 <select
                   value={selectedCinema}
@@ -207,18 +207,18 @@ export default function HomePage() {
                       window.location.href = `/cum-rap?cinema=${val}`;
                     }
                   }}
-                  className="font-bold text-sm text-gray-900 bg-transparent border-none focus:ring-0 p-0 cursor-pointer"
+                  className="font-bold text-sm text-gray-900 dark:text-white bg-transparent border-none focus:ring-0 p-0 cursor-pointer"
                 >
-                  <option value="">Chọn rạp để xem lịch chiếu ({cinemas.length} rạp)...</option>
+                  <option value="" className="dark:bg-slate-900 dark:text-white">Chọn rạp để xem lịch chiếu ({cinemas.length} rạp)...</option>
                   {cinemas.map((c) => (
-                    <option key={c.id} value={c.slug}>
+                    <option key={c.id} value={c.slug} className="dark:bg-slate-900 dark:text-white">
                       {c.name}
                     </option>
                   ))}
                 </select>
                 <Link
                   href="/cum-rap"
-                  className="text-xs font-bold text-[#c8102e] hover:underline shrink-0"
+                  className="text-xs font-bold text-[#c8102e] dark:text-red-400 hover:underline shrink-0"
                 >
                   Xem tất cả rạp &rarr;
                 </Link>
@@ -226,18 +226,18 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-6 text-xs text-gray-600 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
+          <div className="flex items-center gap-6 text-xs text-gray-600 dark:text-gray-400 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
             <div className="flex items-center gap-1.5 shrink-0">
-              <Tv className="w-4 h-4 text-[#c8102e]" />
-              <span className="font-semibold text-gray-800">IMAX Laser & Dolby Atmos</span>
+              <Tv className="w-4 h-4 text-[#c8102e] dark:text-red-400" />
+              <span className="font-semibold text-gray-800 dark:text-gray-200">IMAX Laser & Dolby Atmos</span>
             </div>
             <div className="flex items-center gap-1.5 shrink-0">
-              <Users className="w-4 h-4 text-[#B8902A]" />
-              <span className="font-semibold text-gray-800">Phòng Private Lab 10 chỗ</span>
+              <Users className="w-4 h-4 text-[#B8902A] dark:text-amber-400" />
+              <span className="font-semibold text-gray-800 dark:text-gray-200">Phòng Private Lab 10 chỗ</span>
             </div>
             <div className="flex items-center gap-1.5 shrink-0">
-              <Award className="w-4 h-4 text-emerald-600" />
-              <span className="font-semibold text-gray-800">Ưu đãi sinh viên 45.000đ</span>
+              <Award className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              <span className="font-semibold text-gray-800 dark:text-gray-200">Ưu đãi sinh viên 45.000đ</span>
             </div>
           </div>
         </div>
@@ -246,7 +246,7 @@ export default function HomePage() {
       {/* 3. Movie Catalog Section with Horizontal Slider & > Button */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 py-12 flex-1 w-full">
         {/* Tab & Format Controls */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 pb-4 mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 dark:border-slate-800 pb-4 mb-6">
           <div className="flex items-center gap-4">
             <button
               onClick={() => {
@@ -255,8 +255,8 @@ export default function HomePage() {
               }}
               className={`text-lg sm:text-xl font-extrabold pb-2 transition-colors border-b-2 ${
                 activeTab === 'NOW_SHOWING'
-                  ? 'text-[#c8102e] border-[#c8102e]'
-                  : 'text-gray-400 border-transparent hover:text-gray-700'
+                  ? 'text-[#c8102e] border-[#c8102e] dark:text-red-400 dark:border-red-500'
+                  : 'text-gray-400 border-transparent hover:text-gray-700 dark:hover:text-gray-200'
               }`}
             >
               Phim Đang Chiếu
@@ -268,8 +268,8 @@ export default function HomePage() {
               }}
               className={`text-lg sm:text-xl font-extrabold pb-2 transition-colors border-b-2 ${
                 activeTab === 'COMING_SOON'
-                  ? 'text-[#c8102e] border-[#c8102e]'
-                  : 'text-gray-400 border-transparent hover:text-gray-700'
+                  ? 'text-[#c8102e] border-[#c8102e] dark:text-red-400 dark:border-red-500'
+                  : 'text-gray-400 border-transparent hover:text-gray-700 dark:hover:text-gray-200'
               }`}
             >
               Phim Sắp Chiếu
@@ -289,7 +289,7 @@ export default function HomePage() {
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                     formatFilter === fmt
                       ? 'bg-[#c8102e] text-white shadow-sm'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      : 'bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700'
                   }`}
                 >
                   {fmt === 'ALL' ? 'Tất Cả' : fmt}
@@ -299,14 +299,14 @@ export default function HomePage() {
 
             {/* Quick Header Arrow Controls */}
             {filteredMovies.length > 0 && (
-              <div className="hidden sm:flex items-center gap-1.5 border-l border-gray-200 pl-3">
+              <div className="hidden sm:flex items-center gap-1.5 border-l border-gray-200 dark:border-slate-800 pl-3">
                 <button
                   onClick={() => handleScroll('left')}
                   disabled={!canScrollLeft}
                   className={`p-2 rounded-xl border transition-all ${
                     canScrollLeft
-                      ? 'border-gray-300 text-gray-700 hover:border-[#c8102e] hover:text-[#c8102e] hover:bg-red-50/50 shadow-sm'
-                      : 'border-gray-200 text-gray-300 cursor-not-allowed opacity-40'
+                      ? 'border-gray-300 dark:border-slate-700 text-gray-700 dark:text-gray-200 hover:border-[#c8102e] hover:text-[#c8102e] hover:bg-red-50/50 dark:hover:bg-red-950/30 shadow-sm'
+                      : 'border-gray-200 dark:border-slate-800 text-gray-300 dark:text-slate-600 cursor-not-allowed opacity-40'
                   }`}
                   aria-label="Xem phim trước"
                   title="Xem phim trước"
@@ -319,7 +319,7 @@ export default function HomePage() {
                   className={`px-3 py-2 rounded-xl transition-all flex items-center gap-1 text-xs font-bold ${
                     canScrollRight
                       ? 'bg-[#c8102e] text-white hover:bg-[#8e0b1f] shadow-md hover:scale-105 active:scale-95'
-                      : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-gray-100 dark:bg-slate-800 text-gray-400 dark:text-slate-500 cursor-not-allowed'
                   }`}
                   aria-label="Xem thêm lần lượt các phim"
                   title="Bấm để xem thêm lần lượt các phim"
@@ -338,7 +338,7 @@ export default function HomePage() {
             {Array.from({ length: 5 }).map((_, i) => (
               <div
                 key={i}
-                className="w-[210px] sm:w-[235px] md:w-[250px] shrink-0 animate-pulse bg-gray-200 aspect-[2/3] rounded-2xl"
+                className="w-[210px] sm:w-[235px] md:w-[250px] shrink-0 animate-pulse bg-gray-200 dark:bg-slate-800 aspect-[2/3] rounded-2xl"
               />
             ))}
           </div>
@@ -348,7 +348,7 @@ export default function HomePage() {
             {canScrollLeft && (
               <button
                 onClick={() => handleScroll('left')}
-                className="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-gray-800 border border-gray-200 shadow-2xl flex items-center justify-center hover:bg-[#c8102e] hover:text-white hover:border-[#c8102e] hover:scale-110 active:scale-95 transition-all"
+                className="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-slate-800 text-gray-800 dark:text-white border border-gray-200 dark:border-slate-700 shadow-2xl dark:shadow-black/70 flex items-center justify-center hover:bg-[#c8102e] hover:text-white hover:border-[#c8102e] hover:scale-110 active:scale-95 transition-all"
                 aria-label="Xem phim trước đó"
                 title="Xem phim trước đó"
               >
@@ -360,7 +360,7 @@ export default function HomePage() {
             {canScrollRight && (
               <button
                 onClick={() => handleScroll('right')}
-                className="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-gray-900 border-2 border-gray-200 shadow-2xl flex items-center justify-center hover:bg-[#c8102e] hover:text-white hover:border-[#c8102e] hover:scale-110 active:scale-95 transition-all animate-pulse hover:animate-none"
+                className="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white dark:bg-slate-800 text-gray-900 dark:text-white border-2 border-gray-200 dark:border-slate-700 shadow-2xl dark:shadow-black/70 flex items-center justify-center hover:bg-[#c8102e] hover:text-white hover:border-[#c8102e] hover:scale-110 active:scale-95 transition-all animate-pulse hover:animate-none"
                 aria-label="Xem thêm lần lượt các phim"
                 title="Bấm để xem thêm lần lượt các phim"
               >
@@ -372,7 +372,7 @@ export default function HomePage() {
             {canScrollRight && (
               <div
                 onClick={() => handleScroll('right')}
-                className="cursor-pointer absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white/95 via-white/40 to-transparent z-10 flex items-center justify-end pr-2 opacity-80 hover:opacity-100 transition-opacity"
+                className="cursor-pointer absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white/95 via-white/40 to-transparent dark:from-[#090d16]/95 dark:via-[#090d16]/40 z-10 flex items-center justify-end pr-2 opacity-80 hover:opacity-100 transition-opacity"
               />
             )}
 
@@ -380,7 +380,7 @@ export default function HomePage() {
             {canScrollLeft && (
               <div
                 onClick={() => handleScroll('left')}
-                className="cursor-pointer absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white/95 via-white/40 to-transparent z-10 flex items-center justify-start pl-2 opacity-80 hover:opacity-100 transition-opacity"
+                className="cursor-pointer absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white/95 via-white/40 to-transparent dark:from-[#090d16]/95 dark:via-[#090d16]/40 z-10 flex items-center justify-start pl-2 opacity-80 hover:opacity-100 transition-opacity"
               />
             )}
 
