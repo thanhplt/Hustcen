@@ -343,7 +343,7 @@ export default function HomePage() {
             ))}
           </div>
         ) : filteredMovies.length > 0 ? (
-          <div className="relative group">
+          <div className="relative">
             {/* Floating Left Button (<) */}
             {canScrollLeft && (
               <button

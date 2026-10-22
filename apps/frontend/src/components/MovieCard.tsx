@@ -14,6 +14,7 @@ interface MovieCardProps {
 
 export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
   const [trailerOpen, setTrailerOpen] = useState(false);
+  const [isTrailerActive, setIsTrailerActive] = useState(false);
   const { user } = useAuth();
 
   // Age badge colors
@@ -49,13 +50,23 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
 
   return (
     <>
-      <div className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-border-subtle shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <div
+        className="group/card flex flex-col bg-white rounded-2xl overflow-hidden border border-border-subtle shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative"
+        onMouseLeave={() => setIsTrailerActive(false)}
+      >
         {/* Poster Container */}
-        <div className="relative aspect-[2/3] w-full overflow-hidden bg-gray-100">
+        <div
+          className="relative aspect-[2/3] w-full overflow-hidden bg-gray-100 cursor-pointer"
+          onClick={() => {
+            if (movie.trailer?.embedUrl) {
+              setIsTrailerActive((prev) => !prev);
+            }
+          }}
+        >
           <img
             src={posterSrc}
             alt={movie.title}
-            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover object-center group-hover/card:scale-105 transition-transform duration-500"
             loading="lazy"
             onError={(e) => {
               e.currentTarget.onerror = null;
@@ -65,7 +76,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
           />
 
           {/* Age Tag */}
-          <div className="absolute top-2.5 left-2.5 z-10">
+          <div className="absolute top-2.5 left-2.5 z-10 pointer-events-none">
             <span
               className={`px-2 py-0.5 rounded text-[11px] font-black tracking-wider shadow ${getAgeBadge(
                 movie.ageRating,
@@ -76,7 +87,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
           </div>
 
           {/* Formats Tags */}
-          <div className="absolute top-2.5 right-2.5 flex flex-col gap-1 z-10 items-end">
+          <div className="absolute top-2.5 right-2.5 flex flex-col gap-1 z-10 items-end pointer-events-none">
             {parsedFormats.map((fmt) => (
               <span
                 key={fmt}
@@ -89,25 +100,38 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
 
           {/* Rating Badge */}
           {movie.ratingAvg ? (
-            <div className="absolute bottom-2.5 left-2.5 bg-black/80 backdrop-blur-md text-amber-400 px-2 py-1 rounded-lg text-xs font-bold flex items-center gap-1 shadow">
+            <div className="absolute bottom-2.5 left-2.5 bg-black/80 backdrop-blur-md text-amber-400 px-2 py-1 rounded-lg text-xs font-bold flex items-center gap-1 shadow pointer-events-none">
               <Star className="w-3.5 h-3.5 fill-amber-400" />
               <span>{movie.ratingAvg.toFixed(1)}</span>
             </div>
           ) : null}
 
-          {/* Hover Trailer Overlay Button */}
+          {/* Hover / Click Trailer Overlay Button - ONLY appears for this specific card */}
           {movie.trailer?.embedUrl && (
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div
+              className={`absolute inset-0 bg-black/45 transition-all duration-300 flex flex-col items-center justify-center gap-2 z-20 ${
+                isTrailerActive
+                  ? 'opacity-100 pointer-events-auto'
+                  : 'opacity-0 pointer-events-none group-hover/card:opacity-100 group-hover/card:pointer-events-auto'
+              }`}
+              onClick={(e) => {
+                e.stopPropagation();
+                setTrailerOpen(true);
+              }}
+            >
               <button
                 onClick={(e) => {
-                  e.preventDefault();
+                  e.stopPropagation();
                   setTrailerOpen(true);
                 }}
-                className="w-12 h-12 rounded-full bg-[#c8102e] hover:bg-[#8e0b1f] text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform"
+                className="w-12 h-12 rounded-full bg-[#c8102e] hover:bg-[#8e0b1f] text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all cursor-pointer"
                 title="Xem Trailer"
               >
                 <Play className="w-5 h-5 fill-white ml-0.5" />
               </button>
+              <span className="text-xs font-semibold text-white drop-shadow-md tracking-wide">
+                Xem Trailer
+              </span>
             </div>
           )}
         </div>
@@ -141,11 +165,17 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onNotifyMe }) => {
           <div className="mt-3.5 pt-3 border-t border-gray-100 flex items-center gap-2">
             {movie.trailer?.embedUrl && (
               <button
-                onClick={() => setTrailerOpen(true)}
-                className="px-2.5 py-2 rounded-xl border border-border-subtle hover:bg-surface-highlight text-gray-700 hover:text-[#c8102e] text-xs font-semibold flex items-center gap-1 transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setTrailerOpen(true);
+                }}
+                className={`px-2.5 py-2 rounded-xl border border-border-subtle hover:bg-surface-highlight text-gray-700 hover:text-[#c8102e] text-xs font-semibold items-center gap-1 transition-all ${
+                  isTrailerActive ? 'flex' : 'hidden group-hover/card:flex'
+                }`}
                 title="Trailer"
               >
                 <Play className="w-3.5 h-3.5" />
+                <span className="text-[11px]">Trailer</span>
               </button>
             )}
 
